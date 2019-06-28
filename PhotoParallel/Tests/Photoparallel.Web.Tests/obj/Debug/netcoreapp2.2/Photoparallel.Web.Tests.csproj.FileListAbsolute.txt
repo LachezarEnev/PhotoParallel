@@ -41,3 +41,46 @@ D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Tests\Photoparallel
 D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Tests\Photoparallel.Web.Tests\obj\Debug\netcoreapp2.2\Photoparallel.Web.Tests.csproj.CopyComplete
 D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Tests\Photoparallel.Web.Tests\obj\Debug\netcoreapp2.2\Photoparallel.Web.Tests.dll
 D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Tests\Photoparallel.Web.Tests\obj\Debug\netcoreapp2.2\Photoparallel.Web.Tests.pdb
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Tests\Photoparallel.Web.Tests\bin\Debug\netcoreapp2.2\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Tests\Photoparallel.Web.Tests\bin\Debug\netcoreapp2.2\xunit.runner.reporters.netcoreapp10.dll
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Tests\Photoparallel.Web.Tests\bin\Debug\netcoreapp2.2\xunit.runner.utility.netcoreapp10.dll
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Tests\Photoparallel.Web.Tests\bin\Debug\netcoreapp2.2\Photoparallel.Web.Views.dll
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Tests\Photoparallel.Web.Tests\bin\Debug\netcoreapp2.2\Photoparallel.Web.Views.pdb
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Tests\Photoparallel.Web.Tests\bin\Debug\netcoreapp2.2\appsettings.json
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Tests\Photoparallel.Web.Tests\bin\Debug\netcoreapp2.2\Photoparallel.Web.Tests.deps.json
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Tests\Photoparallel.Web.Tests\bin\Debug\netcoreapp2.2\Photoparallel.Web.Tests.runtimeconfig.json
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Tests\Photoparallel.Web.Tests\bin\Debug\netcoreapp2.2\Photoparallel.Web.Tests.runtimeconfig.dev.json
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Tests\Photoparallel.Web.Tests\bin\Debug\netcoreapp2.2\Photoparallel.Web.Tests.dll
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Tests\Photoparallel.Web.Tests\bin\Debug\netcoreapp2.2\Photoparallel.Web.Tests.pdb
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Tests\Photoparallel.Web.Tests\bin\Debug\netcoreapp2.2\Photoparallel.Common.dll
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Tests\Photoparallel.Web.Tests\bin\Debug\netcoreapp2.2\Photoparallel.Data.Common.dll
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Tests\Photoparallel.Web.Tests\bin\Debug\netcoreapp2.2\Photoparallel.Data.dll
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Tests\Photoparallel.Web.Tests\bin\Debug\netcoreapp2.2\Photoparallel.Data.Models.dll
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Tests\Photoparallel.Web.Tests\bin\Debug\netcoreapp2.2\Photoparallel.Services.Data.dll
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Tests\Photoparallel.Web.Tests\bin\Debug\netcoreapp2.2\Photoparallel.Services.dll
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Tests\Photoparallel.Web.Tests\bin\Debug\netcoreapp2.2\Photoparallel.Services.Mapping.dll
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Tests\Photoparallel.Web.Tests\bin\Debug\netcoreapp2.2\Photoparallel.Services.Messaging.dll
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Tests\Photoparallel.Web.Tests\bin\Debug\netcoreapp2.2\Photoparallel.Web.dll
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Tests\Photoparallel.Web.Tests\bin\Debug\netcoreapp2.2\Photoparallel.Web.Infrastructure.dll
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Tests\Photoparallel.Web.Tests\bin\Debug\netcoreapp2.2\Photoparallel.Web.ViewModels.dll
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Tests\Photoparallel.Web.Tests\bin\Debug\netcoreapp2.2\Photoparallel.Web.pdb
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Tests\Photoparallel.Web.Tests\bin\Debug\netcoreapp2.2\Photoparallel.Common.pdb
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Tests\Photoparallel.Web.Tests\bin\Debug\netcoreapp2.2\Photoparallel.Data.pdb
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Tests\Photoparallel.Web.Tests\bin\Debug\netcoreapp2.2\Photoparallel.Data.Common.pdb
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Tests\Photoparallel.Web.Tests\bin\Debug\netcoreapp2.2\Photoparallel.Data.Models.pdb
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Tests\Photoparallel.Web.Tests\bin\Debug\netcoreapp2.2\Photoparallel.Services.pdb
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Tests\Photoparallel.Web.Tests\bin\Debug\netcoreapp2.2\Photoparallel.Services.Data.pdb
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Tests\Photoparallel.Web.Tests\bin\Debug\netcoreapp2.2\Photoparallel.Services.Mapping.pdb
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Tests\Photoparallel.Web.Tests\bin\Debug\netcoreapp2.2\Photoparallel.Services.Messaging.pdb
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Tests\Photoparallel.Web.Tests\bin\Debug\netcoreapp2.2\Photoparallel.Web.Infrastructure.pdb
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Tests\Photoparallel.Web.Tests\bin\Debug\netcoreapp2.2\Photoparallel.Web.ViewModels.pdb
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Tests\Photoparallel.Web.Tests\obj\Debug\netcoreapp2.2\Photoparallel.Web.Tests.csprojAssemblyReference.cache
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Tests\Photoparallel.Web.Tests\obj\Debug\netcoreapp2.2\Photoparallel.Web.Tests.csproj.CoreCompileInputs.cache
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Tests\Photoparallel.Web.Tests\obj\Debug\netcoreapp2.2\Photoparallel.Web.Tests.RazorAssemblyInfo.cache
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Tests\Photoparallel.Web.Tests\obj\Debug\netcoreapp2.2\Photoparallel.Web.Tests.RazorAssemblyInfo.cs
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Tests\Photoparallel.Web.Tests\obj\Debug\netcoreapp2.2\Photoparallel.Web.Tests.AssemblyInfoInputs.cache
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Tests\Photoparallel.Web.Tests\obj\Debug\netcoreapp2.2\Photoparallel.Web.Tests.AssemblyInfo.cs
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Tests\Photoparallel.Web.Tests\obj\Debug\netcoreapp2.2\Photoparallel.Web.Tests.RazorTargetAssemblyInfo.cache
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Tests\Photoparallel.Web.Tests\obj\Debug\netcoreapp2.2\Photoparallel.Web.Tests.csproj.CopyComplete
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Tests\Photoparallel.Web.Tests\obj\Debug\netcoreapp2.2\Photoparallel.Web.Tests.dll
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Tests\Photoparallel.Web.Tests\obj\Debug\netcoreapp2.2\Photoparallel.Web.Tests.pdb

@@ -11,10 +11,8 @@
 using System;
 using System.Reflection;
 
-[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("Photoparallel.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Data\\Photoparallel.D" +
-    "ata", "Photoparallel.Data.csproj", "0")]
-[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("Photoparallel.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Web\\Photoparallel.We" +
-    "b", "Photoparallel.Web.csproj", "0")]
+[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("Photoparallel.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Data\\Photoparallel.Data", "Photoparallel.Data.csproj", "0")]
+[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("Photoparallel.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Web\\Photoparallel.Web", "Photoparallel.Web.csproj", "0")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("Photoparallel.Web.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]

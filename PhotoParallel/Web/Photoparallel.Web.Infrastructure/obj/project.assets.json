@@ -214,11 +214,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Web\\Photoparallel.Web.Infrastructure\\Photoparallel.Web.Infrastructure.csproj",
+      "projectUniqueName": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Web\\Photoparallel.Web.Infrastructure\\Photoparallel.Web.Infrastructure.csproj",
       "projectName": "Photoparallel.Web.Infrastructure",
-      "projectPath": "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Web\\Photoparallel.Web.Infrastructure\\Photoparallel.Web.Infrastructure.csproj",
+      "projectPath": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Web\\Photoparallel.Web.Infrastructure\\Photoparallel.Web.Infrastructure.csproj",
       "packagesPath": "C:\\Users\\don_m\\.nuget\\packages\\",
-      "outputPath": "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Web\\Photoparallel.Web.Infrastructure\\obj\\",
+      "outputPath": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Web\\Photoparallel.Web.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

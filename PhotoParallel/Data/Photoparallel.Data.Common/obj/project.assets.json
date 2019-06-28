@@ -313,11 +313,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Data\\Photoparallel.Data.Common\\Photoparallel.Data.Common.csproj",
+      "projectUniqueName": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Data\\Photoparallel.Data.Common\\Photoparallel.Data.Common.csproj",
       "projectName": "Photoparallel.Data.Common",
-      "projectPath": "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Data\\Photoparallel.Data.Common\\Photoparallel.Data.Common.csproj",
+      "projectPath": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Data\\Photoparallel.Data.Common\\Photoparallel.Data.Common.csproj",
       "packagesPath": "C:\\Users\\don_m\\.nuget\\packages\\",
-      "outputPath": "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Data\\Photoparallel.Data.Common\\obj\\",
+      "outputPath": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Data\\Photoparallel.Data.Common\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

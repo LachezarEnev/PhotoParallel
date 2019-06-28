@@ -27,8 +27,6 @@ namespace Photoparallel.Data.Models
 
         public string LastName { get; set; }
 
-        public string Phone { get; set; }
-
         public ICollection<Receipt> Receipts { get; set; }
 
         public ICollection<Order> Orders { get; set; }

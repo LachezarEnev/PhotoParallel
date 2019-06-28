@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Web\\Photoparallel.Web\\Photoparallel.Web.csproj": {}
+    "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Web\\Photoparallel.Web\\Photoparallel.Web.csproj": {}
   },
   "projects": {
-    "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Data\\Photoparallel.Data.Common\\Photoparallel.Data.Common.csproj": {
+    "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Data\\Photoparallel.Data.Common\\Photoparallel.Data.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Data\\Photoparallel.Data.Common\\Photoparallel.Data.Common.csproj",
+        "projectUniqueName": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Data\\Photoparallel.Data.Common\\Photoparallel.Data.Common.csproj",
         "projectName": "Photoparallel.Data.Common",
-        "projectPath": "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Data\\Photoparallel.Data.Common\\Photoparallel.Data.Common.csproj",
+        "projectPath": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Data\\Photoparallel.Data.Common\\Photoparallel.Data.Common.csproj",
         "packagesPath": "C:\\Users\\don_m\\.nuget\\packages\\",
-        "outputPath": "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Data\\Photoparallel.Data.Common\\obj\\",
+        "outputPath": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Data\\Photoparallel.Data.Common\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -66,14 +66,14 @@
         }
       }
     },
-    "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Data\\Photoparallel.Data.Models\\Photoparallel.Data.Models.csproj": {
+    "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Data\\Photoparallel.Data.Models\\Photoparallel.Data.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Data\\Photoparallel.Data.Models\\Photoparallel.Data.Models.csproj",
+        "projectUniqueName": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Data\\Photoparallel.Data.Models\\Photoparallel.Data.Models.csproj",
         "projectName": "Photoparallel.Data.Models",
-        "projectPath": "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Data\\Photoparallel.Data.Models\\Photoparallel.Data.Models.csproj",
+        "projectPath": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Data\\Photoparallel.Data.Models\\Photoparallel.Data.Models.csproj",
         "packagesPath": "C:\\Users\\don_m\\.nuget\\packages\\",
-        "outputPath": "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Data\\Photoparallel.Data.Models\\obj\\",
+        "outputPath": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Data\\Photoparallel.Data.Models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -92,8 +92,8 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Data\\Photoparallel.Data.Common\\Photoparallel.Data.Common.csproj": {
-                "projectPath": "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Data\\Photoparallel.Data.Common\\Photoparallel.Data.Common.csproj"
+              "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Data\\Photoparallel.Data.Common\\Photoparallel.Data.Common.csproj": {
+                "projectPath": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Data\\Photoparallel.Data.Common\\Photoparallel.Data.Common.csproj"
               }
             }
           }
@@ -132,14 +132,14 @@
         }
       }
     },
-    "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Data\\Photoparallel.Data\\Photoparallel.Data.csproj": {
+    "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Data\\Photoparallel.Data\\Photoparallel.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Data\\Photoparallel.Data\\Photoparallel.Data.csproj",
+        "projectUniqueName": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Data\\Photoparallel.Data\\Photoparallel.Data.csproj",
         "projectName": "Photoparallel.Data",
-        "projectPath": "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Data\\Photoparallel.Data\\Photoparallel.Data.csproj",
+        "projectPath": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Data\\Photoparallel.Data\\Photoparallel.Data.csproj",
         "packagesPath": "C:\\Users\\don_m\\.nuget\\packages\\",
-        "outputPath": "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Data\\Photoparallel.Data\\obj\\",
+        "outputPath": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Data\\Photoparallel.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -158,14 +158,14 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Data\\Photoparallel.Data.Common\\Photoparallel.Data.Common.csproj": {
-                "projectPath": "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Data\\Photoparallel.Data.Common\\Photoparallel.Data.Common.csproj"
+              "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Data\\Photoparallel.Data.Common\\Photoparallel.Data.Common.csproj": {
+                "projectPath": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Data\\Photoparallel.Data.Common\\Photoparallel.Data.Common.csproj"
               },
-              "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Data\\Photoparallel.Data.Models\\Photoparallel.Data.Models.csproj": {
-                "projectPath": "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Data\\Photoparallel.Data.Models\\Photoparallel.Data.Models.csproj"
+              "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Data\\Photoparallel.Data.Models\\Photoparallel.Data.Models.csproj": {
+                "projectPath": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Data\\Photoparallel.Data.Models\\Photoparallel.Data.Models.csproj"
               },
-              "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Photoparallel.Common\\Photoparallel.Common.csproj": {
-                "projectPath": "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Photoparallel.Common\\Photoparallel.Common.csproj"
+              "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Photoparallel.Common\\Photoparallel.Common.csproj": {
+                "projectPath": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Photoparallel.Common\\Photoparallel.Common.csproj"
               }
             }
           }
@@ -222,14 +222,14 @@
         }
       }
     },
-    "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Photoparallel.Common\\Photoparallel.Common.csproj": {
+    "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Photoparallel.Common\\Photoparallel.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Photoparallel.Common\\Photoparallel.Common.csproj",
+        "projectUniqueName": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Photoparallel.Common\\Photoparallel.Common.csproj",
         "projectName": "Photoparallel.Common",
-        "projectPath": "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Photoparallel.Common\\Photoparallel.Common.csproj",
+        "projectPath": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Photoparallel.Common\\Photoparallel.Common.csproj",
         "packagesPath": "C:\\Users\\don_m\\.nuget\\packages\\",
-        "outputPath": "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Photoparallel.Common\\obj\\",
+        "outputPath": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Photoparallel.Common\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -280,14 +280,14 @@
         }
       }
     },
-    "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Services\\Photoparallel.Services.Data\\Photoparallel.Services.Data.csproj": {
+    "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Services\\Photoparallel.Services.Data\\Photoparallel.Services.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Services\\Photoparallel.Services.Data\\Photoparallel.Services.Data.csproj",
+        "projectUniqueName": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Services\\Photoparallel.Services.Data\\Photoparallel.Services.Data.csproj",
         "projectName": "Photoparallel.Services.Data",
-        "projectPath": "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Services\\Photoparallel.Services.Data\\Photoparallel.Services.Data.csproj",
+        "projectPath": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Services\\Photoparallel.Services.Data\\Photoparallel.Services.Data.csproj",
         "packagesPath": "C:\\Users\\don_m\\.nuget\\packages\\",
-        "outputPath": "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Services\\Photoparallel.Services.Data\\obj\\",
+        "outputPath": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Services\\Photoparallel.Services.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -306,11 +306,11 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Data\\Photoparallel.Data.Common\\Photoparallel.Data.Common.csproj": {
-                "projectPath": "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Data\\Photoparallel.Data.Common\\Photoparallel.Data.Common.csproj"
+              "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Data\\Photoparallel.Data.Common\\Photoparallel.Data.Common.csproj": {
+                "projectPath": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Data\\Photoparallel.Data.Common\\Photoparallel.Data.Common.csproj"
               },
-              "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Data\\Photoparallel.Data.Models\\Photoparallel.Data.Models.csproj": {
-                "projectPath": "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Data\\Photoparallel.Data.Models\\Photoparallel.Data.Models.csproj"
+              "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Data\\Photoparallel.Data.Models\\Photoparallel.Data.Models.csproj": {
+                "projectPath": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Data\\Photoparallel.Data.Models\\Photoparallel.Data.Models.csproj"
               }
             }
           }
@@ -345,14 +345,14 @@
         }
       }
     },
-    "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Services\\Photoparallel.Services.Mapping\\Photoparallel.Services.Mapping.csproj": {
+    "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Services\\Photoparallel.Services.Mapping\\Photoparallel.Services.Mapping.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Services\\Photoparallel.Services.Mapping\\Photoparallel.Services.Mapping.csproj",
+        "projectUniqueName": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Services\\Photoparallel.Services.Mapping\\Photoparallel.Services.Mapping.csproj",
         "projectName": "Photoparallel.Services.Mapping",
-        "projectPath": "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Services\\Photoparallel.Services.Mapping\\Photoparallel.Services.Mapping.csproj",
+        "projectPath": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Services\\Photoparallel.Services.Mapping\\Photoparallel.Services.Mapping.csproj",
         "packagesPath": "C:\\Users\\don_m\\.nuget\\packages\\",
-        "outputPath": "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Services\\Photoparallel.Services.Mapping\\obj\\",
+        "outputPath": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Services\\Photoparallel.Services.Mapping\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -407,14 +407,14 @@
         }
       }
     },
-    "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Services\\Photoparallel.Services.Messaging\\Photoparallel.Services.Messaging.csproj": {
+    "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Services\\Photoparallel.Services.Messaging\\Photoparallel.Services.Messaging.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Services\\Photoparallel.Services.Messaging\\Photoparallel.Services.Messaging.csproj",
+        "projectUniqueName": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Services\\Photoparallel.Services.Messaging\\Photoparallel.Services.Messaging.csproj",
         "projectName": "Photoparallel.Services.Messaging",
-        "projectPath": "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Services\\Photoparallel.Services.Messaging\\Photoparallel.Services.Messaging.csproj",
+        "projectPath": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Services\\Photoparallel.Services.Messaging\\Photoparallel.Services.Messaging.csproj",
         "packagesPath": "C:\\Users\\don_m\\.nuget\\packages\\",
-        "outputPath": "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Services\\Photoparallel.Services.Messaging\\obj\\",
+        "outputPath": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Services\\Photoparallel.Services.Messaging\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -477,14 +477,14 @@
         }
       }
     },
-    "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Services\\Photoparallel.Services\\Photoparallel.Services.csproj": {
+    "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Services\\Photoparallel.Services\\Photoparallel.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Services\\Photoparallel.Services\\Photoparallel.Services.csproj",
+        "projectUniqueName": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Services\\Photoparallel.Services\\Photoparallel.Services.csproj",
         "projectName": "Photoparallel.Services",
-        "projectPath": "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Services\\Photoparallel.Services\\Photoparallel.Services.csproj",
+        "projectPath": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Services\\Photoparallel.Services\\Photoparallel.Services.csproj",
         "packagesPath": "C:\\Users\\don_m\\.nuget\\packages\\",
-        "outputPath": "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Services\\Photoparallel.Services\\obj\\",
+        "outputPath": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Services\\Photoparallel.Services\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -535,14 +535,14 @@
         }
       }
     },
-    "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Web\\Photoparallel.Web.Infrastructure\\Photoparallel.Web.Infrastructure.csproj": {
+    "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Web\\Photoparallel.Web.Infrastructure\\Photoparallel.Web.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Web\\Photoparallel.Web.Infrastructure\\Photoparallel.Web.Infrastructure.csproj",
+        "projectUniqueName": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Web\\Photoparallel.Web.Infrastructure\\Photoparallel.Web.Infrastructure.csproj",
         "projectName": "Photoparallel.Web.Infrastructure",
-        "projectPath": "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Web\\Photoparallel.Web.Infrastructure\\Photoparallel.Web.Infrastructure.csproj",
+        "projectPath": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Web\\Photoparallel.Web.Infrastructure\\Photoparallel.Web.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\don_m\\.nuget\\packages\\",
-        "outputPath": "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Web\\Photoparallel.Web.Infrastructure\\obj\\",
+        "outputPath": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Web\\Photoparallel.Web.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -593,14 +593,14 @@
         }
       }
     },
-    "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Web\\Photoparallel.Web.ViewModels\\Photoparallel.Web.ViewModels.csproj": {
+    "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Web\\Photoparallel.Web.ViewModels\\Photoparallel.Web.ViewModels.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Web\\Photoparallel.Web.ViewModels\\Photoparallel.Web.ViewModels.csproj",
+        "projectUniqueName": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Web\\Photoparallel.Web.ViewModels\\Photoparallel.Web.ViewModels.csproj",
         "projectName": "Photoparallel.Web.ViewModels",
-        "projectPath": "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Web\\Photoparallel.Web.ViewModels\\Photoparallel.Web.ViewModels.csproj",
+        "projectPath": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Web\\Photoparallel.Web.ViewModels\\Photoparallel.Web.ViewModels.csproj",
         "packagesPath": "C:\\Users\\don_m\\.nuget\\packages\\",
-        "outputPath": "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Web\\Photoparallel.Web.ViewModels\\obj\\",
+        "outputPath": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Web\\Photoparallel.Web.ViewModels\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -619,11 +619,11 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Data\\Photoparallel.Data.Models\\Photoparallel.Data.Models.csproj": {
-                "projectPath": "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Data\\Photoparallel.Data.Models\\Photoparallel.Data.Models.csproj"
+              "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Data\\Photoparallel.Data.Models\\Photoparallel.Data.Models.csproj": {
+                "projectPath": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Data\\Photoparallel.Data.Models\\Photoparallel.Data.Models.csproj"
               },
-              "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Services\\Photoparallel.Services.Mapping\\Photoparallel.Services.Mapping.csproj": {
-                "projectPath": "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Services\\Photoparallel.Services.Mapping\\Photoparallel.Services.Mapping.csproj"
+              "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Services\\Photoparallel.Services.Mapping\\Photoparallel.Services.Mapping.csproj": {
+                "projectPath": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Services\\Photoparallel.Services.Mapping\\Photoparallel.Services.Mapping.csproj"
               }
             }
           }
@@ -658,14 +658,14 @@
         }
       }
     },
-    "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Web\\Photoparallel.Web\\Photoparallel.Web.csproj": {
+    "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Web\\Photoparallel.Web\\Photoparallel.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Web\\Photoparallel.Web\\Photoparallel.Web.csproj",
+        "projectUniqueName": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Web\\Photoparallel.Web\\Photoparallel.Web.csproj",
         "projectName": "Photoparallel.Web",
-        "projectPath": "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Web\\Photoparallel.Web\\Photoparallel.Web.csproj",
+        "projectPath": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Web\\Photoparallel.Web\\Photoparallel.Web.csproj",
         "packagesPath": "C:\\Users\\don_m\\.nuget\\packages\\",
-        "outputPath": "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Web\\Photoparallel.Web\\obj\\",
+        "outputPath": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Web\\Photoparallel.Web\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -684,29 +684,29 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Data\\Photoparallel.Data.Models\\Photoparallel.Data.Models.csproj": {
-                "projectPath": "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Data\\Photoparallel.Data.Models\\Photoparallel.Data.Models.csproj"
+              "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Data\\Photoparallel.Data.Models\\Photoparallel.Data.Models.csproj": {
+                "projectPath": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Data\\Photoparallel.Data.Models\\Photoparallel.Data.Models.csproj"
               },
-              "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Data\\Photoparallel.Data\\Photoparallel.Data.csproj": {
-                "projectPath": "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Data\\Photoparallel.Data\\Photoparallel.Data.csproj"
+              "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Data\\Photoparallel.Data\\Photoparallel.Data.csproj": {
+                "projectPath": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Data\\Photoparallel.Data\\Photoparallel.Data.csproj"
               },
-              "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Services\\Photoparallel.Services.Data\\Photoparallel.Services.Data.csproj": {
-                "projectPath": "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Services\\Photoparallel.Services.Data\\Photoparallel.Services.Data.csproj"
+              "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Services\\Photoparallel.Services.Data\\Photoparallel.Services.Data.csproj": {
+                "projectPath": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Services\\Photoparallel.Services.Data\\Photoparallel.Services.Data.csproj"
               },
-              "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Services\\Photoparallel.Services.Mapping\\Photoparallel.Services.Mapping.csproj": {
-                "projectPath": "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Services\\Photoparallel.Services.Mapping\\Photoparallel.Services.Mapping.csproj"
+              "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Services\\Photoparallel.Services.Mapping\\Photoparallel.Services.Mapping.csproj": {
+                "projectPath": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Services\\Photoparallel.Services.Mapping\\Photoparallel.Services.Mapping.csproj"
               },
-              "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Services\\Photoparallel.Services.Messaging\\Photoparallel.Services.Messaging.csproj": {
-                "projectPath": "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Services\\Photoparallel.Services.Messaging\\Photoparallel.Services.Messaging.csproj"
+              "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Services\\Photoparallel.Services.Messaging\\Photoparallel.Services.Messaging.csproj": {
+                "projectPath": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Services\\Photoparallel.Services.Messaging\\Photoparallel.Services.Messaging.csproj"
               },
-              "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Services\\Photoparallel.Services\\Photoparallel.Services.csproj": {
-                "projectPath": "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Services\\Photoparallel.Services\\Photoparallel.Services.csproj"
+              "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Services\\Photoparallel.Services\\Photoparallel.Services.csproj": {
+                "projectPath": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Services\\Photoparallel.Services\\Photoparallel.Services.csproj"
               },
-              "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Web\\Photoparallel.Web.Infrastructure\\Photoparallel.Web.Infrastructure.csproj": {
-                "projectPath": "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Web\\Photoparallel.Web.Infrastructure\\Photoparallel.Web.Infrastructure.csproj"
+              "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Web\\Photoparallel.Web.Infrastructure\\Photoparallel.Web.Infrastructure.csproj": {
+                "projectPath": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Web\\Photoparallel.Web.Infrastructure\\Photoparallel.Web.Infrastructure.csproj"
               },
-              "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Web\\Photoparallel.Web.ViewModels\\Photoparallel.Web.ViewModels.csproj": {
-                "projectPath": "D:\\SoftUni\\C# Web\\Projects\\ASP.NET-MVC-Template\\ASP.NET Core\\Web\\Photoparallel.Web.ViewModels\\Photoparallel.Web.ViewModels.csproj"
+              "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Web\\Photoparallel.Web.ViewModels\\Photoparallel.Web.ViewModels.csproj": {
+                "projectPath": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Web\\Photoparallel.Web.ViewModels\\Photoparallel.Web.ViewModels.csproj"
               }
             }
           }

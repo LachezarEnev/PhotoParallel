@@ -2,9 +2,8 @@
 {
     using System.Linq;
 
-    using Photoparallel.Data.Common.Models;
-
     using Microsoft.EntityFrameworkCore;
+    using Photoparallel.Data.Common.Models;
 
     internal static class EntityIndexesConfiguration
     {
