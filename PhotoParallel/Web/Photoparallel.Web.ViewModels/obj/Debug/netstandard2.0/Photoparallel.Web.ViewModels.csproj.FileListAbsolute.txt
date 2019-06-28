@@ -1,0 +1,16 @@
+D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Web\Photoparallel.Web.ViewModels\bin\Debug\netstandard2.0\Photoparallel.Web.ViewModels.deps.json
+D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Web\Photoparallel.Web.ViewModels\bin\Debug\netstandard2.0\Photoparallel.Web.ViewModels.dll
+D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Web\Photoparallel.Web.ViewModels\bin\Debug\netstandard2.0\Photoparallel.Web.ViewModels.pdb
+D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Web\Photoparallel.Web.ViewModels\bin\Debug\netstandard2.0\Photoparallel.Data.Common.dll
+D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Web\Photoparallel.Web.ViewModels\bin\Debug\netstandard2.0\Photoparallel.Data.Models.dll
+D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Web\Photoparallel.Web.ViewModels\bin\Debug\netstandard2.0\Photoparallel.Services.Mapping.dll
+D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Web\Photoparallel.Web.ViewModels\bin\Debug\netstandard2.0\Photoparallel.Data.Models.pdb
+D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Web\Photoparallel.Web.ViewModels\bin\Debug\netstandard2.0\Photoparallel.Services.Mapping.pdb
+D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Web\Photoparallel.Web.ViewModels\bin\Debug\netstandard2.0\Photoparallel.Data.Common.pdb
+D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Web\Photoparallel.Web.ViewModels\obj\Debug\netstandard2.0\Photoparallel.Web.ViewModels.csprojAssemblyReference.cache
+D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Web\Photoparallel.Web.ViewModels\obj\Debug\netstandard2.0\Photoparallel.Web.ViewModels.csproj.CoreCompileInputs.cache
+D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Web\Photoparallel.Web.ViewModels\obj\Debug\netstandard2.0\Photoparallel.Web.ViewModels.AssemblyInfoInputs.cache
+D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Web\Photoparallel.Web.ViewModels\obj\Debug\netstandard2.0\Photoparallel.Web.ViewModels.AssemblyInfo.cs
+D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Web\Photoparallel.Web.ViewModels\obj\Debug\netstandard2.0\Photoparallel.Web.ViewModels.csproj.CopyComplete
+D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Web\Photoparallel.Web.ViewModels\obj\Debug\netstandard2.0\Photoparallel.Web.ViewModels.dll
+D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Web\Photoparallel.Web.ViewModels\obj\Debug\netstandard2.0\Photoparallel.Web.ViewModels.pdb

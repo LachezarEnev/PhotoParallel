@@ -1,0 +1,9 @@
+D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Services\Photoparallel.Services\bin\Debug\netstandard2.0\Photoparallel.Services.deps.json
+D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Services\Photoparallel.Services\bin\Debug\netstandard2.0\Photoparallel.Services.dll
+D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Services\Photoparallel.Services\bin\Debug\netstandard2.0\Photoparallel.Services.pdb
+D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Services\Photoparallel.Services\obj\Debug\netstandard2.0\Photoparallel.Services.csprojAssemblyReference.cache
+D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Services\Photoparallel.Services\obj\Debug\netstandard2.0\Photoparallel.Services.csproj.CoreCompileInputs.cache
+D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Services\Photoparallel.Services\obj\Debug\netstandard2.0\Photoparallel.Services.AssemblyInfoInputs.cache
+D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Services\Photoparallel.Services\obj\Debug\netstandard2.0\Photoparallel.Services.AssemblyInfo.cs
+D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Services\Photoparallel.Services\obj\Debug\netstandard2.0\Photoparallel.Services.dll
+D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Services\Photoparallel.Services\obj\Debug\netstandard2.0\Photoparallel.Services.pdb

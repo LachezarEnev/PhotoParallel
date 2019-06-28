@@ -1,0 +1,9 @@
+D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Services\Photoparallel.Services.Messaging\bin\Debug\netstandard2.0\Photoparallel.Services.Messaging.deps.json
+D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Services\Photoparallel.Services.Messaging\bin\Debug\netstandard2.0\Photoparallel.Services.Messaging.dll
+D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Services\Photoparallel.Services.Messaging\bin\Debug\netstandard2.0\Photoparallel.Services.Messaging.pdb
+D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Services\Photoparallel.Services.Messaging\obj\Debug\netstandard2.0\Photoparallel.Services.Messaging.csprojAssemblyReference.cache
+D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Services\Photoparallel.Services.Messaging\obj\Debug\netstandard2.0\Photoparallel.Services.Messaging.csproj.CoreCompileInputs.cache
+D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Services\Photoparallel.Services.Messaging\obj\Debug\netstandard2.0\Photoparallel.Services.Messaging.AssemblyInfoInputs.cache
+D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Services\Photoparallel.Services.Messaging\obj\Debug\netstandard2.0\Photoparallel.Services.Messaging.AssemblyInfo.cs
+D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Services\Photoparallel.Services.Messaging\obj\Debug\netstandard2.0\Photoparallel.Services.Messaging.dll
+D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Services\Photoparallel.Services.Messaging\obj\Debug\netstandard2.0\Photoparallel.Services.Messaging.pdb

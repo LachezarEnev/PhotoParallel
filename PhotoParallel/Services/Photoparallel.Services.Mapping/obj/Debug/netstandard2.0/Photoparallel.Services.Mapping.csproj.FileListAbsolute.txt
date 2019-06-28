@@ -1,0 +1,9 @@
+D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Services\Photoparallel.Services.Mapping\bin\Debug\netstandard2.0\Photoparallel.Services.Mapping.deps.json
+D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Services\Photoparallel.Services.Mapping\bin\Debug\netstandard2.0\Photoparallel.Services.Mapping.dll
+D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Services\Photoparallel.Services.Mapping\bin\Debug\netstandard2.0\Photoparallel.Services.Mapping.pdb
+D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Services\Photoparallel.Services.Mapping\obj\Debug\netstandard2.0\Photoparallel.Services.Mapping.csprojAssemblyReference.cache
+D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Services\Photoparallel.Services.Mapping\obj\Debug\netstandard2.0\Photoparallel.Services.Mapping.csproj.CoreCompileInputs.cache
+D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Services\Photoparallel.Services.Mapping\obj\Debug\netstandard2.0\Photoparallel.Services.Mapping.AssemblyInfoInputs.cache
+D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Services\Photoparallel.Services.Mapping\obj\Debug\netstandard2.0\Photoparallel.Services.Mapping.AssemblyInfo.cs
+D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Services\Photoparallel.Services.Mapping\obj\Debug\netstandard2.0\Photoparallel.Services.Mapping.dll
+D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Services\Photoparallel.Services.Mapping\obj\Debug\netstandard2.0\Photoparallel.Services.Mapping.pdb

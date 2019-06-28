@@ -1,0 +1,14 @@
+D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Services\Photoparallel.Services.Data\bin\Debug\netstandard2.0\Photoparallel.Services.Data.deps.json
+D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Services\Photoparallel.Services.Data\bin\Debug\netstandard2.0\Photoparallel.Services.Data.dll
+D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Services\Photoparallel.Services.Data\bin\Debug\netstandard2.0\Photoparallel.Services.Data.pdb
+D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Services\Photoparallel.Services.Data\bin\Debug\netstandard2.0\Photoparallel.Data.Common.dll
+D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Services\Photoparallel.Services.Data\bin\Debug\netstandard2.0\Photoparallel.Data.Models.dll
+D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Services\Photoparallel.Services.Data\bin\Debug\netstandard2.0\Photoparallel.Data.Common.pdb
+D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Services\Photoparallel.Services.Data\bin\Debug\netstandard2.0\Photoparallel.Data.Models.pdb
+D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Services\Photoparallel.Services.Data\obj\Debug\netstandard2.0\Photoparallel.Services.Data.csprojAssemblyReference.cache
+D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Services\Photoparallel.Services.Data\obj\Debug\netstandard2.0\Photoparallel.Services.Data.csproj.CoreCompileInputs.cache
+D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Services\Photoparallel.Services.Data\obj\Debug\netstandard2.0\Photoparallel.Services.Data.AssemblyInfoInputs.cache
+D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Services\Photoparallel.Services.Data\obj\Debug\netstandard2.0\Photoparallel.Services.Data.AssemblyInfo.cs
+D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Services\Photoparallel.Services.Data\obj\Debug\netstandard2.0\Photoparallel.Services.Data.csproj.CopyComplete
+D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Services\Photoparallel.Services.Data\obj\Debug\netstandard2.0\Photoparallel.Services.Data.dll
+D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Services\Photoparallel.Services.Data\obj\Debug\netstandard2.0\Photoparallel.Services.Data.pdb
