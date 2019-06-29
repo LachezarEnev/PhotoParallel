@@ -77,7 +77,7 @@
             </div>
         }
         else if (this.User.IsInRole("Administrator"))
-        {            
+        {
             <div id="sticker" class="header-bg">
                 <div class="container-fluid">
                     <div class="row">
@@ -176,7 +176,7 @@
                                         </li>
                                         <li>
                                             <a class="page-scroll" href="#portfolio">Rent</a>
-                                        </li>                                       
+                                        </li>
                                         <li>
                                             <a class="page-scroll" href="#contact">Contact</a>
                                         </li>
@@ -192,17 +192,15 @@
 
     </header>
 
-    <div class="container">        
+    <div class="container body-content body-height">
         <main class="mt-3">
             @this.RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; @DateTime.Now.Year - Photoparallel - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
+    <footer class="text-center m-3">
+        <p>&copy; 2019 - Photoparallel.Web</p>
+    </footer>    
 
     <environment names="Development">
         <script src="~/lib/jquery/dist/jquery.js" asp-append-version="true"></script>
@@ -220,5 +218,6 @@
     </environment>
 
     @this.RenderSection("Scripts", required: false)
+
 </body>
 </html>

@@ -4,6 +4,8 @@
     using System.Collections.Generic;
     using System.Linq;
 
+    using Photoparallel.Data.Models.Enums;
+
     public class Rent
     {
         public Rent()
@@ -11,11 +13,11 @@
             this.Products = new HashSet<RentProduct>();
         }
 
-        public string Id { get; set; }
+        public int Id { get; set; }
 
-        public string RenterId { get; set; }
+        public string CustomerId { get; set; }
 
-        public ApplicationUser Renter { get; set; }
+        public ApplicationUser Customer { get; set; }
 
         public DateTime RentedOn { get; set; } = DateTime.UtcNow;
 
@@ -25,9 +27,13 @@
 
         public string ShippingAddress { get; set; }
 
-        public string ReceiptId { get; set; }
+        public string CreditCardId { get; set; }
 
-        public Receipt Receipt { get; set; }
+        public CreditCard CreditCard { get; set; }
+
+        public int InvoiceId { get; set; }
+
+        public Invoice Invoice { get; set; }
 
         public ICollection<RentProduct> Products { get; set; }
 

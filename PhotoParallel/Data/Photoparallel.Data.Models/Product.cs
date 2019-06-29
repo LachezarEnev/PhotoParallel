@@ -12,7 +12,7 @@
             this.Rents = new HashSet<RentProduct>();
         }
 
-        public string Id { get; set; }
+        public int Id { get; set; }
 
         public string Name { get; set; }
 
@@ -28,11 +28,9 @@
 
         public decimal PricePerDay { get; set; }
 
-        public byte Photo { get; set; }
+        public byte[] Photo { get; set; }
 
         public ProductStatus ProductStatus { get; set; }
-
-        public int InStock { get; set; }
 
         public ICollection<OrderProduct> Orders { get; set; }
 

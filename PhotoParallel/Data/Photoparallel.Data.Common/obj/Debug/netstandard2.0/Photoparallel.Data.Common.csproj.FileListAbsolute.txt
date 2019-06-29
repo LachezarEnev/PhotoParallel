@@ -7,3 +7,12 @@ D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Data\Photoparallel.
 D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Data\Photoparallel.Data.Common\obj\Debug\netstandard2.0\Photoparallel.Data.Common.AssemblyInfo.cs
 D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Data\Photoparallel.Data.Common\obj\Debug\netstandard2.0\Photoparallel.Data.Common.dll
 D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Data\Photoparallel.Data.Common\obj\Debug\netstandard2.0\Photoparallel.Data.Common.pdb
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Data\Photoparallel.Data.Common\bin\Debug\netstandard2.0\Photoparallel.Data.Common.deps.json
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Data\Photoparallel.Data.Common\bin\Debug\netstandard2.0\Photoparallel.Data.Common.dll
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Data\Photoparallel.Data.Common\bin\Debug\netstandard2.0\Photoparallel.Data.Common.pdb
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Data\Photoparallel.Data.Common\obj\Debug\netstandard2.0\Photoparallel.Data.Common.csprojAssemblyReference.cache
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Data\Photoparallel.Data.Common\obj\Debug\netstandard2.0\Photoparallel.Data.Common.csproj.CoreCompileInputs.cache
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Data\Photoparallel.Data.Common\obj\Debug\netstandard2.0\Photoparallel.Data.Common.AssemblyInfoInputs.cache
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Data\Photoparallel.Data.Common\obj\Debug\netstandard2.0\Photoparallel.Data.Common.AssemblyInfo.cs
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Data\Photoparallel.Data.Common\obj\Debug\netstandard2.0\Photoparallel.Data.Common.dll
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Data\Photoparallel.Data.Common\obj\Debug\netstandard2.0\Photoparallel.Data.Common.pdb

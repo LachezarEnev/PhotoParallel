@@ -13,21 +13,27 @@
             this.Products = new HashSet<OrderProduct>();
         }
 
-        public string Id { get; set; }
+        public int Id { get; set; }
 
-        public string CreatorId { get; set; }
+        public string CustomerId { get; set; }
 
-        public ApplicationUser Creator { get; set; }
+        public ApplicationUser Customer { get; set; }
 
         public OrderStatus OrderStatus { get; set; } = OrderStatus.Pending;
 
         public DateTime CreatedOn { get; set; } = DateTime.UtcNow;
 
+        public DateTime? EstimatedDeliveryDate { get; set; }
+
         public string ShippingAddress { get; set; }
 
-        public string ReceiptId { get; set; }
+        public string CreditCardId { get; set; }
 
-        public Receipt Receipt { get; set; }
+        public CreditCard CreditCard { get; set; }
+
+        public int InvoiceId { get; set; }
+
+        public Invoice Invoice { get; set; }
 
         public CreditContract CreditContract { get; set; }
 

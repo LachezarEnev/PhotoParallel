@@ -4,5 +4,6 @@
     {
         ForSale = 1,
         ForRent = 2,
+        Rented = 3,
     }
 }

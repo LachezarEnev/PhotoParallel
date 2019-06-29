@@ -2,9 +2,11 @@
 {
     using System;
 
+    using Photoparallel.Data.Models.Enums;
+
     public class CreditContract
     {
-        public string Id { get; set; }
+        public int Id { get; set; }
 
         public DateTime IssuedOn { get; set; } = DateTime.UtcNow;
 
@@ -12,11 +14,21 @@
 
         public decimal PricePerMonth { get; set; }
 
+        public string Ucn { get; set; }
+
+        public string IdNumber { get; set; }
+
+        public decimal Salary { get; set; }
+
+        public string Address { get; set; }
+
+        public CreditStatus CreditStatus { get; set; } = CreditStatus.Pending;
+
         public string CreditCompanyId { get; set; }
 
         public CreditCompany CreditCompany { get; set; }
 
-        public string OrderId { get; set; }
+        public int OrderId { get; set; }
 
         public Order Order { get; set; }
 

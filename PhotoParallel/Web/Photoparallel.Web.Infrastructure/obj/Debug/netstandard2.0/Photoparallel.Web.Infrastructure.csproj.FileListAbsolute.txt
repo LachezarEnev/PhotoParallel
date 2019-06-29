@@ -6,3 +6,12 @@ D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Web\Photoparallel.W
 D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Web\Photoparallel.Web.Infrastructure\obj\Debug\netstandard2.0\Photoparallel.Web.Infrastructure.AssemblyInfo.cs
 D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Web\Photoparallel.Web.Infrastructure\obj\Debug\netstandard2.0\Photoparallel.Web.Infrastructure.dll
 D:\SoftUni\C# Web\Projects\ASP.NET-MVC-Template\ASP.NET Core\Web\Photoparallel.Web.Infrastructure\obj\Debug\netstandard2.0\Photoparallel.Web.Infrastructure.pdb
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web.Infrastructure\bin\Debug\netstandard2.0\Photoparallel.Web.Infrastructure.deps.json
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web.Infrastructure\bin\Debug\netstandard2.0\Photoparallel.Web.Infrastructure.dll
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web.Infrastructure\bin\Debug\netstandard2.0\Photoparallel.Web.Infrastructure.pdb
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web.Infrastructure\obj\Debug\netstandard2.0\Photoparallel.Web.Infrastructure.csprojAssemblyReference.cache
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web.Infrastructure\obj\Debug\netstandard2.0\Photoparallel.Web.Infrastructure.csproj.CoreCompileInputs.cache
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web.Infrastructure\obj\Debug\netstandard2.0\Photoparallel.Web.Infrastructure.AssemblyInfoInputs.cache
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web.Infrastructure\obj\Debug\netstandard2.0\Photoparallel.Web.Infrastructure.AssemblyInfo.cs
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web.Infrastructure\obj\Debug\netstandard2.0\Photoparallel.Web.Infrastructure.dll
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web.Infrastructure\obj\Debug\netstandard2.0\Photoparallel.Web.Infrastructure.pdb

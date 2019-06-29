@@ -47,6 +47,11 @@
 
             returnUrl = returnUrl ?? this.Url.Content("~/");
 
+            if (this.User.Identity.IsAuthenticated)
+            {
+                this.Response.Redirect("/Home/Index");
+            }
+
             // Clear the existing external cookie to ensure a clean login process
             await this.HttpContext.SignOutAsync(IdentityConstants.ExternalScheme);
 

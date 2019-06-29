@@ -11,7 +11,7 @@
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.RazorPages;
     using Microsoft.Extensions.Logging;
-
+    using Photoparallel.Common;
     using Photoparallel.Data.Models;
 
     [AllowAnonymous]
@@ -44,6 +44,11 @@
         public void OnGet(string returnUrl = null)
         {
             this.ReturnUrl = returnUrl;
+
+            if (this.User.Identity.IsAuthenticated)
+            {
+                this.Response.Redirect("/Home/Index");
+            }
         }
 
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
@@ -65,11 +70,11 @@
 
                 if (this.userManager.Users.Count() == 1)
                 {
-                    await this.userManager.AddToRoleAsync(user, "Administrator");
+                    await this.userManager.AddToRoleAsync(user, GlobalConstants.AdministratorRoleName);
                 }
                 else
                 {
-                    await this.userManager.AddToRoleAsync(user, "User");
+                    await this.userManager.AddToRoleAsync(user, GlobalConstants.UserRoleName);
                 }
 
                 if (result.Succeeded)
@@ -122,7 +127,7 @@
             public string ConfirmPassword { get; set; }
 
             [Required]
-            [DataType(DataType.PhoneNumber)]
+            [RegularExpression(@"^(\+\s?)?((?<!\+.*)\(\+?\d+([\s\-\.]?\d+)?\)|\d+)([\s\-\.]?(\(\d+([\s\-\.]?\d+)?\)|\d+))*(\s?(x|ext\.?)\s?\d+)?$", ErrorMessage = "The PhoneNumber field is not a valid phone number")]
             [Display(Name = "Phone Number")]
             public string PhoneNumber { get; set; }
 

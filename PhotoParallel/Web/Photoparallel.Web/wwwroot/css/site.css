@@ -61,3 +61,8 @@ body {
     width:45%
 }
 
+.body-height {
+    min-height: 80%;
+}
+
+
