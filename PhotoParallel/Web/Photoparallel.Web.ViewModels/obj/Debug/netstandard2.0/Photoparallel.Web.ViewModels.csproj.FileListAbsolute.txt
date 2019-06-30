@@ -30,3 +30,19 @@ D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web.ViewModels\obj\D
 D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web.ViewModels\obj\Debug\netstandard2.0\Photoparallel.Web.ViewModels.csproj.CopyComplete
 D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web.ViewModels\obj\Debug\netstandard2.0\Photoparallel.Web.ViewModels.dll
 D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web.ViewModels\obj\Debug\netstandard2.0\Photoparallel.Web.ViewModels.pdb
+C:\Users\don_m\PhotoParallel\PhotoParallel\Web\Photoparallel.Web.ViewModels\bin\Debug\netstandard2.0\Photoparallel.Web.ViewModels.deps.json
+C:\Users\don_m\PhotoParallel\PhotoParallel\Web\Photoparallel.Web.ViewModels\bin\Debug\netstandard2.0\Photoparallel.Web.ViewModels.dll
+C:\Users\don_m\PhotoParallel\PhotoParallel\Web\Photoparallel.Web.ViewModels\bin\Debug\netstandard2.0\Photoparallel.Web.ViewModels.pdb
+C:\Users\don_m\PhotoParallel\PhotoParallel\Web\Photoparallel.Web.ViewModels\bin\Debug\netstandard2.0\Photoparallel.Data.Common.dll
+C:\Users\don_m\PhotoParallel\PhotoParallel\Web\Photoparallel.Web.ViewModels\bin\Debug\netstandard2.0\Photoparallel.Data.Models.dll
+C:\Users\don_m\PhotoParallel\PhotoParallel\Web\Photoparallel.Web.ViewModels\bin\Debug\netstandard2.0\Photoparallel.Services.Mapping.dll
+C:\Users\don_m\PhotoParallel\PhotoParallel\Web\Photoparallel.Web.ViewModels\bin\Debug\netstandard2.0\Photoparallel.Data.Models.pdb
+C:\Users\don_m\PhotoParallel\PhotoParallel\Web\Photoparallel.Web.ViewModels\bin\Debug\netstandard2.0\Photoparallel.Services.Mapping.pdb
+C:\Users\don_m\PhotoParallel\PhotoParallel\Web\Photoparallel.Web.ViewModels\bin\Debug\netstandard2.0\Photoparallel.Data.Common.pdb
+C:\Users\don_m\PhotoParallel\PhotoParallel\Web\Photoparallel.Web.ViewModels\obj\Debug\netstandard2.0\Photoparallel.Web.ViewModels.csprojAssemblyReference.cache
+C:\Users\don_m\PhotoParallel\PhotoParallel\Web\Photoparallel.Web.ViewModels\obj\Debug\netstandard2.0\Photoparallel.Web.ViewModels.csproj.CoreCompileInputs.cache
+C:\Users\don_m\PhotoParallel\PhotoParallel\Web\Photoparallel.Web.ViewModels\obj\Debug\netstandard2.0\Photoparallel.Web.ViewModels.AssemblyInfoInputs.cache
+C:\Users\don_m\PhotoParallel\PhotoParallel\Web\Photoparallel.Web.ViewModels\obj\Debug\netstandard2.0\Photoparallel.Web.ViewModels.AssemblyInfo.cs
+C:\Users\don_m\PhotoParallel\PhotoParallel\Web\Photoparallel.Web.ViewModels\obj\Debug\netstandard2.0\Photoparallel.Web.ViewModels.csproj.CopyComplete
+C:\Users\don_m\PhotoParallel\PhotoParallel\Web\Photoparallel.Web.ViewModels\obj\Debug\netstandard2.0\Photoparallel.Web.ViewModels.dll
+C:\Users\don_m\PhotoParallel\PhotoParallel\Web\Photoparallel.Web.ViewModels\obj\Debug\netstandard2.0\Photoparallel.Web.ViewModels.pdb

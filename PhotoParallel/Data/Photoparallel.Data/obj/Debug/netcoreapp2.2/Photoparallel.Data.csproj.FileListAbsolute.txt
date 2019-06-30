@@ -36,3 +36,22 @@ D:\SoftUni\C# Web\MyProject\PhotoParallel\Data\Photoparallel.Data\obj\Debug\netc
 D:\SoftUni\C# Web\MyProject\PhotoParallel\Data\Photoparallel.Data\obj\Debug\netcoreapp2.2\Photoparallel.Data.csproj.CopyComplete
 D:\SoftUni\C# Web\MyProject\PhotoParallel\Data\Photoparallel.Data\obj\Debug\netcoreapp2.2\Photoparallel.Data.dll
 D:\SoftUni\C# Web\MyProject\PhotoParallel\Data\Photoparallel.Data\obj\Debug\netcoreapp2.2\Photoparallel.Data.pdb
+C:\Users\don_m\PhotoParallel\PhotoParallel\Data\Photoparallel.Data\bin\Debug\netcoreapp2.2\appsettings.json
+C:\Users\don_m\PhotoParallel\PhotoParallel\Data\Photoparallel.Data\bin\Debug\netcoreapp2.2\Photoparallel.Data.deps.json
+C:\Users\don_m\PhotoParallel\PhotoParallel\Data\Photoparallel.Data\bin\Debug\netcoreapp2.2\Photoparallel.Data.runtimeconfig.json
+C:\Users\don_m\PhotoParallel\PhotoParallel\Data\Photoparallel.Data\bin\Debug\netcoreapp2.2\Photoparallel.Data.runtimeconfig.dev.json
+C:\Users\don_m\PhotoParallel\PhotoParallel\Data\Photoparallel.Data\bin\Debug\netcoreapp2.2\Photoparallel.Data.dll
+C:\Users\don_m\PhotoParallel\PhotoParallel\Data\Photoparallel.Data\bin\Debug\netcoreapp2.2\Photoparallel.Data.pdb
+C:\Users\don_m\PhotoParallel\PhotoParallel\Data\Photoparallel.Data\bin\Debug\netcoreapp2.2\Photoparallel.Common.dll
+C:\Users\don_m\PhotoParallel\PhotoParallel\Data\Photoparallel.Data\bin\Debug\netcoreapp2.2\Photoparallel.Data.Common.dll
+C:\Users\don_m\PhotoParallel\PhotoParallel\Data\Photoparallel.Data\bin\Debug\netcoreapp2.2\Photoparallel.Data.Models.dll
+C:\Users\don_m\PhotoParallel\PhotoParallel\Data\Photoparallel.Data\bin\Debug\netcoreapp2.2\Photoparallel.Common.pdb
+C:\Users\don_m\PhotoParallel\PhotoParallel\Data\Photoparallel.Data\bin\Debug\netcoreapp2.2\Photoparallel.Data.Common.pdb
+C:\Users\don_m\PhotoParallel\PhotoParallel\Data\Photoparallel.Data\bin\Debug\netcoreapp2.2\Photoparallel.Data.Models.pdb
+C:\Users\don_m\PhotoParallel\PhotoParallel\Data\Photoparallel.Data\obj\Debug\netcoreapp2.2\Photoparallel.Data.csprojAssemblyReference.cache
+C:\Users\don_m\PhotoParallel\PhotoParallel\Data\Photoparallel.Data\obj\Debug\netcoreapp2.2\Photoparallel.Data.csproj.CoreCompileInputs.cache
+C:\Users\don_m\PhotoParallel\PhotoParallel\Data\Photoparallel.Data\obj\Debug\netcoreapp2.2\Photoparallel.Data.AssemblyInfoInputs.cache
+C:\Users\don_m\PhotoParallel\PhotoParallel\Data\Photoparallel.Data\obj\Debug\netcoreapp2.2\Photoparallel.Data.AssemblyInfo.cs
+C:\Users\don_m\PhotoParallel\PhotoParallel\Data\Photoparallel.Data\obj\Debug\netcoreapp2.2\Photoparallel.Data.csproj.CopyComplete
+C:\Users\don_m\PhotoParallel\PhotoParallel\Data\Photoparallel.Data\obj\Debug\netcoreapp2.2\Photoparallel.Data.dll
+C:\Users\don_m\PhotoParallel\PhotoParallel\Data\Photoparallel.Data\obj\Debug\netcoreapp2.2\Photoparallel.Data.pdb

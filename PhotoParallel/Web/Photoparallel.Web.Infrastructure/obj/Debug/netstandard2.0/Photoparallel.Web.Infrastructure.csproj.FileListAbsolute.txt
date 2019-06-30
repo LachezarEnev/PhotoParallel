@@ -15,3 +15,12 @@ D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web.Infrastructure\o
 D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web.Infrastructure\obj\Debug\netstandard2.0\Photoparallel.Web.Infrastructure.AssemblyInfo.cs
 D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web.Infrastructure\obj\Debug\netstandard2.0\Photoparallel.Web.Infrastructure.dll
 D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web.Infrastructure\obj\Debug\netstandard2.0\Photoparallel.Web.Infrastructure.pdb
+C:\Users\don_m\PhotoParallel\PhotoParallel\Web\Photoparallel.Web.Infrastructure\bin\Debug\netstandard2.0\Photoparallel.Web.Infrastructure.deps.json
+C:\Users\don_m\PhotoParallel\PhotoParallel\Web\Photoparallel.Web.Infrastructure\bin\Debug\netstandard2.0\Photoparallel.Web.Infrastructure.dll
+C:\Users\don_m\PhotoParallel\PhotoParallel\Web\Photoparallel.Web.Infrastructure\bin\Debug\netstandard2.0\Photoparallel.Web.Infrastructure.pdb
+C:\Users\don_m\PhotoParallel\PhotoParallel\Web\Photoparallel.Web.Infrastructure\obj\Debug\netstandard2.0\Photoparallel.Web.Infrastructure.csprojAssemblyReference.cache
+C:\Users\don_m\PhotoParallel\PhotoParallel\Web\Photoparallel.Web.Infrastructure\obj\Debug\netstandard2.0\Photoparallel.Web.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\don_m\PhotoParallel\PhotoParallel\Web\Photoparallel.Web.Infrastructure\obj\Debug\netstandard2.0\Photoparallel.Web.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\don_m\PhotoParallel\PhotoParallel\Web\Photoparallel.Web.Infrastructure\obj\Debug\netstandard2.0\Photoparallel.Web.Infrastructure.AssemblyInfo.cs
+C:\Users\don_m\PhotoParallel\PhotoParallel\Web\Photoparallel.Web.Infrastructure\obj\Debug\netstandard2.0\Photoparallel.Web.Infrastructure.dll
+C:\Users\don_m\PhotoParallel\PhotoParallel\Web\Photoparallel.Web.Infrastructure\obj\Debug\netstandard2.0\Photoparallel.Web.Infrastructure.pdb

@@ -20,6 +20,8 @@
     using Photoparallel.Data.Models;
     using Photoparallel.Data.Repositories;
     using Photoparallel.Data.Seeding;
+    using Photoparallel.Services;
+    using Photoparallel.Services.Contracts;
     using Photoparallel.Services.Data;
     using Photoparallel.Services.Mapping;
     using Photoparallel.Services.Messaging;
@@ -100,6 +102,8 @@
             services.AddTransient<IEmailSender, NullMessageSender>();
             services.AddTransient<ISmsSender, NullMessageSender>();
             services.AddTransient<ISettingsService, SettingsService>();
+
+            services.AddScoped<IOrdersService, OrdersService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -142,6 +146,7 @@
             app.UseStaticFiles();
             app.UseCookiePolicy();
             app.UseAuthentication();
+
 
             app.UseMvc(routes =>
             {

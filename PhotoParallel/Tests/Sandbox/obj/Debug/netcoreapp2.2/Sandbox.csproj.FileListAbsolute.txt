@@ -56,3 +56,32 @@ D:\SoftUni\C# Web\MyProject\PhotoParallel\Tests\Sandbox\obj\Debug\netcoreapp2.2\
 D:\SoftUni\C# Web\MyProject\PhotoParallel\Tests\Sandbox\obj\Debug\netcoreapp2.2\Sandbox.csproj.CopyComplete
 D:\SoftUni\C# Web\MyProject\PhotoParallel\Tests\Sandbox\obj\Debug\netcoreapp2.2\Sandbox.dll
 D:\SoftUni\C# Web\MyProject\PhotoParallel\Tests\Sandbox\obj\Debug\netcoreapp2.2\Sandbox.pdb
+C:\Users\don_m\PhotoParallel\PhotoParallel\Tests\Sandbox\bin\Debug\netcoreapp2.2\appsettings.json
+C:\Users\don_m\PhotoParallel\PhotoParallel\Tests\Sandbox\bin\Debug\netcoreapp2.2\Sandbox.deps.json
+C:\Users\don_m\PhotoParallel\PhotoParallel\Tests\Sandbox\bin\Debug\netcoreapp2.2\Sandbox.runtimeconfig.json
+C:\Users\don_m\PhotoParallel\PhotoParallel\Tests\Sandbox\bin\Debug\netcoreapp2.2\Sandbox.runtimeconfig.dev.json
+C:\Users\don_m\PhotoParallel\PhotoParallel\Tests\Sandbox\bin\Debug\netcoreapp2.2\Sandbox.dll
+C:\Users\don_m\PhotoParallel\PhotoParallel\Tests\Sandbox\bin\Debug\netcoreapp2.2\Sandbox.pdb
+C:\Users\don_m\PhotoParallel\PhotoParallel\Tests\Sandbox\bin\Debug\netcoreapp2.2\Photoparallel.Common.dll
+C:\Users\don_m\PhotoParallel\PhotoParallel\Tests\Sandbox\bin\Debug\netcoreapp2.2\Photoparallel.Data.Common.dll
+C:\Users\don_m\PhotoParallel\PhotoParallel\Tests\Sandbox\bin\Debug\netcoreapp2.2\Photoparallel.Data.dll
+C:\Users\don_m\PhotoParallel\PhotoParallel\Tests\Sandbox\bin\Debug\netcoreapp2.2\Photoparallel.Data.Models.dll
+C:\Users\don_m\PhotoParallel\PhotoParallel\Tests\Sandbox\bin\Debug\netcoreapp2.2\Photoparallel.Services.Data.dll
+C:\Users\don_m\PhotoParallel\PhotoParallel\Tests\Sandbox\bin\Debug\netcoreapp2.2\Photoparallel.Services.dll
+C:\Users\don_m\PhotoParallel\PhotoParallel\Tests\Sandbox\bin\Debug\netcoreapp2.2\Photoparallel.Services.Mapping.dll
+C:\Users\don_m\PhotoParallel\PhotoParallel\Tests\Sandbox\bin\Debug\netcoreapp2.2\Photoparallel.Services.Messaging.dll
+C:\Users\don_m\PhotoParallel\PhotoParallel\Tests\Sandbox\bin\Debug\netcoreapp2.2\Photoparallel.Common.pdb
+C:\Users\don_m\PhotoParallel\PhotoParallel\Tests\Sandbox\bin\Debug\netcoreapp2.2\Photoparallel.Data.Common.pdb
+C:\Users\don_m\PhotoParallel\PhotoParallel\Tests\Sandbox\bin\Debug\netcoreapp2.2\Photoparallel.Data.Models.pdb
+C:\Users\don_m\PhotoParallel\PhotoParallel\Tests\Sandbox\bin\Debug\netcoreapp2.2\Photoparallel.Data.pdb
+C:\Users\don_m\PhotoParallel\PhotoParallel\Tests\Sandbox\bin\Debug\netcoreapp2.2\Photoparallel.Services.Data.pdb
+C:\Users\don_m\PhotoParallel\PhotoParallel\Tests\Sandbox\bin\Debug\netcoreapp2.2\Photoparallel.Services.Mapping.pdb
+C:\Users\don_m\PhotoParallel\PhotoParallel\Tests\Sandbox\bin\Debug\netcoreapp2.2\Photoparallel.Services.Messaging.pdb
+C:\Users\don_m\PhotoParallel\PhotoParallel\Tests\Sandbox\bin\Debug\netcoreapp2.2\Photoparallel.Services.pdb
+C:\Users\don_m\PhotoParallel\PhotoParallel\Tests\Sandbox\obj\Debug\netcoreapp2.2\Sandbox.csprojAssemblyReference.cache
+C:\Users\don_m\PhotoParallel\PhotoParallel\Tests\Sandbox\obj\Debug\netcoreapp2.2\Sandbox.csproj.CoreCompileInputs.cache
+C:\Users\don_m\PhotoParallel\PhotoParallel\Tests\Sandbox\obj\Debug\netcoreapp2.2\Sandbox.AssemblyInfoInputs.cache
+C:\Users\don_m\PhotoParallel\PhotoParallel\Tests\Sandbox\obj\Debug\netcoreapp2.2\Sandbox.AssemblyInfo.cs
+C:\Users\don_m\PhotoParallel\PhotoParallel\Tests\Sandbox\obj\Debug\netcoreapp2.2\Sandbox.csproj.CopyComplete
+C:\Users\don_m\PhotoParallel\PhotoParallel\Tests\Sandbox\obj\Debug\netcoreapp2.2\Sandbox.dll
+C:\Users\don_m\PhotoParallel\PhotoParallel\Tests\Sandbox\obj\Debug\netcoreapp2.2\Sandbox.pdb

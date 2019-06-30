@@ -16,3 +16,12 @@ D:\SoftUni\C# Web\MyProject\PhotoParallel\Services\Photoparallel.Services.Mappin
 D:\SoftUni\C# Web\MyProject\PhotoParallel\Services\Photoparallel.Services.Mapping\obj\Debug\netstandard2.0\Photoparallel.Services.Mapping.AssemblyInfo.cs
 D:\SoftUni\C# Web\MyProject\PhotoParallel\Services\Photoparallel.Services.Mapping\obj\Debug\netstandard2.0\Photoparallel.Services.Mapping.dll
 D:\SoftUni\C# Web\MyProject\PhotoParallel\Services\Photoparallel.Services.Mapping\obj\Debug\netstandard2.0\Photoparallel.Services.Mapping.pdb
+C:\Users\don_m\PhotoParallel\PhotoParallel\Services\Photoparallel.Services.Mapping\bin\Debug\netstandard2.0\Photoparallel.Services.Mapping.deps.json
+C:\Users\don_m\PhotoParallel\PhotoParallel\Services\Photoparallel.Services.Mapping\bin\Debug\netstandard2.0\Photoparallel.Services.Mapping.dll
+C:\Users\don_m\PhotoParallel\PhotoParallel\Services\Photoparallel.Services.Mapping\bin\Debug\netstandard2.0\Photoparallel.Services.Mapping.pdb
+C:\Users\don_m\PhotoParallel\PhotoParallel\Services\Photoparallel.Services.Mapping\obj\Debug\netstandard2.0\Photoparallel.Services.Mapping.csprojAssemblyReference.cache
+C:\Users\don_m\PhotoParallel\PhotoParallel\Services\Photoparallel.Services.Mapping\obj\Debug\netstandard2.0\Photoparallel.Services.Mapping.csproj.CoreCompileInputs.cache
+C:\Users\don_m\PhotoParallel\PhotoParallel\Services\Photoparallel.Services.Mapping\obj\Debug\netstandard2.0\Photoparallel.Services.Mapping.AssemblyInfoInputs.cache
+C:\Users\don_m\PhotoParallel\PhotoParallel\Services\Photoparallel.Services.Mapping\obj\Debug\netstandard2.0\Photoparallel.Services.Mapping.AssemblyInfo.cs
+C:\Users\don_m\PhotoParallel\PhotoParallel\Services\Photoparallel.Services.Mapping\obj\Debug\netstandard2.0\Photoparallel.Services.Mapping.dll
+C:\Users\don_m\PhotoParallel\PhotoParallel\Services\Photoparallel.Services.Mapping\obj\Debug\netstandard2.0\Photoparallel.Services.Mapping.pdb

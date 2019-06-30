@@ -16,3 +16,12 @@ D:\SoftUni\C# Web\MyProject\PhotoParallel\Photoparallel.Common\obj\Debug\netstan
 D:\SoftUni\C# Web\MyProject\PhotoParallel\Photoparallel.Common\obj\Debug\netstandard2.0\Photoparallel.Common.AssemblyInfo.cs
 D:\SoftUni\C# Web\MyProject\PhotoParallel\Photoparallel.Common\obj\Debug\netstandard2.0\Photoparallel.Common.dll
 D:\SoftUni\C# Web\MyProject\PhotoParallel\Photoparallel.Common\obj\Debug\netstandard2.0\Photoparallel.Common.pdb
+C:\Users\don_m\PhotoParallel\PhotoParallel\Photoparallel.Common\bin\Debug\netstandard2.0\Photoparallel.Common.deps.json
+C:\Users\don_m\PhotoParallel\PhotoParallel\Photoparallel.Common\bin\Debug\netstandard2.0\Photoparallel.Common.dll
+C:\Users\don_m\PhotoParallel\PhotoParallel\Photoparallel.Common\bin\Debug\netstandard2.0\Photoparallel.Common.pdb
+C:\Users\don_m\PhotoParallel\PhotoParallel\Photoparallel.Common\obj\Debug\netstandard2.0\Photoparallel.Common.csprojAssemblyReference.cache
+C:\Users\don_m\PhotoParallel\PhotoParallel\Photoparallel.Common\obj\Debug\netstandard2.0\Photoparallel.Common.csproj.CoreCompileInputs.cache
+C:\Users\don_m\PhotoParallel\PhotoParallel\Photoparallel.Common\obj\Debug\netstandard2.0\Photoparallel.Common.AssemblyInfoInputs.cache
+C:\Users\don_m\PhotoParallel\PhotoParallel\Photoparallel.Common\obj\Debug\netstandard2.0\Photoparallel.Common.AssemblyInfo.cs
+C:\Users\don_m\PhotoParallel\PhotoParallel\Photoparallel.Common\obj\Debug\netstandard2.0\Photoparallel.Common.dll
+C:\Users\don_m\PhotoParallel\PhotoParallel\Photoparallel.Common\obj\Debug\netstandard2.0\Photoparallel.Common.pdb

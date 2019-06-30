@@ -12,6 +12,7 @@ using System;
 using System.Reflection;
 
 [assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("Photoparallel.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Data\\Photoparallel.Data", "Photoparallel.Data.csproj", "0")]
+[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("Photoparallel.Services, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Services\\Photoparallel.Services", "Photoparallel.Services.csproj", "0")]
 [assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("Photoparallel.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Web\\Photoparallel.Web", "Photoparallel.Web.csproj", "0")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("Photoparallel.Web.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]

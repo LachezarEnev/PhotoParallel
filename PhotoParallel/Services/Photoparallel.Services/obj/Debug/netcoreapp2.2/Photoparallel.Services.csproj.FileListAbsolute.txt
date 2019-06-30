@@ -1,0 +1,38 @@
+C:\Users\don_m\PhotoParallel\PhotoParallel\Services\Photoparallel.Services\bin\Debug\netcoreapp2.2\appsettings.json
+C:\Users\don_m\PhotoParallel\PhotoParallel\Services\Photoparallel.Services\bin\Debug\netcoreapp2.2\Photoparallel.Services.deps.json
+C:\Users\don_m\PhotoParallel\PhotoParallel\Services\Photoparallel.Services\bin\Debug\netcoreapp2.2\Photoparallel.Services.dll
+C:\Users\don_m\PhotoParallel\PhotoParallel\Services\Photoparallel.Services\bin\Debug\netcoreapp2.2\Photoparallel.Services.pdb
+C:\Users\don_m\PhotoParallel\PhotoParallel\Services\Photoparallel.Services\bin\Debug\netcoreapp2.2\Photoparallel.Common.dll
+C:\Users\don_m\PhotoParallel\PhotoParallel\Services\Photoparallel.Services\bin\Debug\netcoreapp2.2\Photoparallel.Data.Common.dll
+C:\Users\don_m\PhotoParallel\PhotoParallel\Services\Photoparallel.Services\bin\Debug\netcoreapp2.2\Photoparallel.Data.dll
+C:\Users\don_m\PhotoParallel\PhotoParallel\Services\Photoparallel.Services\bin\Debug\netcoreapp2.2\Photoparallel.Data.Models.dll
+C:\Users\don_m\PhotoParallel\PhotoParallel\Services\Photoparallel.Services\bin\Debug\netcoreapp2.2\Photoparallel.Data.Models.pdb
+C:\Users\don_m\PhotoParallel\PhotoParallel\Services\Photoparallel.Services\bin\Debug\netcoreapp2.2\Photoparallel.Data.pdb
+C:\Users\don_m\PhotoParallel\PhotoParallel\Services\Photoparallel.Services\bin\Debug\netcoreapp2.2\Photoparallel.Common.pdb
+C:\Users\don_m\PhotoParallel\PhotoParallel\Services\Photoparallel.Services\bin\Debug\netcoreapp2.2\Photoparallel.Data.Common.pdb
+C:\Users\don_m\PhotoParallel\PhotoParallel\Services\Photoparallel.Services\obj\Debug\netcoreapp2.2\Photoparallel.Services.csprojAssemblyReference.cache
+C:\Users\don_m\PhotoParallel\PhotoParallel\Services\Photoparallel.Services\obj\Debug\netcoreapp2.2\Photoparallel.Services.csproj.CoreCompileInputs.cache
+C:\Users\don_m\PhotoParallel\PhotoParallel\Services\Photoparallel.Services\obj\Debug\netcoreapp2.2\Photoparallel.Services.AssemblyInfoInputs.cache
+C:\Users\don_m\PhotoParallel\PhotoParallel\Services\Photoparallel.Services\obj\Debug\netcoreapp2.2\Photoparallel.Services.AssemblyInfo.cs
+C:\Users\don_m\PhotoParallel\PhotoParallel\Services\Photoparallel.Services\obj\Debug\netcoreapp2.2\Photoparallel.Services.csproj.CopyComplete
+C:\Users\don_m\PhotoParallel\PhotoParallel\Services\Photoparallel.Services\obj\Debug\netcoreapp2.2\Photoparallel.Services.dll
+C:\Users\don_m\PhotoParallel\PhotoParallel\Services\Photoparallel.Services\obj\Debug\netcoreapp2.2\Photoparallel.Services.pdb
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Services\Photoparallel.Services\bin\Debug\netcoreapp2.2\appsettings.json
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Services\Photoparallel.Services\bin\Debug\netcoreapp2.2\Photoparallel.Services.deps.json
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Services\Photoparallel.Services\bin\Debug\netcoreapp2.2\Photoparallel.Services.dll
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Services\Photoparallel.Services\bin\Debug\netcoreapp2.2\Photoparallel.Services.pdb
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Services\Photoparallel.Services\bin\Debug\netcoreapp2.2\Photoparallel.Common.dll
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Services\Photoparallel.Services\bin\Debug\netcoreapp2.2\Photoparallel.Data.Common.dll
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Services\Photoparallel.Services\bin\Debug\netcoreapp2.2\Photoparallel.Data.dll
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Services\Photoparallel.Services\bin\Debug\netcoreapp2.2\Photoparallel.Data.Models.dll
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Services\Photoparallel.Services\bin\Debug\netcoreapp2.2\Photoparallel.Data.Models.pdb
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Services\Photoparallel.Services\bin\Debug\netcoreapp2.2\Photoparallel.Data.pdb
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Services\Photoparallel.Services\bin\Debug\netcoreapp2.2\Photoparallel.Common.pdb
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Services\Photoparallel.Services\bin\Debug\netcoreapp2.2\Photoparallel.Data.Common.pdb
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Services\Photoparallel.Services\obj\Debug\netcoreapp2.2\Photoparallel.Services.csprojAssemblyReference.cache
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Services\Photoparallel.Services\obj\Debug\netcoreapp2.2\Photoparallel.Services.csproj.CoreCompileInputs.cache
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Services\Photoparallel.Services\obj\Debug\netcoreapp2.2\Photoparallel.Services.AssemblyInfoInputs.cache
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Services\Photoparallel.Services\obj\Debug\netcoreapp2.2\Photoparallel.Services.AssemblyInfo.cs
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Services\Photoparallel.Services\obj\Debug\netcoreapp2.2\Photoparallel.Services.csproj.CopyComplete
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Services\Photoparallel.Services\obj\Debug\netcoreapp2.2\Photoparallel.Services.dll
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Services\Photoparallel.Services\obj\Debug\netcoreapp2.2\Photoparallel.Services.pdb

@@ -596,6 +596,10 @@
         }
       },
       "Photoparallel.Services/1.0.0": {
+        "dependencies": {
+          "Photoparallel.Data": "1.0.0",
+          "Photoparallel.Data.Models": "1.0.0"
+        },
         "runtime": {
           "Photoparallel.Services.dll": {}
         },
