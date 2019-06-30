@@ -19,6 +19,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="8.1.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="6.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
     <PackageReference Include="BuildBundlerMinifier" Version="2.9.406" />
@@ -37,5 +39,9 @@
     <ProjectReference Include="..\..\Services\Photoparallel.Services\Photoparallel.Services.csproj" />
     <ProjectReference Include="..\Photoparallel.Web.Infrastructure\Photoparallel.Web.Infrastructure.csproj" />
     <ProjectReference Include="..\Photoparallel.Web.ViewModels\Photoparallel.Web.ViewModels.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Administration\Views\Home\" />
   </ItemGroup>
 </Project>

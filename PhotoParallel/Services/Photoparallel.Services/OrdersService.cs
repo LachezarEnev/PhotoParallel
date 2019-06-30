@@ -1,12 +1,11 @@
 ﻿namespace Photoparallel.Services
 {
-    using System.Collections.Generic;
-    using System.Linq;
-    using Microsoft.EntityFrameworkCore;
     using Photoparallel.Data;
     using Photoparallel.Data.Models;
     using Photoparallel.Data.Models.Enums;
     using Photoparallel.Services.Contracts;
+    using System.Collections.Generic;
+    using System.Linq;
 
     public class OrdersService : IOrdersService
     {
@@ -20,7 +19,7 @@
         public IEnumerable<Order> GetAllOrders()
         {
             var allOrders = this.context.Orders
-                .Include(x => x.Customer);
+                .OrderBy(x => x.Id);
 
             return allOrders;
         }
@@ -28,8 +27,8 @@
         public IEnumerable<Order> GetPendingOrders()
         {
             var pendingOrders = this.context.Orders
-                .Include(x => x.Customer)
-                .Where(x => x.OrderStatus == OrderStatus.Pending);
+                .Where(x => x.OrderStatus == OrderStatus.Pending)
+                .OrderBy(x => x.Id);
 
             return pendingOrders;
         }

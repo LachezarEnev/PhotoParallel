@@ -26,8 +26,7 @@
                 var currentOrder = new AllOrdersViewModel()
                 {
                     Id = order.Id,
-                    CustomerFullName = order.Customer.FirstName + " " + order.Customer.LastName,
-                    Status = order.OrderStatus.ToString(),
+                    OrderStatus = order.OrderStatus.ToString(),
                     CreatedOn = order.CreatedOn.ToString("dd/MM/yyyy"),
                 };
 

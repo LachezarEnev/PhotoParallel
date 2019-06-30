@@ -24,6 +24,7 @@
     ".NETCoreApp,Version=v2.2": {
       "Photoparallel.Web/1.0.0": {
         "dependencies": {
+          "AutoMapper": "8.1.1",
           "BuildBundlerMinifier": "2.9.406",
           "Microsoft.AspNetCore.App": "2.2.0",
           "Microsoft.NETCore.App": "2.2.0",

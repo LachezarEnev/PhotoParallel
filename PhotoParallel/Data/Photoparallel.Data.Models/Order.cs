@@ -31,7 +31,7 @@
 
         public CreditCard CreditCard { get; set; }
 
-        public int InvoiceId { get; set; }
+        public int? InvoiceId { get; set; }
 
         public Invoice Invoice { get; set; }
 

@@ -6,40 +6,48 @@
 
 <div class="row">
     <div class="col-xl-6">
-        <div class="container mobile-fondsize-11 shadow p-4 mb-4 bg-transparent hover">
+        <div class="container mobile-fondsize-11 shadow p-4 mb-4 bg-transparent">
             <div class="h2 text-center text-info font-weight-bold">Pending Orders</div>
-            <table class="table table-hover">
+            <table class="table table-hover-custom">
                 <thead>
                     <tr class="row">
+                        <th scope="col" class="col-md-2 col d-flex justify-content-center text-white">№</th>
                         <th scope="col" class="col-md-2 col d-flex justify-content-center text-white">Order Number</th>
-                        <th scope="col" class="col-md-2 col d-flex justify-content-center text-white">Customer</th>
                         <th scope="col" class="col-md-2 col d-flex justify-content-center text-white">Creation Date</th>
                         <th scope="col" class="col-md-2 col d-flex justify-content-center text-white">Status</th>
                         <th scope="col" class="col-md-4 col d-flex justify-content-center text-white">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (var order in Model)
+                    @{
+                        var orders = Model.ToArray();
+                     }
+                    @for (int i = 0; i < orders.Length; i++)                    
                     {
+                        var order = orders[i];
+
                         <tr class="row">
-                            <td class="col-md-2 col d-flex justify-content-center">
+                            <td class="col-md-2 col d-flex justify-content-center text-white">
+                                @(i + 1)
+                            </td>
+                            <td class="col-md-2 col d-flex justify-content-center text-white">
                                 @order.Id
                             </td>
-                            <td class="col-md-2 col d-flex justify-content-center">
-                                @order.CustomerFullName
-                            </td>
-                            <td class="col-md-2 col d-flex justify-content-center">
+                            <td class="col-md-2 col d-flex justify-content-center text-white">
                                 @order.CreatedOn
                             </td>
-                            <td class="col-md-2 col d-flex justify-content-center">
-                                @order.Status
+                            <td class="col-md-2 col d-flex justify-content-center text-white">
+                                @order.OrderStatus
                             </td>
                             <td class="col-md-4 col d-flex justify-content-around">
                                 <div class="mr-2">
                                     <a asp-area="Administration" asp-controller="Orders" asp-action="Details" asp-route-id="@order.Id" class="btn btn-info btn-sm">Details</a>
                                 </div>
                                 <div class="mr-2">
-                                    <a asp-area="Administration" asp-controller="Orders" asp-action="Process" asp-route-id="@order.Id" class="btn btn-warning btn-sm">Обработи</a>
+                                    <a asp-area="Administration" asp-controller="Orders" asp-action="Approve" asp-route-id="@order.Id" class="btn btn-success btn-sm">Approve</a>
+                                </div>
+                                <div class="mr-2">
+                                    <a asp-area="Administration" asp-controller="Orders" asp-action="Delete" asp-route-id="@order.Id" class="btn btn-danger btn-sm">Delete</a>
                                 </div>
                             </td>
                         </tr>

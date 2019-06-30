@@ -1,6 +1,7 @@
 ﻿namespace Photoparallel.Services.Contracts
 {
     using System.Collections.Generic;
+    using System.Threading.Tasks;
 
     using Photoparallel.Data.Models;
 

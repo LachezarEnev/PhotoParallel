@@ -307,7 +307,7 @@ namespace Photoparallel.Data.Migrations
 
                     b.Property<DateTime?>("EstimatedDeliveryDate");
 
-                    b.Property<int>("InvoiceId");
+                    b.Property<int?>("InvoiceId");
 
                     b.Property<int>("OrderStatus");
 
@@ -320,7 +320,8 @@ namespace Photoparallel.Data.Migrations
                     b.HasIndex("CustomerId");
 
                     b.HasIndex("InvoiceId")
-                        .IsUnique();
+                        .IsUnique()
+                        .HasFilter("[InvoiceId] IS NOT NULL");
 
                     b.ToTable("Orders");
                 });
@@ -379,7 +380,7 @@ namespace Photoparallel.Data.Migrations
 
                     b.Property<string>("CustomerId");
 
-                    b.Property<int>("InvoiceId");
+                    b.Property<int?>("InvoiceId");
 
                     b.Property<DateTime>("RentedOn");
 
@@ -396,7 +397,8 @@ namespace Photoparallel.Data.Migrations
                     b.HasIndex("CustomerId");
 
                     b.HasIndex("InvoiceId")
-                        .IsUnique();
+                        .IsUnique()
+                        .HasFilter("[InvoiceId] IS NOT NULL");
 
                     b.ToTable("Rents");
                 });
@@ -528,8 +530,7 @@ namespace Photoparallel.Data.Migrations
 
                     b.HasOne("Photoparallel.Data.Models.Invoice", "Invoice")
                         .WithOne("Order")
-                        .HasForeignKey("Photoparallel.Data.Models.Order", "InvoiceId")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .HasForeignKey("Photoparallel.Data.Models.Order", "InvoiceId");
                 });
 
             modelBuilder.Entity("Photoparallel.Data.Models.OrderProduct", b =>
@@ -557,8 +558,7 @@ namespace Photoparallel.Data.Migrations
 
                     b.HasOne("Photoparallel.Data.Models.Invoice", "Invoice")
                         .WithOne("Rent")
-                        .HasForeignKey("Photoparallel.Data.Models.Rent", "InvoiceId")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .HasForeignKey("Photoparallel.Data.Models.Rent", "InvoiceId");
                 });
 
             modelBuilder.Entity("Photoparallel.Data.Models.RentProduct", b =>

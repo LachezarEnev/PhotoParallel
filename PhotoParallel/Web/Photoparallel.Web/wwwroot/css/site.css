@@ -65,4 +65,10 @@ body {
     min-height: 80%;
 }
 
+.table-hover-custom > tbody > tr:hover {
+    background-color: #245269
+}
+
+
+
 
