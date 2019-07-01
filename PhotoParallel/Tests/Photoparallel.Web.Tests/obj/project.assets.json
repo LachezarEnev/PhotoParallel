@@ -5464,6 +5464,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
         "dependencies": {
+          "AutoMapper": "8.1.1",
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "6.1.1",
           "Photoparallel.Data": "1.0.0",
           "Photoparallel.Data.Models": "1.0.0"
         },

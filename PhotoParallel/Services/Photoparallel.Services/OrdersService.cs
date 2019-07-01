@@ -1,36 +1,63 @@
 ﻿namespace Photoparallel.Services
 {
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+
+    using AutoMapper;
+    using Microsoft.EntityFrameworkCore;
     using Photoparallel.Data;
     using Photoparallel.Data.Models;
     using Photoparallel.Data.Models.Enums;
     using Photoparallel.Services.Contracts;
-    using System.Collections.Generic;
-    using System.Linq;
 
     public class OrdersService : IOrdersService
     {
         private readonly PhotoparallelDbContext context;
+        private readonly IMapper mapper;
 
-        public OrdersService(PhotoparallelDbContext context)
+        public OrdersService(PhotoparallelDbContext context, IMapper mapper)
         {
             this.context = context;
+            this.mapper = mapper;
         }
 
-        public IEnumerable<Order> GetAllOrders()
+        public async Task<IEnumerable<Order>> GetAllOrdersAsync()
         {
-            var allOrders = this.context.Orders
-                .OrderBy(x => x.Id);
+            var allOrders = await this.context.Orders
+                .OrderBy(x => x.Id)
+                .ToArrayAsync();
 
             return allOrders;
         }
 
-        public IEnumerable<Order> GetPendingOrders()
+        public async Task<Order> GetOrderByIdAsync(int orderId)
         {
-            var pendingOrders = this.context.Orders
+            var order = await this.context.Orders
+                .Include(x => x.Customer)
+                .FirstOrDefaultAsync(x => x.Id == orderId);
+
+            return order;
+        }
+
+        public async Task<IEnumerable<Order>> GetPendingOrdersAsync()
+        {
+            var pendingOrders = await this.context.Orders
                 .Where(x => x.OrderStatus == OrderStatus.Pending)
-                .OrderBy(x => x.Id);
+                .OrderBy(x => x.Id)
+                .ToArrayAsync();
 
             return pendingOrders;
+        }
+
+        public async Task<IEnumerable<OrderProduct>> OrderProductsByOrderIdAsync(int id)
+        {
+            var orderProducts = await this.context.OrderProducts
+                .Include(x => x.Product)
+                .Where(x => x.OrderId == id)
+                .ToArrayAsync();
+
+            return orderProducts;
         }
     }
 }

@@ -2,7 +2,7 @@
 {
     using System.Linq;
     using System.Reflection;
-
+    using AutoMapper;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Http;
@@ -25,6 +25,7 @@
     using Photoparallel.Services.Data;
     using Photoparallel.Services.Mapping;
     using Photoparallel.Services.Messaging;
+    using Photoparallel.Web.MappingConfiguration;
     using Photoparallel.Web.ViewModels;
 
     public class Startup
@@ -37,12 +38,18 @@
         }
 
         // This method gets called by the runtime. Use this method to add services to the container.
+
+        [System.Obsolete]
         public void ConfigureServices(IServiceCollection services)
         {
             // Framework services
             // TODO: Add pooling when this bug is fixed: https://github.com/aspnet/EntityFrameworkCore/issues/9741
             services.AddDbContext<PhotoparallelDbContext>(
                 options => options.UseSqlServer(this.configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddAutoMapper(cfg => {
+                cfg.AddProfile<PhotoParallelProfile>();
+            });
 
             services
                 .AddIdentity<ApplicationUser, ApplicationRole>(options =>

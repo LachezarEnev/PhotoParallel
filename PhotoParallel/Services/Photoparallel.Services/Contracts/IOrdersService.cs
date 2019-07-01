@@ -7,8 +7,12 @@
 
     public interface IOrdersService
     {
-        IEnumerable<Order> GetAllOrders();
+        Task<IEnumerable<Order>> GetAllOrdersAsync();
 
-        IEnumerable<Order> GetPendingOrders();
+        Task<IEnumerable<Order>> GetPendingOrdersAsync();
+
+        Task<Order> GetOrderByIdAsync(int orderId);
+
+        Task<IEnumerable<OrderProduct>> OrderProductsByOrderIdAsync(int id);
     }
 }

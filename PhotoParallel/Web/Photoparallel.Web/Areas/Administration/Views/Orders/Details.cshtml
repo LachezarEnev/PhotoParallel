@@ -1,0 +1,80 @@
+﻿@model Photoparallel.Web.Areas.Administration.ViewModels.Orders.OrderDetailsViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="h2 text-center text-info font-weight-bold">Order Details</div>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-6 text-white">
+            Order №
+        </dt>
+        <dd class="col-sm-6 text-white">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt class="col-sm-6 text-white">
+           Customer Name
+        </dt>
+        <dd class="col-sm-6 text-white">
+            @Html.DisplayFor(model => model.FirstName)  @Html.DisplayFor(model => model.LastName)
+        </dd>       
+        <dt class="col-sm-6 text-white">
+            Phone Number
+        </dt>
+        <dd class="col-sm-6 text-white">
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+        <dt class="col-sm-6 text-white">
+            Shipping Address
+        </dt>
+        <dd class="col-sm-6 text-white">
+            @Html.DisplayFor(model => model.ShippingAddress)
+        </dd>
+        <dt class="col-sm-6 text-white">
+            Order Status
+        </dt>
+        <dd class="col-sm-6 text-white">
+            @Html.DisplayFor(model => model.OrderStatus)
+        </dd>
+        <dt class="col-sm-6 text-white">
+            Created On
+        </dt>
+        <dd class="col-sm-6 text-white">
+            @Html.DisplayFor(model => model.CreatedOn)
+        </dd>
+        <dt class="col-sm-6 text-white">
+            Estimated Delivery Date
+        </dt>
+        <dd class="col-sm-6 text-white">
+            @Html.DisplayFor(model => model.EstimatedDeliveryDate)
+        </dd>
+        <dt class="col-sm-6 text-white">
+            Invoice №
+        </dt>
+        <dd class="col-sm-6 text-white">
+            @Html.DisplayFor(model => model.InvoiceId)
+        </dd>
+        <dt class="col-sm-6 text-white">
+            Total Price
+        </dt>
+        <dd class="col-sm-6 text-white">
+            @Html.DisplayFor(model => model.TotalPrice) lv.
+        </dd>
+    </dl>
+</div>
+<div>
+    @if (Model.OrderStatus == "Pending")
+    {
+        <div class=" container d-flex justify-content-between">
+
+            <a asp-area="Administration" asp-controller="Orders" asp-action="Approve" asp-route-id="@Model.Id" class="btn btn-success btn-sm">Approve</a>
+
+            <a asp-area="Administration" asp-controller="Orders" asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-danger btn-sm">Delete</a>
+
+            <a asp-area="Administration" asp-controller="Orders" asp-action="Pending" class="btn btn-info btn-sm">Back</a>
+        </div>
+    }
+</div>
