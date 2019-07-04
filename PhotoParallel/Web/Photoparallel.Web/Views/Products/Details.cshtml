@@ -1,0 +1,77 @@
+﻿@model Photoparallel.Web.ViewModels.Products.DetailsProductViewModel
+@using Photoparallel.Data.Models.Enums
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div id="fb-root"></div>
+<script src="~/js/facebook.js"></script>
+
+<p class="h3 text-info">@Model.Name</p>
+<p class="text-muted h6">Product №: @Model.Id</p>
+<div class="row">
+    <div class="col-md-5">
+        <div class="zoom">
+            <img src="@Model.ImageUrls.FirstOrDefault()" alt="@Model.Name">
+        </div>
+        <div class="row">
+            @foreach (var image in Model.ImageUrls.Skip(1))
+            {
+                <a class="lightbox m-3 d-flex justify-content-between" href="@image">
+                    <img src=@image width="50" height="50" />
+                </a>
+                <div class="lightbox-target ">
+                    <a class="lightbox-close" href="@image"></a>
+                </div>
+            }
+        </div>
+        @if (this.User.IsInRole("Administrator"))
+        {
+            <div class="pb-2 m-4">
+                <a asp-area="Administration" asp-controller="Products" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-outline-warning btn-lg btn-block">
+                    <i class="fas fa-cog"></i> Edit
+                </a>
+            </div>
+        }
+    </div>
+    <div class="col-md-5">
+        <div>
+            <dl class="text-white text-center">
+                <dt>@Html.DisplayNameFor(model => model.Description):</dt>
+                <dd class="m-2">@Html.DisplayFor(model => model.Description)</dd>
+            </dl>
+        </div>
+    </div>
+    <div class="col-md-2">
+        @if (this.Model.ProductStatus == ProductStatus.Rent)
+        {
+            <p class="font-weight-bold text-white h2">Price per day: @Model.PricePerDay lv.</p>
+        }
+        else
+        {
+            <p class="font-weight-bold text-white h5">Price: @Model.Price лв.</p>
+        }
+        @if (this.User.Identity.IsAuthenticated)
+        {
+            @if (this.Model.ProductStatus == ProductStatus.Sale)
+            {
+                <div class="mt-2">
+                    <div class="mb-2">
+                        <a asp-controller="Orders" asp-action="Add" asp-route-id="@Model.Id" asp-route-direct="true" class="btn btn-success btn-lg btn-block"> Buy</a>
+                    </div>
+                    <div class="mb-2">
+                        <a asp-controller="Credits" asp-action="Create" asp-route-id="@Model.Id" class="btn btn-danger btn-lg btn-block"> Buy on Credit</a>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="mb-2">
+                    <a asp-controller="Rents" asp-action="Add" asp-route-id="@Model.Id" asp-route-direct="true" class="btn btn-success btn-lg btn-block"> Rent</a>
+                </div>
+            }
+        }
+    </div>
+</div>
+
