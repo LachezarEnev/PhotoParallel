@@ -19,9 +19,7 @@
 
         public DateTime CreatedOn { get; set; }
 
-        public DateTime? EstimatedDeliveryDate { get; set; }
-
-        public int? InvoiceId { get; set; }
+        public string EstimatedDeliveryDate { get; set; }
 
         public decimal TotalPrice { get; set; }
 

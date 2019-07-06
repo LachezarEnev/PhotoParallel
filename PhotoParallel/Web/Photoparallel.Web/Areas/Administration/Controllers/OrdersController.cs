@@ -5,13 +5,14 @@
 
     using AutoMapper;
     using Microsoft.AspNetCore.Mvc;
+    using Photoparallel.Data.Models.Enums;
     using Photoparallel.Services.Contracts;
     using Photoparallel.Web.Areas.Administration.ViewModels.Home;
     using Photoparallel.Web.Areas.Administration.ViewModels.Orders;
 
     public class OrdersController : AdministrationController
     {
-        private const string ERROR_MESSAGE_INVALID_ORDER_NUMBER = "Invalid order number. Please try again!";
+        private const string ErrorMessageInvalidOrderNumber = "Invalid order number. Please try again!";
 
         private readonly IOrdersService ordersService;
         private readonly IMapper mapper;
@@ -46,16 +47,32 @@
 
             if (order == null)
             {
-                this.TempData["error"] = ERROR_MESSAGE_INVALID_ORDER_NUMBER;
-                return this.RedirectToAction("Index", "Home");
+                this.TempData["error"] = ErrorMessageInvalidOrderNumber;
+                return this.RedirectToAction("/Home/Index/");
             }
 
             var orderProducts = await this.ordersService.OrderProductsByOrderIdAsync(id);
             var orderProductsViewModel = this.mapper.Map<IList<OrderProductsViewModel>>(orderProducts);
 
             var orderViewModel = this.mapper.Map<OrderDetailsViewModel>(order);
-
             orderViewModel.OrderProductsViewModel = orderProductsViewModel;
+
+            if (order.OrderStatus == OrderStatus.Pending || order.OrderStatus == OrderStatus.Denied)
+            {
+                orderViewModel.EstimatedDeliveryDate = "N/A";
+            }
+            else if (order.OrderStatus == OrderStatus.Approved)
+            {
+                orderViewModel.EstimatedDeliveryDate = "N/A";
+            }
+            else if (order.OrderStatus == OrderStatus.Delivered)
+            {
+                orderViewModel.EstimatedDeliveryDate = "Delivered";
+            }
+            else
+            {
+                orderViewModel.EstimatedDeliveryDate = order.EstimatedDeliveryDate?.ToString(@"dd/MM/yyyy");
+            }
 
             return this.View(orderViewModel);
         }

@@ -37,6 +37,8 @@
 
         public DbSet<Invoice> Invoices { get; set; }
 
+        public DbSet<Image> Images { get; set; }
+
         public DbSet<Rent> Rents { get; set; }
 
         public DbSet<RentProduct> RentProducts { get; set; }

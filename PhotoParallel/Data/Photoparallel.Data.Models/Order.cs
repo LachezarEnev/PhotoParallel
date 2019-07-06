@@ -19,9 +19,9 @@
 
         public ApplicationUser Customer { get; set; }
 
-        public OrderStatus OrderStatus { get; set; } = OrderStatus.Pending;
+        public OrderStatus OrderStatus { get; set; } = OrderStatus.Open;
 
-        public DateTime CreatedOn { get; set; } = DateTime.UtcNow;
+        public DateTime CreatedOn { get; set; } = DateTime.Now;
 
         public DateTime? EstimatedDeliveryDate { get; set; }
 

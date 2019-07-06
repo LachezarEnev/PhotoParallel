@@ -12,5 +12,15 @@
         void AddImageUrls(int id, IEnumerable<string> imageUrls);
 
         void AddProduct(Product product);
+
+        Task<Product> GetProductByIdAsync(int id);
+
+        bool EditProduct(Product product);
+
+        IEnumerable<Image> GetImages(int id);
+
+        bool HideProduct(int id);
+
+        bool ShowProduct(int id);
     }
 }

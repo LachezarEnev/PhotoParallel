@@ -225,6 +225,8 @@ namespace Photoparallel.Data.Migrations
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<decimal>("Interest");
+
                     b.Property<string>("Name");
 
                     b.HasKey("Id");
@@ -270,6 +272,23 @@ namespace Photoparallel.Data.Migrations
                         .IsUnique();
 
                     b.ToTable("CreditContracts");
+                });
+
+            modelBuilder.Entity("Photoparallel.Data.Models.Image", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ImageUrl");
+
+                    b.Property<int>("ProductId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("Images");
                 });
 
             modelBuilder.Entity("Photoparallel.Data.Models.Invoice", b =>
@@ -351,9 +370,11 @@ namespace Photoparallel.Data.Migrations
 
                     b.Property<string>("Description");
 
-                    b.Property<string>("Name");
+                    b.Property<bool>("Hide");
 
-                    b.Property<byte[]>("Photo");
+                    b.Property<bool>("IsRented");
+
+                    b.Property<string>("Name");
 
                     b.Property<decimal>("Price");
 
@@ -508,6 +529,14 @@ namespace Photoparallel.Data.Migrations
                     b.HasOne("Photoparallel.Data.Models.Order", "Order")
                         .WithOne("CreditContract")
                         .HasForeignKey("Photoparallel.Data.Models.CreditContract", "OrderId")
+                        .OnDelete(DeleteBehavior.Restrict);
+                });
+
+            modelBuilder.Entity("Photoparallel.Data.Models.Image", b =>
+                {
+                    b.HasOne("Photoparallel.Data.Models.Product", "Product")
+                        .WithMany("Images")
+                        .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Restrict);
                 });
 

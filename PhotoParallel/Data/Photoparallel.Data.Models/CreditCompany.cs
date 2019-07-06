@@ -13,6 +13,8 @@
 
         public string Name { get; set; }
 
+        public decimal Interest { get; set; }
+
         public ICollection<CreditContract> Contracts { get; set; }
     }
 }

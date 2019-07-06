@@ -10,6 +10,7 @@
         {
             this.Orders = new HashSet<OrderProduct>();
             this.Rents = new HashSet<RentProduct>();
+            this.Images = new HashSet<Image>();
         }
 
         public int Id { get; set; }
@@ -28,9 +29,13 @@
 
         public decimal PricePerDay { get; set; }
 
-        public byte[] Photo { get; set; }
-
         public ProductStatus ProductStatus { get; set; }
+
+        public bool IsRented { get; set; }
+
+        public bool Hide { get; set; }
+
+        public ICollection<Image> Images { get; set; }
 
         public ICollection<OrderProduct> Orders { get; set; }
 

@@ -111,6 +111,8 @@
             services.AddTransient<ISettingsService, SettingsService>();
 
             services.AddScoped<IOrdersService, OrdersService>();
+            services.AddScoped<IImagesService, ImagesService>();
+            services.AddScoped<IProductsService, ProductsService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -48,6 +48,6 @@
         [Required]
         [Display(Name = "Image")]
         [DataType(DataType.ImageUrl)]
-        public ICollection<IFormFile> Images { get; set; }
+        public ICollection<IFormFile> FormImages { get; set; }
     }
 }

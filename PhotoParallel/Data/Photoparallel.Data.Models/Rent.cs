@@ -4,8 +4,6 @@
     using System.Collections.Generic;
     using System.Linq;
 
-    using Photoparallel.Data.Models.Enums;
-
     public class Rent
     {
         public Rent()
@@ -19,7 +17,7 @@
 
         public ApplicationUser Customer { get; set; }
 
-        public DateTime RentedOn { get; set; } = DateTime.UtcNow;
+        public DateTime RentedOn { get; set; } = DateTime.Now;
 
         public DateTime? ReturnedOn { get; set; }
 

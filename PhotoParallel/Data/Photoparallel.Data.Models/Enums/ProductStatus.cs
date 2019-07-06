@@ -2,8 +2,7 @@
 {
     public enum ProductStatus
     {
-        ForSale = 1,
-        ForRent = 2,
-        Rented = 3,
+        Sale = 1,
+        Rent = 2,
     }
 }

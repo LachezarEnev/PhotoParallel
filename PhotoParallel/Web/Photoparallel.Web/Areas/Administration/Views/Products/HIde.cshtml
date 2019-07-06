@@ -1,0 +1,61 @@
+﻿@model Photoparallel.Web.Areas.Administration.ViewModels.Products.HideProductsViewModel
+
+@{
+    ViewData["Title"] = "Hide";
+}
+
+<h3 class="mobile-fondsize-20 text-center text-info">@ViewData["Title"]</h3>
+<h5 class="mobile-fondsize-20 text-danger text-center ">Are you sure you want to hide the product?</h5>
+
+<hr class="w-50" />
+<div class="container">
+    <form asp-action="HideConfirmed">
+        <div class="d-flex justify-content-between">
+            <div class="form-group w-45">
+                <div class="d-flex justify-content-center text-white-50">
+                    <label asp-for="Name" class="control-label"></label>
+                </div>
+                <input asp-for="Name" class="form-control" disabled />
+            </div>
+            @if (Model.ProductStatus == "Sale")
+            {
+                <div class="form-group w-45">
+                    <div class="d-flex justify-content-center text-white-50">
+                        <label asp-for="Price" class="control-label"></label>
+                    </div>
+                    <input asp-for="Price" class="form-control" disabled />
+                </div>
+            }
+            else
+            {
+                <div class="form-group w-45">
+                    <div class="d-flex justify-content-center text-white-50">
+                        <label asp-for="PricePerDay" class="control-label"></label>
+                    </div>
+                    <input asp-for="PricePerDay" class="form-control" disabled />
+                </div>
+            }
+        </div>
+        <div class="d-flex justify-content-between">
+            <div class="form-group w-45">
+                <div class="d-flex justify-content-center text-white-50">
+                    <label asp-for="ProductType" class="control-label"></label>
+                </div>
+                <input asp-for="ProductType" class="form-control" disabled />
+            </div>
+            <div class="form-group w-45">
+                <div class="d-flex justify-content-center text-white-50">
+                    <label asp-for="ProductStatus" class="control-label"></label>
+                </div>
+                <input asp-for="ProductStatus" class="form-control" disabled />
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="hidden" asp-for="Id" />
+        </div>
+        <div class="form-group text-center">
+            <button type="submit" class="btn btn-danger">Hide</button>
+        </div>
+    </form>
+</div>
+

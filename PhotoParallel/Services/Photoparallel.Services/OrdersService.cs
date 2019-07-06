@@ -25,6 +25,7 @@
         public async Task<IEnumerable<Order>> GetAllOrdersAsync()
         {
             var allOrders = await this.context.Orders
+                .Where(x => x.OrderStatus != OrderStatus.Open)
                 .OrderBy(x => x.Id)
                 .ToArrayAsync();
 
@@ -54,6 +55,7 @@
         {
             var orderProducts = await this.context.OrderProducts
                 .Include(x => x.Product)
+                .ThenInclude(x => x.Images)
                 .Where(x => x.OrderId == id)
                 .ToArrayAsync();
 

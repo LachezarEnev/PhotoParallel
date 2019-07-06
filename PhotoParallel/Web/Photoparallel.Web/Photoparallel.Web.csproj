@@ -28,6 +28,7 @@
     <PackageReference Include="StyleCop.Analyzers" Version="1.1.118" PrivateAssets="all">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="X.PagedList.Mvc.Core" Version="7.6.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -44,5 +45,6 @@
   <ItemGroup>
     <Folder Include="Areas\Administration\ViewModels\Home\" />
     <Folder Include="Areas\Administration\Views\Home\" />
+    <Folder Include="wwwroot\Images\Products\" />
   </ItemGroup>
 </Project>

@@ -866,6 +866,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[1.1.118, )"
+            },
+            "X.PagedList.Mvc.Core": {
+              "target": "Package",
+              "version": "[7.6.0, )"
             }
           },
           "imports": [
