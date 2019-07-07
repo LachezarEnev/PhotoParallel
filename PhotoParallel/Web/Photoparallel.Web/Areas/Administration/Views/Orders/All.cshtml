@@ -11,11 +11,11 @@
             <table class="table">
                 <thead>
                     <tr class="row">
-                        <th scope="col" class="col-md-2 col d-flex justify-content-center text-white">№</th>
-                        <th scope="col" class="col-md-2 col d-flex justify-content-center text-white">Order Number</th>
-                        <th scope="col" class="col-md-2 col d-flex justify-content-center text-white">Creation Date</th>
-                        <th scope="col" class="col-md-2 col d-flex justify-content-center text-white">Status</th>
-                        <th scope="col" class="col-md-4 col d-flex justify-content-center text-white">Actions</th>
+                        <th scope="col" class="col-md-2 col d-flex justify-content-center">№</th>
+                        <th scope="col" class="col-md-2 col d-flex justify-content-center">Order Number</th>
+                        <th scope="col" class="col-md-2 col d-flex justify-content-center">Creation Date</th>
+                        <th scope="col" class="col-md-2 col d-flex justify-content-center">Status</th>
+                        <th scope="col" class="col-md-4 col d-flex justify-content-center">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -27,16 +27,16 @@
                         var order = orders[i];
 
                         <tr class="row">
-                            <td class="col-md-2 col d-flex justify-content-center text-white">
+                            <td class="col-md-2 col d-flex justify-content-center">
                                 @(i + 1)
                             </td>
-                            <td class="col-md-2 col d-flex justify-content-center text-white">
+                            <td class="col-md-2 col d-flex justify-content-center">
                                 @order.Id
                             </td>
-                            <td class="col-md-2 col d-flex justify-content-center text-white">
+                            <td class="col-md-2 col d-flex justify-content-center">
                                 @order.CreatedOn
                             </td>
-                            <td class="col-md-2 col d-flex justify-content-center text-white">
+                            <td class="col-md-2 col d-flex justify-content-center">
                                 @order.OrderStatus
                             </td>
                             <td class="col-md-4 col d-flex justify-content-around">

@@ -8,6 +8,7 @@
     using Microsoft.EntityFrameworkCore;
     using Photoparallel.Data;
     using Photoparallel.Data.Models;
+    using Photoparallel.Data.Models.Enums;
     using Photoparallel.Services.Contracts;
 
     public class ProductsService : IProductsService
@@ -126,6 +127,69 @@
             this.context.SaveChanges();
 
             return true;
+        }
+
+        public async Task<IEnumerable<Product>> GetHiddenProductsAsync()
+        {
+            var hiddenProducts = await this.context.Products
+                .Include(x => x.Images)
+                .Where(x => x.Hide == true)
+                .OrderByDescending(x => x.Id)
+                .ToListAsync();
+
+            return hiddenProducts;
+        }
+
+        public async Task<IEnumerable<Product>> GetProductsBySearchAsync(string searchString)
+        {
+            var searchStringClean = searchString.Split(new string[] { ",", ".", " " }, StringSplitOptions.RemoveEmptyEntries);
+
+            List<Product> products = await this.context.Products
+                .Include(x => x.Images)
+                .Where(x => x.Hide == false && searchStringClean.All(c => x.Name.ToLower().Contains(c.ToLower())))
+                .ToListAsync();
+
+            return products;
+        }
+
+        public async Task<IEnumerable<Product>> GetVisibleProductsAsync()
+        {
+            var products = await this.context.Products
+                .Include(x => x.Images)
+                .Where(x => x.Hide == false)
+                .ToListAsync();
+
+            return products;
+        }
+
+        public async Task<IEnumerable<Product>> GetProductsFilterAsync(string searchString)
+        {
+            if (searchString != null)
+            {
+                return await this.GetProductsBySearchAsync(searchString);
+            }
+
+            return await this.GetVisibleProductsAsync();
+        }
+
+        public IEnumerable<Product> OrderBy(IEnumerable<Product> products, ProductsSort sortBy)
+        {
+            if (sortBy == ProductsSort.Name)
+            {
+               return products.OrderBy(x => x.Name).ToList();
+            }
+            else if (sortBy == ProductsSort.PriceAscending)
+            {
+                return products.OrderBy(x => x.Price).ToList();
+            }
+            else if (sortBy == ProductsSort.PriceDescending)
+            {
+                return products.OrderByDescending(x => x.Price).ToList();
+            }
+            else
+            {
+                return products.OrderByDescending(x => x.Id).ToList();
+            }
         }
 
         private bool ProductExists(int id)

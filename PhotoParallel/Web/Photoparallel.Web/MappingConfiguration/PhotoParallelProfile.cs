@@ -7,6 +7,7 @@
     using Photoparallel.Web.Areas.Administration.ViewModels.Home;
     using Photoparallel.Web.Areas.Administration.ViewModels.Orders;
     using Photoparallel.Web.Areas.Administration.ViewModels.Products;
+    using Photoparallel.Web.ViewModels.Home;
     using Photoparallel.Web.ViewModels.Products;
 
     public class PhotoParallelProfile : Profile
@@ -34,6 +35,9 @@
             this.CreateMap<Product, EditProductsInputModel>();
             this.CreateMap<EditProductsInputModel, Product>();
             this.CreateMap<Product, HideProductsViewModel>();
+
+            this.CreateMap<Product, IndexProductViewModel>()
+                .ForMember(x => x.ImageUrl, y => y.MapFrom(src => src.Images.FirstOrDefault().ImageUrl));
         }
     }
 }

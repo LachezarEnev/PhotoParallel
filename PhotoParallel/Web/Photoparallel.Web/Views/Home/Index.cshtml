@@ -1,11 +1,104 @@
-﻿@{
-    this.ViewData["Title"] = "Home Page";
+﻿@model Photoparallel.Web.ViewModels.Home.IndexViewModel
+@using X.PagedList.Mvc.Core;
+@using X.PagedList.Mvc.Common;
+@using X.PagedList;
+
+@{
+    ViewData["Title"] = "Index";
 }
 
-<div class="jumbotron mt-3 bg-transparent">
-    <h1 class="display-4 text-info">Welcome to Photoparallel!</h1>
-    <hr class="bg-white hr-2" />
-    <h3 class="text-white"><a href="/Identity/Account/Login">Login</a> if you have an account.</h3>
-    <h3 class="text-white"><a href="/Identity/Account/Register">Register</a> if you don't.</h3>
+<div class="row mb-2">
+    <div class="col-md-12 col-lg-6">
+        @if (Model.SearchString != null)
+        {
+            <strong>Search: </strong>@Model.SearchString
+        }
+    </div>
+    <div class="col-md-12 col-lg-6 text-right">
+        <form method="post" asp-controller="Home" asp-action="Index">
+            <input type="hidden" name="SearchString" value="@Model.SearchString">
+            <input type="hidden" name="Page" value="@Model.PageNumber">
+            <span class="text-muted">Show:</span>
+            <select name="PageSize" onchange="this.form.submit();">
+                <option value="8" selected="@(Model.PageSize == 8 ? true : false)">8</option>
+                <option value="16" selected="@(Model.PageSize == 16 ? true : false)">16</option>
+                <option value="24" selected="@(Model.PageSize == 24 ? true : false)">24</option>
+                <option value="32" selected="@(Model.PageSize == 32 ? true : false)">32</option>
+                <option value="48" selected="@(Model.PageSize == 48 ? true : false)">48</option>
+            </select>
+            <span class="text-muted">Sort by:</span>
+            <select name="SortBy" id="SortBy" onchange="this.form.submit();">
+                <option value="1" selected="@(Model.SortBy.ToString() == "Newest" ? true : false)">Newest</option>
+                <option value="2" selected="@(Model.SortBy.ToString() == "Name" ? true : false)">Name</option>
+                <option value="3" selected="@(Model.SortBy.ToString() == "PriceDescending" ? true : false)">Price(desc.)</option>
+                <option value="4" selected="@(Model.SortBy.ToString() == "PriceAscending" ? true : false)">Price(asc.)</option>
+            </select>
+        </form>
+    </div>
 </div>
 
+<div class="row">
+    @foreach (var product in Model.ProductsViewModel)
+    {
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-3">
+            <div class="card h-100">
+                <a asp-controller="Products" asp-action="Details" asp-route-id="@product.Id">
+                    <div class="card-img-top center-block zoom">
+                        <img src="@product.ImageUrl" alt="@product.Name">
+                    </div>
+                </a>
+                <div class="card-body text-center h-25 pb-0 pt-0 pl-0 pr-0">
+                    <div>
+                        <a asp-controller="Products" asp-action="Details" asp-route-id="@product.Id"><h6 class="card-title font-weight-bold">@product.Name</h6></a>
+                    </div>
+                </div>
+                <div class="mb-1">
+                    <ul class="list-group list-group-flush mb-0">
+                        <li class="list-group-item text-center font-weight-bold text-danger h5 ">@product.Price lv.</li>
+                    </ul>
+                </div>
+                <div class="card-footer d-flex justify-content-around text-center bg-white">
+                    <div class="d-flex justify-content-between">
+                        <div class="mr-2">
+                            <a asp-controller="Orders" asp-action="Add" asp-route-id="@product.Id" class="btn btn-info btn-sm btn-block">Buy</a>
+                        </div>
+                        <div class="mr-2">
+                            <a asp-controller="Credits" asp-action="Add" asp-route-id="@product.Id" class="btn btn-danger btn-sm btn-block">Credit</a>
+                        </div>
+                    </div>
+                </div>                
+                <div class="d-flex center-block">
+                    @if (product.Quantity > 0)
+                    {
+                        <span class="text-info">In stock</span>
+                    }
+                    else
+                    {
+                        <span class="text-info">On demand</span>
+                    }
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<div class="mt-3 d-flex justify-content-around">
+    @Html.PagedListPager((IPagedList)Model.ProductsViewModel, page => Url.Action("Index",
+                                            new
+                                                {
+                                                PageNumber = page,
+                                                PageSize = Model.PageSize,
+                                                SearchString = Model.SearchString,
+                                                SortBy = Model.SortBy
+                                            }),
+                                            new PagedListRenderOptions
+                                            {                                                
+                                                MaximumPageNumbersToDisplay = 5,
+                                                LiElementClasses = new string[] { "page-item" },
+                                                PageClasses = new string[] { "page-link" }
+                                            })
+</div>
+
+@section Scripts {
+    <script src="~/js/rating.js"></script>
+}

@@ -14,7 +14,7 @@
     public class ProductsController : AdministrationController
     {
         private const int DefaultPageNumber = 1;
-        private const int DefaultPageSize = 8;
+        private const int DefaultPageSize = 10;
 
         private readonly IMapper mapper;
         private readonly IImagesService imagesService;
@@ -144,7 +144,18 @@
         {
             this.productsService.ShowProduct(id);
 
-            return this.RedirectToAction("All");
+            return this.RedirectToAction("Hidden");
+        }
+
+        public async Task<IActionResult> Hidden(int? pageNumber, int? pageSize)
+        {
+            var products = await this.productsService.GetHiddenProductsAsync();
+
+            pageNumber = pageNumber ?? DefaultPageNumber;
+            pageSize = pageSize ?? DefaultPageSize;
+            var pageProductsViewMode = products.ToPagedList(pageNumber.Value, pageSize.Value);
+
+            return this.View(pageProductsViewMode);
         }
     }
 }

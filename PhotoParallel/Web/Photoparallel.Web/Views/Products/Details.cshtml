@@ -5,8 +5,9 @@
     ViewData["Title"] = "Details";
 }
 
-<div class="container bg-dark">
+<div class="container">
     <p class="h3 text-info">@Model.Name</p>
+    <p class="h4 text-muted">@Model.Brand</p>
     <p class="text-muted h6">Product №: @Model.Id</p>
     <div class="row">
         <div class="col-md-5">
@@ -33,7 +34,7 @@
         </div>
         <div class="col-md-5">
             <div>
-                <dl class="text-white-50 text-center">
+                <dl class="text-center">
                     <dt>@Html.DisplayNameFor(model => model.Description):</dt>
                     <dd class="m-2">@Html.DisplayFor(model => model.Description)</dd>
                 </dl>
@@ -42,11 +43,11 @@
         <div class="col-md-2">
             @if (this.Model.ProductStatus == ProductStatus.Rent)
             {
-                <p class="font-weight-bold text-white h2">Price per day: @Model.PricePerDay lv.</p>
+                <p class="font-weight-bold text-danger h4">Price per day: @Model.PricePerDay lv.</p>
             }
             else
             {
-                <p class="font-weight-bold text-white h4">Price: @Model.Price лв.</p>
+                <p class="font-weight-bold text-danger h4">Price: @Model.Price лв.</p>
             }
             @if (this.User.Identity.IsAuthenticated)
             {
@@ -54,20 +55,48 @@
                 {
                     <div class="mt-2">
                         <div class="mb-2">
-                            <a asp-controller="Orders" asp-action="Add" asp-route-id="@Model.Id" asp-route-direct="true" class="btn btn-success btn-lg btn-block"> Buy</a>
+                            <a asp-controller="Orders" asp-action="Add" asp-route-id="@Model.Id" asp-route-direct="true" class="btn btn-info btn-lg btn-block">Buy</a>
                         </div>
                         <div class="mb-2">
-                            <a asp-controller="Credits" asp-action="Create" asp-route-id="@Model.Id" class="btn btn-danger btn-lg btn-block"> Buy on Credit</a>
+                            <a asp-controller="Credits" asp-action="Create" asp-route-id="@Model.Id" class="btn btn-danger btn-lg btn-block">Credit</a>
                         </div>
                     </div>
                 }
                 else
                 {
                     <div class="mb-2">
-                        <a asp-controller="Rents" asp-action="Add" asp-route-id="@Model.Id" asp-route-direct="true" class="btn btn-success btn-lg btn-block"> Rent</a>
+                        <a asp-controller="Rents" asp-action="Add" asp-route-id="@Model.Id" asp-route-direct="true" class="btn btn-success btn-lg btn-block">Rent</a>
                     </div>
                 }
             }
+            <div class="container d-flex">
+                <img src="~/img/cart.png" height="40" width="40" alt="Аvailability" />
+                <div class="m-3">
+                    @if (Model.Quantity > 0)
+                    {
+                        <div>In Stock</div>
+                    }
+                    else
+                    {
+                        <div>On Demand</div>
+                    }
+                </div>
+            </div>
+            @if (Model.Price >= 100)
+            {
+                <div class="container d-flex mt-2">
+                    <img src="~/img/truck.png" height="40" width="40" alt="Shipping" />
+                    <div class="m-3">
+                        <div>Free Shipping</div>
+                    </div>
+                </div>
+            }
+            <div class="container d-flex mt-2">
+                <img src="~/img/shield.png" height="40" width="40" alt="Warranty" />
+                <div class="m-3">
+                    <div >24 Months</div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
