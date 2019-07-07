@@ -31,6 +31,10 @@
 
         public ProductStatus ProductStatus { get; set; }
 
+        public WarrantyStatus WarrantyStatus { get; set; }
+
+        public int? Warranty { get; set; }
+
         public bool IsRented { get; set; }
 
         public bool Hide { get; set; }

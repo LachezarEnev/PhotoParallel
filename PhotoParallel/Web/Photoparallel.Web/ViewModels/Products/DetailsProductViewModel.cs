@@ -20,7 +20,11 @@
 
         public int Quantity { get; set; }
 
+        public int? Warranty { get; set; }
+
         public ProductStatus ProductStatus { get; set; }
+
+        public WarrantyStatus WarrantyStatus { get; set; }
 
         public ICollection<string> ImageUrls { get; set; }
     }

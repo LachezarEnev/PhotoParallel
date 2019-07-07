@@ -386,6 +386,10 @@ namespace Photoparallel.Data.Migrations
 
                     b.Property<int>("Quantity");
 
+                    b.Property<int?>("Warranty");
+
+                    b.Property<int>("WarrantyStatus");
+
                     b.HasKey("Id");
 
                     b.ToTable("Products");

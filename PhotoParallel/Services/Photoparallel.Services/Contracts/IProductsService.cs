@@ -26,6 +26,8 @@
 
         Task<IEnumerable<Product>> GetHiddenProductsAsync();
 
+        Task<IEnumerable<Product>> GetOosProductsAsync();
+
         Task<IEnumerable<Product>> GetProductsFilterAsync(string searchString);
 
         IEnumerable<Product> OrderBy(IEnumerable<Product> products, ProductsSort sortBy);

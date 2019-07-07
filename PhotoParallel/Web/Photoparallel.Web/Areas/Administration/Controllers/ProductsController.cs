@@ -157,5 +157,16 @@
 
             return this.View(pageProductsViewMode);
         }
+
+        public async Task<IActionResult> Oos(int? pageNumber, int? pageSize)
+        {
+            var products = await this.productsService.GetOosProductsAsync();
+
+            pageNumber = pageNumber ?? DefaultPageNumber;
+            pageSize = pageSize ?? DefaultPageSize;
+            var pageProductsViewMode = products.ToPagedList(pageNumber.Value, pageSize.Value);
+
+            return this.View(pageProductsViewMode);
+        }
     }
 }

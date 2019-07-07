@@ -140,13 +140,23 @@
             return hiddenProducts;
         }
 
+        public async Task<IEnumerable<Product>> GetOosProductsAsync()
+        {
+            var oosProducts = await this.context.Products
+                .Include(x => x.Images)
+                .Where(x => x.Quantity == 0)
+                .ToListAsync();
+
+            return oosProducts;
+        }
+
         public async Task<IEnumerable<Product>> GetProductsBySearchAsync(string searchString)
         {
             var searchStringClean = searchString.Split(new string[] { ",", ".", " " }, StringSplitOptions.RemoveEmptyEntries);
 
             List<Product> products = await this.context.Products
                 .Include(x => x.Images)
-                .Where(x => x.Hide == false && searchStringClean.All(c => x.Name.ToLower().Contains(c.ToLower())))
+                .Where(x => x.Hide == false && x.ProductStatus == ProductStatus.Sale && searchStringClean.All(c => x.Name.ToLower().Contains(c.ToLower())))
                 .ToListAsync();
 
             return products;
@@ -156,7 +166,7 @@
         {
             var products = await this.context.Products
                 .Include(x => x.Images)
-                .Where(x => x.Hide == false)
+                .Where(x => x.Hide == false && x.ProductStatus == ProductStatus.Sale)
                 .ToListAsync();
 
             return products;

@@ -43,31 +43,32 @@
         <div class="col-md-2">
             @if (this.Model.ProductStatus == ProductStatus.Rent)
             {
-                <p class="font-weight-bold text-danger h4">Price per day: @Model.PricePerDay lv.</p>
+                <p class="font-weight-bold text-danger h5">Price per day: @Model.PricePerDay lv.</p>
             }
             else
             {
-                <p class="font-weight-bold text-danger h4">Price: @Model.Price лв.</p>
+                <p class="font-weight-bold text-danger h4">Price: @Model.Price lv.</p>
             }
-            @if (this.User.Identity.IsAuthenticated)
+
+            @if (this.Model.ProductStatus == ProductStatus.Sale)
             {
-                @if (this.Model.ProductStatus == ProductStatus.Sale)
-                {
-                    <div class="mt-2">
-                        <div class="mb-2">
-                            <a asp-controller="Orders" asp-action="Add" asp-route-id="@Model.Id" asp-route-direct="true" class="btn btn-info btn-lg btn-block">Buy</a>
-                        </div>
-                        <div class="mb-2">
-                            <a asp-controller="Credits" asp-action="Create" asp-route-id="@Model.Id" class="btn btn-danger btn-lg btn-block">Credit</a>
-                        </div>
-                    </div>
-                }
-                else
-                {
+                <div class="mt-2">
                     <div class="mb-2">
-                        <a asp-controller="Rents" asp-action="Add" asp-route-id="@Model.Id" asp-route-direct="true" class="btn btn-success btn-lg btn-block">Rent</a>
+                        <a asp-controller="Orders" asp-action="Add" asp-route-id="@Model.Id" asp-route-direct="true" class="myButton-olive btn-lg btn-block text-center"><i class="fas fa-shopping-cart"></i> Buy</a>
                     </div>
-                }
+                    @if (this.Model.Price >= 300)
+                    {
+                        <div class="mb-2">
+                            <a asp-controller="Credits" asp-action="Create" asp-route-id="@Model.Id" class="myButton-red btn-lg btn-block text-center">Credit</a>
+                        </div>
+                    }
+                </div>
+            }
+            else
+            {
+                <div class="mb-2">
+                    <a asp-controller="Rents" asp-action="Add" asp-route-id="@Model.Id" asp-route-direct="true" class="btn btn-success btn-lg btn-block">Rent</a>
+                </div>
             }
             <div class="container d-flex">
                 <img src="~/img/cart.png" height="40" width="40" alt="Аvailability" />
@@ -78,7 +79,7 @@
                     }
                     else
                     {
-                        <div>On Demand</div>
+                        <div>Out of Stock</div>
                     }
                 </div>
             </div>
@@ -91,12 +92,15 @@
                     </div>
                 </div>
             }
-            <div class="container d-flex mt-2">
-                <img src="~/img/shield.png" height="40" width="40" alt="Warranty" />
-                <div class="m-3">
-                    <div >24 Months</div>
+            @if (Model.WarrantyStatus == WarrantyStatus.Yes)
+            {
+                <div class="container d-flex mt-2">
+                    <img src="~/img/shield.png" height="40" width="40" alt="Warranty" />
+                    <div class="m-3">
+                        <div>@Model.Warranty Years</div>
+                    </div>
                 </div>
-            </div>
+            }
         </div>
     </div>
 </div>

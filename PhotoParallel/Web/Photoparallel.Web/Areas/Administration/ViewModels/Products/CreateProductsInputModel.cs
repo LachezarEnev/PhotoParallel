@@ -46,6 +46,13 @@
         public ProductStatus ProductStatus { get; set; }
 
         [Required]
+        [Display(Name = "Warranty")]
+        public WarrantyStatus WarrantyStatus { get; set; }
+
+        [Range(0, 10, ErrorMessage = "\"{0}\" must be between {1} and {2}!")]
+        public int? Warranty { get; set; }
+
+        [Required]
         [Display(Name = "Image")]
         [DataType(DataType.ImageUrl)]
         public ICollection<IFormFile> FormImages { get; set; }
