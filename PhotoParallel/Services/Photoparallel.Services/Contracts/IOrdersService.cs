@@ -13,6 +13,12 @@
 
         Task<Order> GetOrderByIdAsync(int orderId);
 
+        Task<Order> GetOpenOrderByUserIdAsync(string username);
+
         Task<IEnumerable<OrderProduct>> OrderProductsByOrderIdAsync(int id);
+
+        Task<bool> AddProductAsync(int id, Order order);
+
+        Task<OrderProduct> GetOrderProductAsync(int id, Order order);
     }
 }

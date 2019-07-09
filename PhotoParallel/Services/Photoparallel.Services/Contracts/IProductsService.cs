@@ -30,6 +30,8 @@
 
         Task<IEnumerable<Product>> GetProductsFilterAsync(string searchString);
 
+        Task<IEnumerable<Product>> GetProductsBySearchAsync(string searchString);
+
         IEnumerable<Product> OrderBy(IEnumerable<Product> products, ProductsSort sortBy);
     }
 }

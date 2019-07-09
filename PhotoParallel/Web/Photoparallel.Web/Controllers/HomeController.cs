@@ -6,6 +6,7 @@
 
     using AutoMapper;
     using Microsoft.AspNetCore.Mvc;
+    using Photoparallel.Common;
     using Photoparallel.Services.Contracts;
     using Photoparallel.Web.ViewModels.Home;
     using X.PagedList;
@@ -14,6 +15,7 @@
     {
         private const int DefaultPageNumber = 1;
         private const int DefaultPageSize = 8;
+        private const string NoResultsFound = "No products found!";
 
         private readonly IProductsService productsService;
         private readonly IMapper mapper;

@@ -5,12 +5,13 @@
     using System.Text.Encodings.Web;
     using System.Threading.Tasks;
 
-    using Photoparallel.Data.Models;
-
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Identity.UI.Services;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.RazorPages;
+
+    using Photoparallel.Data.Models;
+    using Photoparallel.Services.Contracts;
 
 #pragma warning disable SA1649 // File name should match first type name
     public class IndexModel : PageModel
@@ -19,15 +20,18 @@
         private readonly UserManager<ApplicationUser> userManager;
         private readonly SignInManager<ApplicationUser> signInManager;
         private readonly IEmailSender emailSender;
+        private readonly IUsersService usersService;
 
         public IndexModel(
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
-            IEmailSender emailSender)
+            IEmailSender emailSender,
+            IUsersService usersService)
         {
             this.userManager = userManager;
             this.signInManager = signInManager;
             this.emailSender = emailSender;
+            this.usersService = usersService;
         }
 
         public string Username { get; set; }
@@ -56,6 +60,8 @@
 
             this.Input = new InputModel
             {
+                FirstName = user.FirstName,
+                LastName = user.LastName,
                 Email = email,
                 PhoneNumber = phoneNumber,
             };
@@ -98,6 +104,16 @@
                     var userId = await this.userManager.GetUserIdAsync(user);
                     throw new InvalidOperationException($"Unexpected error occurred setting phone number for user with ID '{userId}'.");
                 }
+            }
+
+            if (this.Input.FirstName != user.FirstName)
+            {
+                usersService.EditFirstName(user, this.Input.FirstName);
+            }
+
+            if (this.Input.LastName != user.LastName)
+            {
+                usersService.EditLastName(user, this.Input.LastName);
             }
 
             await this.signInManager.RefreshSignInAsync(user);
@@ -144,6 +160,14 @@
             [Phone]
             [Display(Name = "Phone number")]
             public string PhoneNumber { get; set; }
+
+            [Required]
+            [Display(Name = "First Name")]
+            public string FirstName { get; set; }
+
+            [Required]
+            [Display(Name = "Last Name")]
+            public string LastName { get; set; }
         }
     }
 }
