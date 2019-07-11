@@ -1,11 +1,9 @@
 ﻿namespace Photoparallel.Services
 {
-    using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
 
-    using AutoMapper;
     using Microsoft.EntityFrameworkCore;
     using Photoparallel.Data;
     using Photoparallel.Data.Models;
@@ -27,8 +25,9 @@
 
         public async Task<bool> AddProductAsync(int id, Order order)
         {
-            var product = await this.context.Products.
-                SingleOrDefaultAsync(x => x.Id == id);
+            var product = await this.context.Products
+                .Include(x => x.Images)
+                .SingleOrDefaultAsync(x => x.Id == id);
 
             if (product == null || order == null)
             {
@@ -37,9 +36,8 @@
 
             if (order.Products.Any(x => x.ProductId == id))
             {
-                var quantity = order.Products.Where(x => x.ProductId == id).Select(x => x.Quantity).FirstOrDefault();
-                var orderProduct = await this.GetOrderProductAsync(id, order);
-                orderProduct.Quantity = quantity + 1;
+                var orderProduct = await this.context.OrderProducts.FirstOrDefaultAsync(x => x.ProductId == id && x.OrderId == order.Id);
+                orderProduct.Quantity += 1;
 
                 this.context.Update(orderProduct);
                 await this.context.SaveChangesAsync();
@@ -58,6 +56,11 @@
             }
 
             return true;
+        }
+
+        public async Task<OrderProduct> GetOrderProductAsync(int id, Order order)
+        {
+            return await this.context.OrderProducts.FirstOrDefaultAsync(x => x.ProductId == id && x.OrderId == order.Id);
         }
 
         public async Task<IEnumerable<Order>> GetAllOrdersAsync()
@@ -129,9 +132,43 @@
             return orderProducts;
         }
 
-        public Task<OrderProduct> GetOrderProductAsync(int id, Order order)
+        public async Task<bool> DeleteProductAsync(int productId, Order order)
         {
-            return this.context.OrderProducts.FirstOrDefaultAsync(x => x.ProductId == id && x.OrderId == order.Id);
+            var openOrder = await this.context.OrderProducts.FirstOrDefaultAsync(x => x.ProductId == productId && x.OrderId == order.Id);
+
+            if (openOrder == null)
+            {
+                return false;
+            }
+
+            this.context.Remove(openOrder);
+            await this.context.SaveChangesAsync();
+
+            return true;
+        }
+
+        public async Task<bool> EditProductQuantityAsync(int id, int quantity, Order order)
+        {
+            var orderProduct = await this.context.OrderProducts.FirstOrDefaultAsync(x => x.ProductId == id && x.OrderId == order.Id);
+
+            if (orderProduct == null || quantity < 0)
+            {
+                return false;
+            }
+
+            if (quantity == 0)
+            {
+                this.context.Remove(orderProduct);
+            }
+            else
+            {
+                orderProduct.Quantity = quantity;
+                this.context.Update(orderProduct);
+            }
+
+            await this.context.SaveChangesAsync();
+
+            return true;
         }
     }
 }

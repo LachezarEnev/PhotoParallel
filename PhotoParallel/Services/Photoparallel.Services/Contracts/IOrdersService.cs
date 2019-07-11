@@ -20,5 +20,9 @@
         Task<bool> AddProductAsync(int id, Order order);
 
         Task<OrderProduct> GetOrderProductAsync(int id, Order order);
+
+        Task<bool> DeleteProductAsync(int productId, Order order);
+
+        Task<bool> EditProductQuantityAsync(int id, int quantity, Order order);
     }
 }

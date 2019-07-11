@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="~/css/style.css" />
 
 </head>
-<body>    
+<body>
     <header>
         <div id="sticker" class="header-bg">
             <div class="container-fluid">
@@ -57,10 +57,13 @@
                                                 <i class="fas fa-user-circle"></i> Hello, @this.User.Identity.Name!
                                             </a>
                                             <div class="dropdown-menu dropdown-content bg-dark" aria-labelledby="navbarDropdown">
-                                                <a asp-area="" asp-controller="Orders" asp-action="My" class="dropdown-item nav-link text-white"><i class="fas fa-history"></i> My Orders</a>                                                
+                                                <a asp-area="" asp-controller="Orders" asp-action="My" class="dropdown-item nav-link text-white"><i class="fas fa-history"></i> My Orders</a>
                                                 <a asp-area="Identity" asp-page="/Account/Manage/Index" class="dropdown-item nav-link text-white"><i class="fas fa-cog"></i> Settings</a>
                                                 <a asp-area="Identity" asp-page="/Account/Logout" class="dropdown-item nav-link text-white"><i class="fas fa-sign-out-alt"></i> Exit</a>
                                             </div>
+                                        </li>
+                                        <li class="dropdown">
+                                            @await Component.InvokeAsync(typeof(ShoppingCartComponent))                                         
                                         </li>
                                     }
                                 </ul>
@@ -114,10 +117,10 @@
                 </div>
             </div>
             @*<div class="m-2">
-                <partial name="~/Views/Shared/Partials/_MiddleSectionPartial.cshtml" />
-            </div>
-            <hr />*@
-        </div>        
+                    <partial name="~/Views/Shared/Partials/_MiddleSectionPartial.cshtml" />
+                </div>
+                <hr />*@
+        </div>
     </header>
 
     <div class="container body-content body-height">

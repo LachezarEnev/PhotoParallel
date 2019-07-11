@@ -23,13 +23,18 @@ using Photoparallel.Web.ViewModels;
 
 #line default
 #line hidden
+#line 3 "D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web\Views\_ViewImports.cshtml"
+using Photoparallel.Web.Components;
+
+#line default
+#line hidden
 #line 2 "D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web\Views\Products\Details.cshtml"
 using Photoparallel.Data.Models.Enums;
 
 #line default
 #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3a87c8ee8beabcd76a833d6368f7ee4ab9a15703", @"/Views/Products/Details.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"fc2205d27b40f433e54a8ce081b106793a229119", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"19f56853bc10335ee88806db5846472111bad1fa", @"/Views/_ViewImports.cshtml")]
     public class Views_Products_Details : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Photoparallel.Web.ViewModels.Products.DetailsProductViewModel>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-area", "Administration", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -182,7 +187,7 @@ WriteAttributeValue("", 756, image, 756, 6, false);
             WriteLiteral("                <div class=\"pb-2 m-4\">\r\n                    ");
             EndContext();
             BeginContext(987, 230, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a87c8ee8beabcd76a833d6368f7ee4ab9a1570315027", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a87c8ee8beabcd76a833d6368f7ee4ab9a1570315196", async() => {
                 BeginContext(1134, 79, true);
                 WriteLiteral("\r\n                        <i class=\"fas fa-cog\"></i> Edit\r\n                    ");
                 EndContext();
@@ -306,7 +311,7 @@ WriteAttributeValue("", 756, image, 756, 6, false);
             WriteLiteral("                <div class=\"mt-2\">\r\n                    <div class=\"mb-2\">\r\n                        ");
             EndContext();
             BeginContext(2142, 189, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a87c8ee8beabcd76a833d6368f7ee4ab9a1570321612", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a87c8ee8beabcd76a833d6368f7ee4ab9a1570321781", async() => {
                 BeginContext(2287, 40, true);
                 WriteLiteral("<i class=\"fas fa-shopping-cart\"></i> Buy");
                 EndContext();
@@ -359,7 +364,7 @@ WriteAttributeValue("", 756, image, 756, 6, false);
             WriteLiteral("                        <div class=\"mb-2\">\r\n                            ");
             EndContext();
             BeginContext(2507, 133, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a87c8ee8beabcd76a833d6368f7ee4ab9a1570325251", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a87c8ee8beabcd76a833d6368f7ee4ab9a1570325420", async() => {
                 BeginContext(2630, 6, true);
                 WriteLiteral("Credit");
                 EndContext();
@@ -415,7 +420,7 @@ WriteAttributeValue("", 756, image, 756, 6, false);
             WriteLiteral("                <div class=\"mb-2\">\r\n                    ");
             EndContext();
             BeginContext(2825, 141, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a87c8ee8beabcd76a833d6368f7ee4ab9a1570328593", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a87c8ee8beabcd76a833d6368f7ee4ab9a1570328762", async() => {
                 BeginContext(2958, 4, true);
                 WriteLiteral("Rent");
                 EndContext();
@@ -467,7 +472,7 @@ WriteAttributeValue("", 756, image, 756, 6, false);
             WriteLiteral("            <div class=\"container d-flex\">\r\n                ");
             EndContext();
             BeginContext(3067, 70, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "3a87c8ee8beabcd76a833d6368f7ee4ab9a1570332115", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "3a87c8ee8beabcd76a833d6368f7ee4ab9a1570332284", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -524,7 +529,7 @@ WriteAttributeValue("", 756, image, 756, 6, false);
             WriteLiteral("                <div class=\"container d-flex mt-2\">\r\n                    ");
             EndContext();
             BeginContext(3602, 67, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "3a87c8ee8beabcd76a833d6368f7ee4ab9a1570334971", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "3a87c8ee8beabcd76a833d6368f7ee4ab9a1570335140", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -562,7 +567,7 @@ WriteAttributeValue("", 756, image, 756, 6, false);
             WriteLiteral("                <div class=\"container d-flex mt-2\">\r\n                    ");
             EndContext();
             BeginContext(3977, 68, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "3a87c8ee8beabcd76a833d6368f7ee4ab9a1570337205", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "3a87c8ee8beabcd76a833d6368f7ee4ab9a1570337374", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

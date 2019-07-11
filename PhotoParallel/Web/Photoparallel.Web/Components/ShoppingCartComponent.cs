@@ -1,0 +1,42 @@
+﻿namespace Photoparallel.Web.Components
+{
+    using System.Threading.Tasks;
+
+    using AutoMapper;
+    using Microsoft.AspNetCore.Mvc;
+    using Photoparallel.Services.Contracts;
+    using Photoparallel.Web.ViewModels.Orders;
+
+    public class ShoppingCartComponent : ViewComponent
+    {
+        private readonly IOrdersService ordersService;
+        private readonly IMapper mapper;
+
+        public ShoppingCartComponent(IOrdersService ordersService, IMapper mapper)
+        {
+            this.ordersService = ordersService;
+            this.mapper = mapper;
+        }
+
+        public async Task<IViewComponentResult> InvokeAsync()
+        {
+            var orderViewModel = new OpenOrderViewModel();
+
+            var openOrder = await this.ordersService.GetOpenOrderByUserIdAsync(this.User.Identity.Name);
+            orderViewModel.Id = openOrder.Id;
+
+            foreach (var product in openOrder.Products)
+            {
+                var orderProduct = await this.ordersService.GetOrderProductAsync(product.ProductId, openOrder);
+                var orderProductViewModel = this.mapper.Map<OpenOrdersProductsViewModel>(product.Product);
+
+                orderProductViewModel.OrderQuantity = orderProduct.Quantity;
+                orderProductViewModel.TotalPrice = orderProductViewModel.OrderQuantity * orderProductViewModel.Price;
+
+                orderViewModel.Products.Add(orderProductViewModel);
+            }
+
+            return this.View(orderViewModel);
+        }
+    }
+}

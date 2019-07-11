@@ -1,0 +1,80 @@
+﻿@model Photoparallel.Web.ViewModels.Orders.OpenOrderViewModel
+
+@{
+    ViewData["Title"] = "Default";
+}
+<a class="" dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <i class="fas fa-shopping-cart"></i>
+    @if (Model.Products.Count() != 0)
+    {
+        <sup class="font-weight-bold">@Model.Products.Count()</sup>
+    }
+    Shopping Cart
+</a>
+<div class="dropdown-menu dropdown-content bg-dark" aria-labelledby="navbarDropdown">
+    @if (Model.Products.Count() == 0)
+    {
+        <div class="text-center">
+            <p class="mb-0 py-3 font-weight-bold bg-white">Your Shopping Cart is empty!</p>
+        </div>
+        @*<div class="text-center">
+            <p class="font-weight-bold text-white mb-0">To continue please add products to your Shopping Cart!</p>
+        </div>*@
+    }
+    else
+    {
+        <div class="container mobile-fondsize-11 bg-white">
+            <table class="table table-sm table-hover mb-0">
+                <thead>
+                    <tr class="row">
+                        <th scope="col" class="col-2 d-flex justify-content-center">Product</th>
+                        <th scope="col" class="col-3 d-flex justify-content-center"></th>
+                        <th scope="col" class="col-2 d-flex justify-content-center">Price</th>
+                        <th scope="col" class="col-2 d-flex justify-content-center">Quantity</th>
+                        <th scope="col" class="col-2 d-flex justify-content-center">Total</th>
+                        <th scope="col" class="col-1 d-flex justify-content-center"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var product in Model.Products)
+                    {
+                        <tr class="row">
+                            <td class="col-2 d-flex justify-content-center">
+                                <img src="@product.ImageUrl" width="50" height="50">
+                            </td>
+                            <td class="col-3 d-flex justify-content-center p-5">
+                                <p class="text-dark">@(product.Name.Substring(0, 10))...</p>
+                            </td>
+                            <td class="col-2 d-flex justify-content-center p-5">
+                                @product.Price lv.
+                            </td>
+                            <td class="col-2 d-flex justify-content-center p-5">
+                                @product.OrderQuantity
+                            </td>
+                            <td class="col-2 d-flex justify-content-center p-5">
+                                @product.TotalPrice lv.
+                            </td>
+                            <td class="col-1 d-flex justify-content-center">
+                                <a class="text-danger px-0" asp-area="" asp-controller="Orders" asp-action="DeleteProduct" asp-route-id="@product.Id"><i class="fa fa-trash"></i></a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="row">
+            <div class="col-4 pr-0 text-center">
+                <a asp-area="" asp-controller="Orders" asp-action="Index" class="dropdown-item nav-link text-info">See Shopping Cart</a>
+            </div>
+            <div class="col-4 pr-0 text-center">
+                <a asp-area="" asp-controller="Orders" asp-action="Finish" asp-route-id="@Model.Id" class="dropdown-item nav-link text-success">Finish Order</a>
+            </div>
+            <div class="col-4 pl-0 pr-0 p-4 text-center">
+                <p class="font-weight-bold text-white mb-0 pr-4">Grand Total:</p>
+                <p class="font-weight-bold text-white mb-0 pr-4">@(Model.Products.Sum(x => x.Price * x.OrderQuantity)) lv.</p>
+            </div>
+        </div>
+    }
+</div>
+
+
