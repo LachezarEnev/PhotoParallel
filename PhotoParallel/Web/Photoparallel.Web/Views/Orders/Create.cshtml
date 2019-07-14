@@ -1,0 +1,101 @@
+﻿@model Photoparallel.Web.ViewModels.Orders.CreateOrderInputModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="progress pt-1">
+    <div class="progress-bar" role="progressbar" style="width: 66%;" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100">66%</div>
+</div>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-controller="Orders" asp-action="Create" method="post">
+            <div asp-validation-summary="All" class="text-danger mt-3"></div>
+            <div class="h4 font-weight-bold text-center text-info">Recipent Data:</div>
+            <div class="form-group">
+                <label asp-for="@Model.FirstName"></label>
+                <input asp-for="@Model.FirstName" name="FirstName" class="form-control"/>
+                <span asp-validation-for="@Model.FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.LastName"></label>
+                <input asp-for="@Model.LastName" name="LastName" class="form-control"/>
+                <span asp-validation-for="@Model.LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.PhoneNumber"></label>
+                <input asp-for="@Model.PhoneNumber" name="PhoneNumber" class="form-control" />
+                <span asp-validation-for="@Model.PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="h4 font-weight-bold text-center text-info">Shipping Address:</div>
+            <div class="form-group">
+                <label asp-for="@Model.City"></label>
+                <input asp-for="@Model.City" name="City" class="form-control" placeholder="City/Village..." />
+                <span asp-validation-for="@Model.City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.PostalCode"></label>
+                <input asp-for="@Model.PostalCode" name="PostalCode" class="form-control" placeholder="Postal Code..." />
+                <span asp-validation-for="@Model.PostalCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Province"></label>
+                <input asp-for="@Model.Province" name="Province" class="form-control" placeholder="Province..." />
+                <span asp-validation-for="@Model.Province" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Address"></label>
+                <input asp-for="@Model.Address" name="Address" class="form-control" placeholder="Address..." />
+                <span asp-validation-for="@Model.Address" class="text-danger"></span>
+            </div>
+            <div class="h4 font-weight-bold text-center text-info">Payment Method:</div>
+            <div class="form-group">
+                <div>
+                    <input asp-for="PaymentType" type="radio" id="CashОnDelivery" value="CashОnDelivery" checked>
+                    <label for="CashОnDelivery">Cash on delivery</label>
+                </div>
+                <div>
+                    <input asp-for="PaymentType" type="radio" id="Card" value="Card">
+                    <label for="Card">Visa, MasterCard</label>
+                </div>
+            </div>
+            <span asp-validation-for="PaymentType" class="text-danger"></span>
+            <div class="text-right mt-3 mb-3">
+                <button type="submit" class="form-group btn myButton-olive btn-lg btn-block mb-0">Continue</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="col-6">
+        <div>
+            <div class="h4 font-weight-bold text-center text-info">Products:</div>
+            @await Component.InvokeAsync(typeof(OpenOrderComponent))
+            @if (Model.TotalPrice < 100)
+            {
+                <div class="text-center">
+                    <p class="font-weight-bold text-danger h4 text-right">Shipping: @Model.ShippingCosts lv.</p>
+                </div>
+                <hr />
+                <div class="text-center">
+                    <p class="font-weight-bold text-danger h3 text-right">Grand Total: @(Model.TotalPrice + Model.ShippingCosts) lv.</p>
+                </div>
+            }
+            else
+            {
+                <div class="text-center">
+                    <p class="font-weight-bold text-danger h4 text-right">Free Shipping</p>
+                </div>
+                <hr />
+                <div class="text-center">
+                    <p class="font-weight-bold text-danger h3 text-right">Grand Total: @(Model.TotalPrice) lv.</p>
+                </div>
+            }
+        </div>
+    </div>   
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

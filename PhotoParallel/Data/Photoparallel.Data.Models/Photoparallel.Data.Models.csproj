@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Photoparallel.Common\Photoparallel.Common.csproj" />
     <ProjectReference Include="..\Photoparallel.Data.Common\Photoparallel.Data.Common.csproj" />
   </ItemGroup>
   

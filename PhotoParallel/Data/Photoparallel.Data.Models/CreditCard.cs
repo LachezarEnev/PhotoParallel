@@ -12,7 +12,11 @@
 
         public string Id { get; set; }
 
-        public string Number { get; set; }
+        public int Number { get; set; }
+
+        public int Cvc2 { get; set; }
+
+        public string ExpirationDate { get; set; }
 
         public string CustomerId { get; set; }
 

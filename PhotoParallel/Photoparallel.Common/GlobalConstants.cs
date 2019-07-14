@@ -9,5 +9,11 @@
         public const string ProcuctPathTemplate = "wwwroot/Images/Products/image{0}.jpg";
 
         public const string Wwwroot = "wwwroot";
+
+        public const int BulgarianHoursFromUtcNow = 3;
+
+        public const int ShippingCosts = 5;
+
+        public const string ErrorMessageInvalidOrderNumber = "Invalid order number. Please try again!";
     }
 }

@@ -4,6 +4,8 @@
     using System.Collections.Generic;
     using System.Linq;
 
+    using Photoparallel.Common;
+
     public class Rent
     {
         public Rent()
@@ -17,7 +19,7 @@
 
         public ApplicationUser Customer { get; set; }
 
-        public DateTime RentedOn { get; set; } = DateTime.Now;
+        public DateTime RentedOn { get; set; } = DateTime.UtcNow.AddHours(GlobalConstants.BulgarianHoursFromUtcNow);
 
         public DateTime? ReturnedOn { get; set; }
 

@@ -2,13 +2,14 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     using System.Threading.Tasks;
 
     using AutoMapper;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
+    using Photoparallel.Common;
     using Photoparallel.Services.Contracts;
-    using Photoparallel.Web.Areas.Administration.ViewModels.Orders;
     using Photoparallel.Web.ViewModels.Orders;
 
     public class OrdersController : BaseController
@@ -31,14 +32,14 @@
 
             var openOrder = await this.ordersService.GetOpenOrderByUserIdAsync(this.User.Identity.Name);
             orderViewModel.Id = openOrder.Id;
+            orderViewModel.TotalPrice = openOrder.TotalPrice;
 
             foreach (var product in openOrder.Products)
             {
-                var orderProduct = await this.ordersService.GetOrderProductAsync(product.ProductId, openOrder);
                 var orderProductViewModel = this.mapper.Map<OpenOrdersProductsViewModel>(product.Product);
 
-                orderProductViewModel.OrderQuantity = orderProduct.Quantity;
-                orderProductViewModel.TotalPrice = orderProductViewModel.OrderQuantity * orderProductViewModel.Price;
+                orderProductViewModel.OrderQuantity = product.Quantity;
+                orderProductViewModel.TotalPrice = product.TotalPrice;
 
                 orderViewModel.Products.Add(orderProductViewModel);
             }
@@ -81,32 +82,67 @@
         }
 
         [Authorize]
+        public async Task<IActionResult> Create()
+        {
+            var order = await this.ordersService.GetOpenOrderByUserIdAsync(this.User.Identity.Name);
+
+            if (order == null || order.TotalPrice == 0)
+            {
+                return this.RedirectToAction("Index");
+            }
+
+            var createOrderInputModel = new CreateOrderInputModel
+            {
+                FirstName = order.Customer.FirstName,
+                LastName = order.Customer.LastName,
+                PhoneNumber = order.Customer.PhoneNumber,
+                TotalPrice = order.TotalPrice,
+            };
+
+            return this.View(createOrderInputModel);
+        }
+
+        [Authorize]
+        [HttpPost]
+        public async Task<IActionResult> Create(CreateOrderInputModel model)
+        {
+            var order = await this.ordersService.GetOpenOrderByUserIdAsync(this.User.Identity.Name);
+
+            model.TotalPrice = order.TotalPrice;
+
+            if (!this.ModelState.IsValid)
+            {
+                return this.View(model);
+            }
+
+            string shippingAddress = model.City + ", " + model.PostalCode + Environment.NewLine + model.Address;
+
+            await this.ordersService.SetOrderDetailsAsync(order, shippingAddress, model.FirstName, model.LastName, model.PhoneNumber, model.PaymentType);
+
+            return this.RedirectToAction("Confirm");
+        }
+
+        [Authorize]
+        public async Task<IActionResult> Confirm()
+        {
+            var order = await this.ordersService.GetOpenOrderByUserIdAsync(this.User.Identity.Name);
+
+            if (order == null || order.TotalPrice == 0)
+            {
+                return this.RedirectToAction("Index");
+            }
+
+            var orderViewModel = this.mapper.Map<ConfirmOrderViewModel>(order);
+
+            return this.View(orderViewModel);
+        }
+
+        [Authorize]
         public async Task<IActionResult> Finish(int id)
         {
-            var order = await this.ordersService.GetOrderByIdAsync(id);
-            var orderProducts = await this.ordersService.OrderProductsByOrderIdAsync(order.Id);
+            await this.ordersService.FinishOrderAsync(id);
 
-            bool isOutofStock = false;
-
-            foreach (var product in orderProducts)
-            {
-                if (product.Product.Quantity < product.Quantity)
-                {
-                    isOutofStock = true;
-                    break;
-                }
-            }
-
-            if (isOutofStock)
-            {
-                order.EstimatedDeliveryDate = DateTime.Now.AddDays(10);
-            }
-            else
-            {
-                order.EstimatedDeliveryDate = DateTime.Now.AddDays(3);
-            }
-
-            return this.RedirectToAction("Index");
+            return this.View();
         }
     }
 }

@@ -1,10 +1,12 @@
 ﻿namespace Photoparallel.Services
 {
+    using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
 
     using Microsoft.EntityFrameworkCore;
+    using Photoparallel.Common;
     using Photoparallel.Data;
     using Photoparallel.Data.Models;
     using Photoparallel.Data.Models.Enums;
@@ -55,12 +57,12 @@
                 await this.context.SaveChangesAsync();
             }
 
-            return true;
-        }
+            order.TotalPrice = order.Products.Sum(x => x.Product.Price * x.Quantity);
 
-        public async Task<OrderProduct> GetOrderProductAsync(int id, Order order)
-        {
-            return await this.context.OrderProducts.FirstOrDefaultAsync(x => x.ProductId == id && x.OrderId == order.Id);
+            this.context.Update(order);
+            await this.context.SaveChangesAsync();
+
+            return true;
         }
 
         public async Task<IEnumerable<Order>> GetAllOrdersAsync()
@@ -115,7 +117,7 @@
         {
             var pendingOrders = await this.context.Orders
                 .Where(x => x.OrderStatus == OrderStatus.Pending)
-                .OrderBy(x => x.Id)
+                .OrderBy(x => x.CreatedOn)
                 .ToArrayAsync();
 
             return pendingOrders;
@@ -144,6 +146,11 @@
             this.context.Remove(openOrder);
             await this.context.SaveChangesAsync();
 
+            order.TotalPrice = order.Products.Sum(x => x.Product.Price * x.Quantity);
+
+            this.context.Update(order);
+            await this.context.SaveChangesAsync();
+
             return true;
         }
 
@@ -159,6 +166,7 @@
             if (quantity == 0)
             {
                 this.context.Remove(orderProduct);
+                await this.context.SaveChangesAsync();
             }
             else
             {
@@ -166,9 +174,69 @@
                 this.context.Update(orderProduct);
             }
 
+            order.TotalPrice = order.Products.Sum(x => x.Product.Price * x.Quantity);
+
+            this.context.Update(order);
             await this.context.SaveChangesAsync();
 
             return true;
+        }
+
+        public async Task<Order> AddShippingCostsToOrderAsync(int id)
+        {
+            var order = await this.GetOrderByIdAsync(id);
+
+            if (order == null)
+            {
+                return null;
+            }
+
+            if (order.TotalPrice < 100)
+            {
+                order.TotalPrice += GlobalConstants.ShippingCosts;
+
+                this.context.Update(order);
+                await this.context.SaveChangesAsync();
+            }
+
+            return order;
+        }
+
+        public async Task SetOrderDetailsAsync(Order order, string shippingAddress, string firstName, string lastName, string phoneNumber, PaymentType paymentType)
+        {
+            order.Recipient = firstName + " " + lastName;
+            order.RecipientPhoneNumber = phoneNumber;
+            order.ShippingAddress = shippingAddress;
+            order.PaymentType = paymentType;
+
+            this.context.Update(order);
+            await this.context.SaveChangesAsync();
+        }
+
+
+        public async Task FinishOrderAsync(int orderId)
+        {
+            var order = await this.GetOrderByIdAsync(orderId);
+
+            order.OrderStatus = OrderStatus.Pending;
+            order.CreatedOn = DateTime.UtcNow.AddHours(GlobalConstants.BulgarianHoursFromUtcNow);
+
+            if (order.TotalPrice < 100)
+            {
+                order.TotalPrice += GlobalConstants.ShippingCosts;
+            }
+
+            if (order.PaymentType == PaymentType.CashОnDelivery)
+            {
+                order.PaymentStatus = PaymentStatus.Ondelivery;
+            }
+            else
+            {
+                order.PaymentStatus = PaymentStatus.Paid;
+            }
+
+            this.context.Update(order);
+            await this.context.SaveChangesAsync();
         }
     }
 }

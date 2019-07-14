@@ -27,11 +27,10 @@
 
             foreach (var product in openOrder.Products)
             {
-                var orderProduct = await this.ordersService.GetOrderProductAsync(product.ProductId, openOrder);
                 var orderProductViewModel = this.mapper.Map<OpenOrdersProductsViewModel>(product.Product);
 
-                orderProductViewModel.OrderQuantity = orderProduct.Quantity;
-                orderProductViewModel.TotalPrice = orderProductViewModel.OrderQuantity * orderProductViewModel.Price;
+                orderProductViewModel.OrderQuantity = product.Quantity;
+                orderProductViewModel.TotalPrice = product.TotalPrice;
 
                 orderViewModel.Products.Add(orderProductViewModel);
             }

@@ -1056,6 +1056,16 @@
           "ref/netstandard1.3/System.Threading.Tasks.dll": {}
         }
       },
+      "Photoparallel.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Photoparallel.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Photoparallel.Common.dll": {}
+        }
+      },
       "Photoparallel.Data.Common/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -1074,6 +1084,7 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "2.2.0",
+          "Photoparallel.Common": "1.0.0",
           "Photoparallel.Data.Common": "1.0.0"
         },
         "compile": {
@@ -3676,6 +3687,11 @@
         "system.threading.tasks.4.0.11.nupkg.sha512",
         "system.threading.tasks.nuspec"
       ]
+    },
+    "Photoparallel.Common/1.0.0": {
+      "type": "project",
+      "path": "../../Photoparallel.Common/Photoparallel.Common.csproj",
+      "msbuildProject": "../../Photoparallel.Common/Photoparallel.Common.csproj"
     },
     "Photoparallel.Data.Common/1.0.0": {
       "type": "project",

@@ -916,6 +916,11 @@
           "System.Runtime": "4.3.0"
         }
       },
+      "Photoparallel.Common/1.0.0": {
+        "runtime": {
+          "Photoparallel.Common.dll": {}
+        }
+      },
       "Photoparallel.Data.Common/1.0.0": {
         "dependencies": {
           "System.ComponentModel.Annotations": "4.5.0"
@@ -927,6 +932,7 @@
       "Photoparallel.Data.Models/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "2.2.0",
+          "Photoparallel.Common": "1.0.0",
           "Photoparallel.Data.Common": "1.0.0"
         },
         "runtime": {
@@ -1529,6 +1535,11 @@
       "sha512": "sha512-LbSxKEdOUhVe8BezB/9uOGGppt+nZf6e1VFyw6v3DN6lqitm0OSn2uXMOdtP0M3W4iMcqcivm2J6UgqiwwnXiA==",
       "path": "system.threading.tasks/4.3.0",
       "hashPath": "system.threading.tasks.4.3.0.nupkg.sha512"
+    },
+    "Photoparallel.Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "Photoparallel.Data.Common/1.0.0": {
       "type": "project",

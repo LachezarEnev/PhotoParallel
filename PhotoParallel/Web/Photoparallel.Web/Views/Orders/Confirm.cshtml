@@ -1,0 +1,66 @@
+﻿@model Photoparallel.Web.ViewModels.Orders.ConfirmOrderViewModel
+
+@{
+    ViewData["Title"] = "Confirm";
+}
+
+<div class="progress pt-1">
+    <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card card-body bg-info">
+            <div><span class="font-weight-bold">Recipient:</span> @Model.Recipient</div>
+            <hr />
+            <div><span class="font-weight-bold">Phone Number:</span> @Model.RecipientPhoneNumber</div>
+            <hr />
+            <div><span class="font-weight-bold">Address:</span> @Model.ShippingAddress</div>
+            <hr />
+            <div><span class="font-weight-bold">Payment Method:</span> @Model.PaymentType</div>
+        </div>
+
+        <div class="container- fluid d-flex justify-content-around m-5">
+            <div class="mb-2">
+                <a asp-controller="Orders" asp-action="Create" asp-route-id="@Model.Id" asp-route-direct="true" class="myButton-orange btn-lg btn-block text-center"><i class="fas fa-cog"></i> Edit</a>
+            </div>
+            @if (Model.PaymentType == "Visa/MasterCard")
+            {
+                <div class="mb-2">
+                    <a asp-controller="Orders" asp-action="Pay" asp-route-id="@Model.Id" asp-route-direct="true" class="myButton-olive btn-lg btn-block text-center"><i class="far fa-credit-card"></i> Pay</a>
+                </div>
+            }
+            else
+            {
+                <div class="mb-2">
+                    <a asp-controller="Orders" asp-action="Finish" asp-route-id="@Model.Id" asp-route-direct="true" class="myButton-olive btn-lg btn-block text-center"><i class="fas fa-check"></i> Finish</a>
+                </div>
+            }
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="container-fluid">
+            @await Component.InvokeAsync(typeof(OpenOrderComponent), new { OrderId = Model.Id })
+            @if (Model.TotalPrice < 100)
+            {
+                <div class="text-center">
+                    <p class="font-weight-bold text-danger h4 text-right">Shipping: @Model.ShippingCosts lv.</p>
+                </div>
+                <hr />
+                <div class="text-center">
+                    <p class="font-weight-bold text-danger h3 text-right">Grand Total: @(Model.TotalPrice + Model.ShippingCosts) lv.</p>
+                </div>
+            }
+            else
+            {
+                <div class="text-center">
+                    <p class="font-weight-bold text-danger h4 text-right">Free Shipping</p>
+                </div>
+                <hr />
+                <div class="text-center">
+                    <p class="font-weight-bold text-danger h3 text-right">Grand Total: @(Model.TotalPrice) lv.</p>
+                </div>
+            }
+        </div>
+    </div>
+</div>

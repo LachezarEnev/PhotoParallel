@@ -4,6 +4,7 @@
     using System.Threading.Tasks;
 
     using Photoparallel.Data.Models;
+    using Photoparallel.Data.Models.Enums;
 
     public interface IOrdersService
     {
@@ -19,10 +20,14 @@
 
         Task<bool> AddProductAsync(int id, Order order);
 
-        Task<OrderProduct> GetOrderProductAsync(int id, Order order);
-
         Task<bool> DeleteProductAsync(int productId, Order order);
 
         Task<bool> EditProductQuantityAsync(int id, int quantity, Order order);
+
+        Task<Order> AddShippingCostsToOrderAsync(int orderId);
+
+        Task SetOrderDetailsAsync(Order order, string shippingAddress, string firstName, string lastName, string phoneNumber, PaymentType paymentType);
+
+        Task FinishOrderAsync(int orderId);
     }
 }

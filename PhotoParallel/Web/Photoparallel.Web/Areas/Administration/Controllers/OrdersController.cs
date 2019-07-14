@@ -5,6 +5,7 @@
 
     using AutoMapper;
     using Microsoft.AspNetCore.Mvc;
+    using Photoparallel.Common;
     using Photoparallel.Data.Models.Enums;
     using Photoparallel.Services.Contracts;
     using Photoparallel.Web.Areas.Administration.ViewModels.Home;
@@ -12,8 +13,6 @@
 
     public class OrdersController : AdministrationController
     {
-        private const string ErrorMessageInvalidOrderNumber = "Invalid order number. Please try again!";
-
         private readonly IOrdersService ordersService;
         private readonly IMapper mapper;
 
@@ -47,7 +46,7 @@
 
             if (order == null)
             {
-                this.TempData["error"] = ErrorMessageInvalidOrderNumber;
+                this.TempData["error"] = GlobalConstants.ErrorMessageInvalidOrderNumber;
                 return this.RedirectToAction("/Home/Index/");
             }
 

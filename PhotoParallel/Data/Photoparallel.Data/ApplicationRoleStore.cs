@@ -2,10 +2,9 @@
 {
     using System.Security.Claims;
 
-    using Photoparallel.Data.Models;
-
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+    using Photoparallel.Data.Models;
 
     public class ApplicationRoleStore : RoleStore<
         ApplicationRole,

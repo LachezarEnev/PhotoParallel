@@ -11,6 +11,8 @@
 
         public int Id { get; set; }
 
+        public decimal TotalPrice { get; set; }
+
         public List<OpenOrdersProductsViewModel> Products { get; set; }
     }
 }

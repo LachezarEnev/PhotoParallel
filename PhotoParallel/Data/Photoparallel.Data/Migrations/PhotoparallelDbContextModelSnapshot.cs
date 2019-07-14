@@ -211,7 +211,11 @@ namespace Photoparallel.Data.Migrations
 
                     b.Property<string>("CustomerId");
 
-                    b.Property<string>("Number");
+                    b.Property<int>("Cvc2");
+
+                    b.Property<string>("ExpirationDate");
+
+                    b.Property<int>("Number");
 
                     b.HasKey("Id");
 
@@ -299,6 +303,8 @@ namespace Photoparallel.Data.Migrations
 
                     b.Property<string>("CustomerId");
 
+                    b.Property<string>("InvoiceNumber");
+
                     b.Property<DateTime>("IssuedOn");
 
                     b.Property<string>("ShippingAddress");
@@ -330,7 +336,17 @@ namespace Photoparallel.Data.Migrations
 
                     b.Property<int>("OrderStatus");
 
+                    b.Property<int>("PaymentStatus");
+
+                    b.Property<int>("PaymentType");
+
+                    b.Property<string>("Recipient");
+
+                    b.Property<string>("RecipientPhoneNumber");
+
                     b.Property<string>("ShippingAddress");
+
+                    b.Property<decimal>("TotalPrice");
 
                     b.HasKey("Id");
 

@@ -40,3 +40,5 @@ C:\Users\don_m\PhotoParallel\PhotoParallel\Services\Photoparallel.Services.Data\
 C:\Users\don_m\PhotoParallel\PhotoParallel\Services\Photoparallel.Services.Data\obj\Debug\netstandard2.0\Photoparallel.Services.Data.csproj.CopyComplete
 C:\Users\don_m\PhotoParallel\PhotoParallel\Services\Photoparallel.Services.Data\obj\Debug\netstandard2.0\Photoparallel.Services.Data.dll
 C:\Users\don_m\PhotoParallel\PhotoParallel\Services\Photoparallel.Services.Data\obj\Debug\netstandard2.0\Photoparallel.Services.Data.pdb
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Services\Photoparallel.Services.Data\bin\Debug\netstandard2.0\Photoparallel.Common.dll
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Services\Photoparallel.Services.Data\bin\Debug\netstandard2.0\Photoparallel.Common.pdb

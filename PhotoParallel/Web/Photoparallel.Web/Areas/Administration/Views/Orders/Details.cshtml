@@ -54,8 +54,9 @@
             <tr class="row d-flex justify-content-around">
                 <th scope="col" class="col-md-2 col d-flex justify-content-center"></th>
                 <th scope="col" class="col-md-1 col d-flex justify-content-center">Product №</th>
-                <th scope="col" class="col-md-6 col d-flex justify-content-center">Name</th>
+                <th scope="col" class="col-md-5 col d-flex justify-content-center">Name</th>
                 <th scope="col" class="col-md-1 col d-flex justify-content-center">Quantity</th>
+                <th scope="col" class="col-md-1 col d-flex justify-content-center">In Stock</th>
                 <th scope="col" class="col-md-1 col d-flex justify-content-center">Price</th>
                 <th scope="col" class="col-md-1 col d-flex justify-content-center">Total Price</th>
             </tr>
@@ -70,11 +71,23 @@
                     <td class="col-md-1 col d-flex justify-content-center">
                         @product.ProductId
                     </td>
-                    <td class="col-md-6 col d-flex justify-content-center">
+                    <td class="col-md-5 col d-flex justify-content-center">
                         @product.ProductName
                     </td>
+                    @if (product.InStock < product.Quantity)
+                    {
+                        <td class="col-md-1 col d-flex justify-content-center text-danger font-weight-bold">
+                            @product.Quantity
+                        </td>
+                    }
+                    else
+                    {
+                        <td class="col-md-1 col d-flex justify-content-center text-success font-weight-bold">
+                            @product.Quantity
+                        </td>
+                    }
                     <td class="col-md-1 col d-flex justify-content-center">
-                        @product.Quantity
+                        @product.InStock
                     </td>
                     <td class="col-md-1 col d-flex justify-content-center">
                         @product.Price lv.
@@ -88,16 +101,20 @@
     </table>
     <div>
         @if (Model.OrderStatus == "Pending")
-        {
+        {           
             <div class=" m-3 d-flex justify-content-between">
+
                 <a asp-area="Administration" asp-controller="Orders" asp-action="Delete" asp-route-id="@Model.Id" class="myButton-red btn-lg"><i class="fa fa-trash"></i> Delete</a>
 
-                <a asp-area="Administration" asp-controller="Orders" asp-action="Approve" asp-route-id="@Model.Id" class="myButton-olive btn-lg">Approve</a>
+                <a asp-area="Administration" asp-controller="Orders" asp-action="Edit" asp-route-id="@Model.Id" class="myButton-orange btn-lg"><i class="fas fa-cog"></i> Edit</a>
 
-                <a asp-area="Administration" asp-controller="Orders" asp-action="Pending" class="myButton-blue btn-lg">Back</a>
+                <a asp-area="Administration" asp-controller="Orders" asp-action="Approve" asp-route-id="@Model.Id" class="myButton-olive btn-lg"><i class="fas fa-check"></i> Approve</a>
+
+                <a asp-area="Administration" asp-controller="Orders" asp-action="Pending" class="myButton-blue btn-lg"><i class="fas fa-arrow-left"></i> Back</a>
             </div>
         }
     </div>
 </div>
+
 
 

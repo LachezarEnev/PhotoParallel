@@ -5478,6 +5478,7 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "2.2.0",
+          "Photoparallel.Common": "1.0.0",
           "Photoparallel.Data.Common": "1.0.0"
         },
         "compile": {

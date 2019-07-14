@@ -94,6 +94,9 @@
             "projectReferences": {
               "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Data\\Photoparallel.Data.Common\\Photoparallel.Data.Common.csproj": {
                 "projectPath": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Data\\Photoparallel.Data.Common\\Photoparallel.Data.Common.csproj"
+              },
+              "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Photoparallel.Common\\Photoparallel.Common.csproj": {
+                "projectPath": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Photoparallel.Common\\Photoparallel.Common.csproj"
               }
             }
           }

@@ -11,5 +11,7 @@
         public int OrderId { get; set; }
 
         public Order Order { get; set; }
+
+        public decimal TotalPrice => this.Quantity * this.Product.Price;
     }
 }

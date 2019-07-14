@@ -20,6 +20,7 @@
 
             this.CreateMap<OrderProduct, OrderProductsViewModel>()
                 .ForMember(x => x.Price, y => y.MapFrom(src => src.Product.Price))
+                .ForMember(x => x.InStock, y => y.MapFrom(src => src.Product.Quantity))
                 .ForMember(x => x.ProductName, y => y.MapFrom(src => src.Product.Name))
                 .ForMember(x => x.ImageUrl, y => y.MapFrom(src => src.Product.Images.Select(x => x.ImageUrl).FirstOrDefault()));
 
@@ -42,6 +43,9 @@
 
             this.CreateMap<Product, OpenOrdersProductsViewModel>()
                 .ForMember(x => x.ImageUrl, y => y.MapFrom(src => src.Images.FirstOrDefault().ImageUrl));
+
+            this.CreateMap<Order, ConfirmOrderViewModel>()
+                .ForMember(x => x.PaymentType, y => y.MapFrom(src => src.PaymentType.GetDisplayName()));
         }
     }
 }

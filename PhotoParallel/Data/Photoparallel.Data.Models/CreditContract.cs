@@ -2,13 +2,14 @@
 {
     using System;
 
+    using Photoparallel.Common;
     using Photoparallel.Data.Models.Enums;
 
     public class CreditContract
     {
         public int Id { get; set; }
 
-        public DateTime IssuedOn { get; set; } = DateTime.UtcNow;
+        public DateTime IssuedOn { get; set; } = DateTime.UtcNow.AddHours(GlobalConstants.BulgarianHoursFromUtcNow);
 
         public DateTime ActiveUntil { get; set; }
 

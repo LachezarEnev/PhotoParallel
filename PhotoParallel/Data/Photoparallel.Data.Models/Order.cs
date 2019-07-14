@@ -2,8 +2,8 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
 
+    using Photoparallel.Common;
     using Photoparallel.Data.Models.Enums;
 
     public class Order
@@ -19,9 +19,17 @@
 
         public ApplicationUser Customer { get; set; }
 
+        public string Recipient { get; set; }
+
+        public string RecipientPhoneNumber { get; set; }
+
         public OrderStatus OrderStatus { get; set; } = OrderStatus.Open;
 
-        public DateTime CreatedOn { get; set; } = DateTime.Now;
+        public PaymentStatus PaymentStatus { get; set; }
+
+        public PaymentType PaymentType { get; set; }
+
+        public DateTime CreatedOn { get; set; } = DateTime.UtcNow.AddHours(GlobalConstants.BulgarianHoursFromUtcNow);
 
         public DateTime? EstimatedDeliveryDate { get; set; }
 
@@ -39,6 +47,6 @@
 
         public ICollection<OrderProduct> Products { get; set; }
 
-        public decimal TotalPrice => this.Products.Sum(x => x.Product.Price * x.Quantity);
+        public decimal TotalPrice { get; set; } = 0;
     }
 }

@@ -1056,6 +1056,16 @@
           "ref/netstandard1.3/System.Threading.Tasks.dll": {}
         }
       },
+      "Photoparallel.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Photoparallel.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Photoparallel.Common.dll": {}
+        }
+      },
       "Photoparallel.Data.Common/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -3663,6 +3673,11 @@
         "system.threading.tasks.nuspec"
       ]
     },
+    "Photoparallel.Common/1.0.0": {
+      "type": "project",
+      "path": "../../Photoparallel.Common/Photoparallel.Common.csproj",
+      "msbuildProject": "../../Photoparallel.Common/Photoparallel.Common.csproj"
+    },
     "Photoparallel.Data.Common/1.0.0": {
       "type": "project",
       "path": "../Photoparallel.Data.Common/Photoparallel.Data.Common.csproj",
@@ -3673,6 +3688,7 @@
     ".NETStandard,Version=v2.0": [
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 2.2.0",
       "NETStandard.Library >= 2.0.3",
+      "Photoparallel.Common >= 1.0.0",
       "Photoparallel.Data.Common >= 1.0.0",
       "StyleCop.Analyzers >= 1.1.118"
     ]
@@ -3709,6 +3725,9 @@
           "projectReferences": {
             "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Data\\Photoparallel.Data.Common\\Photoparallel.Data.Common.csproj": {
               "projectPath": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Data\\Photoparallel.Data.Common\\Photoparallel.Data.Common.csproj"
+            },
+            "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Photoparallel.Common\\Photoparallel.Common.csproj": {
+              "projectPath": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Photoparallel.Common\\Photoparallel.Common.csproj"
             }
           }
         }
