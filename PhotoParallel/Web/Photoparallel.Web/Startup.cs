@@ -2,6 +2,7 @@
 {
     using System.Linq;
     using System.Reflection;
+
     using AutoMapper;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
@@ -9,7 +10,7 @@
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Identity.UI;
     using Microsoft.AspNetCore.Identity.UI.Services;
-    using Microsoft.AspNetCore.Mvc;    
+    using Microsoft.AspNetCore.Mvc;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
@@ -114,6 +115,8 @@
             services.AddScoped<IImagesService, ImagesService>();
             services.AddScoped<IProductsService, ProductsService>();
             services.AddScoped<IUsersService, UsersService>();
+            services.AddScoped<ICreditCardsService, CreditCardsService>();
+            services.AddScoped<IInvoicesService, InvoicesService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

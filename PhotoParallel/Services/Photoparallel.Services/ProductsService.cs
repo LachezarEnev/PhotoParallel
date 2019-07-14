@@ -186,7 +186,7 @@
         {
             if (sortBy == ProductsSort.Name)
             {
-               return products.OrderBy(x => x.Name).ToList();
+                return products.OrderBy(x => x.Name).ToList();
             }
             else if (sortBy == ProductsSort.PriceAscending)
             {

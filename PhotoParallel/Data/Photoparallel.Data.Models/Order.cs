@@ -48,5 +48,9 @@
         public ICollection<OrderProduct> Products { get; set; }
 
         public decimal TotalPrice { get; set; } = 0;
+
+        public decimal Shipping { get; set; } = 0;
+
+        public decimal GrandTotal => this.TotalPrice + this.Shipping;
     }
 }

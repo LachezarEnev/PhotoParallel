@@ -69,7 +69,7 @@
         {
             var allOrders = await this.context.Orders
                 .Where(x => x.OrderStatus != OrderStatus.Open)
-                .OrderBy(x => x.Id)
+                .OrderByDescending(x => x.CreatedOn)
                 .ToArrayAsync();
 
             return allOrders;
@@ -108,6 +108,7 @@
         {
             var order = await this.context.Orders
                 .Include(x => x.Customer)
+                .Where(x => x.OrderStatus != OrderStatus.Open)
                 .FirstOrDefaultAsync(x => x.Id == orderId);
 
             return order;
@@ -213,17 +214,14 @@
             await this.context.SaveChangesAsync();
         }
 
-
-        public async Task FinishOrderAsync(int orderId)
+        public async Task FinishOrderAsync(Order order)
         {
-            var order = await this.GetOrderByIdAsync(orderId);
-
             order.OrderStatus = OrderStatus.Pending;
             order.CreatedOn = DateTime.UtcNow.AddHours(GlobalConstants.BulgarianHoursFromUtcNow);
 
             if (order.TotalPrice < 100)
             {
-                order.TotalPrice += GlobalConstants.ShippingCosts;
+                order.Shipping = GlobalConstants.ShippingCosts;
             }
 
             if (order.PaymentType == PaymentType.CashОnDelivery)
@@ -234,6 +232,64 @@
             {
                 order.PaymentStatus = PaymentStatus.Paid;
             }
+
+            this.context.Update(order);
+            await this.context.SaveChangesAsync();
+        }
+
+        public async Task<IEnumerable<Order>> GetAllOrdersByUserAsync(string username)
+        {
+            var orders = await this.context.Orders
+                .Where(x => x.OrderStatus != OrderStatus.Open && x.Customer.UserName == username)
+                .OrderByDescending(x => x.Id)
+                .ToArrayAsync();
+
+            return orders;
+        }
+
+        public async Task ApproveAsync(int id)
+        {
+            var order = await this.context.Orders
+                .Include(x => x.Products)
+                .SingleOrDefaultAsync(x => x.Id == id);
+
+            if (order == null)
+            {
+                return;
+            }
+
+            bool isOutOfStock = false;
+
+            foreach (var orderProduct in order.Products)
+            {
+                var product = await this.context.Products
+                    .FirstOrDefaultAsync(x => x.Id == orderProduct.ProductId);
+
+                product.Quantity -= orderProduct.Quantity;
+
+                if (product.Quantity < 0)
+                {
+                    isOutOfStock = true;
+                }
+            }
+
+            if (isOutOfStock)
+            {
+                order.EstimatedDeliveryDate = DateTime.UtcNow.AddDays(7);
+            }
+            else
+            {
+                if (DateTime.Now.DayOfWeek == DayOfWeek.Friday)
+                {
+                    order.EstimatedDeliveryDate = DateTime.UtcNow.AddDays(3);
+                }
+                else
+                {
+                    order.EstimatedDeliveryDate = DateTime.UtcNow.AddDays(2);
+                }
+            }
+
+            order.OrderStatus = OrderStatus.Approved;
 
             this.context.Update(order);
             await this.context.SaveChangesAsync();

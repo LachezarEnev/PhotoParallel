@@ -19,15 +19,14 @@
             <hr />
             <div><span class="font-weight-bold">Payment Method:</span> @Model.PaymentType</div>
         </div>
-
-        <div class="container- fluid d-flex justify-content-around m-5">
+        <div class="container-fluid d-flex justify-content-around m-5">
             <div class="mb-2">
                 <a asp-controller="Orders" asp-action="Create" asp-route-id="@Model.Id" asp-route-direct="true" class="myButton-orange btn-lg btn-block text-center"><i class="fas fa-cog"></i> Edit</a>
             </div>
             @if (Model.PaymentType == "Visa/MasterCard")
             {
                 <div class="mb-2">
-                    <a asp-controller="Orders" asp-action="Pay" asp-route-id="@Model.Id" asp-route-direct="true" class="myButton-olive btn-lg btn-block text-center"><i class="far fa-credit-card"></i> Pay</a>
+                    <a asp-controller="CreditCards" asp-action="Pay" asp-route-id="@Model.Id" asp-route-direct="true" class="myButton-olive btn-lg btn-block text-center"><i class="far fa-credit-card"></i> Pay</a>
                 </div>
             }
             else

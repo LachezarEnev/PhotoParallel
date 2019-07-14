@@ -6,7 +6,6 @@
 
     using AutoMapper;
     using Microsoft.AspNetCore.Mvc;
-    using Photoparallel.Common;
     using Photoparallel.Services.Contracts;
     using Photoparallel.Web.ViewModels.Home;
     using X.PagedList;

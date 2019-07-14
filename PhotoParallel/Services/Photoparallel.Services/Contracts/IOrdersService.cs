@@ -10,6 +10,8 @@
     {
         Task<IEnumerable<Order>> GetAllOrdersAsync();
 
+        Task<IEnumerable<Order>> GetAllOrdersByUserAsync(string username);
+
         Task<IEnumerable<Order>> GetPendingOrdersAsync();
 
         Task<Order> GetOrderByIdAsync(int orderId);
@@ -28,6 +30,8 @@
 
         Task SetOrderDetailsAsync(Order order, string shippingAddress, string firstName, string lastName, string phoneNumber, PaymentType paymentType);
 
-        Task FinishOrderAsync(int orderId);
+        Task FinishOrderAsync(Order order);
+
+        Task ApproveAsync(int id);
     }
 }

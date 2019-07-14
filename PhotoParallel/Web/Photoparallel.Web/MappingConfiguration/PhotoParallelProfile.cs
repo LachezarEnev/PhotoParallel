@@ -7,6 +7,7 @@
     using Photoparallel.Web.Areas.Administration.ViewModels.Home;
     using Photoparallel.Web.Areas.Administration.ViewModels.Orders;
     using Photoparallel.Web.Areas.Administration.ViewModels.Products;
+    using Photoparallel.Web.ViewModels.CreditCards;
     using Photoparallel.Web.ViewModels.Home;
     using Photoparallel.Web.ViewModels.Orders;
     using Photoparallel.Web.ViewModels.Products;
@@ -18,6 +19,9 @@
             this.CreateMap<Order, AllOrdersViewModel>()
                 .ForMember(x => x.OrderStatus, y => y.MapFrom(src => src.OrderStatus.GetDisplayName()));
 
+            this.CreateMap<Order, MyOrdersViewModel>()
+                .ForMember(x => x.OrderStatus, y => y.MapFrom(src => src.OrderStatus.GetDisplayName()));
+
             this.CreateMap<OrderProduct, OrderProductsViewModel>()
                 .ForMember(x => x.Price, y => y.MapFrom(src => src.Product.Price))
                 .ForMember(x => x.InStock, y => y.MapFrom(src => src.Product.Quantity))
@@ -26,9 +30,9 @@
 
             this.CreateMap<Order, OrderDetailsViewModel>()
                  .ForMember(x => x.OrderStatus, y => y.MapFrom(src => src.OrderStatus.GetDisplayName()))
-                 .ForMember(x => x.FirstName, y => y.MapFrom(src => src.Customer.FirstName))
-                 .ForMember(x => x.LastName, y => y.MapFrom(src => src.Customer.LastName))
-                 .ForMember(x => x.PhoneNumber, y => y.MapFrom(src => src.Customer.PhoneNumber));
+                 .ForMember(x => x.PaymentType, y => y.MapFrom(src => src.PaymentType.GetDisplayName()))
+                 .ForMember(x => x.PaymentStatus, y => y.MapFrom(src => src.PaymentStatus.GetDisplayName()))
+                 .ForMember(x => x.Invoice, y => y.MapFrom(src => src.Invoice.InvoiceNumber));
 
             this.CreateMap<CreateProductsInputModel, Product>();
             this.CreateMap<Product, DetailsProductViewModel>()
@@ -46,6 +50,8 @@
 
             this.CreateMap<Order, ConfirmOrderViewModel>()
                 .ForMember(x => x.PaymentType, y => y.MapFrom(src => src.PaymentType.GetDisplayName()));
+
+            this.CreateMap<CreditCartInputModel, CreditCard>();
         }
     }
 }

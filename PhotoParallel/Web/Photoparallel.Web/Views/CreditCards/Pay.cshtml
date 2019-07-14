@@ -1,0 +1,43 @@
+﻿@model Photoparallel.Web.ViewModels.CreditCards.CreditCartInputModel
+@using Photoparallel.Data.Models.Enums;
+
+@{
+    ViewData["Title"] = "Pay";
+}
+
+<h1 class="text-info text-center">Payment</h1>
+<hr class="w-50" />
+<div class="row">
+    <div class="col-md-4 center-block">
+        <form asp-action="Pay" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>           
+            <div class="form-group w-50">
+                <div class="">
+                    <label asp-for="CreditCardType" class="control-label"></label>
+                </div>
+                <select asp-for="CreditCardType" class="form-control" asp-items="@Html.GetEnumSelectList<CreditCardType>()"><</select>
+                <span asp-validation-for="CreditCardType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Number" class="control-label"></label>
+                <input asp-for="Number" class="form-control" placeholder="0..." />
+                <span asp-validation-for="Number" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cvc2" class="control-label"></label>
+                <input asp-for="Cvc2" class="form-control" placeholder="000" />
+                <span asp-validation-for="Cvc2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ExpirationDate" class="control-label"></label>
+                <input asp-for="ExpirationDate" class="form-control" placeholder="00/00" />
+                <span asp-validation-for="ExpirationDate" class="text-danger"></span>
+            </div>
+            <div class="form-group d-flex justify-content-center">
+                <input type="submit" value="Finish" class="btn myButton-olive" />
+            </div>
+        </form>
+    </div>
+</div>
+
+

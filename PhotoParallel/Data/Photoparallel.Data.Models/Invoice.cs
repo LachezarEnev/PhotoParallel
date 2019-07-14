@@ -12,7 +12,7 @@
 
         public ApplicationUser Customer { get; set; }
 
-        public DateTime IssuedOn { get; set; } = DateTime.UtcNow.AddHours(GlobalConstants.BulgarianHoursFromUtcNow);
+        public DateTime IssuedOn { get; set; }
 
         public string InvoiceNumber { get; set; }
 

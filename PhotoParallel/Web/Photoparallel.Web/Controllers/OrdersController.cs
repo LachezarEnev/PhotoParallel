@@ -2,14 +2,14 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
     using System.Threading.Tasks;
 
     using AutoMapper;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
-    using Photoparallel.Common;
+    using Photoparallel.Data.Models.Enums;
     using Photoparallel.Services.Contracts;
+    using Photoparallel.Web.Areas.Administration.ViewModels.Orders;
     using Photoparallel.Web.ViewModels.Orders;
 
     public class OrdersController : BaseController
@@ -138,11 +138,61 @@
         }
 
         [Authorize]
-        public async Task<IActionResult> Finish(int id)
+        public async Task<IActionResult> Finish()
         {
-            await this.ordersService.FinishOrderAsync(id);
+            var order = await this.ordersService.GetOpenOrderByUserIdAsync(this.User.Identity.Name);
+
+            if (order == null || order.TotalPrice == 0)
+            {
+                return this.RedirectToAction("Index");
+            }
+
+            await this.ordersService.FinishOrderAsync(order);
 
             return this.View();
+        }
+
+        [Authorize]
+        public async Task<IActionResult> My()
+        {
+            var orders = await this.ordersService.GetAllOrdersByUserAsync(this.User.Identity.Name);
+
+            var allOrders = this.mapper.Map<IList<MyOrdersViewModel>>(orders);
+
+            return this.View(allOrders);
+        }
+
+        [Authorize]
+        public async Task<IActionResult> Details(int id)
+        {
+            var order = await this.ordersService.GetOrderByIdAsync(id);
+
+            if (order == null || order.Customer.UserName != this.User.Identity.Name)
+            {
+                return this.RedirectToAction("My");
+            }
+
+            var orderProducts = await this.ordersService.OrderProductsByOrderIdAsync(id);
+            var orderProductsViewModel = this.mapper.Map<IList<OrderProductsViewModel>>(orderProducts);
+
+            var orderViewModel = this.mapper.Map<OrderDetailsViewModel>(order);
+            orderViewModel.OrderProductsViewModel = orderProductsViewModel;
+
+            if (order.OrderStatus == OrderStatus.Pending || order.OrderStatus == OrderStatus.Denied)
+            {
+                orderViewModel.EstimatedDeliveryDate = "N/A";
+                orderViewModel.Invoice = "N/A";
+            }
+            else if (order.OrderStatus == OrderStatus.Delivered)
+            {
+                orderViewModel.EstimatedDeliveryDate = "Delivered";
+            }
+            else
+            {
+                orderViewModel.EstimatedDeliveryDate = order.EstimatedDeliveryDate?.ToString(@"dd/MM/yyyy");
+            }
+
+            return this.View(orderViewModel);
         }
     }
 }

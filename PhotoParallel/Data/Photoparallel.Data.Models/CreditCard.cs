@@ -2,6 +2,8 @@
 {
     using System.Collections.Generic;
 
+    using Photoparallel.Data.Models.Enums;
+
     public class CreditCard
     {
         public CreditCard()
@@ -12,13 +14,15 @@
 
         public string Id { get; set; }
 
-        public int Number { get; set; }
+        public string Number { get; set; }
 
-        public int Cvc2 { get; set; }
+        public string Cvc2 { get; set; }
 
         public string ExpirationDate { get; set; }
 
         public string CustomerId { get; set; }
+
+        public CreditCardType CreditCardType { get; set; }
 
         public ApplicationUser Customer { get; set; }
 

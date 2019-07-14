@@ -47,7 +47,7 @@
             if (order == null)
             {
                 this.TempData["error"] = GlobalConstants.ErrorMessageInvalidOrderNumber;
-                return this.RedirectToAction("/Home/Index/");
+                return this.RedirectToAction("All");
             }
 
             var orderProducts = await this.ordersService.OrderProductsByOrderIdAsync(id);
@@ -59,10 +59,7 @@
             if (order.OrderStatus == OrderStatus.Pending || order.OrderStatus == OrderStatus.Denied)
             {
                 orderViewModel.EstimatedDeliveryDate = "N/A";
-            }
-            else if (order.OrderStatus == OrderStatus.Approved)
-            {
-                orderViewModel.EstimatedDeliveryDate = "N/A";
+                orderViewModel.Invoice = "N/A";
             }
             else if (order.OrderStatus == OrderStatus.Delivered)
             {
@@ -74,6 +71,13 @@
             }
 
             return this.View(orderViewModel);
+        }
+
+        public async Task<IActionResult> Approve(int id)
+        {
+            await this.ordersService.ApproveAsync(id);
+
+            return this.RedirectToAction("Create", "Invoices", id);
         }
     }
 }

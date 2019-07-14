@@ -209,13 +209,15 @@ namespace Photoparallel.Data.Migrations
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<int>("CreditCardType");
+
                     b.Property<string>("CustomerId");
 
-                    b.Property<int>("Cvc2");
+                    b.Property<string>("Cvc2");
 
                     b.Property<string>("ExpirationDate");
 
-                    b.Property<int>("Number");
+                    b.Property<string>("Number");
 
                     b.HasKey("Id");
 
@@ -343,6 +345,8 @@ namespace Photoparallel.Data.Migrations
                     b.Property<string>("Recipient");
 
                     b.Property<string>("RecipientPhoneNumber");
+
+                    b.Property<decimal>("Shipping");
 
                     b.Property<string>("ShippingAddress");
 

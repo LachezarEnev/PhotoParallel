@@ -1,0 +1,71 @@
+﻿@model Photoparallel.Web.Areas.Administration.ViewModels.Orders.OrderDetailsViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="h2 text-center text-info font-weight-bold">Order Details</div>
+<hr class="w-50" />
+<div class="col-md-6">
+    <div class="h4 font-weight-bold text-center text-info">Order Details:</div>
+    <div class="card card-body bg-info">
+        <div><span class="font-weight-bold">Order №:</span> @Model.Id</div>
+        <div><span class="font-weight-bold">Created On:</span> @Model.CreatedOn</div>
+        <div><span class="font-weight-bold">Order Status:</span> @Model.OrderStatus</div>
+        <div><span class="font-weight-bold">Payment Status:</span> @Model.PaymentStatus</div>
+        <div><span class="font-weight-bold">Estimated Delivery Date:</span> @Model.EstimatedDeliveryDate</div>
+        <div><span class="font-weight-bold">Invoice №:</span> @Model.Invoice</div>
+        <div><span class="font-weight-bold">All Products:</span> @Model.TotalPrice lv.</div>
+        <div><span class="font-weight-bold">Shipping:</span> @Model.Shipping lv.</div>
+        <hr />
+        <div class="h4"><span class="font-weight-bold">Grand Total:</span> @Model.GrandTotal lv.</div>
+    </div>
+</div>
+<div class="col-md-6">
+    <div class="h4 font-weight-bold text-center text-info">Recipent Data:</div>
+    <div class="card card-body bg-info">
+        <div><span class="font-weight-bold">Recipient:</span> @Model.Recipient</div>
+        <hr />
+        <div><span class="font-weight-bold">Phone Number:</span> @Model.RecipientPhoneNumber</div>
+        <hr />
+        <div><span class="font-weight-bold">Address:</span> @Model.ShippingAddress</div>
+    </div>
+</div>
+<table class="table">
+    <thead>
+        <tr class="row d-flex justify-content-around">
+            <th scope="col" class="col-md-2 col d-flex justify-content-center"></th>
+            <th scope="col" class="col-md-1 col d-flex justify-content-center">Product №</th>
+            <th scope="col" class="col-md-6 col d-flex justify-content-center">Name</th>
+            <th scope="col" class="col-md-1 col d-flex justify-content-center">Quantity</th>
+            <th scope="col" class="col-md-1 col d-flex justify-content-center">Price</th>
+            <th scope="col" class="col-md-1 col d-flex justify-content-center">Total Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model.OrderProductsViewModel)
+        {
+            <tr class="row d-flex justify-content-around">
+                <td class="col-md-2 col d-flex justify-content-center">
+                    <img src="@product.ImageUrl" width="50" height="50">
+                </td>
+                <td class="col-md-1 col d-flex justify-content-center">
+                    @product.ProductId
+                </td>
+                <td class="col-md-6 col d-flex justify-content-center">
+                    @product.ProductName
+                </td>
+                <td class="col-md-1 col d-flex justify-content-center">
+                    @product.Price lv.
+                </td>
+                <td class="col-md-1 col d-flex justify-content-center">
+                    @product.Quantity
+                </td>
+                <td class="col-md-1 col d-flex justify-content-center">
+                    @(product.Price * product.Quantity) lv.
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
