@@ -72,7 +72,7 @@
 
             if (product == null)
             {
-                return this.NotFound();
+                return this.RedirectToAction("All");
             }
 
             var model = this.mapper.Map<EditProductsInputModel>(product);
@@ -109,7 +109,7 @@
 
             if (product == null)
             {
-                return this.NotFound();
+                return this.RedirectToAction("All");
             }
 
             var hideViewModel = this.mapper.Map<HideProductsViewModel>(product);
@@ -122,7 +122,7 @@
         {
             this.productsService.HideProduct(id);
 
-            return this.RedirectToAction("All");
+            return this.RedirectToAction("Hidden");
         }
 
         public async Task<IActionResult> Show(int id)
@@ -131,7 +131,7 @@
 
             if (product == null)
             {
-                return this.NotFound();
+                return this.RedirectToAction("Hidden");
             }
 
             var showViewModel = this.mapper.Map<HideProductsViewModel>(product);
@@ -144,7 +144,7 @@
         {
             this.productsService.ShowProduct(id);
 
-            return this.RedirectToAction("Hidden");
+            return this.RedirectToAction("All");
         }
 
         public async Task<IActionResult> Hidden(int? pageNumber, int? pageSize)

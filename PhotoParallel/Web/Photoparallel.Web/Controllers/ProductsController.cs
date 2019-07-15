@@ -4,6 +4,7 @@
 
     using AutoMapper;
     using Microsoft.AspNetCore.Mvc;
+    using Photoparallel.Common;
     using Photoparallel.Services.Contracts;
     using Photoparallel.Web.ViewModels.Products;
 
@@ -24,7 +25,12 @@
 
             if (product == null)
             {
-                return this.NotFound();
+                return this.RedirectToAction("Index", "Home");
+            }
+
+            if (this.User.IsInRole(GlobalConstants.UserRoleName) && product.Hide)
+            {
+                return this.RedirectToAction("Index", "Home");
             }
 
             var productViewModel = this.mapper.Map<DetailsProductViewModel>(product);

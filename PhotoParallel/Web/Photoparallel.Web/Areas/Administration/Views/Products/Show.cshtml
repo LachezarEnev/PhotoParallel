@@ -12,7 +12,7 @@
     <form asp-action="ShowConfirmed">
         <div class="d-flex justify-content-between">
             <div class="form-group w-45">
-                <div class="d-flex justify-content-center text-white-50">
+                <div class="d-flex justify-content-center">
                     <label asp-for="Name" class="control-label"></label>
                 </div>
                 <input asp-for="Name" class="form-control" disabled />
@@ -20,7 +20,7 @@
             @if (Model.ProductStatus == "Sale")
             {
                 <div class="form-group w-45">
-                    <div class="d-flex justify-content-center text-white-50">
+                    <div class="d-flex justify-content-center">
                         <label asp-for="Price" class="control-label"></label>
                     </div>
                     <input asp-for="Price" class="form-control" disabled />
@@ -29,7 +29,7 @@
             else
             {
                 <div class="form-group w-45">
-                    <div class="d-flex justify-content-center text-white-50">
+                    <div class="d-flex justify-content-center">
                         <label asp-for="PricePerDay" class="control-label"></label>
                     </div>
                     <input asp-for="PricePerDay" class="form-control" disabled />
@@ -38,13 +38,13 @@
         </div>
         <div class="d-flex justify-content-between">
             <div class="form-group w-45">
-                <div class="d-flex justify-content-center text-white-50">
+                <div class="d-flex justify-content-center">
                     <label asp-for="ProductType" class="control-label"></label>
                 </div>
                 <input asp-for="ProductType" class="form-control" disabled />
             </div>
             <div class="form-group w-45">
-                <div class="d-flex justify-content-center text-white-50">
+                <div class="d-flex justify-content-center">
                     <label asp-for="ProductStatus" class="control-label"></label>
                 </div>
                 <input asp-for="ProductStatus" class="form-control" disabled />

@@ -40,6 +40,33 @@
             return this.View(allPendingOrders);
         }
 
+        public async Task<IActionResult> Approved()
+        {
+            var orders = await this.ordersService.GetApprovedOrdersAsync();
+
+            var allApprovedOrders = this.mapper.Map<IList<AllOrdersViewModel>>(orders);
+
+            return this.View(allApprovedOrders);
+        }
+
+        public async Task<IActionResult> Shipped()
+        {
+            var orders = await this.ordersService.GetShippedOrdersAsync();
+
+            var allShippedOrders = this.mapper.Map<IList<AllOrdersViewModel>>(orders);
+
+            return this.View(allShippedOrders);
+        }
+
+        public async Task<IActionResult> Delivered()
+        {
+            var orders = await this.ordersService.GetDeliveredOrdersAsync();
+
+            var allDeliveredOrders = this.mapper.Map<IList<AllOrdersViewModel>>(orders);
+
+            return this.View(allDeliveredOrders);
+        }
+
         public async Task<IActionResult> Details(int id)
         {
             var order = await this.ordersService.GetOrderByIdAsync(id);
@@ -61,10 +88,6 @@
                 orderViewModel.EstimatedDeliveryDate = "N/A";
                 orderViewModel.Invoice = "N/A";
             }
-            else if (order.OrderStatus == OrderStatus.Delivered)
-            {
-                orderViewModel.EstimatedDeliveryDate = "Delivered";
-            }
             else
             {
                 orderViewModel.EstimatedDeliveryDate = order.EstimatedDeliveryDate?.ToString(@"dd/MM/yyyy");
@@ -77,7 +100,21 @@
         {
             await this.ordersService.ApproveAsync(id);
 
-            return this.RedirectToAction("Create", "Invoices", id);
+            return this.RedirectToAction("Pending");
+        }
+
+        public async Task<IActionResult> Ship(int id)
+        {
+            await this.ordersService.ShipAsync(id);
+
+            return this.RedirectToAction("Approved");
+        }
+
+        public async Task<IActionResult> Deliver(int id)
+        {
+            await this.ordersService.DeliverAsync(id);
+
+            return this.RedirectToAction("Shipped");
         }
     }
 }

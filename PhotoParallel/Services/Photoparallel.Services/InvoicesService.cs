@@ -43,6 +43,7 @@
             invoice.InvoiceNumber = "963" + invoice.Id.ToString("D7");
 
             this.context.Update(invoice);
+            order.Invoice = invoice;
             await this.context.SaveChangesAsync();
         }
     }

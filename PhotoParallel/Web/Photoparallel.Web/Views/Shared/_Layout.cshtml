@@ -88,9 +88,9 @@
                                             <ul class="dropdown-menu dropdown-content bg-dark" role="menu">
                                                 <li><a asp-area="Administration" asp-controller="Orders" asp-action="All">All</a></li>
                                                 <li><a asp-area="Administration" asp-controller="Orders" asp-action="Pending">Pending</a></li>
-                                                <li><a href=#>Approved</a></li>
-                                                <li><a href=#>Shipped</a></li>
-                                                <li><a href=#>Delivered</a></li>
+                                                <li><a asp-area="Administration" asp-controller="Orders" asp-action="Approved">Approved</a></li>
+                                                <li><a asp-area="Administration" asp-controller="Orders" asp-action="Shipped">Shipped</a></li>
+                                                <li><a asp-area="Administration" asp-controller="Orders" asp-action="Delivered">Delivered</a></li>                                               
                                                 <li><a href=#>Denied</a></li>
                                             </ul>
                                         </li>
@@ -117,9 +117,9 @@
                 </div>
             </div>
             @*<div class="m-2">
-                <partial name="~/Views/Shared/Partials/_MiddleSectionPartial.cshtml" />
-            </div>
-            <hr />*@
+                    <partial name="~/Views/Shared/Partials/_MiddleSectionPartial.cshtml" />
+                </div>
+                <hr />*@
         </div>
     </header>
 

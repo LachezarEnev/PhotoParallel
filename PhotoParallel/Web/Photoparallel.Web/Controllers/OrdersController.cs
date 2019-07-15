@@ -183,10 +183,6 @@
                 orderViewModel.EstimatedDeliveryDate = "N/A";
                 orderViewModel.Invoice = "N/A";
             }
-            else if (order.OrderStatus == OrderStatus.Delivered)
-            {
-                orderViewModel.EstimatedDeliveryDate = "Delivered";
-            }
             else
             {
                 orderViewModel.EstimatedDeliveryDate = order.EstimatedDeliveryDate?.ToString(@"dd/MM/yyyy");

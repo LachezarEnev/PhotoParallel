@@ -17,12 +17,14 @@
         private readonly PhotoparallelDbContext context;
         private readonly IUsersService usersService;
         private readonly IProductsService productsService;
+        private readonly IInvoicesService invoicesService;
 
-        public OrdersService(PhotoparallelDbContext context, IUsersService usersService, IProductsService productsService)
+        public OrdersService(PhotoparallelDbContext context, IUsersService usersService, IProductsService productsService, IInvoicesService invoicesService)
         {
             this.context = context;
             this.usersService = usersService;
             this.productsService = productsService;
+            this.invoicesService = invoicesService;
         }
 
         public async Task<bool> AddProductAsync(int id, Order order)
@@ -108,6 +110,7 @@
         {
             var order = await this.context.Orders
                 .Include(x => x.Customer)
+                .Include(x => x.Invoice)
                 .Where(x => x.OrderStatus != OrderStatus.Open)
                 .FirstOrDefaultAsync(x => x.Id == orderId);
 
@@ -122,6 +125,36 @@
                 .ToArrayAsync();
 
             return pendingOrders;
+        }
+
+        public async Task<IEnumerable<Order>> GetApprovedOrdersAsync()
+        {
+            var approvedOrders = await this.context.Orders
+                .Where(x => x.OrderStatus == OrderStatus.Approved)
+                .OrderBy(x => x.EstimatedDeliveryDate)
+                .ToArrayAsync();
+
+            return approvedOrders;
+        }
+
+        public async Task<IEnumerable<Order>> GetShippedOrdersAsync()
+        {
+            var shippedOrders = await this.context.Orders
+                .Where(x => x.OrderStatus == OrderStatus.Shipped)
+                .OrderBy(x => x.EstimatedDeliveryDate)
+                .ToArrayAsync();
+
+            return shippedOrders;
+        }
+
+        public async Task<IEnumerable<Order>> GetDeliveredOrdersAsync()
+        {
+            var deliveredOrders = await this.context.Orders
+               .Where(x => x.OrderStatus == OrderStatus.Delivered)
+               .OrderBy(x => x.EstimatedDeliveryDate)
+               .ToArrayAsync();
+
+            return deliveredOrders;
         }
 
         public async Task<IEnumerable<OrderProduct>> OrderProductsByOrderIdAsync(int id)
@@ -251,7 +284,7 @@
         {
             var order = await this.context.Orders
                 .Include(x => x.Products)
-                .SingleOrDefaultAsync(x => x.Id == id);
+                .SingleOrDefaultAsync(x => x.Id == id && x.OrderStatus == OrderStatus.Pending);
 
             if (order == null)
             {
@@ -275,21 +308,66 @@
 
             if (isOutOfStock)
             {
-                order.EstimatedDeliveryDate = DateTime.UtcNow.AddDays(7);
+                order.EstimatedDeliveryDate = DateTime.UtcNow.AddHours(GlobalConstants.BulgarianHoursFromUtcNow).AddDays(7);
             }
             else
             {
                 if (DateTime.Now.DayOfWeek == DayOfWeek.Friday)
                 {
-                    order.EstimatedDeliveryDate = DateTime.UtcNow.AddDays(3);
+                    order.EstimatedDeliveryDate = DateTime.UtcNow.AddHours(GlobalConstants.BulgarianHoursFromUtcNow).AddDays(3);
                 }
                 else
                 {
-                    order.EstimatedDeliveryDate = DateTime.UtcNow.AddDays(2);
+                    order.EstimatedDeliveryDate = DateTime.UtcNow.AddHours(GlobalConstants.BulgarianHoursFromUtcNow).AddDays(2);
                 }
             }
 
             order.OrderStatus = OrderStatus.Approved;
+
+            this.context.Update(order);
+            await this.context.SaveChangesAsync();
+
+            await this.invoicesService.CreateAsync(id);
+        }
+
+        public async Task ShipAsync(int id)
+        {
+            var order = await this.context.Orders
+                .SingleOrDefaultAsync(x => x.Id == id && x.OrderStatus == OrderStatus.Approved);
+
+            if (order == null)
+            {
+                return;
+            }
+
+            if (DateTime.Now.DayOfWeek == DayOfWeek.Saturday)
+            {
+                order.EstimatedDeliveryDate = DateTime.UtcNow.AddHours(GlobalConstants.BulgarianHoursFromUtcNow).AddDays(2);
+            }
+            else
+            {
+                order.EstimatedDeliveryDate = DateTime.UtcNow.AddHours(GlobalConstants.BulgarianHoursFromUtcNow).AddDays(1);
+            }
+
+            order.OrderStatus = OrderStatus.Shipped;
+
+            this.context.Update(order);
+            await this.context.SaveChangesAsync();
+        }
+
+        public async Task DeliverAsync(int id)
+        {
+            var order = await this.context.Orders
+                .SingleOrDefaultAsync(x => x.Id == id && x.OrderStatus == OrderStatus.Shipped);
+
+            if (order == null)
+            {
+                return;
+            }
+
+            order.OrderStatus = OrderStatus.Delivered;
+            order.EstimatedDeliveryDate = DateTime.UtcNow.AddHours(GlobalConstants.BulgarianHoursFromUtcNow);
+            order.PaymentStatus = PaymentStatus.Paid;
 
             this.context.Update(order);
             await this.context.SaveChangesAsync();

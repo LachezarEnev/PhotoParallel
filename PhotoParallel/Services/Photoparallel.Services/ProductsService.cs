@@ -144,7 +144,7 @@
         {
             var oosProducts = await this.context.Products
                 .Include(x => x.Images)
-                .Where(x => x.Quantity == 0)
+                .Where(x => x.Quantity <= 0)
                 .ToListAsync();
 
             return oosProducts;

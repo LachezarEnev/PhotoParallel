@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Photoparallel.Web.Areas.Administration.ViewModels.Home.AllOrdersViewModel>
+
+@{
+    ViewData["Title"] = "Delivered";
+}
+
+<div class="row">
+    <div class="col-xl-6">
+        <div class="container mobile-fondsize-11 ">
+            <div class="h2 text-center text-info font-weight-bold">Delivered Orders</div>
+            <table class="table">
+                <thead>
+                    <tr class="row">
+                        <th scope="col" class="col-md-2 col d-flex justify-content-center">№</th>
+                        <th scope="col" class="col-md-2 col d-flex justify-content-center">Order Number</th>
+                        <th scope="col" class="col-md-2 col d-flex justify-content-center">Creation Date</th>
+                        <th scope="col" class="col-md-2 col d-flex justify-content-center">Delivery Date</th>
+                        <th scope="col" class="col-md-2 col d-flex justify-content-center">Status</th>
+                        <th scope="col" class="col-md-2 col d-flex justify-content-center">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        var orders = Model.ToArray();
+                    }
+                    @for (int i = 0; i < orders.Length; i++)
+                    {
+                        var order = orders[i];
+
+                        <tr class="row">
+                            <td class="col-md-2 col d-flex justify-content-center">
+                                @(i + 1)
+                            </td>
+                            <td class="col-md-2 col d-flex justify-content-center">
+                                @order.Id
+                            </td>
+                            <td class="col-md-2 col d-flex justify-content-center">
+                                @order.CreatedOn
+                            </td>
+                            <td class="col-md-2 col d-flex justify-content-center">
+                                @order.EstimatedDeliveryDate?.ToString(@"dd/MM/yyyy")
+                            </td>
+                            <td class="col-md-2 col d-flex justify-content-center">
+                                @order.OrderStatus
+                            </td>
+                            <td class="col-md-2 col d-flex justify-content-around">
+                                <div class="mr-2">
+                                    <a asp-area="Administration" asp-controller="Orders" asp-action="Details" asp-route-id="@order.Id" class="btn btn-info btn-sm">Details</a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

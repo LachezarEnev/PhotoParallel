@@ -13,12 +13,5 @@
         {
             this.invoicesService = invoicesService;
         }
-
-        public async Task<IActionResult> Create(int id)
-        {
-            await this.invoicesService.CreateAsync(id);
-
-            return this.RedirectToAction("All", "Orders");
-        }
     }
 }

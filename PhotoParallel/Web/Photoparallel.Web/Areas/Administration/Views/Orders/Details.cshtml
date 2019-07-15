@@ -36,7 +36,6 @@
             @if (Model.OrderStatus == "Pending")
             {
                 <div class=" m-3 d-flex justify-content-between">
-
                     <a asp-area="Administration" asp-controller="Orders" asp-action="Delete" asp-route-id="@Model.Id" class="myButton-red btn-sm"><i class="fa fa-trash"></i> Delete</a>
 
                     <a asp-area="Administration" asp-controller="Orders" asp-action="Edit" asp-route-id="@Model.Id" class="myButton-orange btn-sm"><i class="fas fa-cog"></i> Edit</a>
@@ -44,6 +43,28 @@
                     <a asp-area="Administration" asp-controller="Orders" asp-action="Approve" asp-route-id="@Model.Id" class="myButton-olive btn-sm"><i class="fas fa-check"></i> Approve</a>
 
                     <a asp-area="Administration" asp-controller="Orders" asp-action="Pending" class="myButton-blue btn-sm"><i class="fas fa-arrow-left"></i> Back</a>
+                </div>
+            }
+            else if (Model.OrderStatus == "Approved")
+            {
+                <div class=" m-3 d-flex justify-content-around">
+                    <a asp-area="Administration" asp-controller="Orders" asp-action="Ship" asp-route-id="@Model.Id" class="myButton-olive btn-sm"><i class="fas fa-check"></i> Ship</a>
+
+                    <a asp-area="Administration" asp-controller="Orders" asp-action="Approved" class="myButton-blue btn-sm"><i class="fas fa-arrow-left"></i> Back</a>
+                </div>
+            }
+            else if (Model.OrderStatus == "Shipped")
+            {
+                <div class=" m-3 d-flex justify-content-around">
+                    <a asp-area="Administration" asp-controller="Orders" asp-action="Deliver" asp-route-id="@Model.Id" class="myButton-olive btn-sm"><i class="fas fa-check"></i> Deliver</a>
+
+                    <a asp-area="Administration" asp-controller="Orders" asp-action="Shipped" class="myButton-blue btn-sm"><i class="fas fa-arrow-left"></i> Back</a>
+                </div>
+            }
+            else if (Model.OrderStatus == "Delivered")
+            {
+                <div class=" m-3 d-flex justify-content-around">
+                    <a asp-area="Administration" asp-controller="Orders" asp-action="Delivered" class="myButton-blue btn-sm"><i class="fas fa-arrow-left"></i> Back</a>
                 </div>
             }
         </div>
@@ -74,21 +95,21 @@
                     <td class="col-md-5 col d-flex justify-content-center">
                         @product.ProductName
                     </td>
-                    @if (product.InStock < product.Quantity)
+                    <td class="col-md-1 col d-flex justify-content-center">
+                        @product.Quantity
+                    </td>
+                    @if (product.InStock == 0)
                     {
                         <td class="col-md-1 col d-flex justify-content-center text-danger font-weight-bold">
-                            @product.Quantity
+                            @product.InStock
                         </td>
                     }
                     else
                     {
                         <td class="col-md-1 col d-flex justify-content-center text-success font-weight-bold">
-                            @product.Quantity
+                            @product.InStock
                         </td>
                     }
-                    <td class="col-md-1 col d-flex justify-content-center">
-                        @product.InStock
-                    </td>
                     <td class="col-md-1 col d-flex justify-content-center">
                         @product.Price lv.
                     </td>
