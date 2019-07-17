@@ -39,6 +39,10 @@
                     <dd class="m-2">@Html.DisplayFor(model => model.Description)</dd>
                 </dl>
             </div>
+            @if (Model.Quantity <= 0)
+            {
+                <h6 class="text-danger">This product is out of stock! If you order today, we will deliver it within 7 days!</h6>
+            }
         </div>
         <div class="col-md-2">
             @if (this.Model.ProductStatus == ProductStatus.Rent)

@@ -1,0 +1,74 @@
+﻿@model Photoparallel.Web.ViewModels.Invoices.InvoiceViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+<div class="container-fluid bg-light">
+    <div class="col-md-4">
+        <div class="card bg-transparent p-1 m-2">
+            <div><span class="font-weight-bold">From:</span></div>
+            <div><span class="font-weight-bold">PhotoParallel EOOD</span></div>
+            <div><span class="font-weight-bold">Vat reg. № </span>BG898989898</div>
+            <div><span class="font-weight-bold">Address: </span>Sofia 1766</div>
+            <div>Mladost 4, Business Park Sofia 1, building 1A</div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card bg-transparent p-1 m-2">
+            <h3 class="text-center">INVOICE</h3>
+            <h5 class="text-center">original</h5>
+            <div class="text-center">@Model.InvoiceNumber</div>
+            <div class="text-center">@Model.IssuedOn.ToString("dd/MM/yyyy")</div>
+            <div class="text-center">Order № @Model.OrderNumber</div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card bg-transparent p-1 m-2">
+            <div><span class="font-weight-bold">To:</span></div>
+            <div>@Model.Recipient</div>
+            <div><span class="font-weight-bold">Address: </span>@Model.ShippingAddress</div>
+        </div>
+    </div>
+    <div class="m-5">
+        <table class="table">
+            <thead>
+                <tr class="row d-flex justify-content-around">
+                    <th scope="col" class="col-md-1 col d-flex justify-content-center">№</th>
+                    <th scope="col" class="col-md-5 col d-flex justify-content-center">Name</th>
+                    <th scope="col" class="col-md-2 col d-flex justify-content-center">Price</th>
+                    <th scope="col" class="col-md-2 col d-flex justify-content-center">Quantity</th>
+                    <th scope="col" class="col-md-2 col d-flex justify-content-center">Total Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    var products = Model.InvoiceProducts.ToArray();
+                }
+                @for (int i = 0; i < products.Length; i++)
+                {
+                    <tr class="row d-flex justify-content-around">
+                        <td class="col-md-1 col d-flex justify-content-center">
+                            @(i + 1)
+                        </td>
+                        <td class="col-md-5 col d-flex justify-content-center">
+                            @products[i].ProductName
+                        </td>
+                        <td class="col-md-2 col d-flex justify-content-center">
+                            @products[i].Price lv.
+                        </td>
+                        <td class="col-md-2 col d-flex justify-content-center">
+                            @products[i].Quantity
+                        </td>
+                        <td class="col-md-2 col d-flex justify-content-center">
+                            @(products[i].Price * products[i].Quantity) lv.
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <hr />
+    <div><span class="font-weight-bold">Net Price:</span> @Model.NetPrice.ToString("F2") lv.</div>
+    <div><span class="font-weight-bold">VAT:</span> @Model.Vat.ToString("F2") lv.</div>
+    <div><span class="font-weight-bold">Total Price:</span> @Model.TotalAmount.ToString("F2") lv.</div>
+</div>

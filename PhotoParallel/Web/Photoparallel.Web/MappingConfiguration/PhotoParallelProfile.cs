@@ -9,6 +9,7 @@
     using Photoparallel.Web.Areas.Administration.ViewModels.Products;
     using Photoparallel.Web.ViewModels.CreditCards;
     using Photoparallel.Web.ViewModels.Home;
+    using Photoparallel.Web.ViewModels.Invoices;
     using Photoparallel.Web.ViewModels.Orders;
     using Photoparallel.Web.ViewModels.Products;
 
@@ -32,7 +33,8 @@
                  .ForMember(x => x.OrderStatus, y => y.MapFrom(src => src.OrderStatus.GetDisplayName()))
                  .ForMember(x => x.PaymentType, y => y.MapFrom(src => src.PaymentType.GetDisplayName()))
                  .ForMember(x => x.PaymentStatus, y => y.MapFrom(src => src.PaymentStatus.GetDisplayName()))
-                 .ForMember(x => x.Invoice, y => y.MapFrom(src => src.Invoice.InvoiceNumber));
+                 .ForMember(x => x.Invoice, y => y.MapFrom(src => src.Invoice.InvoiceNumber))
+                 .ForMember(x => x.InvoiceId, y => y.MapFrom(src => src.Invoice.Id));
 
             this.CreateMap<CreateProductsInputModel, Product>();
             this.CreateMap<Product, DetailsProductViewModel>()
@@ -52,6 +54,18 @@
                 .ForMember(x => x.PaymentType, y => y.MapFrom(src => src.PaymentType.GetDisplayName()));
 
             this.CreateMap<CreditCartInputModel, CreditCard>();
+
+            this.CreateMap<Order, DeleteOrderViewModel>()
+                .ForMember(x => x.OrderStatus, y => y.MapFrom(src => src.OrderStatus.GetDisplayName()));
+
+            this.CreateMap<OrderProduct, InvoiceOrderProductsViewModel>()
+               .ForMember(x => x.ProductName, y => y.MapFrom(src => src.Product.Name))
+               .ForMember(x => x.Price, y => y.MapFrom(src => src.Product.Price));
+
+            this.CreateMap<Invoice, InvoiceViewModel>()
+                .ForMember(x => x.OrderNumber, y => y.MapFrom(src => src.Order.Id.ToString()))
+                .ForMember(x => x.Recipient, y => y.MapFrom(src => src.Order.Recipient));
+
         }
     }
 }

@@ -46,5 +46,15 @@
             order.Invoice = invoice;
             await this.context.SaveChangesAsync();
         }
+
+        public async Task<Invoice> GetInvoiceByIdAsync(int id)
+        {
+            var invoice = await this.context.Invoices
+                .Include(x => x.Order)
+                .ThenInclude(x => x.Customer)
+                .SingleOrDefaultAsync(x => x.Id == id);
+
+            return invoice;
+        }
     }
 }

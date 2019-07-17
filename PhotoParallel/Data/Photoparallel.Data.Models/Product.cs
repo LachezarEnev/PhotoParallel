@@ -23,6 +23,8 @@
 
         public int Quantity { get; set; }
 
+        public int InPendingOrders { get; set; } = 0;
+
         public ProductType ProductType { get; set; }
 
         public decimal Price { get; set; }

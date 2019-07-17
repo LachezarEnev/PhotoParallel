@@ -52,6 +52,10 @@
                     }
                 </tbody>
             </table>
+            @if (orders.Count() == 0)
+            {
+                <h3 class="text-center text-danger">There are no Delivered Orders!</h3>
+            }
         </div>
     </div>
 </div>

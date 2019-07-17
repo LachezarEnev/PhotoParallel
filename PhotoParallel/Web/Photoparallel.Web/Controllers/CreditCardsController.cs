@@ -57,8 +57,6 @@
             }
 
             var creditCard = this.mapper.Map<CreditCard>(model);
-            creditCard.Orders.Add(order);
-            creditCard.Customer = user;
 
             var expirationDate = creditCard.ExpirationDate;
             int[] tokens = expirationDate.Split("/")
@@ -74,7 +72,7 @@
                 return this.View("InvalidCard");
             }
 
-            await this.creditCardsService.PayWithCardAsync(creditCard, this.User.Identity.Name);
+            await this.creditCardsService.PayWithCardAsync(creditCard, user, order);
 
             return this.RedirectToAction("Finish", "Orders");
         }

@@ -14,11 +14,15 @@
 
         Task<IEnumerable<Order>> GetPendingOrdersAsync();
 
+        Task<IEnumerable<Order>> GetWaitingOrdersAsync();
+
         Task<IEnumerable<Order>> GetApprovedOrdersAsync();
 
         Task<IEnumerable<Order>> GetShippedOrdersAsync();
 
         Task<IEnumerable<Order>> GetDeliveredOrdersAsync();
+
+        Task<IEnumerable<Order>> GetDeniedOrdersAsync();
 
         Task<Order> GetOrderByIdAsync(int orderId);
 
@@ -43,5 +47,7 @@
         Task ShipAsync(int id);
 
         Task DeliverAsync(int id);
+
+        Task DeleteOrderAsync(int id);
     }
 }

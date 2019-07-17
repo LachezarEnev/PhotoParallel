@@ -40,6 +40,15 @@
             return this.View(allPendingOrders);
         }
 
+        public async Task<IActionResult> Waiting()
+        {
+            var orders = await this.ordersService.GetWaitingOrdersAsync();
+
+            var waitingOrders = this.mapper.Map<IList<AllOrdersViewModel>>(orders);
+
+            return this.View(waitingOrders);
+        }
+
         public async Task<IActionResult> Approved()
         {
             var orders = await this.ordersService.GetApprovedOrdersAsync();
@@ -65,6 +74,15 @@
             var allDeliveredOrders = this.mapper.Map<IList<AllOrdersViewModel>>(orders);
 
             return this.View(allDeliveredOrders);
+        }
+
+        public async Task<IActionResult> Denied()
+        {
+            var orders = await this.ordersService.GetDeniedOrdersAsync();
+
+            var allDeniedOrders = this.mapper.Map<IList<AllOrdersViewModel>>(orders);
+
+            return this.View(allDeniedOrders);
         }
 
         public async Task<IActionResult> Details(int id)
@@ -115,6 +133,28 @@
             await this.ordersService.DeliverAsync(id);
 
             return this.RedirectToAction("Shipped");
+        }
+
+        public async Task<IActionResult> Delete(int id)
+        {
+            var order = await this.ordersService.GetOrderByIdAsync(id);
+
+            if (order == null)
+            {
+                return this.RedirectToAction("Pending");
+            }
+
+            var orderViewModel = this.mapper.Map<DeleteOrderViewModel>(order);
+
+            return this.View(orderViewModel);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            await this.ordersService.DeleteOrderAsync(id);
+
+            return this.RedirectToAction("Denied");
         }
     }
 }

@@ -392,6 +392,8 @@ namespace Photoparallel.Data.Migrations
 
                     b.Property<bool>("Hide");
 
+                    b.Property<int>("InPendingOrders");
+
                     b.Property<bool>("IsRented");
 
                     b.Property<string>("Name");

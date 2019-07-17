@@ -9,13 +9,32 @@
 <div class="container">
     <div class="col-md-6">
         <div class="h4 font-weight-bold text-center text-info">Order Details:</div>
-        <div class="card card-body bg-info">
+        <div class="card card-body bg-transparent">
             <div><span class="font-weight-bold">Order №:</span> @Model.Id</div>
             <div><span class="font-weight-bold">Created On:</span> @Model.CreatedOn</div>
             <div><span class="font-weight-bold">Order Status:</span> @Model.OrderStatus</div>
             <div><span class="font-weight-bold">Payment Status:</span> @Model.PaymentStatus</div>
-            <div><span class="font-weight-bold">Estimated Delivery Date:</span> @Model.EstimatedDeliveryDate</div>
-            <div><span class="font-weight-bold">Invoice №:</span> @Model.Invoice</div>
+            @if (Model.OrderStatus == "Delivered")
+            {
+                <div><span class="font-weight-bold">Delivered On:</span> @Model.EstimatedDeliveryDate</div>
+            }
+            else
+            {
+                <div><span class="font-weight-bold">Estimated Delivery Date:</span> @Model.EstimatedDeliveryDate</div>
+            }
+            @if (Model.Invoice != "N/A")
+            {
+                <div>
+                    <span class="font-weight-bold">Invoice №:</span>
+                    <a asp-area="Administration" asp-controller="Invoices" asp-action="Details" asp-route-id="@Model.InvoiceId">
+                        <u>@Model.Invoice</u>
+                    </a>
+                </div>
+            }
+            else
+            {
+                <div><span class="font-weight-bold">Invoice №:</span> @Model.Invoice</div>
+            }
             <div><span class="font-weight-bold">All Products:</span> @Model.TotalPrice lv.</div>
             <div><span class="font-weight-bold">Shipping:</span> @Model.Shipping lv.</div>
             <hr />
@@ -24,7 +43,7 @@
     </div>
     <div class="col-md-6">
         <div class="h4 font-weight-bold text-center text-info">Recipent Data:</div>
-        <div class="card card-body bg-info">
+        <div class="card card-body bg-transparent">
             <div><span class="font-weight-bold">Recipient:</span> @Model.Recipient</div>
             <hr />
             <div><span class="font-weight-bold">Phone Number:</span> @Model.RecipientPhoneNumber</div>
@@ -43,6 +62,14 @@
                     <a asp-area="Administration" asp-controller="Orders" asp-action="Approve" asp-route-id="@Model.Id" class="myButton-olive btn-sm"><i class="fas fa-check"></i> Approve</a>
 
                     <a asp-area="Administration" asp-controller="Orders" asp-action="Pending" class="myButton-blue btn-sm"><i class="fas fa-arrow-left"></i> Back</a>
+                </div>
+            }
+            else if (Model.OrderStatus == "Waiting Delivery")
+            {
+                <div class=" m-3 d-flex justify-content-between">
+                    <a asp-area="Administration" asp-controller="Orders" asp-action="Approve" asp-route-id="@Model.Id" class="myButton-olive btn-sm"><i class="fas fa-check"></i> Approve</a>
+
+                    <a asp-area="Administration" asp-controller="Orders" asp-action="Waiting" class="myButton-blue btn-sm"><i class="fas fa-arrow-left"></i> Back</a>
                 </div>
             }
             else if (Model.OrderStatus == "Approved")
@@ -65,6 +92,12 @@
             {
                 <div class=" m-3 d-flex justify-content-around">
                     <a asp-area="Administration" asp-controller="Orders" asp-action="Delivered" class="myButton-blue btn-sm"><i class="fas fa-arrow-left"></i> Back</a>
+                </div>
+            }
+            else if (Model.OrderStatus == "Denied")
+            {
+                <div class=" m-3 d-flex justify-content-around">
+                    <a asp-area="Administration" asp-controller="Orders" asp-action="Denied" class="myButton-blue btn-sm"><i class="fas fa-arrow-left"></i> Back</a>
                 </div>
             }
         </div>

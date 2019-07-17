@@ -13,6 +13,8 @@
   <ItemGroup>
     <Compile Remove="Migrations\20190629092304_ModelsUpdate.cs" />
     <Compile Remove="Migrations\20190629092304_ModelsUpdate.Designer.cs" />
+    <Compile Remove="Migrations\20190716213944_AddedInPendingOrdersPropertyNullable.cs" />
+    <Compile Remove="Migrations\20190716213944_AddedInPendingOrdersPropertyNullable.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

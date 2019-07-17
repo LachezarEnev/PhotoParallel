@@ -6,6 +6,6 @@
 
     public interface ICreditCardsService
     {
-        Task PayWithCardAsync(CreditCard card, string username);
+        Task PayWithCardAsync(CreditCard card, ApplicationUser user, Order order);
     }
 }

@@ -55,5 +55,7 @@
         [Display(Name = "Image")]
         [DataType(DataType.ImageUrl)]
         public ICollection<IFormFile> FormImages { get; set; }
+
+        public int InPendingOrders { get; set; }
     }
 }

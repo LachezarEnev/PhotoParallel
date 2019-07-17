@@ -27,6 +27,8 @@
 
         public string Invoice { get; set; }
 
+        public int InvoiceId { get; set; }
+
         public string PaymentType { get; set; }
 
         public string PaymentStatus { get; set; }

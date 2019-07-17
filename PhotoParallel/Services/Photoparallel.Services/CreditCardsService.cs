@@ -2,6 +2,7 @@
 {
     using System.Linq;
     using System.Threading.Tasks;
+
     using Microsoft.EntityFrameworkCore;
     using Photoparallel.Data;
     using Photoparallel.Data.Models;
@@ -16,10 +17,11 @@
             this.context = context;
         }
 
-        public async Task PayWithCardAsync(CreditCard card, string username)
+        public async Task PayWithCardAsync(CreditCard card, ApplicationUser user, Order order)
         {
             var creditCards = await this.context.CreditCards
-                .Where(x => x.Customer.UserName == username)
+                .Include(x => x.Orders)
+                .Where(x => x.Customer.UserName == user.UserName)
                 .ToListAsync();
 
             if (creditCards.Count() != 0)
@@ -28,12 +30,17 @@
                 {
                     if (creditCard.Number == card.Number)
                     {
-                        this.context.Update(card);
+                        creditCard.Orders.Add(order);
+                        this.context.Update(creditCard);
                         await this.context.SaveChangesAsync();
-                        return;
                     }
                 }
+
+                return;
             }
+
+            card.Orders.Add(order);
+            card.Customer = user;
 
             this.context.Add(card);
             await this.context.SaveChangesAsync();

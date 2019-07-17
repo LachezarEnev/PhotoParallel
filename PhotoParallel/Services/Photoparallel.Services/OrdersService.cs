@@ -127,6 +127,16 @@
             return pendingOrders;
         }
 
+        public async Task<IEnumerable<Order>> GetWaitingOrdersAsync()
+        {
+            var waitingOrders = await this.context.Orders
+                .Where(x => x.OrderStatus == OrderStatus.Waiting)
+                .OrderBy(x => x.EstimatedDeliveryDate)
+                .ToArrayAsync();
+
+            return waitingOrders;
+        }
+
         public async Task<IEnumerable<Order>> GetApprovedOrdersAsync()
         {
             var approvedOrders = await this.context.Orders
@@ -151,7 +161,17 @@
         {
             var deliveredOrders = await this.context.Orders
                .Where(x => x.OrderStatus == OrderStatus.Delivered)
-               .OrderBy(x => x.EstimatedDeliveryDate)
+               .OrderByDescending(x => x.EstimatedDeliveryDate)
+               .ToArrayAsync();
+
+            return deliveredOrders;
+        }
+
+        public async Task<IEnumerable<Order>> GetDeniedOrdersAsync()
+        {
+            var deliveredOrders = await this.context.Orders
+               .Where(x => x.OrderStatus == OrderStatus.Denied)
+               .OrderByDescending(x => x.CreatedOn)
                .ToArrayAsync();
 
             return deliveredOrders;
@@ -284,42 +304,46 @@
         {
             var order = await this.context.Orders
                 .Include(x => x.Products)
-                .SingleOrDefaultAsync(x => x.Id == id && x.OrderStatus == OrderStatus.Pending);
+                .SingleOrDefaultAsync(x => x.Id == id && (x.OrderStatus == OrderStatus.Pending || x.OrderStatus == OrderStatus.Waiting));
 
             if (order == null)
             {
                 return;
             }
 
-            bool isOutOfStock = false;
+            bool isOutOfStock = await this.CheckIfItsOutOfStock(order);
+
+            if (isOutOfStock)
+            {
+                if (order.OrderStatus == OrderStatus.Waiting)
+                {
+                    return;
+                }
+
+                order.EstimatedDeliveryDate = DateTime.UtcNow.AddHours(GlobalConstants.BulgarianHoursFromUtcNow).AddDays(7);
+                order.OrderStatus = OrderStatus.Waiting;
+                this.context.Update(order);
+                await this.context.SaveChangesAsync();
+
+                return;
+            }
 
             foreach (var orderProduct in order.Products)
             {
                 var product = await this.context.Products
                     .FirstOrDefaultAsync(x => x.Id == orderProduct.ProductId);
 
+                product.InPendingOrders -= orderProduct.Quantity;
                 product.Quantity -= orderProduct.Quantity;
-
-                if (product.Quantity < 0)
-                {
-                    isOutOfStock = true;
-                }
             }
 
-            if (isOutOfStock)
+            if (DateTime.Now.DayOfWeek == DayOfWeek.Friday)
             {
-                order.EstimatedDeliveryDate = DateTime.UtcNow.AddHours(GlobalConstants.BulgarianHoursFromUtcNow).AddDays(7);
+                order.EstimatedDeliveryDate = DateTime.UtcNow.AddHours(GlobalConstants.BulgarianHoursFromUtcNow).AddDays(3);
             }
             else
             {
-                if (DateTime.Now.DayOfWeek == DayOfWeek.Friday)
-                {
-                    order.EstimatedDeliveryDate = DateTime.UtcNow.AddHours(GlobalConstants.BulgarianHoursFromUtcNow).AddDays(3);
-                }
-                else
-                {
-                    order.EstimatedDeliveryDate = DateTime.UtcNow.AddHours(GlobalConstants.BulgarianHoursFromUtcNow).AddDays(2);
-                }
+                order.EstimatedDeliveryDate = DateTime.UtcNow.AddHours(GlobalConstants.BulgarianHoursFromUtcNow).AddDays(2);
             }
 
             order.OrderStatus = OrderStatus.Approved;
@@ -371,6 +395,50 @@
 
             this.context.Update(order);
             await this.context.SaveChangesAsync();
+        }
+
+        public async Task DeleteOrderAsync(int id)
+        {
+            var order = await this.context.Orders
+                .Where(x => x.Id == id)
+                .FirstOrDefaultAsync();
+
+            if (order == null)
+            {
+                return;
+            }
+
+            order.OrderStatus = OrderStatus.Denied;
+            this.context.Update(order);
+            await this.context.SaveChangesAsync();
+        }
+
+        private async Task<bool> CheckIfItsOutOfStock(Order order)
+        {
+            bool isOutOfStock = false;
+
+            foreach (var orderProduct in order.Products)
+            {
+                var product = await this.context.Products
+                    .FirstOrDefaultAsync(x => x.Id == orderProduct.ProductId);
+
+                if (order.OrderStatus != OrderStatus.Waiting)
+                {
+                    product.InPendingOrders += orderProduct.Quantity;
+                }
+
+                if (product.Quantity - orderProduct.Quantity < 0)
+                {
+                    isOutOfStock = true;
+                }
+            }
+
+            if (isOutOfStock)
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 }
