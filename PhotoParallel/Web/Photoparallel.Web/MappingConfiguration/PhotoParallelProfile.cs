@@ -64,7 +64,8 @@
 
             this.CreateMap<Invoice, InvoiceViewModel>()
                 .ForMember(x => x.OrderNumber, y => y.MapFrom(src => src.Order.Id.ToString()))
-                .ForMember(x => x.Recipient, y => y.MapFrom(src => src.Order.Recipient));
+                .ForMember(x => x.Recipient, y => y.MapFrom(src => src.Order.Recipient))
+                .ForMember(x => x.Shipping, y => y.MapFrom(src => src.Order.Shipping));
 
         }
     }

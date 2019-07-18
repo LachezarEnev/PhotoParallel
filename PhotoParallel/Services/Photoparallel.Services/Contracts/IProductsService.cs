@@ -33,5 +33,7 @@
         Task<IEnumerable<Product>> GetProductsBySearchAsync(string searchString);
 
         IEnumerable<Product> OrderBy(IEnumerable<Product> products, ProductsSort sortBy);
+
+        Task AddQuantityAsync(int id, int quantity);
     }
 }

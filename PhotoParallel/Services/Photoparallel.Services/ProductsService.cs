@@ -202,6 +202,21 @@
             }
         }
 
+        public async Task AddQuantityAsync(int id, int quantity)
+        {
+            var product = await this.context.Products
+                .SingleOrDefaultAsync(x => x.Id == id);
+
+            if (product == null)
+            {
+                return;
+            }
+
+            product.Quantity += quantity;
+            this.context.Update(product);
+            await this.context.SaveChangesAsync();
+        }
+
         private bool ProductExists(int id)
         {
             return this.context.Products.Any(e => e.Id == id);

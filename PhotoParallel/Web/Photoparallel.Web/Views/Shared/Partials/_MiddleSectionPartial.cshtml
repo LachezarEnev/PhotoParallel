@@ -1,7 +1,7 @@
 ﻿<div class="container">
     <div class="d-flex justify-content-around">
         <div class="d-flex flex-column w-50">
-            <input class="search-box mx-auto" id="Search" type="text" name="Search" placeholder="Search...">
+            <input type="text" class="search-box mx-auto" id="products-search-bar" name="Search" placeholder="Search...">
             <div class="mb-0 mobile-fondsize-11 d-flex justify-content-around text-muted font-italic fond-bold">
                 <div>
                     <i class="fas fa-phone"></i><strong> +359 888 88 88 88</strong>
@@ -13,3 +13,19 @@
         </div>
     </div>
 </div>
+
+<script>
+    $('#products-search-bar').on("change paste keyup", function () {
+        $('.card').show();
+
+        let searchValue = $('#products-search-bar').val();
+
+        for (let elem of $('.card')) {
+            let productName = $($(elem).children()[1]).text();
+
+            if (!productName.toLowerCase().includes(searchValue.toLowerCase())) {
+                $(elem).hide();
+            }
+        }
+    });
+</script>

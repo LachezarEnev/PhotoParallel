@@ -21,6 +21,8 @@
 
         public decimal Vat { get; set; }
 
+        public decimal Shipping { get; set; }
+
         public string ShippingAddress { get; set; }
 
         public IList<InvoiceOrderProductsViewModel> InvoiceProducts { get; set; }

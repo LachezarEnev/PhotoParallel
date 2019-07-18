@@ -4,40 +4,40 @@
     ViewData["Title"] = "Details";
 }
 <div class="container-fluid bg-light">
-    <div class="col-md-4">
-        <div class="card bg-transparent p-1 m-2">
+    <div class="row m-4">
+        <div class="col-md-4 center-block">
+            <div class="card bg-transparent p-1 m-2">
+                <h3 class="text-center">INVOICE</h3>
+                <div class="text-center"><span class="font-weight-bold">Invoice № </span>@Model.InvoiceNumber</div>
+                <div class="text-center"><span class="font-weight-bold">Date of issue: </span>@Model.IssuedOn.ToString("dd/MM/yyyy")</div>
+                <div class="text-center"><span class="font-weight-bold">Order № </span>@Model.OrderNumber</div>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex justify-content-between">
+        <div class="col-md-4">
             <div><span class="font-weight-bold">From:</span></div>
             <div><span class="font-weight-bold">PhotoParallel EOOD</span></div>
             <div><span class="font-weight-bold">Vat reg. № </span>BG898989898</div>
             <div><span class="font-weight-bold">Address: </span>Sofia 1766</div>
             <div>Mladost 4, Business Park Sofia 1, building 1A</div>
         </div>
-    </div>
-    <div class="col-md-4">
-        <div class="card bg-transparent p-1 m-2">
-            <h3 class="text-center">INVOICE</h3>
-            <h5 class="text-center">original</h5>
-            <div class="text-center">@Model.InvoiceNumber</div>
-            <div class="text-center">@Model.IssuedOn.ToString("dd/MM/yyyy")</div>
-            <div class="text-center">Order № @Model.OrderNumber</div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="card bg-transparent p-1 m-2">
+        <div class="col-md-4">
             <div><span class="font-weight-bold">To:</span></div>
             <div>@Model.Recipient</div>
             <div><span class="font-weight-bold">Address: </span>@Model.ShippingAddress</div>
         </div>
     </div>
+    <div class="container-fluid m-5"></div>
     <div class="m-5">
         <table class="table">
             <thead>
-                <tr class="row d-flex justify-content-around">
+                <tr class="d-flex justify-content-around">
                     <th scope="col" class="col-md-1 col d-flex justify-content-center">№</th>
                     <th scope="col" class="col-md-5 col d-flex justify-content-center">Name</th>
                     <th scope="col" class="col-md-2 col d-flex justify-content-center">Price</th>
                     <th scope="col" class="col-md-2 col d-flex justify-content-center">Quantity</th>
-                    <th scope="col" class="col-md-2 col d-flex justify-content-center">Total Price</th>
+                    <th scope="col" class="col-md-2 col d-flex justify-content-center">Amount</th>
                 </tr>
             </thead>
             <tbody>
@@ -46,7 +46,7 @@
                 }
                 @for (int i = 0; i < products.Length; i++)
                 {
-                    <tr class="row d-flex justify-content-around">
+                    <tr class="d-flex justify-content-around">
                         <td class="col-md-1 col d-flex justify-content-center">
                             @(i + 1)
                         </td>
@@ -64,11 +64,32 @@
                         </td>
                     </tr>
                 }
+                @if (Model.Shipping > 0)
+                {
+                    <tr class="d-flex justify-content-around">
+                        <td class="col-md-1 col d-flex justify-content-center">
+                            @(products.Count() + 1)
+                        </td>
+                        <td class="col-md-5 col d-flex justify-content-center">
+                            Shipping
+                        </td>
+                        <td class="col-md-4 col d-flex justify-content-center"></td>
+                        <td class="col-md-2 col d-flex justify-content-center">
+                            @Model.Shipping lv.
+                        </td>
+                    </tr>
+                }
             </tbody>
         </table>
     </div>
-    <hr />
-    <div><span class="font-weight-bold">Net Price:</span> @Model.NetPrice.ToString("F2") lv.</div>
-    <div><span class="font-weight-bold">VAT:</span> @Model.Vat.ToString("F2") lv.</div>
-    <div><span class="font-weight-bold">Total Price:</span> @Model.TotalAmount.ToString("F2") lv.</div>
+    <div class="row p-3">
+        <div class="col-md-10">
+        </div>
+        <div class="col-md-2">
+            <div><span class="font-weight-bold">Net Price:</span> @Model.NetPrice.ToString("F2") lv.</div>
+            <div><span class="font-weight-bold">VAT :</span> @Model.Vat.ToString("F2") lv.</div>
+            <div><span class="font-weight-bold">Total Price:</span> @Model.TotalAmount.ToString("F2") lv.</div>
+        </div>
+    </div>
+    <h6 class="text-center p-2 m-3">Thank you for your business!</h6>
 </div>

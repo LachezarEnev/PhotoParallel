@@ -168,5 +168,27 @@
 
             return this.View(pageProductsViewMode);
         }
+
+        public async Task<IActionResult> Supply(int id)
+        {
+            var product = await this.productsService.GetProductByIdAsync(id);
+
+            if (product == null)
+            {
+                return this.RedirectToAction("All");
+            }
+
+            var productViewModel = new ProductsSupplyInputModel() { Name = product.Name, Id = product.Id };
+
+            return this.View(productViewModel);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Supply(ProductsSupplyInputModel model)
+        {
+            await this.productsService.AddQuantityAsync(model.Id, model.Quantity);
+
+            return this.RedirectToAction("All");
+        }
     }
 }

@@ -1,0 +1,34 @@
+﻿@model Photoparallel.Web.Areas.Administration.ViewModels.Products.ProductsSupplyInputModel
+
+@{
+    ViewData["Title"] = "Supply";
+}
+
+<h3 class="mobile-fondsize-20 text-center text-info">@ViewData["Title"]</h3>
+<hr class="w-50" />
+<div class="row d-flex justify-content-around">
+    <div class="col-md-4">
+        <form asp-action="Supply">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <div class="d-flex justify-content-center">
+                    <label asp-for="Name" class="control-label"></label>
+                </div>
+                <input asp-for="Name" class="form-control" disabled />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="d-flex justify-content-center">
+                    <label asp-for="Quantity" class="control-label"></label>
+                </div>
+                <input asp-for="Quantity" class="form-control" />
+                <span asp-validation-for="Quantity" class="text-danger"></span>
+            </div>
+            <div class="form-group text-center">
+                <button type="submit" class="btn myButton-olive"><i class="fas fa-save"></i> Save</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
