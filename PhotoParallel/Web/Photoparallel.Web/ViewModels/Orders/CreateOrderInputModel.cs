@@ -1,11 +1,8 @@
 ﻿namespace Photoparallel.Web.ViewModels.Orders
 {
-    using System;
-    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
     using Photoparallel.Common;
-    using Photoparallel.Data.Models;
     using Photoparallel.Data.Models.Enums;
 
     public class CreateOrderInputModel

@@ -154,7 +154,7 @@
         {
             var searchStringClean = searchString.Split(new string[] { ",", ".", " " }, StringSplitOptions.RemoveEmptyEntries);
 
-            List<Product> products = await this.context.Products
+            var products = await this.context.Products
                 .Include(x => x.Images)
                 .Where(x => x.Hide == false && x.ProductStatus == ProductStatus.Sale && searchStringClean.All(c => x.Name.ToLower().Contains(c.ToLower())))
                 .ToListAsync();
@@ -172,11 +172,28 @@
             return products;
         }
 
-        public async Task<IEnumerable<Product>> GetProductsFilterAsync(string searchString)
+        public async Task<IEnumerable<Product>> GetVisibleProductsByTypeAsync(string productType)
+        {
+            var type = Enum.TryParse<ProductType>(productType, out ProductType searchedType);
+
+            var products = await this.context.Products
+               .Include(x => x.Images)
+               .Where(x => x.Hide == false && x.ProductStatus == ProductStatus.Sale && x.ProductType == searchedType)
+               .ToListAsync();
+
+            return products;
+        }
+
+        public async Task<IEnumerable<Product>> GetProductsFilterAsync(string searchString, string productType)
         {
             if (searchString != null)
             {
                 return await this.GetProductsBySearchAsync(searchString);
+            }
+
+            if (productType != null)
+            {
+                return await this.GetVisibleProductsByTypeAsync(productType);
             }
 
             return await this.GetVisibleProductsAsync();
@@ -215,6 +232,16 @@
             product.Quantity += quantity;
             this.context.Update(product);
             await this.context.SaveChangesAsync();
+        }
+
+        public async Task<IEnumerable<Product>> GetRentProductsAsync()
+        {
+            var products = await this.context.Products
+                .Include(x => x.Images)
+                .Where(x => x.Hide == false && x.ProductStatus == ProductStatus.Rent && x.Quantity > 0)
+                .ToListAsync();
+
+            return products;
         }
 
         private bool ProductExists(int id)

@@ -23,8 +23,13 @@ using Photoparallel.Web.ViewModels;
 
 #line default
 #line hidden
+#line 3 "D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web\Areas\Administration\Views\_ViewImports.cshtml"
+using Photoparallel.Data.Models.Enums;
+
+#line default
+#line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"bbe4032cb7c26550db8753a56bccce04ad962977", @"/Areas/Administration/Views/Dashboard/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"404b50d9b0df29c3e8e273e67c949f8cb0376d4c", @"/Areas/Administration/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"535ab78a90d3d3ac0a28955bed18cb5d765d403d", @"/Areas/Administration/Views/_ViewImports.cshtml")]
     public class Areas_Administration_Views_Dashboard_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Photoparallel.Web.Areas.Administration.ViewModels.Dashboard.IndexViewModel>
     {
         #pragma warning disable 1998

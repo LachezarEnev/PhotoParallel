@@ -8,23 +8,23 @@
         <div class="col-md-4 center-block">
             <div class="card bg-transparent p-1 m-2">
                 <h3 class="text-center">INVOICE</h3>
-                <div class="text-center"><span class="font-weight-bold">Invoice № </span>@Model.InvoiceNumber</div>
-                <div class="text-center"><span class="font-weight-bold">Date of issue: </span>@Model.IssuedOn.ToString("dd/MM/yyyy")</div>
+                <div class="text-center"><span class="font-weight-bold">№ </span>@Model.InvoiceNumber</div>
+                <div class="text-center"><span class="font-weight-bold">Date: </span>@Model.IssuedOn.ToString("dd/MM/yyyy")</div>
                 <div class="text-center"><span class="font-weight-bold">Order № </span>@Model.OrderNumber</div>
             </div>
         </div>
     </div>
     <div class="d-flex justify-content-between">
         <div class="col-md-4">
-            <div><span class="font-weight-bold">From:</span></div>
+            <div class="font-weight-bold">From:</div>
             <div><span class="font-weight-bold">PhotoParallel EOOD</span></div>
             <div><span class="font-weight-bold">Vat reg. № </span>BG898989898</div>
             <div><span class="font-weight-bold">Address: </span>Sofia 1766</div>
             <div>Mladost 4, Business Park Sofia 1, building 1A</div>
         </div>
         <div class="col-md-4">
-            <div><span class="font-weight-bold">To:</span></div>
-            <div>@Model.Recipient</div>
+            <div class="font-weight-bold">To:</div>
+            <div class="font-weight-bold">@Model.Recipient</div>
             <div><span class="font-weight-bold">Address: </span>@Model.ShippingAddress</div>
         </div>
     </div>

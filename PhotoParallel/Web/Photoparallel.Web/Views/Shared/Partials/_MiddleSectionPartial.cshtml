@@ -1,31 +1,18 @@
-﻿<div class="container">
-    <div class="d-flex justify-content-around">
-        <div class="d-flex flex-column w-50">
-            <input type="text" class="search-box mx-auto" id="products-search-bar" name="Search" placeholder="Search...">
-            <div class="mb-0 mobile-fondsize-11 d-flex justify-content-around text-muted font-italic fond-bold">
-                <div>
-                    <i class="fas fa-phone"></i><strong> +359 888 88 88 88</strong>
-                </div>
-                <div>
-                    <i class="fas fa-envelope"></i><strong> photoparallel@gmail.com</strong>
-                </div>
-            </div>
+﻿<div class="container col-md-12 col-sm-12">
+    <div class="d-flex justify-content-between">
+        <div class="col-md-3 text-info font-italic fond-bold text-center" style="margin-top: 15px;">
+            <i class="fas fa-phone"></i><strong> +359 888 88 88 88</strong>
         </div>
-    </div>
+        <div class="col-md-6 center-block p-2">
+            <form method="post" asp-area="" asp-controller="Home" asp-action="Index">
+                <div class="input-group">
+                    <input type="text" class="search-box mx-auto" id="Search" name="SearchString" placeholder="Search...">
+                </div>
+            </form>
+        </div>
+        <div class="col-md-3 text-info font-italic fond-bold text-center" style="margin-top: 15px;">
+            <i class="fas fa-envelope"></i><strong> photoparallel@gmail.com</strong>
+        </div>       
+    </div>   
 </div>
 
-<script>
-    $('#products-search-bar').on("change paste keyup", function () {
-        $('.card').show();
-
-        let searchValue = $('#products-search-bar').val();
-
-        for (let elem of $('.card')) {
-            let productName = $($(elem).children()[1]).text();
-
-            if (!productName.toLowerCase().includes(searchValue.toLowerCase())) {
-                $(elem).hide();
-            }
-        }
-    });
-</script>

@@ -28,9 +28,11 @@
 
         Task<IEnumerable<Product>> GetOosProductsAsync();
 
-        Task<IEnumerable<Product>> GetProductsFilterAsync(string searchString);
+        Task<IEnumerable<Product>> GetProductsFilterAsync(string searchString, string productType);
 
         Task<IEnumerable<Product>> GetProductsBySearchAsync(string searchString);
+
+        Task<IEnumerable<Product>> GetRentProductsAsync();
 
         IEnumerable<Product> OrderBy(IEnumerable<Product> products, ProductsSort sortBy);
 

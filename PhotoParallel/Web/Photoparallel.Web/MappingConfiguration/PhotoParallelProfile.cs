@@ -34,7 +34,8 @@
                  .ForMember(x => x.PaymentType, y => y.MapFrom(src => src.PaymentType.GetDisplayName()))
                  .ForMember(x => x.PaymentStatus, y => y.MapFrom(src => src.PaymentStatus.GetDisplayName()))
                  .ForMember(x => x.Invoice, y => y.MapFrom(src => src.Invoice.InvoiceNumber))
-                 .ForMember(x => x.InvoiceId, y => y.MapFrom(src => src.Invoice.Id));
+                 .ForMember(x => x.InvoiceId, y => y.MapFrom(src => src.Invoice.Id))
+                 .ForMember(x => x.Email, y => y.MapFrom(src => src.Customer.Email));
 
             this.CreateMap<CreateProductsInputModel, Product>();
             this.CreateMap<Product, DetailsProductViewModel>()

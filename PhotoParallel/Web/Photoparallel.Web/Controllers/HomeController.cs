@@ -14,7 +14,6 @@
     {
         private const int DefaultPageNumber = 1;
         private const int DefaultPageSize = 8;
-        private const string NoResultsFound = "No products found!";
 
         private readonly IProductsService productsService;
         private readonly IMapper mapper;
@@ -27,7 +26,7 @@
 
         public async Task<IActionResult> Index(IndexViewModel model)
         {
-            var products = await this.productsService.GetProductsFilterAsync(model.SearchString);
+            var products = await this.productsService.GetProductsFilterAsync(model.SearchString, model.ProductType);
             products = this.productsService.OrderBy(products, model.SortBy).ToList();
 
             var productsViewModel = this.mapper.Map<IList<IndexProductViewModel>>(products);
@@ -39,6 +38,55 @@
             model.ProductsViewModel = pageProductsViewMode;
 
             return this.View(model);
+        }
+
+        public IActionResult Camera(IndexViewModel model)
+        {
+            model.ProductType = "Camera";
+
+            return this.RedirectToAction("Index", model);
+        }
+
+        public IActionResult Lens(IndexViewModel model)
+        {
+            model.ProductType = "Lens";
+
+            return this.RedirectToAction("Index", model);
+        }
+
+        public IActionResult Bag(IndexViewModel model)
+        {
+            model.ProductType = "Bag";
+
+            return this.RedirectToAction("Index", model);
+        }
+
+        public IActionResult Drone(IndexViewModel model)
+        {
+            model.ProductType = "Drone";
+
+            return this.RedirectToAction("Index", model);
+        }
+
+        public IActionResult Microphone(IndexViewModel model)
+        {
+            model.ProductType = "Microphone";
+
+            return this.RedirectToAction("Index", model);
+        }
+
+        public IActionResult Stand(IndexViewModel model)
+        {
+            model.ProductType = "Stand";
+
+            return this.RedirectToAction("Index", model);
+        }
+
+        public IActionResult Accessory(IndexViewModel model)
+        {
+            model.ProductType = "Accessory";
+
+            return this.RedirectToAction("Index", model);
         }
 
         public IActionResult Privacy()

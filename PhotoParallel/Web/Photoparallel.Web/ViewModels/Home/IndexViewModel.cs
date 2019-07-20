@@ -14,5 +14,7 @@
         public int? PageSize { get; set; }
 
         public ProductsSort SortBy { get; set; }
+
+        public string ProductType { get; set; }
     }
 }

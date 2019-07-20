@@ -9,5 +9,6 @@
         Microphone = 5,
         Stand = 6,
         Accessory = 7,
+        All = 8,
     }
 }

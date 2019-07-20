@@ -8,7 +8,7 @@
     using Photoparallel.Services.Contracts;
     using Photoparallel.Web.ViewModels.Products;
 
-    public class ProductsController : Controller
+    public class ProductsController : BaseController
     {
         private readonly IProductsService productsService;
         private readonly IMapper mapper;

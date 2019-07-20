@@ -9,7 +9,7 @@
 <div class="container">
     <div class="col-md-6">
         <div class="h4 font-weight-bold text-center text-info">Order Details:</div>
-        <div class="card card-body bg-transparent">
+        <div class="card card-body bg-transparent shadow">
             <div><span class="font-weight-bold">Order №:</span> @Model.Id</div>
             <div><span class="font-weight-bold">Created On:</span> @Model.CreatedOn</div>
             <div><span class="font-weight-bold">Order Status:</span> @Model.OrderStatus</div>
@@ -43,10 +43,11 @@
     </div>
     <div class="col-md-6">
         <div class="h4 font-weight-bold text-center text-info">Recipent Data:</div>
-        <div class="card card-body bg-transparent">
+        <div class="card card-body bg-transparent shadow">
             <div><span class="font-weight-bold">Recipient:</span> @Model.Recipient</div>
             <hr />
             <div><span class="font-weight-bold">Phone Number:</span> @Model.RecipientPhoneNumber</div>
+            <div><span class="font-weight-bold">Email:</span> @Model.Email</div>
             <hr />
             <div><span class="font-weight-bold">Address:</span> @Model.ShippingAddress</div>
         </div>
