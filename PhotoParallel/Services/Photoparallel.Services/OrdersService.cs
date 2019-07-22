@@ -97,6 +97,7 @@
                 openOrder = new Order
                 {
                     Customer = user,
+                    OrderStatus = OrderStatus.Open,
                 };
 
                 await this.context.Orders.AddAsync(openOrder);
@@ -190,14 +191,14 @@
 
         public async Task<bool> DeleteProductAsync(int productId, Order order)
         {
-            var openOrder = await this.context.OrderProducts.FirstOrDefaultAsync(x => x.ProductId == productId && x.OrderId == order.Id);
+            var orderProduct = await this.context.OrderProducts.FirstOrDefaultAsync(x => x.ProductId == productId && x.OrderId == order.Id);
 
-            if (openOrder == null)
+            if (orderProduct == null)
             {
                 return false;
             }
 
-            this.context.Remove(openOrder);
+            this.context.Remove(orderProduct);
             await this.context.SaveChangesAsync();
 
             order.TotalPrice = order.Products.Sum(x => x.Product.Price * x.Quantity);

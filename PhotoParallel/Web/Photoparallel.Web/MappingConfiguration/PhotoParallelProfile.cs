@@ -12,6 +12,7 @@
     using Photoparallel.Web.ViewModels.Invoices;
     using Photoparallel.Web.ViewModels.Orders;
     using Photoparallel.Web.ViewModels.Products;
+    using Photoparallel.Web.ViewModels.Rents;
 
     public class PhotoParallelProfile : Profile
     {
@@ -51,6 +52,9 @@
             this.CreateMap<Product, OpenOrdersProductsViewModel>()
                 .ForMember(x => x.ImageUrl, y => y.MapFrom(src => src.Images.FirstOrDefault().ImageUrl));
 
+            this.CreateMap<Product, OpenRentsProductsViewModel>()
+                .ForMember(x => x.ImageUrl, y => y.MapFrom(src => src.Images.FirstOrDefault().ImageUrl));
+
             this.CreateMap<Order, ConfirmOrderViewModel>()
                 .ForMember(x => x.PaymentType, y => y.MapFrom(src => src.PaymentType.GetDisplayName()));
 
@@ -67,6 +71,8 @@
                 .ForMember(x => x.OrderNumber, y => y.MapFrom(src => src.Order.Id.ToString()))
                 .ForMember(x => x.Recipient, y => y.MapFrom(src => src.Order.Recipient))
                 .ForMember(x => x.Shipping, y => y.MapFrom(src => src.Order.Shipping));
+
+            this.CreateMap<RentProductInputModel, Rent>();
 
         }
     }

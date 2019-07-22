@@ -4,14 +4,13 @@
 
     public enum OrderStatus
     {
-        Open = 0,
-        Pending = 1,
-        Approved = 2,
-        Shipped = 3,
-        Delivered = 4,
-        Denied = 5,
-
+        Open = 1,
+        Pending = 2,
         [Display(Name = "Waiting Delivery")]
-        Waiting = 6,
+        Waiting = 3,
+        Approved = 4,
+        Shipped = 5,
+        Delivered = 6,
+        Denied = 7,
     }
 }

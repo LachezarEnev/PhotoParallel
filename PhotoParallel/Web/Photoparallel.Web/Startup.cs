@@ -117,6 +117,7 @@
             services.AddScoped<IUsersService, UsersService>();
             services.AddScoped<ICreditCardsService, CreditCardsService>();
             services.AddScoped<IInvoicesService, InvoicesService>();
+            services.AddScoped<IRentsService, RentsService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

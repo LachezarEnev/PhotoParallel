@@ -1,9 +1,8 @@
 ﻿namespace Photoparallel.Web.Areas.Administration.Controllers
 {
+    using Microsoft.AspNetCore.Mvc;
     using Photoparallel.Services.Data;
     using Photoparallel.Web.Areas.Administration.ViewModels.Dashboard;
-
-    using Microsoft.AspNetCore.Mvc;
 
     public class DashboardController : AdministrationController
     {

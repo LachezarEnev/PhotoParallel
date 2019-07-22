@@ -1,0 +1,35 @@
+﻿@model Photoparallel.Web.ViewModels.Rents.OpenRentViewModel
+
+@{
+    ViewData["Title"] = "Default";
+}
+<table class="table">
+    <thead>
+        <tr class="row">
+            <th scope="col" class="col-2 d-flex justify-content-center">Product</th>
+            <th scope="col" class="col-6 d-flex justify-content-center"></th>
+            <th scope="col" class="col-2 d-flex justify-content-center">Price per day</th>
+            <th scope="col" class="col-2 d-flex justify-content-center">Quantity</th>        
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model.Products)
+        {
+            <tr class="row">
+                <td class="col-2 d-flex justify-content-center">
+                    <a asp-area="" asp-controller="Products" asp-action="Details" asp-route-id="@product.Id">
+                        <img src="@product.ImageUrl" width="50" height="50">
+                    </a>
+                </td>
+                <td class="col-6 d-flex justify-content-center">
+                    <a asp-area="" asp-controller="Products" asp-action="Details" asp-route-id="@product.Id">
+                        @product.Name
+                    </a>
+                </td>
+                <td class="col-2 d-flex justify-content-center">@product.PricePerDay</td>
+                <td class="col-2 d-flex justify-content-center">@product.RentQuantity</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

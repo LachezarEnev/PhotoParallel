@@ -43,5 +43,7 @@
         public decimal ShippingCosts { get; set; } = GlobalConstants.ShippingCosts;
 
         public decimal TotalPrice { get; set; }
+
+        public decimal Guarantee { get; set; }
     }
 }

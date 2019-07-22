@@ -423,15 +423,29 @@ namespace Photoparallel.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("Comment");
+
                     b.Property<string>("CreditCardId");
 
                     b.Property<string>("CustomerId");
 
                     b.Property<int?>("InvoiceId");
 
-                    b.Property<DateTime>("RentedOn");
+                    b.Property<decimal>("Penalty");
 
-                    b.Property<DateTime?>("ReturnedOn");
+                    b.Property<string>("Recipient");
+
+                    b.Property<string>("RecipientPhoneNumber");
+
+                    b.Property<DateTime>("RentDate");
+
+                    b.Property<int>("RentStatus");
+
+                    b.Property<DateTime>("ReturnDate");
+
+                    b.Property<int>("ReturnedOnTime");
+
+                    b.Property<decimal>("Shipping");
 
                     b.Property<string>("ShippingAddress");
 

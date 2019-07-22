@@ -5,6 +5,7 @@
     using System.Linq;
 
     using Photoparallel.Common;
+    using Photoparallel.Data.Models.Enums;
 
     public class Rent
     {
@@ -19,11 +20,21 @@
 
         public ApplicationUser Customer { get; set; }
 
-        public DateTime RentedOn { get; set; } = DateTime.UtcNow.AddHours(GlobalConstants.BulgarianHoursFromUtcNow);
+        public string Recipient { get; set; }
 
-        public DateTime? ReturnedOn { get; set; }
+        public string RecipientPhoneNumber { get; set; }
+
+        public RentStatus RentStatus { get; set; }
+
+        public DateTime RentDate { get; set; }
+
+        public DateTime ReturnDate { get; set; }
+
+        public ReturnedOnTime ReturnedOnTime { get; set; }
 
         public decimal TotalPrice { get; set; }
+
+        public string Comment { get; set; }
 
         public string ShippingAddress { get; set; }
 
@@ -35,8 +46,12 @@
 
         public Invoice Invoice { get; set; }
 
+        public decimal Shipping { get; set; } = 0;
+
         public ICollection<RentProduct> Products { get; set; }
 
-        public decimal Guarantee => this.Products.Sum(x => (x.Product.Price * x.Quantity) * 0.50m);
+        public decimal Penalty { get; set; } = 0;
+
+        public decimal Guarantee => this.Products.Sum(x => Math.Round(x.Product.Price * GlobalConstants.GuaranteePercent));
     }
 }

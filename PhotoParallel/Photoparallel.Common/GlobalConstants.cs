@@ -15,5 +15,7 @@
         public const int ShippingCosts = 5;
 
         public const string ErrorMessageInvalidOrderNumber = "Invalid order number. Please try again!";
+
+        public const decimal GuaranteePercent = 0.30m;
     }
 }
