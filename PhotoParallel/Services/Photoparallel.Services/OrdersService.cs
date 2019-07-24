@@ -103,6 +103,16 @@
                 await this.context.Orders.AddAsync(openOrder);
                 await this.context.SaveChangesAsync();
             }
+            else
+            {
+                var totalPrice = openOrder.Products.Sum(x => x.Product.Price * x.Quantity);
+
+                if (openOrder.TotalPrice != totalPrice)
+                {
+                    openOrder.TotalPrice = totalPrice;
+                    await this.context.SaveChangesAsync();
+                }
+            }
 
             return openOrder;
         }
@@ -285,6 +295,16 @@
             else
             {
                 order.PaymentStatus = PaymentStatus.Paid;
+            }
+
+            var orderProducts = await this.context.OrderProducts
+                .Where(x => x.OrderId == order.Id)
+                .ToListAsync();
+
+            foreach (var orderProduct in orderProducts)
+            {
+                orderProduct.ProductPrice = orderProduct.Product.Price;
+                this.context.Update(orderProduct);
             }
 
             this.context.Update(order);

@@ -16,8 +16,9 @@
             <tr class="row">
                 <th scope="col" class="col-1 d-flex justify-content-center"></th>
                 <th scope="col" class="col-3 d-flex justify-content-center">Name</th>
-                <th scope="col" class="col-2 d-flex justify-content-center">Price</th>
+                <th scope="col" class="col-1 d-flex justify-content-center">Price</th>
                 <th scope="col" class="col-2 d-flex justify-content-center">Brand</th>
+                <th scope="col" class="col-1 d-flex justify-content-center">Status</th>
                 <th scope="col" class="col-1 d-flex justify-content-center">Quantity</th>
                 <th scope="col" class="col-3 d-flex justify-content-center">Actions</th>
             </tr>
@@ -36,11 +37,23 @@
                             @product.Name
                         </a>
                     </td>
-                    <td class="col-2 d-flex justify-content-center">
-                        @product.Price lv.
-                    </td>
+                    @if (product.ProductStatus == ProductStatus.Sale)
+                    {
+                        <td class="col-1 d-flex justify-content-center">
+                            @product.Price lv.
+                        </td>
+                    }
+                    else
+                    {
+                        <td class="col-1 d-flex justify-content-center">
+                            @product.PricePerDay lv.
+                        </td>
+                    }
                     <td class="col-2 d-flex justify-content-center">
                         @product.Brand
+                    </td>
+                    <td class="col-1 d-flex justify-content-center">
+                        @product.ProductStatus
                     </td>
                     <td class="col-1 d-flex justify-content-center">
                         @product.Quantity
@@ -67,7 +80,7 @@
                                                     PageNumber = page
                                                 }),
                                                 new PagedListRenderOptions
-                                                {                                                    
+                                                {
                                                     MaximumPageNumbersToDisplay = 5,
                                                     LiElementClasses = new string[] { "page-item" },
                                                     PageClasses = new string[] { "page-link" }

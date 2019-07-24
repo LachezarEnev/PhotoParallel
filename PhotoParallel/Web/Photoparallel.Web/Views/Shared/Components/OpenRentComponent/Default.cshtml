@@ -1,4 +1,5 @@
 ﻿@model Photoparallel.Web.ViewModels.Rents.OpenRentViewModel
+@using Photoparallel.Common
 
 @{
     ViewData["Title"] = "Default";
@@ -7,9 +8,10 @@
     <thead>
         <tr class="row">
             <th scope="col" class="col-2 d-flex justify-content-center">Product</th>
-            <th scope="col" class="col-6 d-flex justify-content-center"></th>
+            <th scope="col" class="col-4 d-flex justify-content-center"></th>
             <th scope="col" class="col-2 d-flex justify-content-center">Price per day</th>
-            <th scope="col" class="col-2 d-flex justify-content-center">Quantity</th>        
+            <th scope="col" class="col-2 d-flex justify-content-center">Quantity</th>
+            <th scope="col" class="col-2 d-flex justify-content-center">Guarantee</th>
         </tr>
     </thead>
     <tbody>
@@ -21,13 +23,14 @@
                         <img src="@product.ImageUrl" width="50" height="50">
                     </a>
                 </td>
-                <td class="col-6 d-flex justify-content-center">
+                <td class="col-4 d-flex justify-content-center">
                     <a asp-area="" asp-controller="Products" asp-action="Details" asp-route-id="@product.Id">
                         @product.Name
                     </a>
                 </td>
                 <td class="col-2 d-flex justify-content-center">@product.PricePerDay</td>
                 <td class="col-2 d-flex justify-content-center">@product.RentQuantity</td>
+                <td class="col-2 d-flex justify-content-center">@(Math.Round(product.Price * GlobalConstants.GuaranteePercent).ToString("F2")) lv</td>
             </tr>
         }
     </tbody>

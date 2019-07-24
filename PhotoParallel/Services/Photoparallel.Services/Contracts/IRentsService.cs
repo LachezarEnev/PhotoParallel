@@ -7,12 +7,14 @@
 
     public interface IRentsService
     {
-        Task CreatRentAsync(Rent rent);
+        Task SetRentDetailsAsync(Rent rent);
 
         Task<Rent> GetOpenRentByUserIdAsync(string username);
 
         Task<bool> AddProductAsync(int id, Rent rent);
 
         Task<bool> DeleteProductAsync(int productId, Rent rent);
+
+        Task FinishRentAsync(Rent rent);
     }
 }

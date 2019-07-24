@@ -17,6 +17,8 @@
     <Compile Remove="Migrations\20190716213944_AddedInPendingOrdersPropertyNullable.Designer.cs" />
     <Compile Remove="Migrations\20190721073300_UpdatedRentEntity.cs" />
     <Compile Remove="Migrations\20190721073300_UpdatedRentEntity.Designer.cs" />
+    <Compile Remove="Migrations\20190724173702_AddedProductPriceInOrderProductEntity.cs" />
+    <Compile Remove="Migrations\20190724173702_AddedProductPriceInOrderProductEntity.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

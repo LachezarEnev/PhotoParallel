@@ -16,8 +16,9 @@
             <tr class="row">
                 <th scope="col" class="col-1 d-flex justify-content-center"></th>
                 <th scope="col" class="col-3 d-flex justify-content-center">Name</th>
-                <th scope="col" class="col-2 d-flex justify-content-center">Price</th>
+                <th scope="col" class="col-1 d-flex justify-content-center">Price</th>
                 <th scope="col" class="col-2 d-flex justify-content-center">Brand</th>
+                <th scope="col" class="col-1 d-flex justify-content-center">Status</th>
                 <th scope="col" class="col-1 d-flex justify-content-center">Quantity</th>
                 <th scope="col" class="col-3 d-flex justify-content-center">Actions</th>
             </tr>
@@ -36,11 +37,23 @@
                             @product.Name
                         </a>
                     </td>
-                    <td class="col-2 d-flex justify-content-center">
-                        @product.Price lv.
-                    </td>
+                    @if (product.ProductStatus == ProductStatus.Sale)
+                    {
+                        <td class="col-1 d-flex justify-content-center">
+                            @product.Price lv.
+                        </td>
+                    }
+                    else
+                    {
+                        <td class="col-1 d-flex justify-content-center">
+                            @product.PricePerDay lv.
+                        </td>
+                    }
                     <td class="col-2 d-flex justify-content-center">
                         @product.Brand
+                    </td>
+                    <td class="col-1 d-flex justify-content-center">
+                        @product.ProductStatus
                     </td>
                     <td class="col-1 d-flex justify-content-center">
                         @product.Quantity
@@ -63,7 +76,7 @@
                             <div class="mr-2">
                                 <a asp-action="Show" asp-route-id="@product.Id" class="btn btn-success btn-sm mobile-fondsize-11">Show</a>
                             </div>
-                        }                       
+                        }
                         <div class="mr-2">
                             <a asp-action="Supply" asp-route-id="@product.Id" class="btn btn-primary btn-sm mobile-fondsize-11">Supply</a>
                         </div>
@@ -72,18 +85,18 @@
             }
         </tbody>
     </table>
-    <div class="mt-3 d-flex justify-content-around">       
-            @Html.PagedListPager((IPagedList)Model, page => Url.Action("All",
-                                                    new
-                                                         {
-                                                        PageNumber = page
-                                                    }),
-                                                    new PagedListRenderOptions
-                                                    {                                                        
-                                                        MaximumPageNumbersToDisplay = 5,
-                                                        LiElementClasses = new string[] { "page-item" },
-                                                        PageClasses = new string[] { "page-link" }
-                                                    })
-       
+    <div class="mt-3 d-flex justify-content-around">
+        @Html.PagedListPager((IPagedList)Model, page => Url.Action("All",
+                                                new
+                                                     {
+                                                    PageNumber = page
+                                                }),
+                                                new PagedListRenderOptions
+                                                {
+                                                    MaximumPageNumbersToDisplay = 5,
+                                                    LiElementClasses = new string[] { "page-item" },
+                                                    PageClasses = new string[] { "page-link" }
+                                                })
+
     </div>
 </div>

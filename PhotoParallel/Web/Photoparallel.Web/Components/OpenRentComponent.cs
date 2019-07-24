@@ -25,10 +25,10 @@
         {
             var rentViewModel = new OpenRentViewModel();
 
-            var openOrder = await this.rentsService.GetOpenRentByUserIdAsync(this.User.Identity.Name);
-            rentViewModel.Id = openOrder.Id;
+            var openRent = await this.rentsService.GetOpenRentByUserIdAsync(this.User.Identity.Name);
+            rentViewModel.Id = openRent.Id;
 
-            foreach (var product in openOrder.Products)
+            foreach (var product in openRent.Products)
             {
                 var rentProductViewModel = this.mapper.Map<OpenRentsProductsViewModel>(product.Product);
 

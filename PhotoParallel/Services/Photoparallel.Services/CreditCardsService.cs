@@ -17,6 +17,35 @@
             this.context = context;
         }
 
+        public async Task PayRentWithCardAsync(CreditCard card, ApplicationUser user, Rent rent)
+        {
+            var creditCards = await this.context.CreditCards
+               .Include(x => x.Orders)
+               .Where(x => x.Customer.UserName == user.UserName)
+               .ToListAsync();
+
+            if (creditCards.Count() != 0)
+            {
+                foreach (var creditCard in creditCards)
+                {
+                    if (creditCard.Number == card.Number)
+                    {
+                        creditCard.Rents.Add(rent);
+                        this.context.Update(creditCard);
+                        await this.context.SaveChangesAsync();
+                    }
+                }
+
+                return;
+            }
+
+            card.Rents.Add(rent);
+            card.Customer = user;
+
+            this.context.Add(card);
+            await this.context.SaveChangesAsync();
+        }
+
         public async Task PayWithCardAsync(CreditCard card, ApplicationUser user, Order order)
         {
             var creditCards = await this.context.CreditCards

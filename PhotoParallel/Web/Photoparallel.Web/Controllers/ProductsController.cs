@@ -28,7 +28,7 @@
                 return this.RedirectToAction("Index", "Home");
             }
 
-            if (this.User.IsInRole(GlobalConstants.UserRoleName) && product.Hide)
+            if (this.User.IsInRole(GlobalConstants.UserRoleName) && (product.Hide || product.IsRented))
             {
                 return this.RedirectToAction("Index", "Home");
             }

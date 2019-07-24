@@ -7,5 +7,7 @@
     public interface ICreditCardsService
     {
         Task PayWithCardAsync(CreditCard card, ApplicationUser user, Order order);
+
+        Task PayRentWithCardAsync(CreditCard card, ApplicationUser user, Rent rent);
     }
 }

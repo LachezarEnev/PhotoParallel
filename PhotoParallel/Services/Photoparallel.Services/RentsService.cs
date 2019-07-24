@@ -1,6 +1,6 @@
 ﻿namespace Photoparallel.Services
 {
-    using System;
+    using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
 
@@ -49,14 +49,18 @@
             }
             else
             {
+                List<RentProduct> productsToRemove = new List<RentProduct>();
+
                 foreach (var rentProduct in openRent.Products)
                 {
                     if (rentProduct.Product.IsRented)
                     {
-                        openRent.Products.Remove(rentProduct);
-                        await this.context.SaveChangesAsync();
+                        productsToRemove.Add(rentProduct);
                     }
                 }
+
+                this.context.RemoveRange(productsToRemove);
+                await this.context.SaveChangesAsync();
             }
 
             return openRent;
@@ -106,9 +110,37 @@
             return true;
         }
 
-        public Task CreatRentAsync(Rent rent)
+        public async Task SetRentDetailsAsync(Rent rent)
         {
-            throw new NotImplementedException();
+            this.context.Update(rent);
+            await this.context.SaveChangesAsync();
+        }
+
+        public async Task FinishRentAsync(Rent rent)
+        {
+            rent.RentStatus = RentStatus.Pending;
+
+            var rentProducts = await this.context.RentProducts
+                .Where(x => x.RentId == rent.Id)
+                .ToListAsync();
+
+            foreach (var rentProduct in rentProducts)
+            {
+                rentProduct.ProductPricePerDay = rentProduct.Product.PricePerDay;
+                var product = rentProduct.Product;
+                product.Quantity -= 1;
+
+                if (product.Quantity == 0)
+                {
+                    product.IsRented = true;
+                }
+
+                this.context.Update(product);
+                this.context.Update(rentProduct);
+            }
+
+            this.context.Update(rent);
+            await this.context.SaveChangesAsync();
         }
     }
 }

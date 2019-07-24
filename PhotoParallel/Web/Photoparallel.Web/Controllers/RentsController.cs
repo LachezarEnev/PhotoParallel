@@ -109,7 +109,7 @@
             {
                 FirstName = rent.Customer.FirstName,
                 LastName = rent.Customer.LastName,
-                RecipientPhoneNumber = rent.Customer.PhoneNumber,
+                PhoneNumber = rent.Customer.PhoneNumber,
             };
 
             return this.View(rentProductInputModel);
@@ -119,19 +119,60 @@
         [HttpPost]
         public async Task<IActionResult> Rent(RentProductInputModel model)
         {
+            var rent = await this.rentsService.GetOpenRentByUserIdAsync(this.User.Identity.Name);
+
             if (!this.ModelState.IsValid)
             {
                 return this.View(model);
             }
 
-            string shippingAddress = model.City + ", " + model.PostalCode + Environment.NewLine + model.Address;
-            string recipient = model.FirstName + " " + model.LastName;
+            if (model.RentDate < DateTime.Now || model.RentDate > model.ReturnDate
+                || model.RentDate > DateTime.Now.AddDays(8) || model.ReturnDate > DateTime.Now.AddDays(8))
+            {
+                return this.View(model);
+            }
 
-            var rent = this.mapper.Map<Rent>(model);
-            rent.ShippingAddress = shippingAddress;
-            rent.Recipient = recipient;
+            rent.ShippingAddress = model.City + ", " + model.PostalCode + Environment.NewLine + model.Address;
+            rent.Recipient = model.FirstName + " " + model.LastName;
+            rent.RentDate = model.RentDate;
+            rent.ReturnDate = model.ReturnDate.AddDays(1);
+            rent.RecipientPhoneNumber = model.PhoneNumber;
 
-            await this.rentsService.CreatRentAsync(rent);
+            await this.rentsService.SetRentDetailsAsync(rent);
+
+            return this.RedirectToAction("Confirm");
+        }
+
+        [Authorize]
+        public async Task<IActionResult> Confirm()
+        {
+            var rent = await this.rentsService.GetOpenRentByUserIdAsync(this.User.Identity.Name);
+
+            if (rent == null || rent.Products.Count() == 0)
+            {
+                return this.RedirectToAction("Index");
+            }
+
+            var days = rent.ReturnDate.Day - rent.RentDate.Day;
+
+            rent.TotalPrice = rent.Products.Sum(x => x.Product.PricePerDay * days);
+
+            var rentViewModel = this.mapper.Map<ConfirmRentViewModel>(rent);
+
+            return this.View(rentViewModel);
+        }
+
+        [Authorize]
+        public async Task<IActionResult> Finish()
+        {
+            var rent = await this.rentsService.GetOpenRentByUserIdAsync(this.User.Identity.Name);
+
+            if (rent == null || rent.Products.Count() == 0)
+            {
+                return this.RedirectToAction("Index");
+            }
+
+            await this.rentsService.FinishRentAsync(rent);
 
             return this.View();
         }

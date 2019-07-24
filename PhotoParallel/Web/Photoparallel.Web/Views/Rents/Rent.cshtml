@@ -24,9 +24,9 @@
                 <span asp-validation-for="LastName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="RecipientPhoneNumber"></label>
-                <input asp-for="RecipientPhoneNumber" name="PhoneNumber" class="form-control" />
-                <span asp-validation-for="RecipientPhoneNumber" class="text-danger"></span>
+                <label asp-for="PhoneNumber"></label>
+                <input asp-for="PhoneNumber" name="PhoneNumber" class="form-control" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
             </div>
             <div class="h4 font-weight-bold text-center text-info">Shipping Address:</div>
             <div class="form-group">
@@ -56,6 +56,7 @@
                         <label asp-for="RentDate" class="control-label"></label>
                     </div>
                     <input asp-for="RentDate" type="text" class="form-control" id="rentDate" placeholder="Start Date..." />
+                    <p class="d-flex justify-content-center">@DateTime.Now.AddDays(1).ToString("dd/MM/yyyy") / @DateTime.Now.AddDays(7).ToString("dd/MM/yyyy")</p>
                     <span asp-validation-for="RentDate" class="text-danger"></span>
                 </div>
                 <div class="form-group w-45">
@@ -63,6 +64,7 @@
                         <label asp-for="ReturnDate" class="control-label"></label>
                     </div>
                     <input asp-for="ReturnDate" type="text" class="form-control" id="returnDate" placeholder="End Date..." />
+                    <p class="d-flex justify-content-center">@DateTime.Now.AddDays(1).ToString("dd/MM/yyyy") / @DateTime.Now.AddDays(7).ToString("dd/MM/yyyy")</p>
                     <span asp-validation-for="ReturnDate" class="text-danger"></span>
                 </div>
             </div>
@@ -93,14 +95,14 @@
             format: 'd.m.Y',
             lang: 'en',
             minDate: '0',
-            maxDate: '+1970/01/08'
+            maxDate: '+1970/01/08'            
         });
         $('#returnDate').datetimepicker({
             timepicker: false,
             format: 'd.m.Y',
             lang: 'en',
             minDate: '0',
-            maxDate: '+1970/01/08'
+            maxDate: '+1970/01/08'           
         });       
     });
 </script>

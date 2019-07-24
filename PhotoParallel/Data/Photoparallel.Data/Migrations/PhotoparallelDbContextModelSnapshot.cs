@@ -371,6 +371,8 @@ namespace Photoparallel.Data.Migrations
 
                     b.Property<int>("OrderId");
 
+                    b.Property<decimal>("ProductPrice");
+
                     b.Property<int>("Quantity");
 
                     b.HasKey("ProductId", "OrderId");
@@ -469,6 +471,8 @@ namespace Photoparallel.Data.Migrations
                     b.Property<int>("ProductId");
 
                     b.Property<int>("RentId");
+
+                    b.Property<decimal>("ProductPricePerDay");
 
                     b.Property<int>("Quantity");
 

@@ -25,7 +25,7 @@
                 .ForMember(x => x.OrderStatus, y => y.MapFrom(src => src.OrderStatus.GetDisplayName()));
 
             this.CreateMap<OrderProduct, OrderProductsViewModel>()
-                .ForMember(x => x.Price, y => y.MapFrom(src => src.Product.Price))
+                .ForMember(x => x.Price, y => y.MapFrom(src => src.ProductPrice))
                 .ForMember(x => x.InStock, y => y.MapFrom(src => src.Product.Quantity))
                 .ForMember(x => x.ProductName, y => y.MapFrom(src => src.Product.Name))
                 .ForMember(x => x.ImageUrl, y => y.MapFrom(src => src.Product.Images.Select(x => x.ImageUrl).FirstOrDefault()));
@@ -58,6 +58,8 @@
             this.CreateMap<Order, ConfirmOrderViewModel>()
                 .ForMember(x => x.PaymentType, y => y.MapFrom(src => src.PaymentType.GetDisplayName()));
 
+            this.CreateMap<Rent, ConfirmRentViewModel>();
+
             this.CreateMap<CreditCartInputModel, CreditCard>();
 
             this.CreateMap<Order, DeleteOrderViewModel>()
@@ -65,15 +67,15 @@
 
             this.CreateMap<OrderProduct, InvoiceOrderProductsViewModel>()
                .ForMember(x => x.ProductName, y => y.MapFrom(src => src.Product.Name))
-               .ForMember(x => x.Price, y => y.MapFrom(src => src.Product.Price));
+               .ForMember(x => x.Price, y => y.MapFrom(src => src.ProductPrice));
 
             this.CreateMap<Invoice, InvoiceViewModel>()
                 .ForMember(x => x.OrderNumber, y => y.MapFrom(src => src.Order.Id.ToString()))
                 .ForMember(x => x.Recipient, y => y.MapFrom(src => src.Order.Recipient))
                 .ForMember(x => x.Shipping, y => y.MapFrom(src => src.Order.Shipping));
 
-            this.CreateMap<RentProductInputModel, Rent>();
-
+            //this.CreateMap<RentProductInputModel, Rent>()
+            //    .ForMember(x => x.RecipientPhoneNumber, y => y.MapFrom(src => src.PhoneNumber));
         }
     }
 }
