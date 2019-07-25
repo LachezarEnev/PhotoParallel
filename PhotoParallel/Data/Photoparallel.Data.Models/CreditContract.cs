@@ -15,6 +15,10 @@
 
         public decimal PricePerMonth { get; set; }
 
+        public int Months { get; set; }
+
+        public decimal TotalAmount { get; set; }
+
         public string Ucn { get; set; }
 
         public string IdNumber { get; set; }

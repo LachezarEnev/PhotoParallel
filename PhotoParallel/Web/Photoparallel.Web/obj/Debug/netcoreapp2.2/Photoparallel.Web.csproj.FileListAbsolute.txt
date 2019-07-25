@@ -308,3 +308,6 @@ D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web\obj\Debug\netcor
 D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Components\ConfirmRentComponent\Default.g.cshtml.cs
 D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web\obj\Debug\netcoreapp2.2\Razor\Views\CreditCards\PayRent.g.cshtml.cs
 D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web\obj\Debug\netcoreapp2.2\Razor\Views\Rents\Finish.g.cshtml.cs
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Components\RentCartComponent\Default.g.cshtml.cs
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web\obj\Debug\netcoreapp2.2\Razor\Views\Rents\My.g.cshtml.cs
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web\obj\Debug\netcoreapp2.2\Razor\Views\Rents\Details.g.cshtml.cs

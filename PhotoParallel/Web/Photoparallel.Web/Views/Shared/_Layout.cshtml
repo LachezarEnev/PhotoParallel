@@ -43,9 +43,6 @@
                             </div>
                             <div class="collapse navbar-collapse main-menu bs-example-navbar-collapse-1" id="navbar-example">
                                 <ul class="nav navbar-nav navbar-right">
-                                    <li class="active">
-                                        <a class="page-scroll" href="/Home/Index"><i class="fa fa-home"></i> Home</a>
-                                    </li>
                                     @if (!this.User.Identity.IsAuthenticated)
                                     {
                                         <li>
@@ -60,9 +57,13 @@
                                             </a>
                                             <div class="dropdown-menu dropdown-content bg-dark" aria-labelledby="navbarDropdown">
                                                 <a asp-area="" asp-controller="Orders" asp-action="My" class="dropdown-item nav-link text-white"><i class="fas fa-history"></i> My Orders</a>
+                                                <a asp-area="" asp-controller="Rents" asp-action="My" class="dropdown-item nav-link text-white"><i class="fas fa-history"></i> My Rents</a>
                                                 <a asp-area="Identity" asp-page="/Account/Manage/Index" class="dropdown-item nav-link text-white"><i class="fas fa-cog"></i> Settings</a>
                                                 <a asp-area="Identity" asp-page="/Account/Logout" class="dropdown-item nav-link text-white"><i class="fas fa-sign-out-alt"></i> Exit</a>
                                             </div>
+                                        </li>
+                                        <li class="dropdown">
+                                            @await Component.InvokeAsync(typeof(RentCartComponent))
                                         </li>
                                         <li class="dropdown">
                                             @await Component.InvokeAsync(typeof(ShoppingCartComponent))
@@ -70,22 +71,26 @@
                                     }
                                 </ul>
                                 <ul class="nav navbar-nav navbar-left">
-                                    <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products</a>
-                                        <ul class="dropdown-menu dropdown-content bg-dark" role="menu">
-                                            <li><a asp-area="" asp-controller="Home" asp-action="Index"><i class="fas fa-home"></i> All</a></li>
-                                            <li><a asp-area="" asp-controller="Home" asp-action="Camera"><i class="fas fa-camera"></i> Cameras</a></li>
-                                            <li><a asp-area="" asp-controller="Home" asp-action="Lens"><i class="fa fa-camera-retro"></i> Lenses</a></li>
-                                            <li><a asp-area="" asp-controller="Home" asp-action="Drone"><i class="fas fa-helicopter"></i> Drones</a></li>
-                                            <li><a asp-area="" asp-controller="Home" asp-action="Stand"><i class="fab fa-stripe-s"></i> Stands</a></li>
-                                            <li><a asp-area="" asp-controller="Home" asp-action="Bag"><i class="fas fa-briefcase"></i> Bags</a></li>
-                                            <li><a asp-area="" asp-controller="Home" asp-action="Accessory"><i class="fab fa-adn"></i> Accessories</a></li>
-                                        </ul>
+                                    <li class="active">
+                                        <a class="page-scroll" href="/Home/Index"><i class="fa fa-home"></i> Home</a>
                                     </li>
+                                    @*<li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products</a>
+                                            <ul class="dropdown-menu dropdown-content bg-dark" role="menu">
+                                                <li><a asp-area="" asp-controller="Home" asp-action="Index"><i class="fas fa-home"></i> All</a></li>
+                                                <li><a asp-area="" asp-controller="Home" asp-action="Camera"><i class="fas fa-camera"></i> Cameras</a></li>
+                                                <li><a asp-area="" asp-controller="Home" asp-action="Lens"><i class="fa fa-camera-retro"></i> Lenses</a></li>
+                                                <li><a asp-area="" asp-controller="Home" asp-action="Drone"><i class="fas fa-helicopter"></i> Drones</a></li>
+                                                <li><a asp-area="" asp-controller="Home" asp-action="Stand"><i class="fab fa-stripe-s"></i> Stands</a></li>
+                                                <li><a asp-area="" asp-controller="Home" asp-action="Bag"><i class="fas fa-briefcase"></i> Bags</a></li>
+                                                <li><a asp-area="" asp-controller="Home" asp-action="Accessory"><i class="fab fa-adn"></i> Accessories</a></li>
+                                                <li> <a asp-area="" asp-controller="Rents" asp-action="Index"><i class="fas fa-registered"></i> Rent</a></li>
+                                            </ul>
+                                        </li>*@
                                     @if (this.User.IsInRole("Administrator"))
                                     {
                                         <li class="dropdown">
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Orders Panel</a>
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fas fa-cog"></i> Orders</a>
                                             <ul class="dropdown-menu dropdown-content bg-dark" role="menu">
                                                 <li><a asp-area="Administration" asp-controller="Orders" asp-action="All">All</a></li>
                                                 <li><a asp-area="Administration" asp-controller="Orders" asp-action="Pending">Pending</a></li>
@@ -97,7 +102,7 @@
                                             </ul>
                                         </li>
                                         <li class="dropdown">
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products Panel</a>
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fas fa-cog"></i> Products</a>
                                             <ul class="dropdown-menu dropdown-content bg-dark" role="menu">
                                                 <li><a asp-area="Administration" asp-controller="Products" asp-action="All">All Products</a></li>
                                                 <li><a asp-area="Administration" asp-controller="Products" asp-action="Hidden">Hidden Products</a></li>
@@ -105,18 +110,20 @@
                                                 <li><a asp-area="Administration" asp-controller="Products" asp-action="Create">Create Product</a></li>
                                             </ul>
                                         </li>
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fas fa-cog"></i> Rents</a>
+                                            <ul class="dropdown-menu dropdown-content bg-dark" role="menu"></ul>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fas fa-cog"></i> Credits</a>
+                                            <ul class="dropdown-menu dropdown-content bg-dark" role="menu"></ul>
+                                        </li>
                                     }
-                                    <li>
-                                        <a asp-area="" asp-controller="Rents" asp-action="Index">Rent</a>
-                                    </li>
-                                    <li>
-                                        <a class="page-scroll" href="#contact">Contact</a>
-                                    </li>
                                 </ul>
                             </div>
                         </nav>
                         <hr class="my-1 mt-2">
-                        <partial name="~/Views/Shared/Partials/_MiddleSectionPartial.cshtml" />                      
+                        <partial name="~/Views/Shared/Partials/_MiddleSectionPartial.cshtml" />
                     </div>
                 </div>
                 <hr class="my-1 mt-2" />

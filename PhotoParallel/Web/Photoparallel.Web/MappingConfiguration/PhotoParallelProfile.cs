@@ -7,6 +7,7 @@
     using Photoparallel.Web.Areas.Administration.ViewModels.Home;
     using Photoparallel.Web.Areas.Administration.ViewModels.Orders;
     using Photoparallel.Web.Areas.Administration.ViewModels.Products;
+    using Photoparallel.Web.Areas.Administration.ViewModels.Rents;
     using Photoparallel.Web.ViewModels.CreditCards;
     using Photoparallel.Web.ViewModels.Home;
     using Photoparallel.Web.ViewModels.Invoices;
@@ -24,6 +25,11 @@
             this.CreateMap<Order, MyOrdersViewModel>()
                 .ForMember(x => x.OrderStatus, y => y.MapFrom(src => src.OrderStatus.GetDisplayName()));
 
+            this.CreateMap<Rent, MyRentsViewModel>()
+                 .ForMember(x => x.RentStatus, y => y.MapFrom(src => src.RentStatus.GetDisplayName()))
+                 .ForMember(x => x.RentDate, y => y.MapFrom(src => src.RentDate.ToString("dd/MM/yyyy")))
+                 .ForMember(x => x.ReturnDate, y => y.MapFrom(src => src.ReturnDate.ToString("dd/MM/yyyy")));
+
             this.CreateMap<OrderProduct, OrderProductsViewModel>()
                 .ForMember(x => x.Price, y => y.MapFrom(src => src.ProductPrice))
                 .ForMember(x => x.InStock, y => y.MapFrom(src => src.Product.Quantity))
@@ -37,6 +43,17 @@
                  .ForMember(x => x.Invoice, y => y.MapFrom(src => src.Invoice.InvoiceNumber))
                  .ForMember(x => x.InvoiceId, y => y.MapFrom(src => src.Invoice.Id))
                  .ForMember(x => x.Email, y => y.MapFrom(src => src.Customer.Email));
+
+            this.CreateMap<RentProduct, RentProductsViewModel>()
+                .ForMember(x => x.PricePerDay, y => y.MapFrom(src => src.ProductPricePerDay))
+                .ForMember(x => x.ProductName, y => y.MapFrom(src => src.Product.Name))
+                .ForMember(x => x.ImageUrl, y => y.MapFrom(src => src.Product.Images.Select(x => x.ImageUrl).FirstOrDefault()));
+
+            this.CreateMap<Rent, RentDetailsViewModel>()
+                .ForMember(x => x.RentsStatus, y => y.MapFrom(src => src.RentStatus.GetDisplayName()))
+                .ForMember(x => x.Invoice, y => y.MapFrom(src => src.Invoice.InvoiceNumber))
+                .ForMember(x => x.InvoiceId, y => y.MapFrom(src => src.Invoice.Id))
+                .ForMember(x => x.Email, y => y.MapFrom(src => src.Customer.Email));
 
             this.CreateMap<CreateProductsInputModel, Product>();
             this.CreateMap<Product, DetailsProductViewModel>()

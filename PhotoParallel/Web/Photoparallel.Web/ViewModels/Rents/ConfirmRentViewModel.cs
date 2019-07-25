@@ -16,6 +16,8 @@
 
         public decimal Guarantee { get; set; }
 
+        public string Comment { get; set; }
+
         public int Days { get; set; }
 
         public DateTime RentDate { get; set; }

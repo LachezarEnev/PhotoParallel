@@ -82,7 +82,7 @@
         [Authorize]
         public async Task<IActionResult> PayRent()
         {
-            var rent = await this.rentsService.GetOpenRentByUserIdAsync(this.User.Identity.Name);
+            var rent = await this.rentsService.CreateOpenRentByUserIdAsync(this.User.Identity.Name);
 
             if (rent == null || rent.Products.Count() == 0)
             {
@@ -101,7 +101,7 @@
                 return this.View(model);
             }
 
-            var rent = await this.rentsService.GetOpenRentByUserIdAsync(this.User.Identity.Name);
+            var rent = await this.rentsService.CreateOpenRentByUserIdAsync(this.User.Identity.Name);
             var user = this.usersService.GetUserByUsername(this.User.Identity.Name);
 
             if (user == null || rent == null)

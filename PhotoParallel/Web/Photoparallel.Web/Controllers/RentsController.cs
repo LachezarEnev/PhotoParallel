@@ -9,8 +9,9 @@
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
     using Photoparallel.Common;
-    using Photoparallel.Data.Models;
+    using Photoparallel.Data.Models.Enums;
     using Photoparallel.Services.Contracts;
+    using Photoparallel.Web.Areas.Administration.ViewModels.Rents;
     using Photoparallel.Web.ViewModels.Home;
     using Photoparallel.Web.ViewModels.Rents;
     using X.PagedList;
@@ -54,7 +55,7 @@
         {
             var rentViewModel = new OpenRentViewModel();
 
-            var openOrder = await this.rentsService.GetOpenRentByUserIdAsync(this.User.Identity.Name);
+            var openOrder = await this.rentsService.CreateOpenRentByUserIdAsync(this.User.Identity.Name);
             rentViewModel.Id = openOrder.Id;
 
             foreach (var product in openOrder.Products)
@@ -78,7 +79,7 @@
                 return this.Redirect("/Identity/Account/Login");
             }
 
-            var openRent = await this.rentsService.GetOpenRentByUserIdAsync(this.User.Identity.Name);
+            var openRent = await this.rentsService.CreateOpenRentByUserIdAsync(this.User.Identity.Name);
 
             await this.rentsService.AddProductAsync(id, openRent);
 
@@ -88,7 +89,7 @@
         [Authorize]
         public async Task<IActionResult> DeleteProduct(int id)
         {
-            var rent = await this.rentsService.GetOpenRentByUserIdAsync(this.User.Identity.Name);
+            var rent = await this.rentsService.CreateOpenRentByUserIdAsync(this.User.Identity.Name);
 
             await this.rentsService.DeleteProductAsync(id, rent);
 
@@ -98,7 +99,7 @@
         [Authorize]
         public async Task<IActionResult> Rent()
         {
-            var rent = await this.rentsService.GetOpenRentByUserIdAsync(this.User.Identity.Name);
+            var rent = await this.rentsService.CreateOpenRentByUserIdAsync(this.User.Identity.Name);
 
             if (rent == null || rent.Products.Count() == 0)
             {
@@ -119,7 +120,7 @@
         [HttpPost]
         public async Task<IActionResult> Rent(RentProductInputModel model)
         {
-            var rent = await this.rentsService.GetOpenRentByUserIdAsync(this.User.Identity.Name);
+            var rent = await this.rentsService.CreateOpenRentByUserIdAsync(this.User.Identity.Name);
 
             if (!this.ModelState.IsValid)
             {
@@ -137,6 +138,8 @@
             rent.RentDate = model.RentDate;
             rent.ReturnDate = model.ReturnDate.AddDays(1);
             rent.RecipientPhoneNumber = model.PhoneNumber;
+            rent.Comment = model.Comment;
+            rent.Guarantee = rent.Products.Sum(x => Math.Round(x.Product.Price * GlobalConstants.GuaranteePercent));
 
             await this.rentsService.SetRentDetailsAsync(rent);
 
@@ -146,16 +149,16 @@
         [Authorize]
         public async Task<IActionResult> Confirm()
         {
-            var rent = await this.rentsService.GetOpenRentByUserIdAsync(this.User.Identity.Name);
+            var rent = await this.rentsService.CreateOpenRentByUserIdAsync(this.User.Identity.Name);
 
             if (rent == null || rent.Products.Count() == 0)
             {
                 return this.RedirectToAction("Index");
             }
 
-            var days = rent.ReturnDate.Day - rent.RentDate.Day;
+            var days = rent.ReturnDate - rent.RentDate;
 
-            rent.TotalPrice = rent.Products.Sum(x => x.Product.PricePerDay * days);
+            rent.TotalPrice = rent.Products.Sum(x => x.Product.PricePerDay * (int)days.TotalDays);
 
             var rentViewModel = this.mapper.Map<ConfirmRentViewModel>(rent);
 
@@ -165,7 +168,7 @@
         [Authorize]
         public async Task<IActionResult> Finish()
         {
-            var rent = await this.rentsService.GetOpenRentByUserIdAsync(this.User.Identity.Name);
+            var rent = await this.rentsService.CreateOpenRentByUserIdAsync(this.User.Identity.Name);
 
             if (rent == null || rent.Products.Count() == 0)
             {
@@ -175,6 +178,42 @@
             await this.rentsService.FinishRentAsync(rent);
 
             return this.View();
+        }
+
+        [Authorize]
+        public async Task<IActionResult> My()
+        {
+            var rents = await this.rentsService.GetAllRentsByUserAsync(this.User.Identity.Name);
+
+            var rentsViewModel = this.mapper.Map<IList<MyRentsViewModel>>(rents);
+
+            return this.View(rentsViewModel);
+        }
+
+        [Authorize]
+        public async Task<IActionResult> Details(int id)
+        {
+            var rent = await this.rentsService.GetRentByIdAsync(id);
+
+            if (rent == null || rent.Customer.UserName != this.User.Identity.Name)
+            {
+                return this.RedirectToAction("My");
+            }
+
+            var rentProducts = await this.rentsService.RentProductsByRentIdAsync(id);
+            var rentProductsViewModel = this.mapper.Map<IList<RentProductsViewModel>>(rentProducts);
+
+            var rentViewModel = this.mapper.Map<RentDetailsViewModel>(rent);
+            rentViewModel.RentProductsViewModel = rentProductsViewModel;
+            rentViewModel.PaymentStatus = "Paid";
+            rentViewModel.Days = (int)(rent.ReturnDate - rent.RentDate).TotalDays;
+
+            if (rent.RentStatus == RentStatus.Pending || rent.RentStatus == RentStatus.Denied || rent.RentStatus == RentStatus.Rented)
+            {
+                rentViewModel.Invoice = "N/A";
+            }
+
+            return this.View(rentViewModel);
         }
     }
 }

@@ -25,9 +25,9 @@
         {
             var rentViewModel = new OpenRentViewModel();
 
-            var openRent = await this.rentsService.GetOpenRentByUserIdAsync(this.User.Identity.Name);
+            var openRent = await this.rentsService.CreateOpenRentByUserIdAsync(this.User.Identity.Name);
             rentViewModel.Id = openRent.Id;
-            rentViewModel.Days = openRent.ReturnDate.Day - openRent.RentDate.Day;
+            rentViewModel.Days = (int)(openRent.ReturnDate - openRent.RentDate).TotalDays;
 
             foreach (var product in openRent.Products)
             {

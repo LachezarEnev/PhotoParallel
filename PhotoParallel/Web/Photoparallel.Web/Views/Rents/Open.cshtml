@@ -1,7 +1,7 @@
 ﻿@model Photoparallel.Web.ViewModels.Rents.OpenRentViewModel
 
 @{
-    ViewData["Title"] = "Rent Order";
+    ViewData["Title"] = "Rent Cart";
 }
 
 
@@ -22,7 +22,7 @@ else
 <hr class="w-50" />
 @if (Model.Products.Count() == 0)
 {
-    <h3 class="text-center">No selected products.</h3>
+    <h3 class="text-center">Your rent cart is empty.</h3>
     <hr class="w-50" />
 
     <div class="d-flex justify-content-around m-5">
@@ -42,7 +42,7 @@ else
                             <th scope="col" class="col-2 d-flex justify-content-center">Product</th>
                             <th scope="col" class="col-5 d-flex justify-content-center"></th>
                             <th scope="col" class="col-2 d-flex justify-content-center">Price per day</th>
-                            <th scope="col" class="col-2 d-flex justify-content-center">Quantity</th>                           
+                            <th scope="col" class="col-2 d-flex justify-content-center">Quantity</th>
                             <th scope="col" class="col-1 d-flex justify-content-center"></th>
                         </tr>
                     </thead>

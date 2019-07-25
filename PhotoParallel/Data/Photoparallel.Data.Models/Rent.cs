@@ -2,9 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
 
-    using Photoparallel.Common;
     using Photoparallel.Data.Models.Enums;
 
     public class Rent
@@ -52,6 +50,6 @@
 
         public decimal Penalty { get; set; } = 0;
 
-        public decimal Guarantee => this.Products.Sum(x => Math.Round(x.Product.Price * GlobalConstants.GuaranteePercent));
+        public decimal Guarantee { get; set; }
     }
 }

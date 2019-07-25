@@ -1,5 +1,6 @@
 ﻿namespace Photoparallel.Services
 {
+    using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
@@ -21,7 +22,7 @@
             this.usersService = usersService;
         }
 
-        public async Task<Rent> GetOpenRentByUserIdAsync(string username)
+        public async Task<Rent> CreateOpenRentByUserIdAsync(string username)
         {
             var user = this.usersService.GetUserByUsername(username);
 
@@ -62,6 +63,24 @@
                 this.context.RemoveRange(productsToRemove);
                 await this.context.SaveChangesAsync();
             }
+
+            return openRent;
+        }
+
+        public async Task<Rent> GetOpenRentAsync(string username)
+        {
+            var user = this.usersService.GetUserByUsername(username);
+
+            if (user == null)
+            {
+                return null;
+            }
+
+            var openRent = await this.context.Rents
+               .Include(x => x.Products)
+               .ThenInclude(x => x.Product)
+               .ThenInclude(x => x.Images)
+               .SingleOrDefaultAsync(x => x.RentStatus == RentStatus.Open && x.Customer.UserName == user.UserName);
 
             return openRent;
         }
@@ -141,6 +160,38 @@
 
             this.context.Update(rent);
             await this.context.SaveChangesAsync();
+        }
+
+        public async Task<IEnumerable<Rent>> GetAllRentsByUserAsync(string username)
+        {
+            var rents = await this.context.Rents
+                .Where(x => x.RentStatus != RentStatus.Open && x.Customer.UserName == username)
+                .OrderByDescending(x => x.Id)
+                .ToArrayAsync();
+
+            return rents;
+        }
+
+        public async Task<Rent> GetRentByIdAsync(int id)
+        {
+            var rent = await this.context.Rents
+                .Include(x => x.Customer)
+                .Include(x => x.Invoice)
+                .Where(x => x.RentStatus != RentStatus.Open)
+                .FirstOrDefaultAsync(x => x.Id == id);
+
+            return rent;
+        }
+
+        public async Task<IEnumerable<RentProduct>> RentProductsByRentIdAsync(int id)
+        {
+            var rentProducts = await this.context.RentProducts
+                .Include(x => x.Product)
+                .ThenInclude(x => x.Images)
+                .Where(x => x.RentId == id)
+                .ToArrayAsync();
+
+            return rentProducts;
         }
     }
 }

@@ -25,7 +25,7 @@
         {
             var rentViewModel = new OpenRentViewModel();
 
-            var openRent = await this.rentsService.GetOpenRentByUserIdAsync(this.User.Identity.Name);
+            var openRent = await this.rentsService.CreateOpenRentByUserIdAsync(this.User.Identity.Name);
             rentViewModel.Id = openRent.Id;
 
             foreach (var product in openRent.Products)

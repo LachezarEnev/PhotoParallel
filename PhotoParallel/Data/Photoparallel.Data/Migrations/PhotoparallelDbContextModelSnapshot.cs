@@ -260,11 +260,15 @@ namespace Photoparallel.Data.Migrations
 
                     b.Property<DateTime>("IssuedOn");
 
+                    b.Property<int>("Months");
+
                     b.Property<int>("OrderId");
 
                     b.Property<decimal>("PricePerMonth");
 
                     b.Property<decimal>("Salary");
+
+                    b.Property<decimal>("TotalAmount");
 
                     b.Property<string>("Ucn");
 
@@ -430,6 +434,8 @@ namespace Photoparallel.Data.Migrations
                     b.Property<string>("CreditCardId");
 
                     b.Property<string>("CustomerId");
+
+                    b.Property<decimal>("Guarantee");
 
                     b.Property<int?>("InvoiceId");
 

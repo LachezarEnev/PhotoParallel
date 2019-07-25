@@ -1,0 +1,82 @@
+﻿@model Photoparallel.Web.Areas.Administration.ViewModels.Rents.RentDetailsViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="h2 text-center text-info font-weight-bold">Rent Order Details</div>
+<hr class="w-50" />
+<div class="col-md-6">
+    <div class="h4 font-weight-bold text-center text-info">Rent Order Details:</div>
+    <div class="card card-body bg-transparent shadow">
+        <div><span class="font-weight-bold">Rent Order №:</span> @Model.Id</div>
+        <div><span class="font-weight-bold">Rent Status:</span> @Model.RentsStatus</div>
+        <div><span class="font-weight-bold">Rental Days:</span> @Model.RentDate.ToString("dd/MM/yyyy") - @Model.ReturnDate.AddDays(-1).ToString("dd/MM/yyyy")</div>
+        <div><span class="font-weight-bold">Return Date:</span> @Model.ReturnDate.ToString("dd/MM/yyyy")</div>
+        <div><span class="font-weight-bold">Payment Status:</span> @Model.PaymentStatus</div>
+        @if (Model.Invoice != "N/A")
+        {
+            <div>
+                <span class="font-weight-bold">Invoice №:</span>
+                <a asp-area="" asp-controller="Invoices" asp-action="Details" asp-route-id="@Model.InvoiceId">
+                    <u>@Model.Invoice</u>
+                </a>
+            </div>
+        }
+        else
+        {
+            <div><span class="font-weight-bold">Invoice №:</span> @Model.Invoice</div>
+        }
+        <div><span class="font-weight-bold">Rental Amount:</span> @Model.TotalPrice lv.</div>
+        <div><span class="font-weight-bold">Guarantee:</span> @Model.Guarantee lv.</div>
+        <hr />
+        <div class="h4"><span class="font-weight-bold">Grand Total:</span> @(Model.TotalPrice + Model.Guarantee) lv.</div>
+    </div>
+</div>
+<div class="col-md-6">
+    <div class="h4 font-weight-bold text-center text-info">Recipent Data:</div>
+    <div class="card card-body bg-transparent shadow">
+        <div><span class="font-weight-bold">Recipient:</span> @Model.Recipient</div>
+        <hr />
+        <div><span class="font-weight-bold">Phone Number:</span> @Model.RecipientPhoneNumber</div>
+        <hr />
+        <div><span class="font-weight-bold">Address:</span> @Model.ShippingAddress</div>
+    </div>
+</div>
+<table class="table">
+    <thead>
+        <tr class="row d-flex justify-content-around">
+            <th scope="col" class="col-md-2 col d-flex justify-content-center"></th>
+            <th scope="col" class="col-md-1 col d-flex justify-content-center">Product №</th>
+            <th scope="col" class="col-md-5 col d-flex justify-content-center">Name</th>
+            <th scope="col" class="col-md-2 col d-flex justify-content-center">Price per day</th>
+            <th scope="col" class="col-md-1 col d-flex justify-content-center">Days</th>
+            <th scope="col" class="col-md-1 col d-flex justify-content-center">Total Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var rent in Model.RentProductsViewModel)
+        {
+            <tr class="row d-flex justify-content-around">
+                <td class="col-md-2 col d-flex justify-content-center">
+                    <img src="@rent.ImageUrl" width="50" height="50">
+                </td>
+                <td class="col-md-1 col d-flex justify-content-center">
+                    @rent.ProductId
+                </td>
+                <td class="col-md-5 col d-flex justify-content-center">
+                    @rent.ProductName
+                </td>
+                <td class="col-md-2 col d-flex justify-content-center">
+                    @rent.PricePerDay lv.
+                </td>
+                <td class="col-md-1 col d-flex justify-content-center">
+                    @Model.Days
+                </td>
+                <td class="col-md-1 col d-flex justify-content-center">
+                    @(rent.PricePerDay * Model.Days) lv.
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
