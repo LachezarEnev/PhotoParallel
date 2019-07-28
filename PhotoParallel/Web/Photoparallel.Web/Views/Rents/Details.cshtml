@@ -4,12 +4,12 @@
     ViewData["Title"] = "Details";
 }
 
-<div class="h2 text-center text-info font-weight-bold">Rent Order Details</div>
+<div class="h2 text-center text-info font-weight-bold">Rental Order Details</div>
 <hr class="w-50" />
 <div class="col-md-6">
-    <div class="h4 font-weight-bold text-center text-info">Rent Order Details:</div>
+    <div class="h4 font-weight-bold text-center text-info">Rental Order Details:</div>
     <div class="card card-body bg-transparent shadow">
-        <div><span class="font-weight-bold">Rent Order №:</span> @Model.Id</div>
+        <div><span class="font-weight-bold">Rental Order №:</span> @Model.Id</div>
         <div><span class="font-weight-bold">Rent Status:</span> @Model.RentsStatus</div>
         <div><span class="font-weight-bold">Rental Days:</span> @Model.RentDate.ToString("dd/MM/yyyy") - @Model.ReturnDate.AddDays(-1).ToString("dd/MM/yyyy")</div>
         <div><span class="font-weight-bold">Return Date:</span> @Model.ReturnDate.ToString("dd/MM/yyyy")</div>
@@ -18,7 +18,7 @@
         {
             <div>
                 <span class="font-weight-bold">Invoice №:</span>
-                <a asp-area="" asp-controller="Invoices" asp-action="Details" asp-route-id="@Model.InvoiceId">
+                <a asp-area="" asp-controller="Invoices" asp-action="RentDetails" asp-route-id="@Model.InvoiceId">
                     <u>@Model.Invoice</u>
                 </a>
             </div>
@@ -27,10 +27,23 @@
         {
             <div><span class="font-weight-bold">Invoice №:</span> @Model.Invoice</div>
         }
-        <div><span class="font-weight-bold">Rental Amount:</span> @Model.TotalPrice lv.</div>
-        <div><span class="font-weight-bold">Guarantee:</span> @Model.Guarantee lv.</div>
-        <hr />
-        <div class="h4"><span class="font-weight-bold">Grand Total:</span> @(Model.TotalPrice + Model.Guarantee) lv.</div>
+        <div><span class="font-weight-bold">Rental Amount:</span> @Model.TotalPrice BGN</div>
+        @if (Model.RentsStatus != "Returned")
+        {
+            <div><span class="font-weight-bold">Guarantee:</span> @Model.Guarantee BGN</div>
+            <hr />
+            <div class="h4"><span class="font-weight-bold">Grand Total:</span> @(Model.TotalPrice + Model.Guarantee) BGN</div>
+        }
+        else
+        {
+            if (Model.Penalty > 0)
+            {
+                <div><span class="font-weight-bold">Penalty:</span> @Model.Penalty BGN</div>
+            }
+            <div><span class="font-weight-bold">Returned on time:</span> @Model.ReturnedOnTime</div>
+            <hr />
+            <div class="h4"><span class="font-weight-bold">Grand Total:</span> @(Model.TotalPrice + Model.Penalty) BGN</div>
+        }
     </div>
 </div>
 <div class="col-md-6">
@@ -68,13 +81,13 @@
                     @rent.ProductName
                 </td>
                 <td class="col-md-2 col d-flex justify-content-center">
-                    @rent.PricePerDay lv.
+                    @rent.PricePerDay BGN
                 </td>
                 <td class="col-md-1 col d-flex justify-content-center">
                     @Model.Days
                 </td>
                 <td class="col-md-1 col d-flex justify-content-center">
-                    @(rent.PricePerDay * Model.Days) lv.
+                    @(rent.PricePerDay * Model.Days) BGN
                 </td>
             </tr>
         }

@@ -42,14 +42,14 @@
             @await Component.InvokeAsync(typeof(ConfirmRentComponent), new { OrderId = Model.Id })
             <hr />
             <div class="text-center">
-                <p class="font-weight-bold h4 text-right"> Rental Amount: @(Model.TotalPrice) lv.</p>
+                <p class="font-weight-bold h4 text-right"> Rental Amount: @(Model.TotalPrice) BGN</p>
             </div>
             <div class="text-center">
-                <p class="font-weight-bold h4 text-right"> Guarantee: @Model.Guarantee lv.</p>
+                <p class="font-weight-bold h4 text-right"> Guarantee: @Model.Guarantee BGN</p>
             </div>
             <hr />
             <div class="text-center">
-                <p class="font-weight-bold text-danger h3 text-right"> Grand Total: @(Model.Guarantee + Model.TotalPrice) lv.</p>
+                <p class="font-weight-bold text-danger h3 text-right"> Grand Total: @(Model.Guarantee + Model.TotalPrice) BGN</p>
             </div>
         </div>
         <h6 class="text-danger text-center">The guarantee will be refunded upon return of the product(s). If you delay the return date or cause damage to the product(s), a fine will be deducted from the Guarantee!</h6>

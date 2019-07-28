@@ -1,0 +1,55 @@
+﻿@model Photoparallel.Web.Areas.Administration.ViewModels.Rents.RentReturnInputModel
+
+@{
+    ViewData["Title"] = "Return";
+}
+
+<div class="h2 text-center text-info font-weight-bold">Return</div>
+<hr class="w-50" />
+<div class="container-fluid">
+    <div class="col-md-6">
+        <div class="h4 font-weight-bold text-center text-info">Rental Order Details:</div>
+        <div class="card card-body bg-transparent shadow">
+            <div><span class="font-weight-bold">Rental Order №:</span> @Model.Id</div>
+            <div><span class="font-weight-bold">Rental Date:</span> @Model.RentDate</div>
+            <div><span class="font-weight-bold">Return Date:</span> @Model.ReturnDate</div>
+            <div><span class="font-weight-bold">Rental Amount:</span> @Model.TotalPrice BGN</div>
+            <div><span class="font-weight-bold">Guarantee:</span> @Model.Guarantee BGN</div>
+            <hr />
+            <div class="h4"><span class="font-weight-bold">Grand Total:</span> @(Model.TotalPrice + Model.Guarantee) BGN</div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="h4 font-weight-bold text-center text-info">Recipent Data:</div>
+        <div class="card card-body bg-transparent shadow">
+            <div><span class="font-weight-bold">Recipient:</span> @Model.Recipient</div>
+            <hr />
+            <div><span class="font-weight-bold">Phone Number:</span> @Model.RecipientPhoneNumber</div>
+            <hr />
+            <div><span class="font-weight-bold">Address:</span> @Model.ShippingAddress</div>
+        </div>
+    </div>
+</div>
+<form asp-controller="Rents" asp-action="Return" method="post">    
+    <div class="container-fluid mt-4">
+        <div class="col-md-6 form-group">
+            <div class="d-flex justify-content-center">
+                <label asp-for="Penalty"></label>
+            </div>
+            <input asp-for="Penalty" name="Penalty" class="form-control" />
+            <span asp-validation-for="Penalty" class="text-danger"></span>
+        </div>
+        <div class="col-md-6 form-group">
+            <div class="d-flex justify-content-center">
+                <label asp-for="ReturnedOnTime" class="control-label"></label>
+            </div>
+            <select asp-for="ReturnedOnTime" class="form-control" asp-items="@Html.GetEnumSelectList<ReturnedOnTime>()"><</select>
+            <span asp-validation-for="ReturnedOnTime" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group text-center">
+        <button type="submit" value="" class="btn myButton-olive">Return</button>
+    </div>
+</form>
+
+

@@ -4,6 +4,7 @@
     using System.ComponentModel.DataAnnotations;
 
     using Photoparallel.Common;
+    using Photoparallel.Web.ValidationAttributes;
 
     public class RentProductInputModel
     {
@@ -36,11 +37,13 @@
         public string PostalCode { get; set; }
 
         [Required]
+        [DateStartAttribute]
         [Display(Name = "Start Day")]
         [DataType(DataType.Date)]
         public DateTime RentDate { get; set; } = DateTime.UtcNow.AddHours(GlobalConstants.BulgarianHoursFromUtcNow).AddDays(1);
 
         [Required]
+        [DateEndAttribute("RentDate")]
         [Display(Name = "End Day")]
         [DataType(DataType.Date)]
         public DateTime ReturnDate { get; set; } = DateTime.UtcNow.AddHours(GlobalConstants.BulgarianHoursFromUtcNow).AddDays(1);

@@ -29,9 +29,11 @@
 
         public async Task<bool> AddProductAsync(int id, Order order)
         {
-            var product = await this.context.Products
-                .Include(x => x.Images)
-                .SingleOrDefaultAsync(x => x.Id == id);
+            //var product = await this.context.Products
+            //    .Include(x => x.Images)
+            //    .SingleOrDefaultAsync(x => x.Id == id);
+
+            var product = await this.productsService.GetProductByIdAsync(id);
 
             if (product == null || order == null)
             {
@@ -351,8 +353,9 @@
 
             foreach (var orderProduct in order.Products)
             {
-                var product = await this.context.Products
-                    .FirstOrDefaultAsync(x => x.Id == orderProduct.ProductId);
+                //var product = await this.context.Products
+                //    .FirstOrDefaultAsync(x => x.Id == orderProduct.ProductId);
+                var product = await this.productsService.GetProductByIdAsync(orderProduct.ProductId);
 
                 product.InPendingOrders -= orderProduct.Quantity;
                 product.Quantity -= orderProduct.Quantity;
@@ -372,7 +375,7 @@
             this.context.Update(order);
             await this.context.SaveChangesAsync();
 
-            await this.invoicesService.CreateAsync(id);
+            await this.invoicesService.CreateAsync(order);
         }
 
         public async Task ShipAsync(int id)
@@ -440,8 +443,10 @@
 
             foreach (var orderProduct in order.Products)
             {
-                var product = await this.context.Products
-                    .FirstOrDefaultAsync(x => x.Id == orderProduct.ProductId);
+                //var product = await this.context.Products
+                //    .FirstOrDefaultAsync(x => x.Id == orderProduct.ProductId);
+
+                var product = await this.productsService.GetProductByIdAsync(orderProduct.ProductId);
 
                 if (order.OrderStatus != OrderStatus.Waiting)
                 {

@@ -66,6 +66,17 @@
             return this.View(pageProductsViewMode);
         }
 
+        public async Task<IActionResult> Rent(int? pageNumber, int? pageSize)
+        {
+            var products = await this.productsService.GetRentProductsAsync();
+
+            pageNumber = pageNumber ?? DefaultPageNumber;
+            pageSize = pageSize ?? DefaultPageSize;
+            var pageProductsViewMode = products.ToPagedList(pageNumber.Value, pageSize.Value);
+
+            return this.View(pageProductsViewMode);
+        }
+
         public async Task<IActionResult> Edit(int id)
         {
             var product = await this.productsService.GetProductByIdAsync(id);

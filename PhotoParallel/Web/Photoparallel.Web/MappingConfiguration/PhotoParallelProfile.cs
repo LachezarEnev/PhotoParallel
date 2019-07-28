@@ -30,6 +30,11 @@
                  .ForMember(x => x.RentDate, y => y.MapFrom(src => src.RentDate.ToString("dd/MM/yyyy")))
                  .ForMember(x => x.ReturnDate, y => y.MapFrom(src => src.ReturnDate.ToString("dd/MM/yyyy")));
 
+            this.CreateMap<Rent, AllRentsViewModel>()
+                .ForMember(x => x.RentStatus, y => y.MapFrom(src => src.RentStatus.GetDisplayName()))
+                 .ForMember(x => x.RentDate, y => y.MapFrom(src => src.RentDate.ToString("dd/MM/yyyy")))
+                 .ForMember(x => x.ReturnDate, y => y.MapFrom(src => src.ReturnDate.ToString("dd/MM/yyyy")));
+
             this.CreateMap<OrderProduct, OrderProductsViewModel>()
                 .ForMember(x => x.Price, y => y.MapFrom(src => src.ProductPrice))
                 .ForMember(x => x.InStock, y => y.MapFrom(src => src.Product.Quantity))
@@ -51,6 +56,7 @@
 
             this.CreateMap<Rent, RentDetailsViewModel>()
                 .ForMember(x => x.RentsStatus, y => y.MapFrom(src => src.RentStatus.GetDisplayName()))
+                .ForMember(x => x.ReturnedOnTime, y => y.MapFrom(src => src.ReturnedOnTime.GetDisplayName()))
                 .ForMember(x => x.Invoice, y => y.MapFrom(src => src.Invoice.InvoiceNumber))
                 .ForMember(x => x.InvoiceId, y => y.MapFrom(src => src.Invoice.Id))
                 .ForMember(x => x.Email, y => y.MapFrom(src => src.Customer.Email));
@@ -59,8 +65,12 @@
             this.CreateMap<Product, DetailsProductViewModel>()
                 .ForMember(x => x.ImageUrls, y => y.MapFrom(src => src.Images.Select(x => x.ImageUrl)));
 
-            this.CreateMap<Product, EditProductsInputModel>();
-            this.CreateMap<EditProductsInputModel, Product>();
+            this.CreateMap<Product, EditProductsInputModel>()
+                .ForMember(x => x.IsRented, y => y.MapFrom(src => src.IsRented.ToString()));
+
+            this.CreateMap<EditProductsInputModel, Product>()
+             .ForMember(x => x.IsRented, y => y.MapFrom(src => bool.Parse(src.IsRented)));
+
             this.CreateMap<Product, HideProductsViewModel>();
 
             this.CreateMap<Product, IndexProductViewModel>()
@@ -82,17 +92,33 @@
             this.CreateMap<Order, DeleteOrderViewModel>()
                 .ForMember(x => x.OrderStatus, y => y.MapFrom(src => src.OrderStatus.GetDisplayName()));
 
+            this.CreateMap<Rent, DeleteRentViewModel>()
+                .ForMember(x => x.RentStatus, y => y.MapFrom(src => src.RentStatus.GetDisplayName()));
+
             this.CreateMap<OrderProduct, InvoiceOrderProductsViewModel>()
-               .ForMember(x => x.ProductName, y => y.MapFrom(src => src.Product.Name))
+               //.ForMember(x => x.ProductName, y => y.MapFrom(src => src.Product.Name))
                .ForMember(x => x.Price, y => y.MapFrom(src => src.ProductPrice));
+
+            this.CreateMap<RentProduct, InvoiceRentProductsViewModel>()
+                //.ForMember(x => x.ProductName, y => y.MapFrom(src => src.Product.Name))
+                .ForMember(x => x.Price, y => y.MapFrom(src => src.ProductPricePerDay));
 
             this.CreateMap<Invoice, InvoiceViewModel>()
                 .ForMember(x => x.OrderNumber, y => y.MapFrom(src => src.Order.Id.ToString()))
                 .ForMember(x => x.Recipient, y => y.MapFrom(src => src.Order.Recipient))
                 .ForMember(x => x.Shipping, y => y.MapFrom(src => src.Order.Shipping));
 
-            //this.CreateMap<RentProductInputModel, Rent>()
-            //    .ForMember(x => x.RecipientPhoneNumber, y => y.MapFrom(src => src.PhoneNumber));
+            this.CreateMap<Invoice, InvoiceRentViewModel>()
+                .ForMember(x => x.RentNumber, y => y.MapFrom(src => src.Rent.Id.ToString()))
+                .ForMember(x => x.Recipient, y => y.MapFrom(src => src.Rent.Recipient))
+                .ForMember(x => x.Penalty, y => y.MapFrom(src => src.Rent.Penalty));
+
+            this.CreateMap<Rent, RentReturnInputModel>()
+                .ForMember(x => x.RentDate, y => y.MapFrom(src => src.RentDate.ToString("dd/MM/yyyy")))
+                .ForMember(x => x.ReturnDate, y => y.MapFrom(src => src.ReturnDate.ToString("dd/MM/yyyy")));
+
+            this.CreateMap<Invoice, MyInvoicesViewModel>()
+                .ForMember(x => x.IssuedOn, y => y.MapFrom(src => src.IssuedOn.ToString("dd/MM/yyyy")));
         }
     }
 }

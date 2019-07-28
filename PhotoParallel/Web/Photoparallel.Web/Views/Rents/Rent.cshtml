@@ -55,16 +55,16 @@
                     <div class="d-flex justify-content-center">
                         <label asp-for="RentDate" class="control-label"></label>
                     </div>
-                    <input asp-for="RentDate" type="text" class="form-control" id="rentDate" placeholder="Start Date..." />
                     <p class="d-flex justify-content-center">@DateTime.Now.AddDays(1).ToString("dd/MM/yyyy") / @DateTime.Now.AddDays(7).ToString("dd/MM/yyyy")</p>
+                    <input asp-for="RentDate" type="text" class="form-control" id="rentDate" placeholder="Start Date..." />
                     <span asp-validation-for="RentDate" class="text-danger"></span>
                 </div>
                 <div class="form-group w-45">
                     <div class="d-flex justify-content-center">
                         <label asp-for="ReturnDate" class="control-label"></label>
                     </div>
-                    <input asp-for="ReturnDate" type="text" class="form-control" id="returnDate" placeholder="End Date..." />
                     <p class="d-flex justify-content-center">@DateTime.Now.AddDays(1).ToString("dd/MM/yyyy") / @DateTime.Now.AddDays(7).ToString("dd/MM/yyyy")</p>
+                    <input asp-for="ReturnDate" type="text" class="form-control" id="returnDate" placeholder="End Date..." />
                     <span asp-validation-for="ReturnDate" class="text-danger"></span>
                 </div>
             </div>

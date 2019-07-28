@@ -23,14 +23,12 @@
 
         private readonly IProductsService productsService;
         private readonly IMapper mapper;
-        private readonly IUsersService usersService;
         private readonly IRentsService rentsService;
 
-        public RentsController(IProductsService productsService, IMapper mapper, IUsersService usersService, IRentsService rentsService)
+        public RentsController(IProductsService productsService, IMapper mapper, IRentsService rentsService)
         {
             this.productsService = productsService;
             this.mapper = mapper;
-            this.usersService = usersService;
             this.rentsService = rentsService;
         }
 

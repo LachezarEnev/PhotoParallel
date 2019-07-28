@@ -1,6 +1,5 @@
 ﻿namespace Photoparallel.Services
 {
-    using System.Threading.Tasks;
     using Microsoft.AspNetCore.Identity;
     using Photoparallel.Data;
     using Photoparallel.Data.Models;

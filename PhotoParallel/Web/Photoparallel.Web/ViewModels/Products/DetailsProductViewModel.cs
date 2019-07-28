@@ -22,6 +22,8 @@
 
         public int? Warranty { get; set; }
 
+        public bool IsRented { get; set; }
+
         public ProductStatus ProductStatus { get; set; }
 
         public WarrantyStatus WarrantyStatus { get; set; }

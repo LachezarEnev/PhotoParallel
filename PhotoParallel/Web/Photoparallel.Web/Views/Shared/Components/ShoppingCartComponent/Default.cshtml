@@ -43,13 +43,13 @@
                                 <p class="text-dark">@(product.Name.Substring(0, 10))...</p>
                             </td>
                             <td class="col-2 d-flex justify-content-center p-5">
-                                @product.Price lv.
+                                @product.Price BGN
                             </td>
                             <td class="col-2 d-flex justify-content-center p-5">
                                 @product.OrderQuantity
                             </td>
                             <td class="col-2 d-flex justify-content-center p-5">
-                                @product.TotalPrice lv.
+                                @product.TotalPrice BGN
                             </td>
                             <td class="col-1 d-flex justify-content-center">
                                 <a class="text-danger px-0" asp-area="" asp-controller="Orders" asp-action="DeleteProduct" asp-route-id="@product.Id"><i class="fa fa-trash"></i></a>
@@ -68,7 +68,7 @@
             </div>
             <div class="col-4 pl-0 pr-0 p-4 text-center">
                 <p class="font-weight-bold text-white mb-0 pr-4">Grand Total:</p>
-                <p class="font-weight-bold text-white mb-0 pr-4">@(Model.Products.Sum(x => x.Price * x.OrderQuantity)) lv.</p>
+                <p class="font-weight-bold text-white mb-0 pr-4">@(Model.Products.Sum(x => x.Price * x.OrderQuantity)) BGN</p>
             </div>
         </div>
     }

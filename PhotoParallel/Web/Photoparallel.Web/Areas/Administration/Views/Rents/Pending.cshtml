@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Photoparallel.Web.Areas.Administration.ViewModels.Rents.AllRentsViewModel>
+
+@{
+    ViewData["Title"] = "Pending";
+}
+
+    <div class="row">
+        <div class="col-xl-6">
+            <div class="container mobile-fondsize-11">
+                <div class="h2 text-center text-info font-weight-bold">Pending Rents</div>
+                <table class="table">
+                    <thead>
+                        <tr class="row">
+                            <th scope="col" class="col-md-1 col d-flex justify-content-center">№</th>
+                            <th scope="col" class="col-md-2 col d-flex justify-content-center">Rent Number</th>
+                            <th scope="col" class="col-md-2 col d-flex justify-content-center">Rent Date</th>
+                            <th scope="col" class="col-md-2 col d-flex justify-content-center">Return Date</th>
+                            <th scope="col" class="col-md-2 col d-flex justify-content-center">Status</th>
+                            <th scope="col" class="col-md-3 col d-flex justify-content-center">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            var rents = Model.ToArray();
+                        }
+                        @for (int i = 0; i < rents.Length; i++)
+                        {
+                            var rent = rents[i];
+
+                            <tr class="row">
+                                <td class="col-md-1 col d-flex justify-content-center">
+                                    @(i + 1)
+                                </td>
+                                <td class="col-md-2 col d-flex justify-content-center">
+                                    @rent.Id
+                                </td>
+                                <td class="col-md-2 col d-flex justify-content-center">
+                                    @rent.RentDate
+                                </td>
+                                <td class="col-md-2 col d-flex justify-content-center">
+                                    @rent.ReturnDate
+                                </td>
+                                <td class="col-md-2 col d-flex justify-content-center">
+                                    @rent.RentStatus
+                                </td>
+                                <td class="col-md-3 col d-flex justify-content-around">
+                                    <div class="mr-2">
+                                        <a asp-area="Administration" asp-controller="Rents" asp-action="Details" asp-route-id="@rent.Id" class="btn btn-info btn-sm">Details</a>
+                                    </div>
+                                    <div class="mr-2">
+                                        <a asp-area="Administration" asp-controller="Rents" asp-action="Ship" asp-route-id="@rent.Id" class="btn btn-success btn-sm">Ship</a>
+                                    </div>
+                                    <div class="mr-2">
+                                        <a asp-area="Administration" asp-controller="Rents" asp-action="Delete" asp-route-id="@rent.Id" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Delete</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                @if (rents.Count() == 0)
+                {
+                    <h3 class="text-center text-danger">There are no Pending Rents!</h3>
+                }
+            </div>
+        </div>
+    </div>

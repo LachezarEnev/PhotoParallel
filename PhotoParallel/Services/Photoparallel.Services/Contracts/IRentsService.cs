@@ -5,6 +5,7 @@
     using System.Threading.Tasks;
 
     using Photoparallel.Data.Models;
+    using Photoparallel.Data.Models.Enums;
 
     public interface IRentsService
     {
@@ -25,5 +26,19 @@
         Task<Rent> GetRentByIdAsync(int id);
 
         Task<IEnumerable<RentProduct>> RentProductsByRentIdAsync(int id);
+
+        Task<IEnumerable<Rent>> GetPendingRentsAsync();
+
+        Task<IEnumerable<Rent>> GetRentedRentsAsync();
+
+        Task<IEnumerable<Rent>> GetDeniedRentsAsync();
+
+        Task<IEnumerable<Rent>> GetReturnedRentsAsync();
+
+        Task ShipAsync(int id);
+
+        Task DeleteRentAsync(int id);
+
+        Task ReturnAsync(int rentId, decimal penalty, ReturnedOnTime returnedOnTime);
     }
 }

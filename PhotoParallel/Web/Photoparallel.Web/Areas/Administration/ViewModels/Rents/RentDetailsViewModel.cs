@@ -31,6 +31,10 @@
 
         public decimal Guarantee { get; set; }
 
+        public decimal Penalty { get; set; }
+
+        public string ReturnedOnTime { get; set; }
+
         public int Days { get; set; }
 
         public string Comment { get; set; }

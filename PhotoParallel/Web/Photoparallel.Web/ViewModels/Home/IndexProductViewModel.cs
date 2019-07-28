@@ -12,6 +12,8 @@
 
         public string ImageUrl { get; set; }
 
+        public bool IsRented { get; set; }
+
         public int Quantity { get; set; }
     }
 }

@@ -35,10 +35,10 @@
             {
                 <div><span class="font-weight-bold">Invoice №:</span> @Model.Invoice</div>
             }
-            <div><span class="font-weight-bold">All Products:</span> @Model.TotalPrice lv.</div>
-            <div><span class="font-weight-bold">Shipping:</span> @Model.Shipping lv.</div>
+            <div><span class="font-weight-bold">All Products:</span> @Model.TotalPrice BGN</div>
+            <div><span class="font-weight-bold">Shipping:</span> @Model.Shipping BGN</div>
             <hr />
-            <div class="h4"><span class="font-weight-bold">Grand Total:</span> @Model.GrandTotal lv.</div>
+            <div class="h4"><span class="font-weight-bold">Grand Total:</span> @Model.GrandTotal BGN</div>
         </div>
     </div>
     <div class="col-md-6">
@@ -109,11 +109,11 @@
             <tr class="row d-flex justify-content-around">
                 <th scope="col" class="col-md-2 col d-flex justify-content-center"></th>
                 <th scope="col" class="col-md-1 col d-flex justify-content-center">Product №</th>
-                <th scope="col" class="col-md-5 col d-flex justify-content-center">Name</th>
+                <th scope="col" class="col-md-3 col d-flex justify-content-center">Name</th>
                 <th scope="col" class="col-md-1 col d-flex justify-content-center">Quantity</th>
                 <th scope="col" class="col-md-1 col d-flex justify-content-center">In Stock</th>
-                <th scope="col" class="col-md-1 col d-flex justify-content-center">Price</th>
-                <th scope="col" class="col-md-1 col d-flex justify-content-center">Total Price</th>
+                <th scope="col" class="col-md-2 col d-flex justify-content-center">Price</th>
+                <th scope="col" class="col-md-2 col d-flex justify-content-center">Total Price</th>
             </tr>
         </thead>
         <tbody>
@@ -126,7 +126,7 @@
                     <td class="col-md-1 col d-flex justify-content-center">
                         @product.ProductId
                     </td>
-                    <td class="col-md-5 col d-flex justify-content-center">
+                    <td class="col-md-3 col d-flex justify-content-center">
                         @product.ProductName
                     </td>
                     <td class="col-md-1 col d-flex justify-content-center">
@@ -144,11 +144,11 @@
                             @product.InStock
                         </td>
                     }
-                    <td class="col-md-1 col d-flex justify-content-center">
-                        @product.Price lv.
+                    <td class="col-md-2 col d-flex justify-content-center">
+                        @product.Price BGN
                     </td>
-                    <td class="col-md-1 col d-flex justify-content-center">
-                        @(product.Price * product.Quantity) lv.
+                    <td class="col-md-2 col d-flex justify-content-center">
+                        @(product.Price * product.Quantity) BGN
                     </td>
                 </tr>
             }

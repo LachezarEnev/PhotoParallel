@@ -311,3 +311,14 @@ D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web\obj\Debug\netcor
 D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Components\RentCartComponent\Default.g.cshtml.cs
 D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web\obj\Debug\netcoreapp2.2\Razor\Views\Rents\My.g.cshtml.cs
 D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web\obj\Debug\netcoreapp2.2\Razor\Views\Rents\Details.g.cshtml.cs
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web\obj\Debug\netcoreapp2.2\Razor\Areas\Administration\Views\Products\Rent.g.cshtml.cs
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web\obj\Debug\netcoreapp2.2\Razor\Areas\Administration\Views\Rents\Pending.g.cshtml.cs
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web\obj\Debug\netcoreapp2.2\Razor\Areas\Administration\Views\Rents\Details.g.cshtml.cs
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web\obj\Debug\netcoreapp2.2\Razor\Areas\Administration\Views\Rents\Rented.g.cshtml.cs
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web\obj\Debug\netcoreapp2.2\Razor\Areas\Administration\Views\Rents\Delete.g.cshtml.cs
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web\obj\Debug\netcoreapp2.2\Razor\Areas\Administration\Views\Rents\Denied.g.cshtml.cs
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web\obj\Debug\netcoreapp2.2\Razor\Areas\Administration\Views\Rents\Return.g.cshtml.cs
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web\obj\Debug\netcoreapp2.2\Razor\Areas\Administration\Views\Invoices\RentDetails.g.cshtml.cs
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web\obj\Debug\netcoreapp2.2\Razor\Views\Invoices\RentDetails.g.cshtml.cs
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web\obj\Debug\netcoreapp2.2\Razor\Areas\Administration\Views\Rents\Returned.g.cshtml.cs
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web\obj\Debug\netcoreapp2.2\Razor\Views\Invoices\My.g.cshtml.cs

@@ -67,6 +67,7 @@
         {
             var products = await this.context.Products
                 .Include(x => x.Images)
+                .Where(x => x.ProductStatus == ProductStatus.Sale)
                 .OrderByDescending(x => x.Id)
                 .ToListAsync();
 
@@ -144,7 +145,7 @@
         {
             var oosProducts = await this.context.Products
                 .Include(x => x.Images)
-                .Where(x => x.Quantity <= 0)
+                .Where(x => (x.Quantity <= 0 || x.Quantity < x.InPendingOrders) && x.ProductStatus == ProductStatus.Sale)
                 .ToListAsync();
 
             return oosProducts;
@@ -238,7 +239,7 @@
         {
             var products = await this.context.Products
                 .Include(x => x.Images)
-                .Where(x => x.Hide == false && x.ProductStatus == ProductStatus.Rent && x.Quantity > 0)
+                .Where(x => x.Hide == false && x.ProductStatus == ProductStatus.Rent)
                 .ToListAsync();
 
             return products;

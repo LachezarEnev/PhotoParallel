@@ -57,5 +57,7 @@
         public ICollection<IFormFile> FormImages { get; set; }
 
         public int InPendingOrders { get; set; }
+
+        public string IsRented { get; set; }
     }
 }

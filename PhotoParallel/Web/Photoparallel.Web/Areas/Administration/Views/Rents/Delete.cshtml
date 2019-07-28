@@ -1,0 +1,47 @@
+﻿@model Photoparallel.Web.Areas.Administration.ViewModels.Rents.DeleteRentViewModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h3 class="text-center text-info">Delete</h3>
+<h5 class="text-center text-danger">Are you sure you want to delete this Rental Order?</h5>
+<hr class="w-50" />
+<div class="container">
+    <form asp-action="DeleteConfirmed">
+        <div class="d-flex justify-content-between">
+            <div class="form-group w-45">
+                <div class="d-flex justify-content-center">
+                    <label asp-for="Id" class="control-label"></label>
+                </div>
+                <input asp-for="Id" class="form-control text-center" disabled />
+            </div>
+            <div class="form-group w-45">
+                <div class="d-flex justify-content-center">
+                    <label asp-for="TotalPrice" class="control-label"></label>
+                </div>
+                <input asp-for="TotalPrice" class="form-control text-center" disabled />
+            </div>
+        </div>
+        <div class="d-flex justify-content-between">
+            <div class="form-group w-45">
+                <div class="d-flex justify-content-center">
+                    <label asp-for="RentStatus" class="control-label"></label>
+                </div>
+                <input asp-for="RentStatus" class="form-control text-center" disabled />
+            </div>
+            <div class="form-group w-45">
+                <div class="d-flex justify-content-center">
+                    <label asp-for="Recipient" class="control-label"></label>
+                </div>
+                <input asp-for="Recipient" class="form-control text-center" disabled />
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="hidden" asp-for="Id" />
+        </div>
+        <div class="form-group text-center">
+            <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i> Delete</button>
+        </div>
+    </form>
+</div>

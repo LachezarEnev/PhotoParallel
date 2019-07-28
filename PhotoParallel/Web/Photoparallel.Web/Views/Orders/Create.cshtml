@@ -74,11 +74,11 @@
             @if (Model.TotalPrice < 100)
             {
                 <div class="text-center">
-                    <p class="font-weight-bold text-danger h4 text-right">Shipping: @Model.ShippingCosts lv.</p>
+                    <p class="font-weight-bold text-danger h4 text-right">Shipping: @Model.ShippingCosts BGN</p>
                 </div>
                 <hr />
                 <div class="text-center">
-                    <p class="font-weight-bold text-danger h3 text-right">Grand Total: @(Model.TotalPrice + Model.ShippingCosts) lv.</p>
+                    <p class="font-weight-bold text-danger h3 text-right">Grand Total: @(Model.TotalPrice + Model.ShippingCosts) BGN</p>
                 </div>
             }
             else
@@ -88,7 +88,7 @@
                 </div>
                 <hr />
                 <div class="text-center">
-                    <p class="font-weight-bold text-danger h3 text-right">Grand Total: @(Model.TotalPrice) lv.</p>
+                    <p class="font-weight-bold text-danger h3 text-right">Grand Total: @(Model.TotalPrice) BGN</p>
                 </div>
             }
         </div>
