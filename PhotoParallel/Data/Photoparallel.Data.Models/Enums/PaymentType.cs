@@ -9,5 +9,7 @@
 
         [Display(Name = "Visa/MasterCard")]
         Card = 2,
+
+        Credit = 3,
     }
 }

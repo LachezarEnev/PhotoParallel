@@ -15,6 +15,8 @@
 
         public decimal Interest { get; set; }
 
+        public bool Hide { get; set; }
+
         public ICollection<CreditContract> Contracts { get; set; }
     }
 }

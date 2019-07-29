@@ -10,13 +10,13 @@
     {
         Task<IEnumerable<Product>> GetAllProductsAsync();
 
-        void AddImageUrls(int id, IEnumerable<string> imageUrls);
+        Task AddImageUrlsAsync(int id, IEnumerable<string> imageUrls);
 
-        void AddProduct(Product product);
+        Task AddProductAsync(Product product);
 
         Task<Product> GetProductByIdAsync(int id);
 
-        bool EditProduct(Product product);
+        Task<bool> EditProductAsync(Product product);
 
         IEnumerable<Image> GetImages(int id);
 

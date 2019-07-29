@@ -57,9 +57,7 @@
             {
                 <div class=" m-3 d-flex justify-content-between">
                     <a asp-area="Administration" asp-controller="Orders" asp-action="Delete" asp-route-id="@Model.Id" class="myButton-red btn-sm"><i class="fa fa-trash"></i> Delete</a>
-
-                    <a asp-area="Administration" asp-controller="Orders" asp-action="Edit" asp-route-id="@Model.Id" class="myButton-orange btn-sm"><i class="fas fa-cog"></i> Edit</a>
-
+                    
                     <a asp-area="Administration" asp-controller="Orders" asp-action="Approve" asp-route-id="@Model.Id" class="myButton-olive btn-sm"><i class="fas fa-check"></i> Approve</a>
 
                     <a asp-area="Administration" asp-controller="Orders" asp-action="Pending" class="myButton-blue btn-sm"><i class="fas fa-arrow-left"></i> Back</a>

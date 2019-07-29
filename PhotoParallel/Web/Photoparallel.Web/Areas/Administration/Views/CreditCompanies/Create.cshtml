@@ -1,0 +1,38 @@
+﻿@model Photoparallel.Web.Areas.Administration.ViewModels.CreditCompanies.CreateCompanyInputModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="h2 text-center text-info font-weight-bold">Create Company</div>
+<hr class="w-50" />
+<div class="row">
+    <div class="col-md-4 center-block">
+        <form asp-controller="CreditCompanies" asp-action="Create" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <div class="d-flex justify-content-center">
+                    <label asp-for="Name" class="control-label"></label>
+                </div>
+                <input asp-for="Name" class="form-control" placeholder="Name..." />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="d-flex justify-content-center">
+                    <label asp-for="Interest" class="control-label"></label>
+                </div>
+                <input asp-for="Interest" class="form-control" placeholder="Percentage..." />
+                <span asp-validation-for="Interest" class="text-danger"></span>
+            </div>
+            <div class="form-group text-center">
+                <input type="submit" value="Create Company" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+

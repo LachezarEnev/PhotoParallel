@@ -20,7 +20,7 @@
             this.context = context;
         }
 
-        public void AddImageUrls(int id, IEnumerable<string> imageUrls)
+        public async Task AddImageUrlsAsync(int id, IEnumerable<string> imageUrls)
         {
             var product = this.context.Products.Include(x => x.Images)
                                           .FirstOrDefault(x => x.Id == id);
@@ -36,10 +36,10 @@
                 product.Images.Add(image);
             }
 
-            this.context.SaveChanges();
+            await this.context.SaveChangesAsync();
         }
 
-        public void AddProduct(Product product)
+        public async Task AddProductAsync(Product product)
         {
             if (product == null)
             {
@@ -47,10 +47,10 @@
             }
 
             this.context.Products.Add(product);
-            this.context.SaveChanges();
+            await this.context.SaveChangesAsync();
         }
 
-        public bool EditProduct(Product product)
+        public async Task<bool> EditProductAsync(Product product)
         {
             if (!this.ProductExists(product.Id))
             {
@@ -58,7 +58,7 @@
             }
 
             this.context.Update(product);
-            this.context.SaveChanges();
+            await this.context.SaveChangesAsync();
 
             return true;
         }

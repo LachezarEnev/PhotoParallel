@@ -12,5 +12,7 @@
         Shipped = 5,
         Delivered = 6,
         Denied = 7,
+        [Display(Name = "Waiting Credit Confirmation")]
+        WaitingCreditConfirmation = 8,
     }
 }

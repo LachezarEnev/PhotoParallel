@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Photoparallel.Web.Areas.Administration.ViewModels.CreditCompanies.AllCreditCompaniesViewModel>
+
+@{
+    ViewData["Title"] = "All";
+}
+
+<div class="container mobile-fondsize-11">
+    <div class="h2 text-center text-info font-weight-bold">All Companies</div>
+    <table class="table">
+        <thead>
+            <tr class="row">
+                <th scope="col" class="col-2 d-flex justify-content-center">№</th>
+                <th scope="col" class="col-4 d-flex justify-content-center">Name</th>
+                <th scope="col" class="col-2 d-flex justify-content-center">Interest</th>
+                <th scope="col" class="col-4 d-flex justify-content-center">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{int num = 1;
+                foreach (var company in Model)
+                {
+
+                    <tr class="row">
+                        <td class="col-2 d-flex justify-content-center">
+                            @num
+                        </td>
+                        <td class="col-4 d-flex justify-content-center">
+                            @company.Name
+                        </td>
+                        <td class="col-2 d-flex justify-content-center">
+                            @company.Interest %
+                        </td>
+                        <td class="col-md-4 d-flex justify-content-around">
+                            <div class="mr-2">
+                                <a asp-action="Edit" asp-route-id="@company.Id" class="btn btn-warning btn-sm mobile-fondsize-11"><i class="fas fa-cog"></i> Edit</a>
+                            </div>
+                            @if (company.Hide)
+                            {
+                                <div class="mr-2">
+                                    <a asp-action="Show" asp-route-id="@company.Id" class="btn btn-success btn-sm mobile-fondsize-11">Show</a>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="mr-2">
+                                    <a asp-action="Hide" asp-route-id="@company.Id" class="btn btn-danger btn-sm mobile-fondsize-11">Hide</a>
+                                </div>
+                            }
+                        </td>
+                    </tr>
+                    num++;
+                }
+            }
+        </tbody>
+    </table>
+</div>

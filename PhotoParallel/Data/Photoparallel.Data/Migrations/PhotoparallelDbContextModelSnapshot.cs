@@ -231,6 +231,8 @@ namespace Photoparallel.Data.Migrations
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<bool>("Hide");
+
                     b.Property<decimal>("Interest");
 
                     b.Property<string>("Name");

@@ -42,14 +42,14 @@
 
             var product = this.mapper.Map<Product>(model);
 
-            this.productsService.AddProduct(product);
+            await this.productsService.AddProductAsync(product);
 
             if (model.FormImages != null)
             {
                 int existingImages = 0;
                 var imageUrls = await this.imagesService.UploadImagesAsync(model.FormImages.ToList(), existingImages, GlobalConstants.ProcuctPathTemplate, product.Id);
 
-                this.productsService.AddImageUrls(product.Id, imageUrls);
+                await this.productsService.AddImageUrlsAsync(product.Id, imageUrls);
             }
 
             return this.RedirectToAction("All");
@@ -101,14 +101,14 @@
 
             var product = this.mapper.Map<Product>(model);
 
-            this.productsService.EditProduct(product);
+            await this.productsService.EditProductAsync(product);
 
             if (model.FormImages != null)
             {
                 int existingImages = this.productsService.GetImages(product.Id).Count();
                 var imageUrls = await this.imagesService.UploadImagesAsync(model.FormImages.ToList(), existingImages, GlobalConstants.ProcuctPathTemplate, product.Id);
 
-                this.productsService.AddImageUrls(product.Id, imageUrls);
+                await this.productsService.AddImageUrlsAsync(product.Id, imageUrls);
             }
 
             return this.RedirectToAction("All");

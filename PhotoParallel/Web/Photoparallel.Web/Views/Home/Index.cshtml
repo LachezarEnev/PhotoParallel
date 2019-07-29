@@ -67,7 +67,7 @@
                         @if (product.Price >= 300)
                         {
                             <div class="mr-2">
-                                <a asp-controller="Credits" asp-action="Add" asp-route-id="@product.Id" class="myButton-red btn-sm btn-block text-center">Credit</a>
+                                <a asp-controller="Orders" asp-action="Add" asp-route-id="@product.Id" class="myButton-red btn-sm btn-block text-center">Credit</a>
                             </div>
                         }
                     </div>
