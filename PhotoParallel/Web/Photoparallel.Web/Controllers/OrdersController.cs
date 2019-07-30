@@ -48,13 +48,9 @@
             return this.View(orderViewModel);
         }
 
+        [Authorize]
         public async Task<IActionResult> Add(int id)
         {
-            if (!this.User.Identity.IsAuthenticated)
-            {
-                return this.Redirect("/Identity/Account/Login");
-            }
-
             var openOrder = await this.ordersService.GetOpenOrderByUserIdAsync(this.User.Identity.Name);
 
             await this.ordersService.AddProductAsync(id, openOrder);

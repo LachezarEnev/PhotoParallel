@@ -10,6 +10,7 @@
     using Photoparallel.Web.Areas.Administration.ViewModels.Products;
     using Photoparallel.Web.Areas.Administration.ViewModels.Rents;
     using Photoparallel.Web.ViewModels.CreditCards;
+    using Photoparallel.Web.ViewModels.Credits;
     using Photoparallel.Web.ViewModels.Home;
     using Photoparallel.Web.ViewModels.Invoices;
     using Photoparallel.Web.ViewModels.Orders;
@@ -98,11 +99,9 @@
                 .ForMember(x => x.RentStatus, y => y.MapFrom(src => src.RentStatus.GetDisplayName()));
 
             this.CreateMap<OrderProduct, InvoiceOrderProductsViewModel>()
-               //.ForMember(x => x.ProductName, y => y.MapFrom(src => src.Product.Name))
                .ForMember(x => x.Price, y => y.MapFrom(src => src.ProductPrice));
 
             this.CreateMap<RentProduct, InvoiceRentProductsViewModel>()
-                //.ForMember(x => x.ProductName, y => y.MapFrom(src => src.Product.Name))
                 .ForMember(x => x.Price, y => y.MapFrom(src => src.ProductPricePerDay));
 
             this.CreateMap<Invoice, InvoiceViewModel>()
@@ -126,6 +125,9 @@
             this.CreateMap<CreditCompany, AllCreditCompaniesViewModel>();
             this.CreateMap<CreditCompany, EditCompanyInputModel>();
             this.CreateMap<EditCompanyInputModel, CreditCompany>();
+            this.CreateMap<CreditContract, ConfirmCreditViewModel>();
+            this.CreateMap<CreditContract, MyCreditssViewModel>();
+            this.CreateMap<CreditContract, CreditDetailsViewModel>();
         }
     }
 }

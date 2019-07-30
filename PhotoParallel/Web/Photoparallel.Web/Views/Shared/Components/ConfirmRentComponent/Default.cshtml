@@ -17,15 +17,11 @@
         @foreach (var product in Model.Products)
         {
             <tr class="row">
-                <td class="col-2 d-flex justify-content-center">
-                    <a asp-area="" asp-controller="Products" asp-action="Details" asp-route-id="@product.Id">
-                        <img src="@product.ImageUrl" width="50" height="50">
-                    </a>
+                <td class="col-2 d-flex justify-content-center">                    
+                        <img src="@product.ImageUrl" width="50" height="50">                    
                 </td>
-                <td class="col-4 d-flex justify-content-center">
-                    <a asp-area="" asp-controller="Products" asp-action="Details" asp-route-id="@product.Id">
-                        @product.Name
-                    </a>
+                <td class="col-4 d-flex justify-content-center">                    
+                        @product.Name                    
                 </td>
                 <td class="col-3 d-flex justify-content-center">@product.PricePerDay</td>                             
                 <td class="col-1 d-flex justify-content-center">@Model.Days</td>

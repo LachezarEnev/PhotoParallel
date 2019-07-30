@@ -8,5 +8,7 @@
 
         [Display(Name = "On delivery")]
         Ondelivery = 2,
+
+        Credit = 3,
     }
 }

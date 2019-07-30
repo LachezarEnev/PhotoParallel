@@ -27,13 +27,13 @@
 
         public string Address { get; set; }
 
-        public CreditStatus CreditStatus { get; set; } = CreditStatus.Pending;
+        public CreditStatus CreditStatus { get; set; } = CreditStatus.Open;
 
         public string CreditCompanyId { get; set; }
 
         public CreditCompany CreditCompany { get; set; }
 
-        public int OrderId { get; set; }
+        public int? OrderId { get; set; }
 
         public Order Order { get; set; }
 

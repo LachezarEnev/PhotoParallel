@@ -17,6 +17,10 @@
 
         public bool Hide { get; set; }
 
+        public string Address { get; set; }
+
+        public string VatNumber { get; set; }
+
         public ICollection<CreditContract> Contracts { get; set; }
     }
 }

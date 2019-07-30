@@ -29,10 +29,6 @@
 
         public async Task<bool> AddProductAsync(int id, Order order)
         {
-            //var product = await this.context.Products
-            //    .Include(x => x.Images)
-            //    .SingleOrDefaultAsync(x => x.Id == id);
-
             var product = await this.productsService.GetProductByIdAsync(id);
 
             if (product == null || order == null)
@@ -282,7 +278,15 @@
 
         public async Task FinishOrderAsync(Order order)
         {
-            order.OrderStatus = OrderStatus.Pending;
+            if (order.PaymentType == PaymentType.Credit)
+            {
+                order.OrderStatus = OrderStatus.WaitingCreditConfirmation;
+            }
+            else
+            {
+                order.OrderStatus = OrderStatus.Pending;
+            }
+
             order.CreatedOn = DateTime.UtcNow.AddHours(GlobalConstants.BulgarianHoursFromUtcNow);
 
             if (order.TotalPrice < 100)
@@ -294,9 +298,13 @@
             {
                 order.PaymentStatus = PaymentStatus.Ondelivery;
             }
-            else
+            else if (order.PaymentType == PaymentType.Card)
             {
                 order.PaymentStatus = PaymentStatus.Paid;
+            }
+            else
+            {
+                order.PaymentStatus = PaymentStatus.Credit;
             }
 
             var orderProducts = await this.context.OrderProducts
@@ -353,8 +361,6 @@
 
             foreach (var orderProduct in order.Products)
             {
-                //var product = await this.context.Products
-                //    .FirstOrDefaultAsync(x => x.Id == orderProduct.ProductId);
                 var product = await this.productsService.GetProductByIdAsync(orderProduct.ProductId);
 
                 product.InPendingOrders -= orderProduct.Quantity;
@@ -415,7 +421,11 @@
 
             order.OrderStatus = OrderStatus.Delivered;
             order.EstimatedDeliveryDate = DateTime.UtcNow.AddHours(GlobalConstants.BulgarianHoursFromUtcNow);
-            order.PaymentStatus = PaymentStatus.Paid;
+
+            if (order.PaymentStatus == PaymentStatus.Ondelivery)
+            {
+                order.PaymentStatus = PaymentStatus.Paid;
+            }
 
             this.context.Update(order);
             await this.context.SaveChangesAsync();
@@ -443,9 +453,6 @@
 
             foreach (var orderProduct in order.Products)
             {
-                //var product = await this.context.Products
-                //    .FirstOrDefaultAsync(x => x.Id == orderProduct.ProductId);
-
                 var product = await this.productsService.GetProductByIdAsync(orderProduct.ProductId);
 
                 if (order.OrderStatus != OrderStatus.Waiting)

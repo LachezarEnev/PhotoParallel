@@ -1,6 +1,7 @@
 ﻿namespace Photoparallel.Services
 {
     using System.Collections.Generic;
+    using System.Linq;
     using System.Threading.Tasks;
 
     using Microsoft.EntityFrameworkCore;
@@ -54,6 +55,15 @@
                 .SingleOrDefaultAsync(x => x.Id == id);
 
             return company;
+        }
+
+        public async Task<IEnumerable<CreditCompany>> GetVisibleCompaniesAsync()
+        {
+            var companies = await this.context.CreditCompanies
+                .Where(x => x.Hide == false)
+                .ToArrayAsync();
+
+            return companies;
         }
 
         public async Task HideCompanyAsync(CreditCompany company)

@@ -231,11 +231,15 @@ namespace Photoparallel.Data.Migrations
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<string>("Address");
+
                     b.Property<bool>("Hide");
 
                     b.Property<decimal>("Interest");
 
                     b.Property<string>("Name");
+
+                    b.Property<string>("VatNumber");
 
                     b.HasKey("Id");
 
@@ -264,7 +268,7 @@ namespace Photoparallel.Data.Migrations
 
                     b.Property<int>("Months");
 
-                    b.Property<int>("OrderId");
+                    b.Property<int?>("OrderId");
 
                     b.Property<decimal>("PricePerMonth");
 
@@ -281,7 +285,8 @@ namespace Photoparallel.Data.Migrations
                     b.HasIndex("CustomerId");
 
                     b.HasIndex("OrderId")
-                        .IsUnique();
+                        .IsUnique()
+                        .HasFilter("[OrderId] IS NOT NULL");
 
                     b.ToTable("CreditContracts");
                 });
@@ -580,8 +585,7 @@ namespace Photoparallel.Data.Migrations
 
                     b.HasOne("Photoparallel.Data.Models.Order", "Order")
                         .WithOne("CreditContract")
-                        .HasForeignKey("Photoparallel.Data.Models.CreditContract", "OrderId")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .HasForeignKey("Photoparallel.Data.Models.CreditContract", "OrderId");
                 });
 
             modelBuilder.Entity("Photoparallel.Data.Models.Image", b =>

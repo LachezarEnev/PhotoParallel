@@ -11,6 +11,8 @@
 
         Task<IEnumerable<CreditCompany>> GetAllCompaniesAsync();
 
+        Task<IEnumerable<CreditCompany>> GetVisibleCompaniesAsync();
+
         Task<CreditCompany> GetCompanyByIdAsync(string id);
 
         Task EditCompanyAsync(CreditCompany comapany);

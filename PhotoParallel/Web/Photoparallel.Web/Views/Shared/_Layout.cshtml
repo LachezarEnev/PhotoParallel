@@ -50,7 +50,7 @@
                                         </li>
                                     }
                                     else
-                                    {
+                                    {                                        
                                         <li class="dropdown">
                                             <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                 <i class="fas fa-user-circle"></i> Hello, @this.User.Identity.Name!
@@ -59,6 +59,7 @@
                                                 <a asp-area="" asp-controller="Orders" asp-action="My" class="dropdown-item nav-link text-white"><i class="fas fa-history"></i> My Orders</a>
                                                 <a asp-area="" asp-controller="Rents" asp-action="My" class="dropdown-item nav-link text-white"><i class="fas fa-history"></i> My Rents</a>
                                                 <a asp-area="" asp-controller="Invoices" asp-action="My" class="dropdown-item nav-link text-white"><i class="fas fa-history"></i> My Invoices</a>
+                                                <a asp-area="" asp-controller="Credits" asp-action="My" class="dropdown-item nav-link text-white"><i class="fas fa-history"></i> My Credits</a>
                                                 <a asp-area="Identity" asp-page="/Account/Manage/Index" class="dropdown-item nav-link text-white"><i class="fas fa-cog"></i> Settings</a>
                                                 <a asp-area="Identity" asp-page="/Account/Logout" class="dropdown-item nav-link text-white"><i class="fas fa-sign-out-alt"></i> Exit</a>
                                             </div>
@@ -76,18 +77,18 @@
                                         <a class="page-scroll" href="/Home/Index"><i class="fa fa-home"></i> Home</a>
                                     </li>
                                     @*<li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products</a>
-            <ul class="dropdown-menu dropdown-content bg-dark" role="menu">
-                <li><a asp-area="" asp-controller="Home" asp-action="Index"><i class="fas fa-home"></i> All</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="Camera"><i class="fas fa-camera"></i> Cameras</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="Lens"><i class="fa fa-camera-retro"></i> Lenses</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="Drone"><i class="fas fa-helicopter"></i> Drones</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="Stand"><i class="fab fa-stripe-s"></i> Stands</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="Bag"><i class="fas fa-briefcase"></i> Bags</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="Accessory"><i class="fab fa-adn"></i> Accessories</a></li>
-                <li> <a asp-area="" asp-controller="Rents" asp-action="Index"><i class="fas fa-registered"></i> Rent</a></li>
-            </ul>
-        </li>*@
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products</a>
+                                            <ul class="dropdown-menu dropdown-content bg-dark" role="menu">
+                                                <li><a asp-area="" asp-controller="Home" asp-action="Index"><i class="fas fa-home"></i> All</a></li>
+                                                <li><a asp-area="" asp-controller="Home" asp-action="Camera"><i class="fas fa-camera"></i> Cameras</a></li>
+                                                <li><a asp-area="" asp-controller="Home" asp-action="Lens"><i class="fa fa-camera-retro"></i> Lenses</a></li>
+                                                <li><a asp-area="" asp-controller="Home" asp-action="Drone"><i class="fas fa-helicopter"></i> Drones</a></li>
+                                                <li><a asp-area="" asp-controller="Home" asp-action="Stand"><i class="fab fa-stripe-s"></i> Stands</a></li>
+                                                <li><a asp-area="" asp-controller="Home" asp-action="Bag"><i class="fas fa-briefcase"></i> Bags</a></li>
+                                                <li><a asp-area="" asp-controller="Home" asp-action="Accessory"><i class="fab fa-adn"></i> Accessories</a></li>
+                                                <li> <a asp-area="" asp-controller="Rents" asp-action="Index"><i class="fas fa-registered"></i> Rent</a></li>
+                                            </ul>
+                                        </li>*@
                                     @if (this.User.IsInRole("Administrator"))
                                     {
                                         <li class="dropdown">

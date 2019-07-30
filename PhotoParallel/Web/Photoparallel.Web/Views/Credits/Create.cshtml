@@ -1,0 +1,185 @@
+﻿@model Photoparallel.Web.ViewModels.Credits.CreateCreditInputModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="progress pt-1">
+    <div class="progress-bar" role="progressbar" style="width: 66%;" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100">66%</div>
+</div>
+<hr />
+<div class="row">
+    <div class="col-md-5">
+        <form asp-action="Create" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="h4 font-weight-bold text-center text-info">Recipent Data:</div>
+            <div class="form-group">
+                <label asp-for="@Model.FirstName"></label>
+                <input asp-for="@Model.FirstName" name="FirstName" class="form-control" />
+                <span asp-validation-for="@Model.FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.LastName"></label>
+                <input asp-for="@Model.LastName" name="LastName" class="form-control" />
+                <span asp-validation-for="@Model.LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.PhoneNumber"></label>
+                <input asp-for="@Model.PhoneNumber" name="PhoneNumber" class="form-control" />
+                <span asp-validation-for="@Model.PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Salary"></label>
+                <input asp-for="@Model.Salary" name="Salary" class="form-control" />
+                <span asp-validation-for="@Model.Salary" class="text-danger"></span>
+            </div>
+            <div class="d-flex justify-content-between mt-5">
+                <div class="form-group w-40">
+                    <div class="d-flex justify-content-center">
+                        <label asp-for="@Model.Ucn"></label>
+                    </div>
+                    <input asp-for="@Model.Ucn" name="Ucn" class="form-control" placeholder="UCN..." />
+                    <span asp-validation-for="@Model.Ucn" class="text-danger"></span>
+                </div>
+                <div class="form-group w-40">
+                    <div class="d-flex justify-content-center">
+                        <label asp-for="@Model.IdNumber"></label>
+                    </div>
+                    <input asp-for="@Model.IdNumber" name="IdNumber" class="form-control" placeholder="Id Number..." />
+                    <span asp-validation-for="@Model.IdNumber" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="h4 font-weight-bold text-center text-info">Shipping Address:</div>
+            <div class="form-group">
+                <label asp-for="@Model.City"></label>
+                <input asp-for="@Model.City" name="City" class="form-control" placeholder="City/Village..." />
+                <span asp-validation-for="@Model.City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.PostalCode"></label>
+                <input asp-for="@Model.PostalCode" name="PostalCode" class="form-control" placeholder="Postal Code..." />
+                <span asp-validation-for="@Model.PostalCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Province"></label>
+                <input asp-for="@Model.Province" name="Province" class="form-control" placeholder="Province..." />
+                <span asp-validation-for="@Model.Province" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Address"></label>
+                <input asp-for="@Model.Address" name="Address" class="form-control" placeholder="Address..." />
+                <span asp-validation-for="@Model.Address" class="text-danger"></span>
+            </div>
+            <div class="d-flex justify-content-between mt-5">
+                <div class="form-group w-40">
+                    <div class="d-flex justify-content-center">
+                        <label asp-for="Months" class="control-label"></label>
+                    </div>
+                    <select class="form-control" id="Months" name="Months">
+                        <option>3</option>
+                        <option>6</option>
+                        <option>9</option>
+                        <option>12</option>
+                        <option>18</option>
+                    </select>
+                    <span asp-validation-for="Months" class="text-danger"></span>
+                </div>
+                <div class="form-group w-40">
+                    <div class="d-flex justify-content-center">
+                        <label asp-for="Company" class="control-label"></label>
+                    </div>
+                    <select class="form-control" id="Company" name="Company">
+                        @foreach (var company in Model.CreditCompanies)
+                        {
+                            <option>@company.Name</option>
+                        }
+                    </select>
+                    <span asp-validation-for="Company" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group text-center">
+                <button type="submit" class="form-group btn myButton-olive btn-lg btn-block mb-0">Continue</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-7">
+        <div>
+            <div class="h4 font-weight-bold text-center text-info">Products:</div>
+            @await Component.InvokeAsync(typeof(OpenOrderComponent))
+            <hr />
+            <div class="text-center">
+                <p class="font-weight-bold text-danger h4 text-right">Cost of goods: @(Model.Order.TotalPrice) BGN</p>
+            </div>
+        </div>
+        <div class="mt-5">
+            <div class="h4 font-weight-bold text-center text-info">Monthly Payment:</div>
+            <table class="table table-striped">
+                <thead>
+                    <tr class="row">
+                        <th scope="col" class="col-md-2 col d-flex justify-content-center"></th>
+                        <th scope="col" class="col-md-2 col d-flex justify-content-center"><b>3 Months</b></th>
+                        <th scope="col" class="col-md-2 col d-flex justify-content-center"><b>6 Months</b></th>
+                        <th scope="col" class="col-md-2 col d-flex justify-content-center"><b>9 Months</b></th>
+                        <th scope="col" class="col-md-2 col d-flex justify-content-center"><b>12 Months</b></th>
+                        <th scope="col" class="col-md-2 col d-flex justify-content-center"><b>18 Months</b></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var creditComany in Model.CreditCompanies)
+                    {
+                        var orderAmount = Model.Order.TotalPrice;
+                        var anualInterest = Math.Round(orderAmount * (creditComany.Interest / 100), 2);
+                        var monthInterest = Math.Round((anualInterest / 12), 2);
+                        <tr class="row">
+                            <td class="col-md-2 col d-flex justify-content-center">
+                                <b>@creditComany.Name</b>
+                            </td>
+                            <td class="col-md-2 col d-flex justify-content-center">
+                                @(((orderAmount / 3) + monthInterest).ToString("F2")) BGN
+                            </td>
+                            <td class="col-md-2 col d-flex justify-content-center">
+                                @(((orderAmount / 6) + monthInterest).ToString("F2")) BGN
+                            </td>
+                            <td class="col-md-2 col d-flex justify-content-center">
+                                @(((orderAmount / 9) + monthInterest).ToString("F2")) BGN
+                            </td>
+                            <td class="col-md-2 col d-flex justify-content-center">
+                                @(((orderAmount / 12) + monthInterest).ToString("F2")) BGN
+                            </td>
+                            <td class="col-md-2 col d-flex justify-content-center">
+                                @(((orderAmount / 18) + monthInterest).ToString("F2")) BGN
+                            </td>
+                        </tr>
+                        <tr class="row text-muted">
+                            <td class="col-md-2 col d-flex justify-content-center">
+                                <b>Total Payout:</b>
+                            </td>
+                            <td class="col-md-2 col d-flex justify-content-center">
+                                <b> @(((Math.Round((orderAmount / 3), 2) + monthInterest) * 3).ToString("F2")) BGN</b>
+                            </td>
+                            <td class="col-md-2 col d-flex justify-content-center">
+                                <b> @(((Math.Round((orderAmount / 6), 2) + monthInterest) * 6).ToString("F2")) BGN</b>
+                            </td>
+                            <td class="col-md-2 col d-flex justify-content-center">
+                                <b> @(((Math.Round((orderAmount / 9), 2) + monthInterest) * 9).ToString("F2")) BGN</b>
+                            </td>
+                            <td class="col-md-2 col d-flex justify-content-center">
+                                <b> @(((Math.Round((orderAmount / 12), 2) + monthInterest) * 12).ToString("F2")) BGN</b>
+                            </td>
+                            <td class="col-md-2 col d-flex justify-content-center">
+                                <b> @(((Math.Round((orderAmount / 18), 2) + monthInterest) * 18).ToString("F2")) BGN</b>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+
+

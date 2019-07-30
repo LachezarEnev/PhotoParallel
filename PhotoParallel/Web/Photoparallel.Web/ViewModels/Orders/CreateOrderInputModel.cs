@@ -34,7 +34,7 @@
 
         [Required]
         [Display(Name = "Postal code")]
-        [RegularExpression(@"^[0-9]{4}$", ErrorMessage = "Postal code must be exactely 4 digits!")]
+        [RegularExpression(@"^[0-9]{4}$", ErrorMessage = "Postal code should be exactly 4 digits!")]
         public string PostalCode { get; set; }
 
         [Display(Name = "Payment type")]
