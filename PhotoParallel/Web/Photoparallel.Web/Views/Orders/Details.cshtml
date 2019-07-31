@@ -34,6 +34,15 @@
         {
             <div><span class="font-weight-bold">Invoice №:</span> @Model.Invoice</div>
         }
+        @if (Model.CreditContract != null)
+        {
+            <div>
+                <span class="font-weight-bold">Credit Contract №:</span>
+                <a asp-area="" asp-controller="Credits" asp-action="Details" asp-route-id="@Model.CreditContract.Id">
+                    <u>@Model.CreditContract.Id</u>
+                </a>
+            </div>
+        }
         <div><span class="font-weight-bold">All Products:</span> @Model.TotalPrice BGN</div>
         <div><span class="font-weight-bold">Shipping:</span> @Model.Shipping BGN</div>
         <hr />

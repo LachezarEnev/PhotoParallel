@@ -1,0 +1,63 @@
+﻿@model Photoparallel.Web.Areas.Administration.ViewModels.Credits.DetailsCreditViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="h4 font-weight-bold text-center text-info">Credit Terms:</div>
+        <div class="card card-body bg-transparent shadow">
+            <div><span class="font-weight-bold">Credit Company:</span> @Model.CreditCompany.Name</div>
+            <div><span class="font-weight-bold">Price per Month:</span> @Model.PricePerMonth</div>
+            <div><span class="font-weight-bold">Monthly installments:</span> @Model.Months</div>
+            <div><span class="font-weight-bold">Credit Amount:</span> @Model.TotalAmount</div>
+            <div><span class="font-weight-bold">Valid Until:</span> @Model.ActiveUntil.ToString("dd/MM/yyyy")</div>
+            <div><span class="font-weight-bold">Credit Status:</span> @Model.CreditStatus</div>
+            <div>
+                <span class="font-weight-bold">Credit Contract №:</span>
+                <a asp-area="Administration" asp-controller="Credits" asp-action="CreditDetails" asp-route-id="@Model.Id">
+                    <u>@Model.Id</u>
+                </a>
+            </div>
+            <div>
+                <span class="font-weight-bold">Order №:</span>
+                <a asp-area="Administration" asp-controller="Orders" asp-action="Details" asp-route-id="@Model.Order.Id">
+                    <u>@Model.Order.Id</u>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="h4 font-weight-bold text-center text-info">Recipent Data:</div>
+        <div class="card card-body bg-transparent shadow">
+            <div><span class="font-weight-bold">Recipient:</span> @Model.Order.Recipient</div>
+            <div><span class="font-weight-bold">Phone Number:</span> @Model.Order.RecipientPhoneNumber</div>
+            <div><span class="font-weight-bold">Address:</span> @Model.Address</div>
+            <div><span class="font-weight-bold">Id Number:</span> @Model.IdNumber</div>
+            <div><span class="font-weight-bold">UCN:</span> @Model.Ucn</div>
+            <div><span class="font-weight-bold">Salary:</span> @Model.Salary BGN</div>
+        </div>
+        <hr />
+        <div>
+            <div class=" m-3 d-flex justify-content-around">
+                @if (Model.CreditStatus == CreditStatus.Pending)
+                {
+                    <a asp-area="Administration" asp-controller="Credits" asp-action="Delete" asp-route-id="@Model.Id" class="myButton-red btn-sm"><i class="fa fa-trash"></i> Delete</a>
+
+                    <a asp-area="Administration" asp-controller="Credits" asp-action="Approve" asp-route-id="@Model.Id" class="myButton-olive btn-sm"><i class="fas fa-check"></i> Approve</a>
+
+                    <a asp-area="Administration" asp-controller="Credits" asp-action="Pending" class="myButton-blue btn-sm"><i class="fas fa-arrow-left"></i> Back</a>
+                }
+                else if (Model.CreditStatus == CreditStatus.Approved)
+                {
+                    <a asp-area="Administration" asp-controller="Credits" asp-action="Approved" class="myButton-blue btn-sm"><i class="fas fa-arrow-left"></i> Back</a>
+                }
+                else
+                {
+                    <a asp-area="Administration" asp-controller="Credits" asp-action="Denied" class="myButton-blue btn-sm"><i class="fas fa-arrow-left"></i> Back</a>
+                }                
+            </div>
+        </div>
+    </div>
+</div>

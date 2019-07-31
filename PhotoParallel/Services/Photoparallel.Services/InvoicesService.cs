@@ -21,10 +21,6 @@
 
         public async Task CreateAsync(Order order)
         {
-            //var order = await this.context.Orders
-            //   .Include(x => x.Customer)
-            //   .FirstOrDefaultAsync(x => x.Id == orderId);
-
             if (order == null)
             {
                 return;
@@ -50,11 +46,6 @@
 
         public async Task CreateRentInvoiceAsync(Rent rent)
         {
-            //var rent = await this.rentsService.GetRentByIdAsync(rentId);
-            //var rent = await this.context.Rents
-            //    .Include(x => x.Customer)
-            //    .FirstOrDefaultAsync(x => x.Id == rentId);
-
             if (rent == null)
             {
                 return;

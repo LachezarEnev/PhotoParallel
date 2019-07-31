@@ -120,6 +120,7 @@
             var order = await this.context.Orders
                 .Include(x => x.Customer)
                 .Include(x => x.Invoice)
+                .Include(x => x.CreditContract)
                 .Where(x => x.OrderStatus != OrderStatus.Open)
                 .FirstOrDefaultAsync(x => x.Id == orderId);
 
@@ -335,7 +336,7 @@
         {
             var order = await this.context.Orders
                 .Include(x => x.Products)
-                .SingleOrDefaultAsync(x => x.Id == id && (x.OrderStatus == OrderStatus.Pending || x.OrderStatus == OrderStatus.Waiting));
+                .SingleOrDefaultAsync(x => x.Id == id && (x.OrderStatus == OrderStatus.Pending || x.OrderStatus == OrderStatus.Waiting || x.OrderStatus == OrderStatus.WaitingCreditConfirmation));
 
             if (order == null)
             {

@@ -1,0 +1,77 @@
+﻿@model Photoparallel.Web.ViewModels.Credits.CreditDetailsViewModel
+
+@{
+    ViewData["Title"] = "CreditDetails";
+}
+
+<div class="container-fluid bg-light">
+    <h3 class="text-center font-weight-bold mt-5">CREDIT CONTRACT</h3>
+    <h5 class="text-center font-weight-bold">№ @Model.Id</h5>
+    <div class="row justify-content-between">
+        <div class="col-7 mt-2">
+            <div><span class="font-weight-bold">Creditor: @Model.CreditCompany.Name</span></div>
+            <div><span class="font-weight-bold">Vat reg. № </span>BG@(Model.CreditCompany.VatNumber)</div>
+            <div><span class="font-weight-bold">Address: </span>@Model.CreditCompany.Address</div>
+        </div>
+        <div class="col-5">
+            <div><span class="font-weight-bold">Recipient: @Model.Order.Recipient</span></div>
+            <div><span class="font-weight-bold">UCN </span>@Model.Ucn</div>
+            <div><span class="font-weight-bold">ID № </span>@Model.IdNumber</div>
+            <div><span class="font-weight-bold">Address: </span>@Model.Address</div>
+        </div>
+    </div>
+    <hr />
+    <h6 class="text-center font-weight-bold">Credit Terms</h6>
+    <p>1. Pri tibique omnesque in, velit nobis nam at. At dicunt inermis delicatissimi pri. Nec quidam maiorum deseruisse no, scaevola detraxit mel et. Nostrud detracto accommodare nam ut, ex magna mutat ponderum quo. Corpora evertitur prodesset te pri. Ius omnes affert interpretaris ne <span class="font-weight-bold">@Model.IssuedOn.ToString("dd/MM/yyyy") - @Model.ActiveUntil.ToString("dd/MM/yyyy")</span>.</p>
+    <p>2. Ad propriae nominati mea, qui cu quot vocibus volutpat, ut posse imperdiet nam. An vim apeirian sapientem, populo timeam iuvaret et cum, at movet graecis his. Ex quot velit quo, eros doming neglegentur nam cu. Te zril quando nam, eum ut scripta habemus luptatum. Cum ne hinc reprehendunt, te vide eligendi tincidunt per, dolores detracto sensibus eu cum. Erant dolorum torquatos ad eam: <span class="font-weight-bold">@Model.TotalAmount BGN</span>.</p>
+    <p>3. Eu aperiam bonorum sit, in denique posidonium concludaturque vim, ea sea atomorum accusamus signiferumque. Sed repudiare voluptatibus cu, cu usu prodesset honestatis. Alienum minimum ad eam, te nemore denique vix. Ea brute commodo quo. Sanctus conceptam id eos, commodo meliore argumentum id est. Mea suas evertitur ea, lorem eligendi argumentum ad sea.</p>
+    <p>4. No nullam splendide mei, id omnis explicari imperdiet qui. Solum efficiantur ei quo, ex sit dicam atomorum. Ei nec vide nostrum antiopam, ea mel amet postea expetendis. Possim omnium intellegebat est id, aeque suavitate his in. Cu omnes postea bonorum nec.</p>
+    <p>5. Adipisci necessitatibus mei ea, has possim omnium ancillae ei. Doming deterruisset qui et, consetetur sadipscing has ad. Alienum recusabo inciderint ad nam, quo no quem facer homero. Sea in illum iuvaret detracto, dico aeque harum cu vis. Ea cibo natum referrentur nec, ea qui tantas laboramus. An mea sumo reformidans.</p>
+    <p>6. Ei est choro assueverit, sea verear adipisci an. Magna debitis vituperatoribus cum cu, ex tale utroque pro, mea denique conceptam an. Eu detracto imperdiet voluptatibus mei. Ea ius reprimique sadipscing, putent voluptaria in cum, mel id graece scriptorem. No atomorum cotidieque pro, et verear dignissim cum.</p>
+    <p>7. Ut enim saepe vel. Sit mutat vitae consetetur at. Affert integre mandamus eos te, eos novum iisque moderatius eu. Te amet idque malis qui, et mel dicunt everti salutatus. Id eam lucilius partiendo evertitur, eum ex partiendo suavitate, mel ubique ponderum no. Tempor discere te his.</p>
+    <p>8. In eam falli omnesque. Brute pertinax repudiandae cum cu, sed euismod patrioque conceptam id. Nam legere omnesque at, viderer efficiendi signiferumque sit no. Paulo utinam dolorum vix ex, ne vis debet utinam lobortis.</p>
+    <p>9. Adhuc ipsum no quo, putant propriae eum ei, cu brute adipisci est. Fastidii disputationi sed ne. Unum eripuit per ut. Case altera phaedrum pro ut, soleat habemus ius an, sit tempor audire ex. Homero vidisse ad qui, vis nibh ullum cu. Usu cu philosophia definitiones, no ridens equidem tincidunt eos. Ei ius quod ridens, ad purto minim accusam vel, ei eum quod dictas.</p>
+    <h6 class="text-center font-weight-bold">Monthly Installments</h6>
+    <div class="mt-5">
+        <table class="table">
+            <thead>
+                <tr class="d-flex justify-content-around">
+                    <th scope="col" class="col-md-2 col d-flex justify-content-center">№</th>
+                    <th scope="col" class="col-md-3 col d-flex justify-content-center">Monthly Instalment</th>
+                    <th scope="col" class="col-md-4 col d-flex justify-content-center">Due Date</th>
+                    <th scope="col" class="col-md-3 col d-flex justify-content-center">Remaining</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.Months; i++)
+                {
+                    <tr class="d-flex justify-content-around">
+                        <td class="col-md-2 col d-flex justify-content-center">
+                            @(i + 1)
+                        </td>
+                        <td class="col-md-3 col d-flex justify-content-center">
+                            @Model.PricePerMonth BGN
+                        </td>
+                        <td class="col-md-4 col d-flex justify-content-center">
+                            @Model.IssuedOn.AddMonths(i + 1).ToString("dd/MM/yyyy")
+                        </td>
+                        <td class="col-md-3 col d-flex justify-content-center">
+                            @(Model.TotalAmount - (Model.PricePerMonth * (i))) BGN
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="row justify-content-between mt-5">
+        <div class="col-1"></div>
+        <div class="col-7">
+            <div class="font-weight-bold">Creditor Signature:.........................</div>
+        </div>
+        <div class="col-4">
+            <div class="font-weight-bold">Recipient Signature:.........................</div>
+            <div class="mb-5 font-weight-bold">Date: @Model.IssuedOn.ToString("dd/MM/yyyy")</div>
+        </div>
+    </div>
+</div>
+

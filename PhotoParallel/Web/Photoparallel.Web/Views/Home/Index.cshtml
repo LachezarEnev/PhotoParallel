@@ -2,12 +2,25 @@
 @using X.PagedList.Mvc.Core;
 @using X.PagedList.Mvc.Common;
 @using X.PagedList;
-
 @{
     ViewData["Title"] = "Index";
 }
 
-<img src="~/img/camera9.jpg" alt="Alternate Text" width="2650" height="350" />
+@{
+    var products = Model.Products.ToList();
+    var newestProduct = products.OrderByDescending(x => x.Id).FirstOrDefault();
+
+    if (newestProduct != null)
+    {
+        <a asp-controller="Products" asp-action="Details" asp-route-id="@newestProduct.Id">
+            <img src="~/img/camera10.jpg" alt="Alternate Text" width="2650" height="350" />
+        </a>
+    }
+    else
+    {
+        <img src="~/img/camera10.jpg" alt="Alternate Text" width="2650" height="350" />
+    }
+}
 <partial name="~/Views/Shared/Partials/_LowerSectionPartial.cshtml" />
 
 <div class="row mb-2">

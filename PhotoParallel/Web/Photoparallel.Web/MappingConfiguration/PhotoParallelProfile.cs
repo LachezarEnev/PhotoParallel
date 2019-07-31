@@ -5,6 +5,7 @@
     using AutoMapper;
     using Photoparallel.Data.Models;
     using Photoparallel.Web.Areas.Administration.ViewModels.CreditCompanies;
+    using Photoparallel.Web.Areas.Administration.ViewModels.Credits;
     using Photoparallel.Web.Areas.Administration.ViewModels.Home;
     using Photoparallel.Web.Areas.Administration.ViewModels.Orders;
     using Photoparallel.Web.Areas.Administration.ViewModels.Products;
@@ -79,6 +80,8 @@
             this.CreateMap<Product, IndexProductViewModel>()
                 .ForMember(x => x.ImageUrl, y => y.MapFrom(src => src.Images.FirstOrDefault().ImageUrl));
 
+            this.CreateMap<Product, AllProductsVieModel>();
+
             this.CreateMap<Product, OpenOrdersProductsViewModel>()
                 .ForMember(x => x.ImageUrl, y => y.MapFrom(src => src.Images.FirstOrDefault().ImageUrl));
 
@@ -128,6 +131,11 @@
             this.CreateMap<CreditContract, ConfirmCreditViewModel>();
             this.CreateMap<CreditContract, MyCreditssViewModel>();
             this.CreateMap<CreditContract, CreditDetailsViewModel>();
+            this.CreateMap<CreditContract, DetailsCreditViewModel>();
+            this.CreateMap<CreditContract, AllCreditsViewModel>();
+
+            this.CreateMap<CreditContract, DeleteCreditViewModel>()
+                .ForMember(x => x.Recipient, y => y.MapFrom(src => src.Order.Recipient));
         }
     }
 }

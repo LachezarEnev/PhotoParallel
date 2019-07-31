@@ -30,12 +30,14 @@
             products = this.productsService.OrderBy(products, model.SortBy).ToList();
 
             var productsViewModel = this.mapper.Map<IList<IndexProductViewModel>>(products);
+            var allProductsViewModel = this.mapper.Map<IList<AllProductsVieModel>>(products);
 
             int pageNumber = model.PageNumber ?? DefaultPageNumber;
             int pageSize = model.PageSize ?? DefaultPageSize;
             var pageProductsViewMode = productsViewModel.ToPagedList(pageNumber, pageSize);
 
             model.ProductsViewModel = pageProductsViewMode;
+            model.Products = allProductsViewModel;
 
             return this.View(model);
         }

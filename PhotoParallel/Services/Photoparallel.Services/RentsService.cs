@@ -91,10 +91,6 @@
 
         public async Task<bool> AddProductAsync(int id, Rent rent)
         {
-            //var product = await this.context.Products
-            //   .Include(x => x.Images)
-            //   .SingleOrDefaultAsync(x => x.Id == id);
-
             var product = await this.productsService.GetProductByIdAsync(id);
 
             if (product == null || rent == null)

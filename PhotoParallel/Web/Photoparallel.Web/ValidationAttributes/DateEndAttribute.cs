@@ -26,7 +26,7 @@
 
             if (startDate > enddate || enddate > DateTime.Now.AddDays(7))
             {
-                return new ValidationResult($"Date must be between {startDate.ToString("dd/MM/yyyy")} and {DateTime.Now.AddDays(7).ToString("dd/MM/yyyy")}");
+                return new ValidationResult($"End day must be between {startDate.ToString("dd/MM/yyyy")} and {DateTime.Now.AddDays(7).ToString("dd/MM/yyyy")}");
             }
 
             return ValidationResult.Success;

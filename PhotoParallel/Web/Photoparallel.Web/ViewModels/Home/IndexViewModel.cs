@@ -1,11 +1,15 @@
 ﻿namespace Photoparallel.Web.ViewModels.Home
 {
+    using System.Collections.Generic;
+
     using Photoparallel.Data.Models.Enums;
     using X.PagedList;
 
     public class IndexViewModel
     {
         public IPagedList<IndexProductViewModel> ProductsViewModel { get; set; }
+
+        public IEnumerable<AllProductsVieModel> Products { get; set; }
 
         public string SearchString { get; set; }
 

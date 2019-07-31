@@ -1,0 +1,42 @@
+﻿<li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fas fa-cog"></i> Products</a>
+    <ul class="dropdown-menu dropdown-content bg-dark" role="menu">
+        <li><a asp-area="Administration" asp-controller="Products" asp-action="All">All Products</a></li>
+        <li><a asp-area="Administration" asp-controller="Products" asp-action="Rent">Rent Products</a></li>
+        <li><a asp-area="Administration" asp-controller="Products" asp-action="Hidden">Hidden Products</a></li>
+        <li><a asp-area="Administration" asp-controller="Products" asp-action="Oos">Out of Stock</a></li>
+        <li><a asp-area="Administration" asp-controller="Products" asp-action="Create">Create Product</a></li>
+    </ul>
+</li>
+<li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fas fa-cog"></i> Orders</a>
+    <ul class="dropdown-menu dropdown-content bg-dark" role="menu">
+        <li><a asp-area="Administration" asp-controller="Orders" asp-action="All">All</a></li>
+        <li><a asp-area="Administration" asp-controller="Orders" asp-action="Pending">Pending</a></li>
+        <li><a asp-area="Administration" asp-controller="Orders" asp-action="Waiting">Waiting</a></li>
+        <li><a asp-area="Administration" asp-controller="Orders" asp-action="Approved">Approved</a></li>
+        <li><a asp-area="Administration" asp-controller="Orders" asp-action="Shipped">Shipped</a></li>
+        <li><a asp-area="Administration" asp-controller="Orders" asp-action="Delivered">Delivered</a></li>
+        <li><a asp-area="Administration" asp-controller="Orders" asp-action="Denied">Denied</a></li>
+    </ul>
+</li>
+<li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fas fa-cog"></i> Rents</a>
+    <ul class="dropdown-menu dropdown-content bg-dark" role="menu">
+        <li><a asp-area="Administration" asp-controller="Rents" asp-action="Pending">Pending</a></li>
+        <li><a asp-area="Administration" asp-controller="Rents" asp-action="Rented">Rented</a></li>
+        <li><a asp-area="Administration" asp-controller="Rents" asp-action="Returned">Returned</a></li>
+        <li><a asp-area="Administration" asp-controller="Rents" asp-action="Denied">Denied</a></li>
+    </ul>
+</li>
+<li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fas fa-cog"></i> Credits</a>
+    <ul class="dropdown-menu dropdown-content bg-dark" role="menu">
+        <li><a asp-area="Administration" asp-controller="Credits" asp-action="Pending">Pending</a></li>
+        <li><a asp-area="Administration" asp-controller="Credits" asp-action="Approved">Approved</a></li>
+        <li><a asp-area="Administration" asp-controller="Credits" asp-action="Denied">Denied</a></li>
+        <li><a asp-area="Administration" asp-controller="CreditCompanies" asp-action="Create">Create Company</a></li>
+        <li><a asp-area="Administration" asp-controller="CreditCompanies" asp-action="All">All Companies</a></li>
+    </ul>
+</li>
+

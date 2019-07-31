@@ -28,8 +28,13 @@ using Photoparallel.Data.Models.Enums;
 
 #line default
 #line hidden
+#line 4 "D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web\Areas\Administration\Views\_ViewImports.cshtml"
+using Photoparallel.Web.Components;
+
+#line default
+#line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"6fbfaf46a3c2652c367d7d98fcc0b6770bc12ad9", @"/Areas/Administration/Views/Rents/Rented.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"535ab78a90d3d3ac0a28955bed18cb5d765d403d", @"/Areas/Administration/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8fba7f6b1e4c2e1685eb266ffdc0c0ed0501e469", @"/Areas/Administration/Views/_ViewImports.cshtml")]
     public class Areas_Administration_Views_Rents_Rented : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<Photoparallel.Web.Areas.Administration.ViewModels.Rents.AllRentsViewModel>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-area", "Administration", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -160,7 +165,7 @@ using Photoparallel.Data.Models.Enums;
             WriteLiteral("\r\n                                </td>\r\n                                <td class=\"col-md-3 col d-flex justify-content-around\">\r\n                                    <div class=\"mr-2\">\r\n                                        ");
             EndContext();
             BeginContext(2581, 136, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6fbfaf46a3c2652c367d7d98fcc0b6770bc12ad910874", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6fbfaf46a3c2652c367d7d98fcc0b6770bc12ad911064", async() => {
                 BeginContext(2706, 7, true);
                 WriteLiteral("Details");
                 EndContext();
@@ -200,7 +205,7 @@ using Photoparallel.Data.Models.Enums;
             WriteLiteral("\r\n                                    </div>\r\n                                    <div class=\"mr-2\">\r\n                                        ");
             EndContext();
             BeginContext(2859, 137, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6fbfaf46a3c2652c367d7d98fcc0b6770bc12ad913949", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6fbfaf46a3c2652c367d7d98fcc0b6770bc12ad914139", async() => {
                 BeginContext(2986, 6, true);
                 WriteLiteral("Return");
                 EndContext();

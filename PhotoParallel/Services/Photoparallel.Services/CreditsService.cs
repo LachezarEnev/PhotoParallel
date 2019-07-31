@@ -5,7 +5,6 @@
     using System.Linq;
     using System.Threading.Tasks;
 
-    using AutoMapper;
     using Microsoft.EntityFrameworkCore;
     using Photoparallel.Common;
     using Photoparallel.Data;
@@ -16,12 +15,50 @@
     public class CreditsService : ICreditsService
     {
         private readonly PhotoparallelDbContext context;
-        private readonly IMapper mapper;
+        private readonly IOrdersService ordersService;
 
-        public CreditsService(PhotoparallelDbContext context, IMapper mapper)
+        public CreditsService(PhotoparallelDbContext context, IOrdersService ordersService)
         {
             this.context = context;
-            this.mapper = mapper;
+            this.ordersService = ordersService;
+        }
+
+        public async Task ApproveAsync(int id)
+        {
+            var credit = await this.context.CreditContracts
+                .Include(x => x.Order)
+                .Where(x => x.Id == id && x.CreditStatus == CreditStatus.Pending)
+                .SingleOrDefaultAsync();
+
+            if (credit == null)
+            {
+                return;
+            }
+
+            credit.CreditStatus = CreditStatus.Approved;
+            this.context.Update(credit);
+            await this.context.SaveChangesAsync();
+
+            await this.ordersService.ApproveAsync(credit.Order.Id);
+        }
+
+        public async Task DeleteCreditAsync(int id)
+        {
+            var credit = await this.context.CreditContracts
+                .Include(x => x.Order)
+                .Where(x => x.Id == id && x.CreditStatus == CreditStatus.Pending)
+                .SingleOrDefaultAsync();
+
+            if (credit == null)
+            {
+                return;
+            }
+
+            credit.CreditStatus = CreditStatus.Denied;
+            this.context.Update(credit);
+            await this.context.SaveChangesAsync();
+
+            await this.ordersService.DeleteOrderAsync(credit.Order.Id);
         }
 
         public async Task FinishCreditAsync(CreditContract credit)
@@ -44,6 +81,16 @@
             return credits;
         }
 
+        public async Task<IEnumerable<CreditContract>> GetApprovedCreditsAsync()
+        {
+            var approvedCredits = await this.context.CreditContracts
+               .Where(x => x.CreditStatus == CreditStatus.Approved)
+               .OrderByDescending(x => x.IssuedOn)
+               .ToArrayAsync();
+
+            return approvedCredits;
+        }
+
         public async Task<CreditContract> GetCreditByIdAsync(int id)
         {
             var credit = await this.context.CreditContracts
@@ -54,6 +101,16 @@
                 .FirstOrDefaultAsync(x => x.Id == id);
 
             return credit;
+        }
+
+        public async Task<IEnumerable<CreditContract>> GetDeniedCreditsAsync()
+        {
+            var deniedCredits = await this.context.CreditContracts
+               .Where(x => x.CreditStatus == CreditStatus.Denied)
+               .OrderByDescending(x => x.IssuedOn)
+               .ToArrayAsync();
+
+            return deniedCredits;
         }
 
         public async Task<CreditContract> GetOpenCreditsByUserIdAsync(string customerId)
@@ -73,6 +130,16 @@
             }
 
             return openCredit;
+        }
+
+        public async Task<IEnumerable<CreditContract>> GetPendingCreditsAsync()
+        {
+            var pendingCredits = await this.context.CreditContracts
+                .Where(x => x.CreditStatus == CreditStatus.Pending)
+                .OrderBy(x => x.IssuedOn)
+                .ToArrayAsync();
+
+            return pendingCredits;
         }
 
         public async Task SetCreditDetailsAsync(CreditContract creditContract, Order order, string address, CreditCompany creditCompany, decimal salary, int months, string ucn, string idNumber)

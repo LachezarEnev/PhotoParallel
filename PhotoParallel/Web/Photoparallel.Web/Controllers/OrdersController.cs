@@ -146,7 +146,7 @@
 
             await this.ordersService.FinishOrderAsync(order);
 
-            return this.View();
+            return this.View(order.Id);
         }
 
         [Authorize]

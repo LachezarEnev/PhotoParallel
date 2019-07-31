@@ -16,5 +16,15 @@
         Task<IEnumerable<CreditContract>> GetAllCreditsByUserAsync(string username);
 
         Task<CreditContract> GetCreditByIdAsync(int id);
+
+        Task<IEnumerable<CreditContract>> GetPendingCreditsAsync();
+
+        Task<IEnumerable<CreditContract>> GetApprovedCreditsAsync();
+
+        Task<IEnumerable<CreditContract>> GetDeniedCreditsAsync();
+
+        Task ApproveAsync(int id);
+
+        Task DeleteCreditAsync(int id);
     }
 }

@@ -1,5 +1,6 @@
 ﻿namespace Photoparallel.Web.Areas.Administration.ViewModels.Orders
 {
+    using Photoparallel.Data.Models;
     using System;
     using System.Collections.Generic;
 
@@ -34,6 +35,8 @@
         public string PaymentType { get; set; }
 
         public string PaymentStatus { get; set; }
+
+        public CreditContract CreditContract { get; set; }
 
         public IList<OrderProductsViewModel> OrderProductsViewModel { get; set; }
     }

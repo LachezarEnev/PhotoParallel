@@ -1,0 +1,19 @@
+﻿<li class="dropdown">
+    <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fas fa-user-circle"></i> Hello, @this.User.Identity.Name!
+    </a>
+    <div class="dropdown-menu dropdown-content bg-dark" aria-labelledby="navbarDropdown">
+        <a asp-area="" asp-controller="Orders" asp-action="My" class="dropdown-item nav-link text-white"><i class="fas fa-history"></i> My Orders</a>
+        <a asp-area="" asp-controller="Rents" asp-action="My" class="dropdown-item nav-link text-white"><i class="fas fa-history"></i> My Rents</a>
+        <a asp-area="" asp-controller="Invoices" asp-action="My" class="dropdown-item nav-link text-white"><i class="fas fa-history"></i> My Invoices</a>
+        <a asp-area="" asp-controller="Credits" asp-action="My" class="dropdown-item nav-link text-white"><i class="fas fa-history"></i> My Credits</a>
+        <a asp-area="Identity" asp-page="/Account/Manage/Index" class="dropdown-item nav-link text-white"><i class="fas fa-cog"></i> Settings</a>
+        <a asp-area="Identity" asp-page="/Account/Logout" class="dropdown-item nav-link text-white"><i class="fas fa-sign-out-alt"></i> Exit</a>
+    </div>
+</li>
+<li class="dropdown">
+    @await Component.InvokeAsync(typeof(RentCartComponent))
+</li>
+<li class="dropdown">
+    @await Component.InvokeAsync(typeof(ShoppingCartComponent))
+</li>

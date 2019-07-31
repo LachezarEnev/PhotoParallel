@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Photoparallel.Web.Areas.Administration.ViewModels.Credits.AllCreditsViewModel>
+
+@{
+    ViewData["Title"] = "Pending";
+}
+
+
+<div class="row">
+    <div class="col-xl-6">
+        <div class="container mobile-fondsize-11">
+            <div class="h2 text-center text-info font-weight-bold">Approved Credits</div>
+            <table class="table">
+                <thead>
+                    <tr class="row">
+                        <th scope="col" class="col-md-2 col d-flex justify-content-center">№</th>
+                        <th scope="col" class="col-md-2 col d-flex justify-content-center">Credit Number</th>
+                        <th scope="col" class="col-md-3 col d-flex justify-content-center">Creation Date</th>
+                        <th scope="col" class="col-md-3 col d-flex justify-content-center">Status</th>
+                        <th scope="col" class="col-md-2 col d-flex justify-content-center">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        var credits = Model.ToArray();
+                    }
+                    @for (int i = 0; i < credits.Length; i++)
+                    {
+                        var credit = credits[i];
+
+                        <tr class="row">
+                            <td class="col-md-2 col d-flex justify-content-center">
+                                @(i + 1)
+                            </td>
+                            <td class="col-md-2 col d-flex justify-content-center">
+                                @credit.Id
+                            </td>
+                            <td class="col-md-3 col d-flex justify-content-center">
+                                @credit.IssuedOn.ToString("dd/MM/yyyy")
+                            </td>
+                            <td class="col-md-3 col d-flex justify-content-center">
+                                @credit.CreditStatus
+                            </td>
+                            <td class="col-md-2 col d-flex justify-content-around">
+                                <div class="mr-2">
+                                    <a asp-area="Administration" asp-controller="Credits" asp-action="Details" asp-route-id="@credit.Id" class="btn btn-info btn-sm">Details</a>
+                                </div>                               
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            @if (credits.Count() == 0)
+            {
+                <h3 class="text-center text-danger">There are no Approved Credits!</h3>
+            }
+        </div>
+    </div>
+</div>

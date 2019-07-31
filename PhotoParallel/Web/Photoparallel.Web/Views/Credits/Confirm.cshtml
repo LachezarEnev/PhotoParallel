@@ -24,7 +24,7 @@
             <div><span class="font-weight-bold">Credit Company:</span> @Model.CreditCompany.Name</div>
             <div><span class="font-weight-bold">Price per Month:</span> @Model.PricePerMonth</div>
             <div><span class="font-weight-bold">Monthly installments:</span> @Model.Months</div>
-            <div><span class="font-weight-bold">Credit Value:</span> @Model.TotalAmount</div>
+            <div><span class="font-weight-bold">Credit Amount:</span> @Model.TotalAmount</div>
             <div><span class="font-weight-bold">Valid Until:</span> @Model.ActiveUntil.ToString("dd/MM/yyyy")</div>
         </div>
         <div class="container-fluid d-flex justify-content-around m-5">
@@ -41,7 +41,11 @@
             @await Component.InvokeAsync(typeof(OpenOrderComponent))
             <div class="text-center">
                 <p class="font-weight-bold text-danger h4 text-right">Cost of goods: @(Model.Order.TotalPrice) BGN</p>
-            </div>         
+            </div>
+            <hr />
+            <div class="text-center">
+                <p class="font-weight-bold text-danger h4 text-right">Credit Amount: @(Model.TotalAmount) BGN</p>
+            </div>
         </div>
     </div>
 </div>
