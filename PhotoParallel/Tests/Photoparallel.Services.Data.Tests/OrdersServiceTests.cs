@@ -810,7 +810,7 @@
         [InlineData(OrderStatus.WaitingCreditConfirmation, 1, 0, OrderStatus.Waiting, 1, 2)]
         [InlineData(OrderStatus.WaitingCreditConfirmation, 2, 0, OrderStatus.Approved, 0, 0)]
         [InlineData(OrderStatus.Shipped, 2, 0, OrderStatus.Shipped, 2, 0)]
-        public async Task ApproveAsyncShouldchangeOrderStatusToApprovedAndReduceProductQuantityIfEnoughQuantity(OrderStatus orderStatus, int productQuantity, int InpendingOrders, OrderStatus expectedStatus, int expectedQuantity, int expectedInPedningOrders)
+        public async Task ApproveAsyncShouldchangeOrderStatusToApprovedAndReduceProductQuantityIfEnoughQuantity(OrderStatus orderStatus, int productQuantity, int inpendingOrders, OrderStatus expectedStatus, int expectedQuantity, int expectedInPedningOrders)
         {
             var options = new DbContextOptionsBuilder<PhotoparallelDbContext>()
                    .UseInMemoryDatabase(Guid.NewGuid().ToString())
@@ -823,7 +823,7 @@
             var invoicesService = new Mock<IInvoicesService>();
             var userService = new Mock<IUsersService>();
 
-            var product = new Product { Name = "Canon M50", Price = 1199, Quantity = productQuantity, InPendingOrders = InpendingOrders };
+            var product = new Product { Name = "Canon M50", Price = 1199, Quantity = productQuantity, InPendingOrders = inpendingOrders };
             dbContext.Products.Add(product);
             await dbContext.SaveChangesAsync();
 

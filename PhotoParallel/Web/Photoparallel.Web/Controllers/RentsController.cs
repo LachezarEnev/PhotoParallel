@@ -72,13 +72,9 @@
             return this.View(rentViewModel);
         }
 
+        [Authorize]
         public async Task<IActionResult> Add(int id)
         {
-            if (!this.User.Identity.IsAuthenticated)
-            {
-                return this.Redirect("/Identity/Account/Login");
-            }
-
             var openRent = await this.rentsService.CreateOpenRentByUserIdAsync(this.User.Identity.Name);
 
             await this.rentsService.AddProductAsync(id, openRent);

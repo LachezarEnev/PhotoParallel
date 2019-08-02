@@ -256,7 +256,7 @@
         {
             var rent = await this.context.Rents
                 .Include(x => x.Products)
-                .FirstOrDefaultAsync(x => x.Id == id);
+                .FirstOrDefaultAsync(x => x.Id == id && x.RentStatus == RentStatus.Pending);
 
             if (rent == null)
             {
