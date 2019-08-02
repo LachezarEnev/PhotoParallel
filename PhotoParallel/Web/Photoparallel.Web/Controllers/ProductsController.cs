@@ -25,13 +25,12 @@
 
             if (product == null)
             {
-                return this.RedirectToAction("Index", "Home");
+                return this.View("ProductNotFound");
             }
 
-            if (this.User.IsInRole(GlobalConstants.UserRoleName) && product.Hide)
+            if (!this.User.IsInRole(GlobalConstants.AdministratorRoleName) && product.Hide)
             {
-                return this.RedirectToAction("Index", "Home");
-            }
+                return this.View("ProductNotFound");            }
 
             var productViewModel = this.mapper.Map<DetailsProductViewModel>(product);
 

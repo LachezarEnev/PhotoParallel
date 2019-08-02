@@ -435,7 +435,7 @@
         public async Task DeleteOrderAsync(int id)
         {
             var order = await this.context.Orders
-                .Where(x => x.Id == id)
+                .Where(x => x.Id == id && x.OrderStatus == OrderStatus.Pending)
                 .FirstOrDefaultAsync();
 
             if (order == null)

@@ -151,7 +151,7 @@
 
             if (credit == null || credit.Customer.UserName != this.User.Identity.Name)
             {
-                return this.RedirectToAction("My");
+                return this.View("CreditNotFound");
             }
 
             var creditViewModel = this.mapper.Map<CreditDetailsViewModel>(credit);

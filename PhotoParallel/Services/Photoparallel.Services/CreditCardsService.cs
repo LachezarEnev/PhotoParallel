@@ -33,10 +33,10 @@
                         creditCard.Rents.Add(rent);
                         this.context.Update(creditCard);
                         await this.context.SaveChangesAsync();
+
+                        return;
                     }
                 }
-
-                return;
             }
 
             card.Rents.Add(rent);
@@ -62,10 +62,10 @@
                         creditCard.Orders.Add(order);
                         this.context.Update(creditCard);
                         await this.context.SaveChangesAsync();
+
+                        return;
                     }
                 }
-
-                return;
             }
 
             card.Orders.Add(order);

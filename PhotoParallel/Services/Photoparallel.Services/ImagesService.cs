@@ -10,14 +10,6 @@
 
     public class ImagesService : IImagesService
     {
-        public async void UploadImageAsync(IFormFile formImage, string path)
-        {
-            using (var stream = new FileStream(path, FileMode.Create))
-            {
-                await formImage.CopyToAsync(stream);
-            }
-        }
-
         public async Task<IEnumerable<string>> UploadImagesAsync(IList<IFormFile> formImages, int images, string template, int id)
         {
             var imageUrls = new List<string>();

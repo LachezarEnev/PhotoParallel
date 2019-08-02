@@ -91,8 +91,7 @@
 
             if (order == null)
             {
-                this.TempData["error"] = GlobalConstants.ErrorMessageInvalidOrderNumber;
-                return this.RedirectToAction("All");
+                return this.View("OrderNotFound");
             }
 
             var orderProducts = await this.ordersService.OrderProductsByOrderIdAsync(id);
@@ -141,7 +140,7 @@
 
             if (order == null)
             {
-                return this.RedirectToAction("Pending");
+                return this.View("OrderNotFound");
             }
 
             var orderViewModel = this.mapper.Map<DeleteOrderViewModel>(order);

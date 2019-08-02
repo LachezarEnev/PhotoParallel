@@ -76,3 +76,5 @@ C:\Users\don_m\PhotoParallel\PhotoParallel\Tests\Photoparallel.Services.Data.Tes
 C:\Users\don_m\PhotoParallel\PhotoParallel\Tests\Photoparallel.Services.Data.Tests\obj\Debug\netcoreapp2.2\Photoparallel.Services.Data.Tests.csproj.CopyComplete
 C:\Users\don_m\PhotoParallel\PhotoParallel\Tests\Photoparallel.Services.Data.Tests\obj\Debug\netcoreapp2.2\Photoparallel.Services.Data.Tests.dll
 C:\Users\don_m\PhotoParallel\PhotoParallel\Tests\Photoparallel.Services.Data.Tests\obj\Debug\netcoreapp2.2\Photoparallel.Services.Data.Tests.pdb
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Tests\Photoparallel.Services.Data.Tests\bin\Debug\netcoreapp2.2\Photoparallel.Services.dll
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Tests\Photoparallel.Services.Data.Tests\bin\Debug\netcoreapp2.2\Photoparallel.Services.pdb

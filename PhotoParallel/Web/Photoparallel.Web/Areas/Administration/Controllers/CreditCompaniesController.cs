@@ -55,7 +55,7 @@
 
             if (company == null)
             {
-                return this.RedirectToAction("All");
+                return this.View("CreditCompanyNotFound");
             }
 
             var model = this.mapper.Map<EditCompanyInputModel>(company);
@@ -84,7 +84,7 @@
 
             if (company == null)
             {
-                return this.RedirectToAction("All");
+                return this.View("CreditCompanyNotFound");
             }
 
             await this.creditCompaniesService.HideCompanyAsync(company);
@@ -98,7 +98,7 @@
 
             if (company == null)
             {
-                return this.RedirectToAction("All");
+                return this.View("CreditCompanyNotFound");
             }
 
             await this.creditCompaniesService.ShowCompanyAsync(company);

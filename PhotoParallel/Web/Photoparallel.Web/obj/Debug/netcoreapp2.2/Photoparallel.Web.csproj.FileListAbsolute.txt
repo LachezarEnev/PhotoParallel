@@ -339,3 +339,8 @@ D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web\obj\Debug\netcor
 D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web\obj\Debug\netcoreapp2.2\Razor\Areas\Administration\Views\Credits\Denied.g.cshtml.cs
 D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Partials\_AdminPartial.g.cshtml.cs
 D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Partials\_UserPartial.g.cshtml.cs
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web\obj\Debug\netcoreapp2.2\Razor\Views\Shared\ProductNotFound.g.cshtml.cs
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web\obj\Debug\netcoreapp2.2\Razor\Views\Shared\OrderNotFound.g.cshtml.cs
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web\obj\Debug\netcoreapp2.2\Razor\Views\Shared\CreditCompanyNotFound.g.cshtml.cs
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web\obj\Debug\netcoreapp2.2\Razor\Views\Shared\CreditNotFound.g.cshtml.cs
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web\obj\Debug\netcoreapp2.2\Razor\Views\Shared\InvoiceNotFound.g.cshtml.cs

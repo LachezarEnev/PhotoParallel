@@ -35,7 +35,7 @@
 
             if (credit == null)
             {
-                return this.RedirectToAction("Pending");
+                return this.View("CreditNotFound");
             }
 
             var creditViewModel = this.mapper.Map<DetailsCreditViewModel>(credit);
@@ -49,7 +49,7 @@
 
             if (credit == null)
             {
-                return this.RedirectToAction("Pending");
+                return this.View("CreditNotFound");
             }
 
             var creditViewModel = this.mapper.Map<CreditDetailsViewModel>(credit);
@@ -70,7 +70,7 @@
 
             if (credit == null)
             {
-                return this.RedirectToAction("Pending");
+                return this.View("CreditNotFound");
             }
 
             var creditViewModel = this.mapper.Map<DeleteCreditViewModel>(credit);

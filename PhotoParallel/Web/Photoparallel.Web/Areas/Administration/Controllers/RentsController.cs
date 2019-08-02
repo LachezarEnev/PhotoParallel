@@ -62,7 +62,7 @@
 
             if (rent == null)
             {
-                return this.RedirectToAction("Pending");
+                return this.View("OrderNotFound");
             }
 
             var rentProducts = await this.rentsService.RentProductsByRentIdAsync(id);
@@ -94,7 +94,7 @@
 
             if (rent == null)
             {
-                return this.RedirectToAction("Pending");
+                return this.View("OrderNotFound");
             }
 
             var rentViewModel = this.mapper.Map<DeleteRentViewModel>(rent);
@@ -116,7 +116,7 @@
 
             if (rent == null)
             {
-                return this.RedirectToAction("Rented");
+                return this.View("OrderNotFound");
             }
 
             var returnInputModel = this.mapper.Map<RentReturnInputModel>(rent);

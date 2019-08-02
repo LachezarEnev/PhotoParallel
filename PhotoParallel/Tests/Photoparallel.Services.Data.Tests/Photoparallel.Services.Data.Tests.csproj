@@ -29,6 +29,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Data\Photoparallel.Data\Photoparallel.Data.csproj" />
     <ProjectReference Include="..\..\Services\Photoparallel.Services.Data\Photoparallel.Services.Data.csproj" />
+    <ProjectReference Include="..\..\Services\Photoparallel.Services\Photoparallel.Services.csproj" />
   </ItemGroup>
 
 </Project>

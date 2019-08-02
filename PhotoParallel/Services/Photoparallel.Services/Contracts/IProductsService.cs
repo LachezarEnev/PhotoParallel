@@ -24,6 +24,10 @@
 
         bool ShowProduct(int id);
 
+        Task<IEnumerable<Product>> GetVisibleProductsAsync();
+
+        Task<IEnumerable<Product>> GetVisibleProductsByTypeAsync(string productType);
+
         Task<IEnumerable<Product>> GetHiddenProductsAsync();
 
         Task<IEnumerable<Product>> GetOosProductsAsync();

@@ -191,7 +191,7 @@
 
             if (rent == null || rent.Customer.UserName != this.User.Identity.Name)
             {
-                return this.RedirectToAction("My");
+                return this.View("OrderNotFound");
             }
 
             var rentProducts = await this.rentsService.RentProductsByRentIdAsync(id);

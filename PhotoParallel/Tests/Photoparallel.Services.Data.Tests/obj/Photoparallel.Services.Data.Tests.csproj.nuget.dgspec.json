@@ -348,6 +348,79 @@
         }
       }
     },
+    "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Services\\Photoparallel.Services\\Photoparallel.Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Services\\Photoparallel.Services\\Photoparallel.Services.csproj",
+        "projectName": "Photoparallel.Services",
+        "projectPath": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Services\\Photoparallel.Services\\Photoparallel.Services.csproj",
+        "packagesPath": "C:\\Users\\don_m\\.nuget\\packages\\",
+        "outputPath": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Services\\Photoparallel.Services\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\don_m\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {
+              "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Data\\Photoparallel.Data.Models\\Photoparallel.Data.Models.csproj": {
+                "projectPath": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Data\\Photoparallel.Data.Models\\Photoparallel.Data.Models.csproj"
+              },
+              "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Data\\Photoparallel.Data\\Photoparallel.Data.csproj": {
+                "projectPath": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Data\\Photoparallel.Data\\Photoparallel.Data.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[8.1.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[6.1.1, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.1.118, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
     "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Tests\\Photoparallel.Services.Data.Tests\\Photoparallel.Services.Data.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -379,6 +452,9 @@
               },
               "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Services\\Photoparallel.Services.Data\\Photoparallel.Services.Data.csproj": {
                 "projectPath": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Services\\Photoparallel.Services.Data\\Photoparallel.Services.Data.csproj"
+              },
+              "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Services\\Photoparallel.Services\\Photoparallel.Services.csproj": {
+                "projectPath": "D:\\SoftUni\\C# Web\\MyProject\\PhotoParallel\\Services\\Photoparallel.Services\\Photoparallel.Services.csproj"
               }
             }
           }

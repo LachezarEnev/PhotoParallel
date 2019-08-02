@@ -8,7 +8,5 @@
     public interface IImagesService
     {
         Task<IEnumerable<string>> UploadImagesAsync(IList<IFormFile> formImages, int count, string template, int id);
-
-        void UploadImageAsync(IFormFile formImage, string path);
     }
 }

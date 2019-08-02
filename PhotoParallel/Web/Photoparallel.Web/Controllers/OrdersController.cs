@@ -166,7 +166,7 @@
 
             if (order == null || order.Customer.UserName != this.User.Identity.Name)
             {
-                return this.RedirectToAction("My");
+                return this.View("OrderNotFound");
             }
 
             var orderProducts = await this.ordersService.OrderProductsByOrderIdAsync(id);

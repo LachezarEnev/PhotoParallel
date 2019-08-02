@@ -33,7 +33,7 @@
 
             if (invoice == null || invoice.Customer.UserName != this.User.Identity.Name)
             {
-                return this.RedirectToAction("My", "Invoices");
+                return this.View("InvoiceNotFound");
             }
 
             if (invoice.Order == null)
@@ -57,7 +57,7 @@
 
             if (invoice == null || invoice.Customer.UserName != this.User.Identity.Name)
             {
-                return this.RedirectToAction("My", "Invoices");
+                return this.View("InvoiceNotFound");
             }
 
             if (invoice.Rent == null)
