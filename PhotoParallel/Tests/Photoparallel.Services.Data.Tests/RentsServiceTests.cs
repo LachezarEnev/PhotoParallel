@@ -249,7 +249,7 @@
             await dbContext.SaveChangesAsync();
 
             var rentsService = new RentsService(dbContext, userService.Object, invoicesService.Object, productService.Object);
-            var delereProductId = 5;
+            var delereProductId = 1000;
             await rentsService.DeleteProductAsync(delereProductId, rent);
 
             var openRentProducts = dbContext.RentProducts.ToList();
@@ -610,6 +610,116 @@
 
             Assert.Equal("Sofia, Mladost 4", rent.ShippingAddress);
             Assert.Equal("0877777777", rent.RecipientPhoneNumber);
+        }
+
+        [Theory]
+        [InlineData(1, false, RentStatus.Pending, true, 0)]
+        [InlineData(3, false, RentStatus.Pending, false, 2)]        
+        public async Task FinishRentAsyncShouldChangeStatusToPendingAndReduceProductQuantity(int productQuantity, bool isRented, RentStatus expectedStatus, bool expextedIsRented, int expectedProductQuantity)
+        {
+            var options = new DbContextOptionsBuilder<PhotoparallelDbContext>()
+                   .UseInMemoryDatabase(Guid.NewGuid().ToString())
+                   .Options;
+            var dbContext = new PhotoparallelDbContext(options);
+
+            var rent = new Rent { RentStatus = RentStatus.Open };
+            dbContext.Rents.Add(rent);
+
+            var productService = new Mock<IProductsService>();
+            var invoicesService = new Mock<IInvoicesService>();
+            var userService = new Mock<IUsersService>();
+
+            var product = new Product { Name = "Canon M50", Quantity = productQuantity, IsRented = isRented };
+
+            dbContext.Products.Add(product);
+
+            var rentProduct = new RentProduct { Product = product, Quantity = 1 };
+
+            rent.Products.Add(rentProduct);
+            await dbContext.SaveChangesAsync();
+
+            var rentsService = new RentsService(dbContext, userService.Object, invoicesService.Object, productService.Object);
+
+            await rentsService.FinishRentAsync(rent);
+
+            Assert.Equal(expectedStatus, rent.RentStatus);
+            Assert.Equal(expextedIsRented, product.IsRented);
+            Assert.Equal(expectedProductQuantity, product.Quantity);
+        }
+
+        [Theory]
+        [InlineData(0, true, RentStatus.Pending, RentStatus.Denied, false, 1)]
+        [InlineData(3, true, RentStatus.Pending, RentStatus.Denied, false, 4)]
+        [InlineData(1, false, RentStatus.Open, RentStatus.Open, false, 1)]
+        [InlineData(0, true, RentStatus.Rented, RentStatus.Rented, true, 0)]
+        public async Task DeleteRentAsyncShouldChangePendingStatusToDenied(int productQuantity, bool isRented, RentStatus rentStatus, RentStatus expectedStatus, bool expextedIsRented, int expectedProductQuantity)
+        {
+            var options = new DbContextOptionsBuilder<PhotoparallelDbContext>()
+                   .UseInMemoryDatabase(Guid.NewGuid().ToString())
+                   .Options;
+            var dbContext = new PhotoparallelDbContext(options);
+
+            var rent = new Rent { RentStatus = rentStatus };
+            dbContext.Rents.Add(rent);
+
+            var productService = new Mock<IProductsService>();
+            var invoicesService = new Mock<IInvoicesService>();
+            var userService = new Mock<IUsersService>();
+
+            var product = new Product { Name = "Canon M50", Quantity = productQuantity, IsRented = isRented };
+
+            dbContext.Products.Add(product);
+
+            var rentProduct = new RentProduct { Product = product, Quantity = 1 };
+
+            rent.Products.Add(rentProduct);
+            await dbContext.SaveChangesAsync();
+
+            var rentsService = new RentsService(dbContext, userService.Object, invoicesService.Object, productService.Object);
+
+            await rentsService.DeleteRentAsync(rent.Id);
+
+            Assert.Equal(expectedStatus, rent.RentStatus);
+            Assert.Equal(expextedIsRented, product.IsRented);
+            Assert.Equal(expectedProductQuantity, product.Quantity);
+        }
+
+        [Theory]
+        [InlineData(0, true, RentStatus.Rented, 0, ReturnedOnTime.Yes, RentStatus.Returned, false, 1, 0)]
+        [InlineData(3, false, RentStatus.Rented, 100, ReturnedOnTime.No, RentStatus.Returned, false, 4, 100)]
+        [InlineData(1, false, RentStatus.Open, 0, ReturnedOnTime.Yes, RentStatus.Open, false, 1, 0)]
+        [InlineData(0, true, RentStatus.Pending, 50, ReturnedOnTime.Yes, RentStatus.Pending, true, 0, 0)]
+        public async Task ReturnAsyncShouldChangeRentedStatusToReturned(int productQuantity, bool isRented, RentStatus rentStatus, decimal penalty, ReturnedOnTime returnedOnTime, RentStatus expectedStatus, bool expextedIsRented, int expectedProductQuantity, decimal expectedPenalty)
+        {
+            var options = new DbContextOptionsBuilder<PhotoparallelDbContext>()
+                   .UseInMemoryDatabase(Guid.NewGuid().ToString())
+                   .Options;
+            var dbContext = new PhotoparallelDbContext(options);
+
+            var rent = new Rent { RentStatus = rentStatus };
+            dbContext.Rents.Add(rent);
+
+            var productService = new Mock<IProductsService>();
+            var invoicesService = new Mock<IInvoicesService>();
+            var userService = new Mock<IUsersService>();
+
+            var product = new Product { Name = "Canon M50", Quantity = productQuantity, IsRented = isRented };
+
+            dbContext.Products.Add(product);
+
+            var rentProduct = new RentProduct { Product = product, Quantity = 1 };
+
+            rent.Products.Add(rentProduct);
+            await dbContext.SaveChangesAsync();
+
+            var rentsService = new RentsService(dbContext, userService.Object, invoicesService.Object, productService.Object);
+
+            await rentsService.ReturnAsync(rent.Id, penalty, returnedOnTime);
+
+            Assert.Equal(expectedStatus, rent.RentStatus);
+            Assert.Equal(expextedIsRented, product.IsRented);
+            Assert.Equal(expectedProductQuantity, product.Quantity);
+            Assert.Equal(expectedPenalty, rent.Penalty);           
         }
     }
 }
