@@ -865,7 +865,7 @@
             var product = new Product { Name = "Canon M50", Price = price };
             dbContext.Products.Add(product);
 
-            var orderProduct = new OrderProduct { Product = product};
+            var orderProduct = new OrderProduct { Product = product };
 
             order.TotalPrice = orderProduct.Product.Price;
 

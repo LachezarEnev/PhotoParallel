@@ -719,7 +719,7 @@
             Assert.Equal(expectedStatus, rent.RentStatus);
             Assert.Equal(expextedIsRented, product.IsRented);
             Assert.Equal(expectedProductQuantity, product.Quantity);
-            Assert.Equal(expectedPenalty, rent.Penalty);           
+            Assert.Equal(expectedPenalty, rent.Penalty);
         }
     }
 }
