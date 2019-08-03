@@ -5,7 +5,6 @@
 
     using AutoMapper;
     using Microsoft.AspNetCore.Mvc;
-    using Photoparallel.Common;
     using Photoparallel.Data.Models.Enums;
     using Photoparallel.Services.Contracts;
     using Photoparallel.Web.Areas.Administration.ViewModels.Home;

@@ -91,6 +91,21 @@
             return this.RedirectToAction("Index", model);
         }
 
+        public IActionResult Delivery()
+        {
+            return this.View();
+        }
+
+        public IActionResult Contact()
+        {
+            return this.View();
+        }
+
+        public IActionResult RentalTerms()
+        {
+            return this.View();
+        }
+
         public IActionResult Privacy()
         {
             return this.View();
