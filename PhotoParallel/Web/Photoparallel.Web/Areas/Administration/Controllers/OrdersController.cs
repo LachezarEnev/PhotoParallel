@@ -9,9 +9,13 @@
     using Photoparallel.Services.Contracts;
     using Photoparallel.Web.Areas.Administration.ViewModels.Home;
     using Photoparallel.Web.Areas.Administration.ViewModels.Orders;
+    using X.PagedList;
 
     public class OrdersController : AdministrationController
     {
+        private const int DefaultPageNumber = 1;
+        private const int DefaultPageSize = 15;
+
         private readonly IOrdersService ordersService;
         private readonly IMapper mapper;
 
@@ -66,22 +70,30 @@
             return this.View(allShippedOrders);
         }
 
-        public async Task<IActionResult> Delivered()
+        public async Task<IActionResult> Delivered(int? pageNumber, int? pageSize)
         {
             var orders = await this.ordersService.GetDeliveredOrdersAsync();
 
             var allDeliveredOrders = this.mapper.Map<IList<AllOrdersViewModel>>(orders);
 
-            return this.View(allDeliveredOrders);
+            pageNumber = pageNumber ?? DefaultPageNumber;
+            pageSize = pageSize ?? DefaultPageSize;
+            var pageOrdersViewModel = allDeliveredOrders.ToPagedList(pageNumber.Value, pageSize.Value);
+
+            return this.View(pageOrdersViewModel);
         }
 
-        public async Task<IActionResult> Denied()
+        public async Task<IActionResult> Denied(int? pageNumber, int? pageSize)
         {
             var orders = await this.ordersService.GetDeniedOrdersAsync();
 
             var allDeniedOrders = this.mapper.Map<IList<AllOrdersViewModel>>(orders);
 
-            return this.View(allDeniedOrders);
+            pageNumber = pageNumber ?? DefaultPageNumber;
+            pageSize = pageSize ?? DefaultPageSize;
+            var pageOrdersViewModel = allDeniedOrders.ToPagedList(pageNumber.Value, pageSize.Value);
+
+            return this.View(pageOrdersViewModel);
         }
 
         public async Task<IActionResult> Details(int id)

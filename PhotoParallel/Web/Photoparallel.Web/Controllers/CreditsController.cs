@@ -11,9 +11,13 @@
     using Photoparallel.Data.Models.Enums;
     using Photoparallel.Services.Contracts;
     using Photoparallel.Web.ViewModels.Credits;
+    using X.PagedList;
 
     public class CreditsController : BaseController
     {
+        private const int DefaultPageNumber = 1;
+        private const int DefaultPageSize = 15;
+
         private readonly ICreditsService creditsService;
         private readonly IOrdersService ordersService;
         private readonly ICreditCompaniesService creditCompaniesService;
@@ -135,13 +139,17 @@
         }
 
         [Authorize]
-        public async Task<IActionResult> My()
+        public async Task<IActionResult> My(int? pageNumber, int? pageSize)
         {
             var credits = await this.creditsService.GetAllCreditsByUserAsync(this.User.Identity.Name);
 
             var allCredits = this.mapper.Map<IList<MyCreditssViewModel>>(credits);
 
-            return this.View(allCredits);
+            pageNumber = pageNumber ?? DefaultPageNumber;
+            pageSize = pageSize ?? DefaultPageSize;
+            var pageCreditsViewModel = allCredits.ToPagedList(pageNumber.Value, pageSize.Value);
+
+            return this.View(pageCreditsViewModel);
         }
 
         [Authorize]

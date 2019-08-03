@@ -1,4 +1,7 @@
-﻿@model IEnumerable<Photoparallel.Web.Areas.Administration.ViewModels.Credits.AllCreditsViewModel>
+﻿@model IPagedList<Photoparallel.Web.Areas.Administration.ViewModels.Credits.AllCreditsViewModel>
+@using X.PagedList.Mvc.Core;
+@using X.PagedList.Mvc.Common;
+@using X.PagedList;
 
 @{
     ViewData["Title"] = "Pending";
@@ -22,6 +25,7 @@
                 <tbody>
                     @{
                         var credits = Model.ToArray();
+                        var counter = (Model.PageNumber - 1) * 15 + 1;
                     }
                     @for (int i = 0; i < credits.Length; i++)
                     {
@@ -29,7 +33,7 @@
 
                         <tr class="row">
                             <td class="col-md-2 col d-flex justify-content-center">
-                                @(i + 1)
+                                @(counter + i)
                             </td>
                             <td class="col-md-2 col d-flex justify-content-center">
                                 @credit.Id
@@ -43,7 +47,7 @@
                             <td class="col-md-2 col d-flex justify-content-around">
                                 <div class="mr-2">
                                     <a asp-area="Administration" asp-controller="Credits" asp-action="Details" asp-route-id="@credit.Id" class="btn btn-info btn-sm">Details</a>
-                                </div>                               
+                                </div>
                             </td>
                         </tr>
                     }
@@ -55,4 +59,17 @@
             }
         </div>
     </div>
+</div>
+<div class="mt-3 d-flex justify-content-around">
+    @Html.PagedListPager((IPagedList)Model, page => Url.Action("Approved",
+    new
+    {
+    PageNumber = page
+    }),
+    new PagedListRenderOptions
+    {
+    MaximumPageNumbersToDisplay = 5,
+    LiElementClasses = new string[] { "page-item" },
+    PageClasses = new string[] { "page-link" }
+    })
 </div>

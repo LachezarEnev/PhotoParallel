@@ -8,9 +8,13 @@
     using Photoparallel.Services.Contracts;
     using Photoparallel.Web.Areas.Administration.ViewModels.Credits;
     using Photoparallel.Web.ViewModels.Credits;
+    using X.PagedList;
 
     public class CreditsController : AdministrationController
     {
+        private const int DefaultPageNumber = 1;
+        private const int DefaultPageSize = 15;
+
         private readonly ICreditsService creditsService;
         private readonly IMapper mapper;
 
@@ -86,22 +90,30 @@
             return this.RedirectToAction("Denied");
         }
 
-        public async Task<IActionResult> Approved()
+        public async Task<IActionResult> Approved(int? pageNumber, int? pageSize)
         {
             var credits = await this.creditsService.GetApprovedCreditsAsync();
 
             var allApprovedCredits = this.mapper.Map<IList<AllCreditsViewModel>>(credits);
 
-            return this.View(allApprovedCredits);
+            pageNumber = pageNumber ?? DefaultPageNumber;
+            pageSize = pageSize ?? DefaultPageSize;
+            var pageCreditsViewMode = allApprovedCredits.ToPagedList(pageNumber.Value, pageSize.Value);
+
+            return this.View(pageCreditsViewMode);
         }
 
-        public async Task<IActionResult> Denied()
+        public async Task<IActionResult> Denied(int? pageNumber, int? pageSize)
         {
             var credits = await this.creditsService.GetDeniedCreditsAsync();
 
             var allDeniedCredits = this.mapper.Map<IList<AllCreditsViewModel>>(credits);
 
-            return this.View(allDeniedCredits);
+            pageNumber = pageNumber ?? DefaultPageNumber;
+            pageSize = pageSize ?? DefaultPageSize;
+            var pageCreditsViewMode = allDeniedCredits.ToPagedList(pageNumber.Value, pageSize.Value);
+
+            return this.View(pageCreditsViewMode);
         }
     }
 }

@@ -8,9 +8,13 @@
     using Photoparallel.Data.Models.Enums;
     using Photoparallel.Services.Contracts;
     using Photoparallel.Web.Areas.Administration.ViewModels.Rents;
+    using X.PagedList;
 
     public class RentsController : AdministrationController
     {
+        private const int DefaultPageNumber = 1;
+        private const int DefaultPageSize = 15;
+
         private readonly IRentsService rentsService;
         private readonly IMapper mapper;
 
@@ -38,22 +42,30 @@
             return this.View(allRentedRents);
         }
 
-        public async Task<IActionResult> Returned()
+        public async Task<IActionResult> Returned(int? pageNumber, int? pageSize)
         {
             var rents = await this.rentsService.GetReturnedRentsAsync();
 
             var allReturnedRents = this.mapper.Map<IList<AllRentsViewModel>>(rents);
 
-            return this.View(allReturnedRents);
+            pageNumber = pageNumber ?? DefaultPageNumber;
+            pageSize = pageSize ?? DefaultPageSize;
+            var pageRentssViewModel = allReturnedRents.ToPagedList(pageNumber.Value, pageSize.Value);
+
+            return this.View(pageRentssViewModel);
         }
 
-        public async Task<IActionResult> Denied()
+        public async Task<IActionResult> Denied(int? pageNumber, int? pageSize)
         {
             var rents = await this.rentsService.GetDeniedRentsAsync();
 
             var allDeniedRents = this.mapper.Map<IList<AllRentsViewModel>>(rents);
 
-            return this.View(allDeniedRents);
+            pageNumber = pageNumber ?? DefaultPageNumber;
+            pageSize = pageSize ?? DefaultPageSize;
+            var pageRentssViewModel = allDeniedRents.ToPagedList(pageNumber.Value, pageSize.Value);
+
+            return this.View(pageRentssViewModel);
         }
 
         public async Task<IActionResult> Details(int id)

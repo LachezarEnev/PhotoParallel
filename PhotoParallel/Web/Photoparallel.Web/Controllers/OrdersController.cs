@@ -12,9 +12,13 @@
     using Photoparallel.Services.Contracts;
     using Photoparallel.Web.Areas.Administration.ViewModels.Orders;
     using Photoparallel.Web.ViewModels.Orders;
+    using X.PagedList;
 
     public class OrdersController : BaseController
     {
+        private const int DefaultPageNumber = 1;
+        private const int DefaultPageSize = 15;
+
         private readonly IOrdersService ordersService;
         private readonly IProductsService productsService;
         private readonly IMapper mapper;
@@ -150,13 +154,17 @@
         }
 
         [Authorize]
-        public async Task<IActionResult> My()
+        public async Task<IActionResult> My(int? pageNumber, int? pageSize)
         {
             var orders = await this.ordersService.GetAllOrdersByUserAsync(this.User.Identity.Name);
 
             var allOrders = this.mapper.Map<IList<MyOrdersViewModel>>(orders);
 
-            return this.View(allOrders);
+            pageNumber = pageNumber ?? DefaultPageNumber;
+            pageSize = pageSize ?? DefaultPageSize;
+            var pageOrdersViewModel = allOrders.ToPagedList(pageNumber.Value, pageSize.Value);
+
+            return this.View(pageOrdersViewModel);
         }
 
         [Authorize]

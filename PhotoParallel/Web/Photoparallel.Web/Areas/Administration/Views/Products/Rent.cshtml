@@ -70,7 +70,7 @@
         </tbody>
     </table>
     <div class="mt-3 d-flex justify-content-around">
-        @Html.PagedListPager((IPagedList)Model, page => Url.Action("All",
+        @Html.PagedListPager((IPagedList)Model, page => Url.Action("Rent",
                                                 new
                                                      {
                                                     PageNumber = page

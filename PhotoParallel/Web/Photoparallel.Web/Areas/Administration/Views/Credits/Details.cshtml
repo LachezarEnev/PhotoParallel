@@ -38,26 +38,16 @@
             <div><span class="font-weight-bold">UCN:</span> @Model.Ucn</div>
             <div><span class="font-weight-bold">Salary:</span> @Model.Salary BGN</div>
         </div>
-        <hr />
-        <div>
-            <div class=" m-3 d-flex justify-content-around">
-                @if (Model.CreditStatus == CreditStatus.Pending)
-                {
-                    <a asp-area="Administration" asp-controller="Credits" asp-action="Delete" asp-route-id="@Model.Id" class="myButton-red btn-sm"><i class="fa fa-trash"></i> Delete</a>
+        <div class=" m-3 d-flex justify-content-around">
+            @if (Model.CreditStatus == CreditStatus.Pending)
+            {
+            <hr />
+            <a asp-area="Administration" asp-controller="Credits" asp-action="Delete" asp-route-id="@Model.Id" class="myButton-red btn-sm"><i class="fa fa-trash"></i> Delete</a>
 
-                    <a asp-area="Administration" asp-controller="Credits" asp-action="Approve" asp-route-id="@Model.Id" class="myButton-olive btn-sm"><i class="fas fa-check"></i> Approve</a>
+            <a asp-area="Administration" asp-controller="Credits" asp-action="Approve" asp-route-id="@Model.Id" class="myButton-olive btn-sm"><i class="fas fa-check"></i> Approve</a>
 
-                    <a asp-area="Administration" asp-controller="Credits" asp-action="Pending" class="myButton-blue btn-sm"><i class="fas fa-arrow-left"></i> Back</a>
-                }
-                else if (Model.CreditStatus == CreditStatus.Approved)
-                {
-                    <a asp-area="Administration" asp-controller="Credits" asp-action="Approved" class="myButton-blue btn-sm"><i class="fas fa-arrow-left"></i> Back</a>
-                }
-                else
-                {
-                    <a asp-area="Administration" asp-controller="Credits" asp-action="Denied" class="myButton-blue btn-sm"><i class="fas fa-arrow-left"></i> Back</a>
-                }                
-            </div>
+            <a asp-area="Administration" asp-controller="Credits" asp-action="Pending" class="myButton-blue btn-sm"><i class="fas fa-arrow-left"></i> Back</a>
+            }
         </div>
     </div>
 </div>

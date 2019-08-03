@@ -61,9 +61,9 @@
 
             pageNumber = pageNumber ?? DefaultPageNumber;
             pageSize = pageSize ?? DefaultPageSize;
-            var pageProductsViewMode = products.ToPagedList(pageNumber.Value, pageSize.Value);
+            var pageProductsViewModel = products.ToPagedList(pageNumber.Value, pageSize.Value);
 
-            return this.View(pageProductsViewMode);
+            return this.View(pageProductsViewModel);
         }
 
         public async Task<IActionResult> Rent(int? pageNumber, int? pageSize)
@@ -72,9 +72,9 @@
 
             pageNumber = pageNumber ?? DefaultPageNumber;
             pageSize = pageSize ?? DefaultPageSize;
-            var pageProductsViewMode = products.ToPagedList(pageNumber.Value, pageSize.Value);
+            var pageProductsViewModel = products.ToPagedList(pageNumber.Value, pageSize.Value);
 
-            return this.View(pageProductsViewMode);
+            return this.View(pageProductsViewModel);
         }
 
         public async Task<IActionResult> Edit(int id)

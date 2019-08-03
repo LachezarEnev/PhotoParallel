@@ -20,6 +20,8 @@
     {
         private const int DefaultPageNumber = 1;
         private const int DefaultPageSize = 8;
+        private const int DefaultMyPageNumber = 1;
+        private const int DefaultMyPageSize = 15;
 
         private readonly IProductsService productsService;
         private readonly IMapper mapper;
@@ -171,13 +173,17 @@
         }
 
         [Authorize]
-        public async Task<IActionResult> My()
+        public async Task<IActionResult> My(int? pageNumber, int? pageSize)
         {
             var rents = await this.rentsService.GetAllRentsByUserAsync(this.User.Identity.Name);
 
             var rentsViewModel = this.mapper.Map<IList<MyRentsViewModel>>(rents);
 
-            return this.View(rentsViewModel);
+            pageNumber = pageNumber ?? DefaultMyPageNumber;
+            pageSize = pageSize ?? DefaultMyPageSize;
+            var pageRentsViewModel = rentsViewModel.ToPagedList(pageNumber.Value, pageSize.Value);
+
+            return this.View(pageRentsViewModel);
         }
 
         [Authorize]

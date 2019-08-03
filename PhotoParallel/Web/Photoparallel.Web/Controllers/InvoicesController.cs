@@ -10,9 +10,13 @@
     using Microsoft.AspNetCore.Mvc;
     using Photoparallel.Services.Contracts;
     using Photoparallel.Web.ViewModels.Invoices;
+    using X.PagedList;
 
     public class InvoicesController : BaseController
     {
+        private const int DefaultPageNumber = 1;
+        private const int DefaultPageSize = 15;
+
         private readonly IInvoicesService invoicesService;
         private readonly IOrdersService ordersService;
         private readonly IMapper mapper;
@@ -79,7 +83,7 @@
         }
 
         [Authorize]
-        public async Task<IActionResult> My()
+        public async Task<IActionResult> My(int? pageNumber, int? pageSize)
         {
             var allInvoices = await this.invoicesService.GetAllAsync();
 
@@ -88,7 +92,11 @@
 
             var allMyInvoicesViewModel = this.mapper.Map<IList<MyInvoicesViewModel>>(allMyInvoices);
 
-            return this.View(allMyInvoicesViewModel);
+            pageNumber = pageNumber ?? DefaultPageNumber;
+            pageSize = pageSize ?? DefaultPageSize;
+            var pageInvoicesViewModel = allMyInvoicesViewModel.ToPagedList(pageNumber.Value, pageSize.Value);
+
+            return this.View(pageInvoicesViewModel);
         }
     }
 }

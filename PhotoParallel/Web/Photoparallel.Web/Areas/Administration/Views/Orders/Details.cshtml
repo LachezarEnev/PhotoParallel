@@ -59,56 +59,50 @@
             <hr />
             <div><span class="font-weight-bold">Address:</span> @Model.ShippingAddress</div>
         </div>
-        <hr />
         <div>
             @if (Model.OrderStatus == "Pending")
             {
+                <hr />
                 <div class=" m-3 d-flex justify-content-between">
                     <a asp-area="Administration" asp-controller="Orders" asp-action="Delete" asp-route-id="@Model.Id" class="myButton-red btn-sm"><i class="fa fa-trash"></i> Delete</a>
-                    
+
                     <a asp-area="Administration" asp-controller="Orders" asp-action="Approve" asp-route-id="@Model.Id" class="myButton-olive btn-sm"><i class="fas fa-check"></i> Approve</a>
 
                     <a asp-area="Administration" asp-controller="Orders" asp-action="Pending" class="myButton-blue btn-sm"><i class="fas fa-arrow-left"></i> Back</a>
                 </div>
+                <hr />
             }
             else if (Model.OrderStatus == "Waiting Delivery")
             {
+                <hr />
                 <div class=" m-3 d-flex justify-content-between">
                     <a asp-area="Administration" asp-controller="Orders" asp-action="Approve" asp-route-id="@Model.Id" class="myButton-olive btn-sm"><i class="fas fa-check"></i> Approve</a>
 
                     <a asp-area="Administration" asp-controller="Orders" asp-action="Waiting" class="myButton-blue btn-sm"><i class="fas fa-arrow-left"></i> Back</a>
                 </div>
+                <hr />
             }
             else if (Model.OrderStatus == "Approved")
             {
+                <hr />
                 <div class=" m-3 d-flex justify-content-around">
                     <a asp-area="Administration" asp-controller="Orders" asp-action="Ship" asp-route-id="@Model.Id" class="myButton-olive btn-sm"><i class="fas fa-check"></i> Ship</a>
 
                     <a asp-area="Administration" asp-controller="Orders" asp-action="Approved" class="myButton-blue btn-sm"><i class="fas fa-arrow-left"></i> Back</a>
                 </div>
+                <hr />
             }
             else if (Model.OrderStatus == "Shipped")
             {
+                <hr />
                 <div class=" m-3 d-flex justify-content-around">
                     <a asp-area="Administration" asp-controller="Orders" asp-action="Deliver" asp-route-id="@Model.Id" class="myButton-olive btn-sm"><i class="fas fa-check"></i> Deliver</a>
 
                     <a asp-area="Administration" asp-controller="Orders" asp-action="Shipped" class="myButton-blue btn-sm"><i class="fas fa-arrow-left"></i> Back</a>
                 </div>
-            }
-            else if (Model.OrderStatus == "Delivered")
-            {
-                <div class=" m-3 d-flex justify-content-around">
-                    <a asp-area="Administration" asp-controller="Orders" asp-action="Delivered" class="myButton-blue btn-sm"><i class="fas fa-arrow-left"></i> Back</a>
-                </div>
-            }
-            else if (Model.OrderStatus == "Denied")
-            {
-                <div class=" m-3 d-flex justify-content-around">
-                    <a asp-area="Administration" asp-controller="Orders" asp-action="Denied" class="myButton-blue btn-sm"><i class="fas fa-arrow-left"></i> Back</a>
-                </div>
+                <hr />
             }
         </div>
-        <hr />
     </div>
     <table class="table">
         <thead>
@@ -160,7 +154,6 @@
             }
         </tbody>
     </table>
-
 </div>
 
 

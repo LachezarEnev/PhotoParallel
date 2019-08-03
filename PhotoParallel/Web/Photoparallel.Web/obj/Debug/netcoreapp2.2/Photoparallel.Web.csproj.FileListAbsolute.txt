@@ -292,7 +292,6 @@ D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web\obj\Debug\netcor
 D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web\obj\Debug\netcoreapp2.2\Razor\Views\Orders\Details.g.cshtml.cs
 D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web\obj\Debug\netcoreapp2.2\Razor\Areas\Administration\Views\Orders\Approved.g.cshtml.cs
 D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web\obj\Debug\netcoreapp2.2\Razor\Areas\Administration\Views\Orders\Shipped.g.cshtml.cs
-D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web\obj\Debug\netcoreapp2.2\Razor\Areas\Administration\Views\Orders\Delivered.g.cshtml.cs
 D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web\obj\Debug\netcoreapp2.2\Razor\Areas\Administration\Views\Orders\Waiting.g.cshtml.cs
 D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web\obj\Debug\netcoreapp2.2\Razor\Areas\Administration\Views\Orders\Delete.g.cshtml.cs
 D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web\obj\Debug\netcoreapp2.2\Razor\Areas\Administration\Views\Orders\Denied.g.cshtml.cs
@@ -348,3 +347,4 @@ D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web\obj\Debug\netcor
 D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web\obj\Debug\netcoreapp2.2\Razor\Views\Home\Delivery.g.cshtml.cs
 D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web\obj\Debug\netcoreapp2.2\Razor\Views\Home\Contact.g.cshtml.cs
 D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web\obj\Debug\netcoreapp2.2\Razor\Views\Home\RentalTerms.g.cshtml.cs
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web\obj\Debug\netcoreapp2.2\Razor\Areas\Administration\Views\Orders\Delivered.g.cshtml.cs

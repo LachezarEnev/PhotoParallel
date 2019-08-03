@@ -56,10 +56,10 @@
         <hr />
         <div><span class="font-weight-bold">Address:</span> @Model.ShippingAddress</div>
     </div>
-    <hr />
     <div>
         @if (Model.RentsStatus == "Pending")
         {
+            <hr />
             <div class=" m-3 d-flex justify-content-around">
                 <a asp-area="Administration" asp-controller="Rents" asp-action="Delete" asp-route-id="@Model.Id" class="myButton-red btn-sm"><i class="fa fa-trash"></i> Delete</a>
 
@@ -67,30 +67,20 @@
 
                 <a asp-area="Administration" asp-controller="Rents" asp-action="Pending" class="myButton-blue btn-sm"><i class="fas fa-arrow-left"></i> Back</a>
             </div>
+            <hr />
         }
         else if (Model.RentsStatus == "Rented")
         {
+            <hr />
             <div class=" m-3 d-flex justify-content-around">
 
                 <a asp-area="Administration" asp-controller="Rents" asp-action="Return" asp-route-id="@Model.Id" class="myButton-olive btn-sm"><i class="fas fa-check"></i> Return</a>
 
                 <a asp-area="Administration" asp-controller="Rents" asp-action="Rented" class="myButton-blue btn-sm"><i class="fas fa-arrow-left"></i> Back</a>
             </div>
-        }
-        else if (Model.RentsStatus == "Denied")
-        {
-            <div class=" m-3 d-flex justify-content-around">
-                <a asp-area="Administration" asp-controller="Rents" asp-action="Denied" class="myButton-blue btn-sm"><i class="fas fa-arrow-left"></i> Back</a>
-            </div>
-        }
-        else if (Model.RentsStatus == "Returned")
-        {
-            <div class=" m-3 d-flex justify-content-around">
-                <a asp-area="Administration" asp-controller="Rents" asp-action="Returned" class="myButton-blue btn-sm"><i class="fas fa-arrow-left"></i> Back</a>
-            </div>
+            <hr />
         }
     </div>
-    <hr />
 </div>
 <table class="table">
     <thead>
