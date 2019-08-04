@@ -1,0 +1,70 @@
+﻿@model IPagedList<Photoparallel.Web.Areas.Administration.ViewModels.Invoices.AllInvoicesViewModel>
+@using X.PagedList.Mvc.Core;
+@using X.PagedList.Mvc.Common;
+@using X.PagedList;
+
+@{
+    ViewData["Title"] = "All";
+}
+
+<div class="row">
+    <div class="col-xl-6">
+        <div class="container mobile-fondsize-11">
+            <div class="h2 text-center text-info font-weight-bold">All Invoices</div>
+            <table class="table">
+                <thead>
+                    <tr class="row">
+                        <th scope="col" class="col-md-2 col d-flex justify-content-center">№</th>
+                        <th scope="col" class="col-md-2 col d-flex justify-content-center">Invoice Number</th>
+                        <th scope="col" class="col-md-3 col d-flex justify-content-center">Issued On</th>
+                        <th scope="col" class="col-md-3 col d-flex justify-content-center">Total Amount</th>
+                        <th scope="col" class="col-md-2 col d-flex justify-content-center">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        var invoices = Model.ToArray();
+                        var counter = (Model.PageNumber - 1) * 15 + 1;
+                    }
+                    @for (int i = 0; i < invoices.Length; i++)
+                    {
+                        var invoice = invoices[i];
+
+                        <tr class="row">
+                            <td class="col-md-2 col d-flex justify-content-center">
+                                @(counter + i)
+                            </td>
+                            <td class="col-md-2 col d-flex justify-content-center">
+                                @invoice.InvoiceNumber
+                            </td>
+                            <td class="col-md-3 col d-flex justify-content-center">
+                                @invoice.IssuedOn
+                            </td>
+                            <td class="col-md-3 col d-flex justify-content-center">
+                                @invoice.TotalAmount BGN
+                            </td>
+                            <td class="col-md-2 col d-flex justify-content-around">
+                                <div class="mr-2">
+                                    <a asp-area="Administration" asp-controller="Invoices" asp-action="Details" asp-route-id="@invoice.Id" class="btn btn-info btn-sm">Details</a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="mt-3 d-flex justify-content-around">
+    @Html.PagedListPager((IPagedList)Model, page => Url.Action("All",
+    new
+    {
+    PageNumber = page
+    }),
+    new PagedListRenderOptions
+    {
+    MaximumPageNumbersToDisplay = 5,
+    LiElementClasses = new string[] { "page-item" },
+    PageClasses = new string[] { "page-link" }
+    })
+</div>

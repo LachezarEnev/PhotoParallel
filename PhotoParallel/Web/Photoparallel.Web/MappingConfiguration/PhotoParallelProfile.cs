@@ -7,6 +7,7 @@
     using Photoparallel.Web.Areas.Administration.ViewModels.CreditCompanies;
     using Photoparallel.Web.Areas.Administration.ViewModels.Credits;
     using Photoparallel.Web.Areas.Administration.ViewModels.Home;
+    using Photoparallel.Web.Areas.Administration.ViewModels.Invoices;
     using Photoparallel.Web.Areas.Administration.ViewModels.Orders;
     using Photoparallel.Web.Areas.Administration.ViewModels.Products;
     using Photoparallel.Web.Areas.Administration.ViewModels.Rents;
@@ -22,6 +23,21 @@
     {
         public PhotoParallelProfile()
         {
+            this.CreateMap<CreateCompanyInputModel, CreditCompany>();
+            this.CreateMap<CreditCompany, AllCreditCompaniesViewModel>();
+            this.CreateMap<CreditCompany, EditCompanyInputModel>();
+            this.CreateMap<EditCompanyInputModel, CreditCompany>();
+            this.CreateMap<CreditContract, ConfirmCreditViewModel>();
+            this.CreateMap<CreditContract, MyCreditssViewModel>();
+            this.CreateMap<CreditContract, CreditDetailsViewModel>();
+            this.CreateMap<CreditContract, DetailsCreditViewModel>();
+            this.CreateMap<CreditContract, AllCreditsViewModel>();
+            this.CreateMap<CreateProductsInputModel, Product>();
+            this.CreateMap<Rent, ConfirmRentViewModel>();
+            this.CreateMap<CreditCartInputModel, CreditCard>();
+            this.CreateMap<Product, AllProductsVieModel>();
+            this.CreateMap<Product, HideProductsViewModel>();
+
             this.CreateMap<Order, AllOrdersViewModel>()
                 .ForMember(x => x.OrderStatus, y => y.MapFrom(src => src.OrderStatus.GetDisplayName()));
 
@@ -64,8 +80,6 @@
                 .ForMember(x => x.InvoiceId, y => y.MapFrom(src => src.Invoice.Id))
                 .ForMember(x => x.Email, y => y.MapFrom(src => src.Customer.Email));
 
-            this.CreateMap<CreateProductsInputModel, Product>();
-
             this.CreateMap<Product, DetailsProductViewModel>()
                 .ForMember(x => x.ImageUrls, y => y.MapFrom(src => src.Images.Select(x => x.ImageUrl)));
 
@@ -75,12 +89,8 @@
             this.CreateMap<EditProductsInputModel, Product>()
              .ForMember(x => x.IsRented, y => y.MapFrom(src => bool.Parse(src.IsRented)));
 
-            this.CreateMap<Product, HideProductsViewModel>();
-
             this.CreateMap<Product, IndexProductViewModel>()
                 .ForMember(x => x.ImageUrl, y => y.MapFrom(src => src.Images.FirstOrDefault().ImageUrl));
-
-            this.CreateMap<Product, AllProductsVieModel>();
 
             this.CreateMap<Product, OpenOrdersProductsViewModel>()
                 .ForMember(x => x.ImageUrl, y => y.MapFrom(src => src.Images.FirstOrDefault().ImageUrl));
@@ -90,10 +100,6 @@
 
             this.CreateMap<Order, ConfirmOrderViewModel>()
                 .ForMember(x => x.PaymentType, y => y.MapFrom(src => src.PaymentType.GetDisplayName()));
-
-            this.CreateMap<Rent, ConfirmRentViewModel>();
-
-            this.CreateMap<CreditCartInputModel, CreditCard>();
 
             this.CreateMap<Order, DeleteOrderViewModel>()
                 .ForMember(x => x.OrderStatus, y => y.MapFrom(src => src.OrderStatus.GetDisplayName()));
@@ -124,15 +130,8 @@
             this.CreateMap<Invoice, MyInvoicesViewModel>()
                 .ForMember(x => x.IssuedOn, y => y.MapFrom(src => src.IssuedOn.ToString("dd/MM/yyyy")));
 
-            this.CreateMap<CreateCompanyInputModel, CreditCompany>();
-            this.CreateMap<CreditCompany, AllCreditCompaniesViewModel>();
-            this.CreateMap<CreditCompany, EditCompanyInputModel>();
-            this.CreateMap<EditCompanyInputModel, CreditCompany>();
-            this.CreateMap<CreditContract, ConfirmCreditViewModel>();
-            this.CreateMap<CreditContract, MyCreditssViewModel>();
-            this.CreateMap<CreditContract, CreditDetailsViewModel>();
-            this.CreateMap<CreditContract, DetailsCreditViewModel>();
-            this.CreateMap<CreditContract, AllCreditsViewModel>();
+            this.CreateMap<Invoice, AllInvoicesViewModel>()
+               .ForMember(x => x.IssuedOn, y => y.MapFrom(src => src.IssuedOn.ToString("dd/MM/yyyy")));
 
             this.CreateMap<CreditContract, DeleteCreditViewModel>()
                 .ForMember(x => x.Recipient, y => y.MapFrom(src => src.Order.Recipient));

@@ -348,3 +348,4 @@ D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web\obj\Debug\netcor
 D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web\obj\Debug\netcoreapp2.2\Razor\Views\Home\Contact.g.cshtml.cs
 D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web\obj\Debug\netcoreapp2.2\Razor\Views\Home\RentalTerms.g.cshtml.cs
 D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web\obj\Debug\netcoreapp2.2\Razor\Areas\Administration\Views\Orders\Delivered.g.cshtml.cs
+D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web\obj\Debug\netcoreapp2.2\Razor\Areas\Administration\Views\Invoices\All.g.cshtml.cs

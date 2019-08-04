@@ -111,7 +111,7 @@
             var orderViewModel = this.mapper.Map<OrderDetailsViewModel>(order);
             orderViewModel.OrderProductsViewModel = orderProductsViewModel;
 
-            if (order.OrderStatus == OrderStatus.Pending || order.OrderStatus == OrderStatus.Denied)
+            if (order.OrderStatus == OrderStatus.Pending || order.OrderStatus == OrderStatus.Denied || order.OrderStatus == OrderStatus.WaitingCreditConfirmation)
             {
                 orderViewModel.EstimatedDeliveryDate = "N/A";
                 orderViewModel.Invoice = "N/A";
