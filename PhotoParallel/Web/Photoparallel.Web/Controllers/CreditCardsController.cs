@@ -7,6 +7,7 @@
     using AutoMapper;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
+    using Photoparallel.Common;
     using Photoparallel.Data.Models;
     using Photoparallel.Services.Contracts;
     using Photoparallel.Web.ViewModels.CreditCards;
@@ -69,7 +70,7 @@
             string lastTwoDigits = yearInString.Substring(2);
             int lastToDigitsOfTheYear = int.Parse(lastTwoDigits);
 
-            if ((DateTime.Now.Month > tokens[0] && lastToDigitsOfTheYear == tokens[1]) || lastToDigitsOfTheYear > tokens[1] || tokens[0] > 12 || tokens[1] - lastToDigitsOfTheYear > 5)
+            if ((DateTime.Now.Month > tokens[0] && lastToDigitsOfTheYear == tokens[1]) || lastToDigitsOfTheYear > tokens[1] || tokens[0] > GlobalConstants.MonthsInYear || tokens[1] - lastToDigitsOfTheYear > GlobalConstants.CreditCardValidity)
             {
                 return this.View("InvalidCard");
             }
@@ -120,7 +121,7 @@
             string lastTwoDigits = yearInString.Substring(2);
             int lastToDigitsOfTheYear = int.Parse(lastTwoDigits);
 
-            if ((DateTime.Now.Month > tokens[0] && lastToDigitsOfTheYear == tokens[1]) || lastToDigitsOfTheYear > tokens[1] || tokens[0] > 12 || tokens[1] - lastToDigitsOfTheYear > 5)
+            if ((DateTime.Now.Month > tokens[0] && lastToDigitsOfTheYear == tokens[1]) || lastToDigitsOfTheYear > tokens[1] || tokens[0] > GlobalConstants.MonthsInYear || tokens[1] - lastToDigitsOfTheYear > GlobalConstants.CreditCardValidity)
             {
                 return this.View("InvalidCard");
             }

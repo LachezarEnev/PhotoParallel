@@ -147,7 +147,7 @@
             creditContract.CreditCompany = creditCompany;
             creditContract.Address = address;
             creditContract.Months = months;
-            creditContract.PricePerMonth = Math.Round(order.TotalPrice / months, 2) + Math.Round((order.TotalPrice * (creditCompany.Interest / 100)) / 12, 2);
+            creditContract.PricePerMonth = Math.Round(order.TotalPrice / months, 2) + Math.Round((order.TotalPrice * (creditCompany.Interest / GlobalConstants.HundredPercent)) / GlobalConstants.MonthsInYear, 2);
             creditContract.TotalAmount = months * creditContract.PricePerMonth;
             creditContract.ActiveUntil = DateTime.UtcNow.AddHours(GlobalConstants.BulgarianHoursFromUtcNow).AddMonths(months);
             creditContract.Customer = order.Customer;

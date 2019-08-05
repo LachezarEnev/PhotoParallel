@@ -1,4 +1,5 @@
 ﻿@model Photoparallel.Web.ViewModels.Credits.CreateCreditInputModel
+@using Photoparallel.Common
 
 @{
     ViewData["Title"] = "Create";
@@ -128,8 +129,8 @@
                     @foreach (var creditComany in Model.CreditCompanies)
                     {
                         var orderAmount = Model.Order.TotalPrice;
-                        var anualInterest = Math.Round(orderAmount * (creditComany.Interest / 100), 2);
-                        var monthInterest = Math.Round((anualInterest / 12), 2);
+                        var anualInterest = Math.Round(orderAmount * (creditComany.Interest / GlobalConstants.HundredPercent), 2);
+                        var monthInterest = Math.Round((anualInterest / GlobalConstants.MonthsInYear), 2);
                         <tr class="row">
                             <td class="col-md-2 col d-flex justify-content-center">
                                 <b>@creditComany.Name</b>

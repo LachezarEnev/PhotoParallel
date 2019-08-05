@@ -12,8 +12,16 @@
 
         public const int BulgarianHoursFromUtcNow = 3;
 
-        public const int ShippingCosts = 5;
+        public const decimal ShippingCosts = 5;
 
         public const decimal GuaranteePercent = 0.30m;
+
+        public const decimal FreeShippingLimitAmount = 100;
+
+        public const int HundredPercent = 100;
+
+        public const int MonthsInYear = 12;
+
+        public const int CreditCardValidity = 5;
     }
 }

@@ -14,6 +14,11 @@
 
     public class OrdersService : IOrdersService
     {
+        private const int AddDaysToWaitingOrder = 7;
+        private const int AddOneDayToOrder = 1;
+        private const int AddTwoDaysToOrder = 2;
+        private const int AddThreeDaysToOrder = 3;
+
         private readonly PhotoparallelDbContext context;
         private readonly IUsersService usersService;
         private readonly IProductsService productsService;
@@ -255,7 +260,7 @@
                 return null;
             }
 
-            if (order.TotalPrice < 100)
+            if (order.TotalPrice < GlobalConstants.FreeShippingLimitAmount)
             {
                 order.TotalPrice += GlobalConstants.ShippingCosts;
 
@@ -290,7 +295,7 @@
 
             order.CreatedOn = DateTime.UtcNow.AddHours(GlobalConstants.BulgarianHoursFromUtcNow);
 
-            if (order.TotalPrice < 100)
+            if (order.TotalPrice < GlobalConstants.FreeShippingLimitAmount)
             {
                 order.Shipping = GlobalConstants.ShippingCosts;
             }
@@ -352,7 +357,7 @@
                     return;
                 }
 
-                order.EstimatedDeliveryDate = DateTime.UtcNow.AddHours(GlobalConstants.BulgarianHoursFromUtcNow).AddDays(7);
+                order.EstimatedDeliveryDate = DateTime.UtcNow.AddHours(GlobalConstants.BulgarianHoursFromUtcNow).AddDays(AddDaysToWaitingOrder);
                 order.OrderStatus = OrderStatus.Waiting;
                 this.context.Update(order);
                 await this.context.SaveChangesAsync();
@@ -370,11 +375,11 @@
 
             if (DateTime.Now.DayOfWeek == DayOfWeek.Friday)
             {
-                order.EstimatedDeliveryDate = DateTime.UtcNow.AddHours(GlobalConstants.BulgarianHoursFromUtcNow).AddDays(3);
+                order.EstimatedDeliveryDate = DateTime.UtcNow.AddHours(GlobalConstants.BulgarianHoursFromUtcNow).AddDays(AddThreeDaysToOrder);
             }
             else
             {
-                order.EstimatedDeliveryDate = DateTime.UtcNow.AddHours(GlobalConstants.BulgarianHoursFromUtcNow).AddDays(2);
+                order.EstimatedDeliveryDate = DateTime.UtcNow.AddHours(GlobalConstants.BulgarianHoursFromUtcNow).AddDays(AddTwoDaysToOrder);
             }
 
             order.OrderStatus = OrderStatus.Approved;
@@ -397,11 +402,11 @@
 
             if (DateTime.Now.DayOfWeek == DayOfWeek.Saturday)
             {
-                order.EstimatedDeliveryDate = DateTime.UtcNow.AddHours(GlobalConstants.BulgarianHoursFromUtcNow).AddDays(2);
+                order.EstimatedDeliveryDate = DateTime.UtcNow.AddHours(GlobalConstants.BulgarianHoursFromUtcNow).AddDays(AddTwoDaysToOrder);
             }
             else
             {
-                order.EstimatedDeliveryDate = DateTime.UtcNow.AddHours(GlobalConstants.BulgarianHoursFromUtcNow).AddDays(1);
+                order.EstimatedDeliveryDate = DateTime.UtcNow.AddHours(GlobalConstants.BulgarianHoursFromUtcNow).AddDays(AddOneDayToOrder);
             }
 
             order.OrderStatus = OrderStatus.Shipped;
