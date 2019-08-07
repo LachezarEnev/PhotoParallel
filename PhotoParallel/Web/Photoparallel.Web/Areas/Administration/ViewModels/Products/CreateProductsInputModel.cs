@@ -19,7 +19,7 @@
 
         [Required]
         [DataType(DataType.MultilineText)]
-        [StringLength(1000, MinimumLength = 10, ErrorMessage = "\"{0}\" must be between {2} and {1} characters!")]
+        [StringLength(2000, MinimumLength = 10, ErrorMessage = "\"{0}\" must be between {2} and {1} characters!")]
         public string Description { get; set; }
 
         [Required]
