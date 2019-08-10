@@ -440,7 +440,7 @@
         public async Task DeleteOrderAsync(int id)
         {
             var order = await this.context.Orders
-                .Where(x => x.Id == id && x.OrderStatus == OrderStatus.Pending)
+                .Where(x => x.Id == id && (x.OrderStatus == OrderStatus.Pending || x.OrderStatus == OrderStatus.WaitingCreditConfirmation))
                 .FirstOrDefaultAsync();
 
             if (order == null)
