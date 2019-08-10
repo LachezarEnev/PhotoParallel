@@ -40,7 +40,7 @@
     <div class="col-md-6">
         <div class="container-fluid">
             @await Component.InvokeAsync(typeof(OpenOrderComponent), new { OrderId = Model.Id })
-            @if (Model.TotalPrice < 100)
+            @if (Model.TotalPrice < GlobalConstants.FreeShippingLimitAmount)
             {
                 <div class="text-center">
                     <p class="font-weight-bold text-danger h4 text-right">Shipping: @Model.ShippingCosts BGN</p>

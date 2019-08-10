@@ -1,5 +1,6 @@
 ﻿namespace Photoparallel.Web.ValidationAttributes
 {
+    using Photoparallel.Common;
     using System;
     using System.ComponentModel.DataAnnotations;
 
@@ -24,9 +25,9 @@
 
             var startDate = (DateTime)property.GetValue(validationContext.ObjectInstance);
 
-            if (startDate > enddate || enddate > DateTime.Now.AddDays(7))
+            if (startDate > enddate || enddate > DateTime.Now.AddDays(GlobalConstants.SevenDays))
             {
-                return new ValidationResult($"End day must be between {startDate.ToString("dd/MM/yyyy")} and {DateTime.Now.AddDays(7).ToString("dd/MM/yyyy")}");
+                return new ValidationResult($"End day must be between {startDate.ToString("dd/MM/yyyy")} and {DateTime.Now.AddDays(GlobalConstants.SevenDays).ToString("dd/MM/yyyy")}");
             }
 
             return ValidationResult.Success;

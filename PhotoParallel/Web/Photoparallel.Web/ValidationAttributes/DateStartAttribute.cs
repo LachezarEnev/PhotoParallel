@@ -3,15 +3,17 @@
     using System;
     using System.ComponentModel.DataAnnotations;
 
+    using Photoparallel.Common;
+
     public class DateStartAttribute : ValidationAttribute
     {
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
             DateTime startDate = Convert.ToDateTime(value);
 
-            if (startDate < DateTime.Now || startDate > DateTime.Now.AddDays(7))
+            if (startDate < DateTime.Now || startDate > DateTime.Now.AddDays(GlobalConstants.SevenDays))
             {
-                return new ValidationResult($"Start day must be between {DateTime.Now.AddDays(1).ToString("dd/MM/yyyy")} and {DateTime.Now.AddDays(7).ToString("dd/MM/yyyy")}");
+                return new ValidationResult($"Start day must be between {DateTime.Now.AddDays(GlobalConstants.OneDay).ToString("dd/MM/yyyy")} and {DateTime.Now.AddDays(GlobalConstants.SevenDays).ToString("dd/MM/yyyy")}");
             }
 
             return ValidationResult.Success;

@@ -25,5 +25,9 @@
         public const int CreditCardValidity = 5;
 
         public const decimal MinimumCreditValue = 300;
+
+        public const int SevenDays = 7;
+
+        public const int OneDay = 1;
     }
 }
