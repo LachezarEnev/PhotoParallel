@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     using System.Threading.Tasks;
 
     using Microsoft.EntityFrameworkCore;
@@ -72,6 +73,7 @@
         public async Task<IEnumerable<Invoice>> GetAllAsync()
         {
             var allInvoices = await this.context.Invoices
+                .OrderByDescending(x => x.Id)
                 .ToListAsync();
 
             return allInvoices;

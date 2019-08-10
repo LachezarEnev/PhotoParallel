@@ -28,6 +28,11 @@ using Photoparallel.Web.Components;
 
 #line default
 #line hidden
+#line 4 "D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web\Views\_ViewImports.cshtml"
+using Photoparallel.Common;
+
+#line default
+#line hidden
 #line 2 "D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web\Views\Invoices\My.cshtml"
 using X.PagedList.Mvc.Core;
 
@@ -44,7 +49,7 @@ using X.PagedList;
 #line default
 #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"dec8e17dfd97c5726228c10fd5024215f324ddf2", @"/Views/Invoices/My.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"19f56853bc10335ee88806db5846472111bad1fa", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"69cd7a0e2099e547b87af83f987e9f2a0389f2d4", @"/Views/_ViewImports.cshtml")]
     public class Views_Invoices_My : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IPagedList<Photoparallel.Web.ViewModels.Invoices.MyInvoicesViewModel>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-area", "", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -164,7 +169,7 @@ using X.PagedList;
             WriteLiteral(" BGN\r\n                            </td>\r\n                            <td class=\"col-md-2 col d-flex justify-content-around\">\r\n                                <div class=\"mr-2\">\r\n                                    ");
             EndContext();
             BeginContext(2324, 128, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "dec8e17dfd97c5726228c10fd5024215f324ddf29508", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "dec8e17dfd97c5726228c10fd5024215f324ddf29669", async() => {
                 BeginContext(2441, 7, true);
                 WriteLiteral("Details");
                 EndContext();

@@ -8,6 +8,7 @@
 
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
+    using Photoparallel.Common;
     using Photoparallel.Data.Models.Enums;
     using Photoparallel.Services.Contracts;
     using Photoparallel.Web.ViewModels.Credits;
@@ -53,7 +54,7 @@
 
             var creditCompanis = await this.creditCompaniesService.GetVisibleCompaniesAsync();
 
-            if (order == null)
+            if (order == null || order.TotalPrice < GlobalConstants.MinimumCreditValue)
             {
                 return this.RedirectToAction("Index", "Orders");
             }

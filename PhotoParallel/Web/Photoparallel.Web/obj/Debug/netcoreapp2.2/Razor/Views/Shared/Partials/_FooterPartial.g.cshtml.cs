@@ -28,8 +28,13 @@ using Photoparallel.Web.Components;
 
 #line default
 #line hidden
+#line 4 "D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web\Views\_ViewImports.cshtml"
+using Photoparallel.Common;
+
+#line default
+#line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f7644d3b257890e83acf7a677e8f23092cd7f50e", @"/Views/Shared/Partials/_FooterPartial.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"19f56853bc10335ee88806db5846472111bad1fa", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"69cd7a0e2099e547b87af83f987e9f2a0389f2d4", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared_Partials__FooterPartial : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-area", "", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -95,7 +100,7 @@ using Photoparallel.Web.Components;
             WriteLiteral("               \r\n                    <li>");
             EndContext();
             BeginContext(1065, 87, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f7644d3b257890e83acf7a677e8f23092cd7f50e9841", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f7644d3b257890e83acf7a677e8f23092cd7f50e10002", async() => {
                 BeginContext(1141, 7, true);
                 WriteLiteral("Cameras");
                 EndContext();
@@ -122,7 +127,7 @@ using Photoparallel.Web.Components;
             WriteLiteral("</li>\r\n                    <li>");
             EndContext();
             BeginContext(1183, 84, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f7644d3b257890e83acf7a677e8f23092cd7f50e11733", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f7644d3b257890e83acf7a677e8f23092cd7f50e11895", async() => {
                 BeginContext(1257, 6, true);
                 WriteLiteral("Lenses");
                 EndContext();
@@ -149,7 +154,7 @@ using Photoparallel.Web.Components;
             WriteLiteral("</li>\r\n                    <li>");
             EndContext();
             BeginContext(1298, 85, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f7644d3b257890e83acf7a677e8f23092cd7f50e13625", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f7644d3b257890e83acf7a677e8f23092cd7f50e13787", async() => {
                 BeginContext(1373, 6, true);
                 WriteLiteral("Drones");
                 EndContext();
@@ -176,7 +181,7 @@ using Photoparallel.Web.Components;
             WriteLiteral("</li>\r\n                    <li>");
             EndContext();
             BeginContext(1414, 95, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f7644d3b257890e83acf7a677e8f23092cd7f50e15517", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f7644d3b257890e83acf7a677e8f23092cd7f50e15679", async() => {
                 BeginContext(1494, 11, true);
                 WriteLiteral("Microphones");
                 EndContext();
@@ -203,7 +208,7 @@ using Photoparallel.Web.Components;
             WriteLiteral("</li>\r\n                    <li>");
             EndContext();
             BeginContext(1540, 85, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f7644d3b257890e83acf7a677e8f23092cd7f50e17415", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f7644d3b257890e83acf7a677e8f23092cd7f50e17577", async() => {
                 BeginContext(1615, 6, true);
                 WriteLiteral("Stands");
                 EndContext();
@@ -230,7 +235,7 @@ using Photoparallel.Web.Components;
             WriteLiteral("</li>\r\n                    <li>");
             EndContext();
             BeginContext(1656, 81, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f7644d3b257890e83acf7a677e8f23092cd7f50e19307", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f7644d3b257890e83acf7a677e8f23092cd7f50e19469", async() => {
                 BeginContext(1729, 4, true);
                 WriteLiteral("Bags");
                 EndContext();
@@ -257,7 +262,7 @@ using Photoparallel.Web.Components;
             WriteLiteral("</li>\r\n                    <li>");
             EndContext();
             BeginContext(1768, 94, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f7644d3b257890e83acf7a677e8f23092cd7f50e21197", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f7644d3b257890e83acf7a677e8f23092cd7f50e21359", async() => {
                 BeginContext(1847, 11, true);
                 WriteLiteral("Accessories");
                 EndContext();
@@ -284,7 +289,7 @@ using Photoparallel.Web.Components;
             WriteLiteral("</li>                  \r\n                </ul>\r\n            </div>\r\n            <div class=\"col-md-3 mb-md-0 mb-3\">\r\n                <h5 class=\"text-info text-left m-4\">General:</h5>\r\n                <ul class=\"text-left m-4\">\r\n                    <li>");
             EndContext();
             BeginContext(2114, 88, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f7644d3b257890e83acf7a677e8f23092cd7f50e23333", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f7644d3b257890e83acf7a677e8f23092cd7f50e23495", async() => {
                 BeginContext(2191, 7, true);
                 WriteLiteral("Contact");
                 EndContext();
@@ -311,7 +316,7 @@ using Photoparallel.Web.Components;
             WriteLiteral("</li>\r\n                    <li class=\"mt-2\">");
             EndContext();
             BeginContext(2246, 90, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f7644d3b257890e83acf7a677e8f23092cd7f50e25243", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f7644d3b257890e83acf7a677e8f23092cd7f50e25405", async() => {
                 BeginContext(2324, 8, true);
                 WriteLiteral("Delivery");
                 EndContext();
@@ -338,7 +343,7 @@ using Photoparallel.Web.Components;
             WriteLiteral("</li>\r\n                    <li class=\"mt-2\">");
             EndContext();
             BeginContext(2380, 97, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f7644d3b257890e83acf7a677e8f23092cd7f50e27154", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f7644d3b257890e83acf7a677e8f23092cd7f50e27316", async() => {
                 BeginContext(2461, 12, true);
                 WriteLiteral("Rental Terms");
                 EndContext();
@@ -376,7 +381,7 @@ using Photoparallel.Web.Components;
                     ");
             EndContext();
             BeginContext(3153, 71, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "f7644d3b257890e83acf7a677e8f23092cd7f50e29726", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "f7644d3b257890e83acf7a677e8f23092cd7f50e29888", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

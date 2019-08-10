@@ -28,8 +28,13 @@ using Photoparallel.Web.Components;
 
 #line default
 #line hidden
+#line 4 "D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web\Views\_ViewImports.cshtml"
+using Photoparallel.Common;
+
+#line default
+#line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"9e1cfca858393521c87f5ab8a32fa6efc73b05f7", @"/Views/Shared/Partials/_LowerSectionPartial.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"19f56853bc10335ee88806db5846472111bad1fa", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"69cd7a0e2099e547b87af83f987e9f2a0389f2d4", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared_Partials__LowerSectionPartial : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-area", "", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -70,7 +75,7 @@ using Photoparallel.Web.Components;
             WriteLiteral("<nav class=\"navbar navbar-expand-lg navbar-dark bg-transparent\">\r\n    <div class=\"main-menu center-block\">\r\n        <ul class=\"nav navbar-nav\">\r\n            <li>");
             EndContext();
             BeginContext(161, 110, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9e1cfca858393521c87f5ab8a32fa6efc73b05f77395", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9e1cfca858393521c87f5ab8a32fa6efc73b05f77556", async() => {
                 BeginContext(236, 31, true);
                 WriteLiteral("<i class=\"fas fa-home\"></i> All");
                 EndContext();
@@ -97,7 +102,7 @@ using Photoparallel.Web.Components;
             WriteLiteral("</li>\r\n            <li>");
             EndContext();
             BeginContext(294, 117, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9e1cfca858393521c87f5ab8a32fa6efc73b05f79304", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9e1cfca858393521c87f5ab8a32fa6efc73b05f79465", async() => {
                 BeginContext(370, 37, true);
                 WriteLiteral("<i class=\"fas fa-camera\"></i> Cameras");
                 EndContext();
@@ -124,7 +129,7 @@ using Photoparallel.Web.Components;
             WriteLiteral("</li>\r\n            <li>");
             EndContext();
             BeginContext(434, 119, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9e1cfca858393521c87f5ab8a32fa6efc73b05f711219", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9e1cfca858393521c87f5ab8a32fa6efc73b05f711380", async() => {
                 BeginContext(508, 41, true);
                 WriteLiteral("<i class=\"fa fa-camera-retro\"></i> Lenses");
                 EndContext();
@@ -151,7 +156,7 @@ using Photoparallel.Web.Components;
             WriteLiteral("</li>\r\n            <li>");
             EndContext();
             BeginContext(576, 119, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9e1cfca858393521c87f5ab8a32fa6efc73b05f713139", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9e1cfca858393521c87f5ab8a32fa6efc73b05f713300", async() => {
                 BeginContext(651, 40, true);
                 WriteLiteral("<i class=\"fas fa-helicopter\"></i> Drones");
                 EndContext();
@@ -178,7 +183,7 @@ using Photoparallel.Web.Components;
             WriteLiteral("</li>\r\n            <li>");
             EndContext();
             BeginContext(718, 128, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9e1cfca858393521c87f5ab8a32fa6efc73b05f715058", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9e1cfca858393521c87f5ab8a32fa6efc73b05f715219", async() => {
                 BeginContext(797, 45, true);
                 WriteLiteral("<i class=\"fas fa-microphone\"></i> Microphones");
                 EndContext();
@@ -205,7 +210,7 @@ using Photoparallel.Web.Components;
             WriteLiteral("</li>\r\n            <li>");
             EndContext();
             BeginContext(869, 117, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9e1cfca858393521c87f5ab8a32fa6efc73b05f716982", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9e1cfca858393521c87f5ab8a32fa6efc73b05f717143", async() => {
                 BeginContext(944, 38, true);
                 WriteLiteral("<i class=\"fab fa-stripe-s\"></i> Stands");
                 EndContext();
@@ -232,7 +237,7 @@ using Photoparallel.Web.Components;
             WriteLiteral("</li>\r\n            <li>");
             EndContext();
             BeginContext(1009, 114, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9e1cfca858393521c87f5ab8a32fa6efc73b05f718900", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9e1cfca858393521c87f5ab8a32fa6efc73b05f719061", async() => {
                 BeginContext(1082, 37, true);
                 WriteLiteral("<i class=\"fas fa-briefcase\"></i> Bags");
                 EndContext();
@@ -259,7 +264,7 @@ using Photoparallel.Web.Components;
             WriteLiteral("</li>\r\n            <li>");
             EndContext();
             BeginContext(1146, 121, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9e1cfca858393521c87f5ab8a32fa6efc73b05f720819", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9e1cfca858393521c87f5ab8a32fa6efc73b05f720980", async() => {
                 BeginContext(1225, 38, true);
                 WriteLiteral("<i class=\"fab fa-adn\"></i> Accessories");
                 EndContext();
@@ -286,7 +291,7 @@ using Photoparallel.Web.Components;
             WriteLiteral("</li>\r\n            <li>");
             EndContext();
             BeginContext(1290, 118, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9e1cfca858393521c87f5ab8a32fa6efc73b05f722741", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9e1cfca858393521c87f5ab8a32fa6efc73b05f722902", async() => {
                 BeginContext(1366, 38, true);
                 WriteLiteral("<i class=\"fas fa-registered\"></i> Rent");
                 EndContext();

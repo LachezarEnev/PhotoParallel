@@ -28,8 +28,13 @@ using Photoparallel.Web.Components;
 
 #line default
 #line hidden
+#line 4 "D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web\Views\_ViewImports.cshtml"
+using Photoparallel.Common;
+
+#line default
+#line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3534a88d4d76b69f3432482390d8f53313e51372", @"/Views/Shared/Partials/_AdminPartial.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"19f56853bc10335ee88806db5846472111bad1fa", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"69cd7a0e2099e547b87af83f987e9f2a0389f2d4", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared_Partials__AdminPartial : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-area", "Administration", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -78,7 +83,7 @@ using Photoparallel.Web.Components;
             WriteLiteral("<li class=\"dropdown\">\r\n    <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\"><i class=\"fas fa-cog\"></i> Products</a>\r\n    <ul class=\"dropdown-menu dropdown-content bg-dark\" role=\"menu\">\r\n        <li>");
             EndContext();
             BeginContext(208, 88, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3534a88d4d76b69f3432482390d8f53313e513729817", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3534a88d4d76b69f3432482390d8f53313e513729978", async() => {
                 BeginContext(280, 12, true);
                 WriteLiteral("All Products");
                 EndContext();
@@ -104,7 +109,7 @@ using Photoparallel.Web.Components;
             WriteLiteral("</li>\r\n        <li>");
             EndContext();
             BeginContext(315, 90, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3534a88d4d76b69f3432482390d8f53313e5137211617", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3534a88d4d76b69f3432482390d8f53313e5137211778", async() => {
                 BeginContext(388, 13, true);
                 WriteLiteral("Rent Products");
                 EndContext();
@@ -130,7 +135,7 @@ using Photoparallel.Web.Components;
             WriteLiteral("</li>\r\n        <li>");
             EndContext();
             BeginContext(424, 94, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3534a88d4d76b69f3432482390d8f53313e5137213419", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3534a88d4d76b69f3432482390d8f53313e5137213580", async() => {
                 BeginContext(499, 15, true);
                 WriteLiteral("Hidden Products");
                 EndContext();
@@ -156,7 +161,7 @@ using Photoparallel.Web.Components;
             WriteLiteral("</li>\r\n        <li>");
             EndContext();
             BeginContext(537, 88, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3534a88d4d76b69f3432482390d8f53313e5137215223", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3534a88d4d76b69f3432482390d8f53313e5137215384", async() => {
                 BeginContext(609, 12, true);
                 WriteLiteral("Out of Stock");
                 EndContext();
@@ -182,7 +187,7 @@ using Photoparallel.Web.Components;
             WriteLiteral("</li>\r\n        <li>");
             EndContext();
             BeginContext(644, 93, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3534a88d4d76b69f3432482390d8f53313e5137217024", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3534a88d4d76b69f3432482390d8f53313e5137217185", async() => {
                 BeginContext(719, 14, true);
                 WriteLiteral("Create Product");
                 EndContext();
@@ -211,7 +216,7 @@ using Photoparallel.Web.Components;
             WriteLiteral("        <li>");
             EndContext();
             BeginContext(1068, 85, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3534a88d4d76b69f3432482390d8f53313e5137219166", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3534a88d4d76b69f3432482390d8f53313e5137219327", async() => {
                 BeginContext(1142, 7, true);
                 WriteLiteral("Pending");
                 EndContext();
@@ -237,7 +242,7 @@ using Photoparallel.Web.Components;
             WriteLiteral("</li>\r\n        <li>");
             EndContext();
             BeginContext(1172, 85, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3534a88d4d76b69f3432482390d8f53313e5137220964", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3534a88d4d76b69f3432482390d8f53313e5137221125", async() => {
                 BeginContext(1246, 7, true);
                 WriteLiteral("Waiting");
                 EndContext();
@@ -263,7 +268,7 @@ using Photoparallel.Web.Components;
             WriteLiteral("</li>\r\n        <li>");
             EndContext();
             BeginContext(1276, 87, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3534a88d4d76b69f3432482390d8f53313e5137222762", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3534a88d4d76b69f3432482390d8f53313e5137222923", async() => {
                 BeginContext(1351, 8, true);
                 WriteLiteral("Approved");
                 EndContext();
@@ -289,7 +294,7 @@ using Photoparallel.Web.Components;
             WriteLiteral("</li>\r\n        <li>");
             EndContext();
             BeginContext(1382, 85, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3534a88d4d76b69f3432482390d8f53313e5137224563", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3534a88d4d76b69f3432482390d8f53313e5137224724", async() => {
                 BeginContext(1456, 7, true);
                 WriteLiteral("Shipped");
                 EndContext();
@@ -315,7 +320,7 @@ using Photoparallel.Web.Components;
             WriteLiteral("</li>\r\n        <li>");
             EndContext();
             BeginContext(1486, 89, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3534a88d4d76b69f3432482390d8f53313e5137226363", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3534a88d4d76b69f3432482390d8f53313e5137226524", async() => {
                 BeginContext(1562, 9, true);
                 WriteLiteral("Delivered");
                 EndContext();
@@ -341,7 +346,7 @@ using Photoparallel.Web.Components;
             WriteLiteral("</li>\r\n        <li>");
             EndContext();
             BeginContext(1594, 83, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3534a88d4d76b69f3432482390d8f53313e5137228165", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3534a88d4d76b69f3432482390d8f53313e5137228326", async() => {
                 BeginContext(1667, 6, true);
                 WriteLiteral("Denied");
                 EndContext();
@@ -367,7 +372,7 @@ using Photoparallel.Web.Components;
             WriteLiteral("</li>\r\n    </ul>\r\n</li>\r\n<li class=\"dropdown\">\r\n    <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\"><i class=\"fas fa-cog\"></i> Rents</a>\r\n    <ul class=\"dropdown-menu dropdown-content bg-dark\" role=\"menu\">\r\n        <li>");
             EndContext();
             BeginContext(1907, 84, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3534a88d4d76b69f3432482390d8f53313e5137230200", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3534a88d4d76b69f3432482390d8f53313e5137230361", async() => {
                 BeginContext(1980, 7, true);
                 WriteLiteral("Pending");
                 EndContext();
@@ -393,7 +398,7 @@ using Photoparallel.Web.Components;
             WriteLiteral("</li>\r\n        <li>");
             EndContext();
             BeginContext(2010, 82, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3534a88d4d76b69f3432482390d8f53313e5137232000", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3534a88d4d76b69f3432482390d8f53313e5137232161", async() => {
                 BeginContext(2082, 6, true);
                 WriteLiteral("Rented");
                 EndContext();
@@ -419,7 +424,7 @@ using Photoparallel.Web.Components;
             WriteLiteral("</li>\r\n        <li>");
             EndContext();
             BeginContext(2111, 86, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3534a88d4d76b69f3432482390d8f53313e5137233801", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3534a88d4d76b69f3432482390d8f53313e5137233962", async() => {
                 BeginContext(2185, 8, true);
                 WriteLiteral("Returned");
                 EndContext();
@@ -445,7 +450,7 @@ using Photoparallel.Web.Components;
             WriteLiteral("</li>\r\n        <li>");
             EndContext();
             BeginContext(2216, 82, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3534a88d4d76b69f3432482390d8f53313e5137235604", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3534a88d4d76b69f3432482390d8f53313e5137235765", async() => {
                 BeginContext(2288, 6, true);
                 WriteLiteral("Denied");
                 EndContext();
@@ -471,7 +476,7 @@ using Photoparallel.Web.Components;
             WriteLiteral("</li>\r\n    </ul>\r\n</li>\r\n<li class=\"dropdown\">\r\n    <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\"><i class=\"fas fa-cog\"></i> Credits</a>\r\n    <ul class=\"dropdown-menu dropdown-content bg-dark\" role=\"menu\">\r\n        <li>");
             EndContext();
             BeginContext(2530, 86, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3534a88d4d76b69f3432482390d8f53313e5137237643", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3534a88d4d76b69f3432482390d8f53313e5137237804", async() => {
                 BeginContext(2605, 7, true);
                 WriteLiteral("Pending");
                 EndContext();
@@ -497,7 +502,7 @@ using Photoparallel.Web.Components;
             WriteLiteral("</li>\r\n        <li>");
             EndContext();
             BeginContext(2635, 88, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3534a88d4d76b69f3432482390d8f53313e5137239443", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3534a88d4d76b69f3432482390d8f53313e5137239604", async() => {
                 BeginContext(2711, 8, true);
                 WriteLiteral("Approved");
                 EndContext();
@@ -523,7 +528,7 @@ using Photoparallel.Web.Components;
             WriteLiteral("</li>\r\n        <li>");
             EndContext();
             BeginContext(2742, 84, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3534a88d4d76b69f3432482390d8f53313e5137241246", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3534a88d4d76b69f3432482390d8f53313e5137241407", async() => {
                 BeginContext(2816, 6, true);
                 WriteLiteral("Denied");
                 EndContext();
@@ -549,7 +554,7 @@ using Photoparallel.Web.Components;
             WriteLiteral("</li>\r\n        <li>");
             EndContext();
             BeginContext(2845, 100, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3534a88d4d76b69f3432482390d8f53313e5137243048", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3534a88d4d76b69f3432482390d8f53313e5137243209", async() => {
                 BeginContext(2927, 14, true);
                 WriteLiteral("Create Company");
                 EndContext();
@@ -575,7 +580,7 @@ using Photoparallel.Web.Components;
             WriteLiteral("</li>\r\n        <li>");
             EndContext();
             BeginContext(2964, 96, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3534a88d4d76b69f3432482390d8f53313e5137244856", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3534a88d4d76b69f3432482390d8f53313e5137245017", async() => {
                 BeginContext(3043, 13, true);
                 WriteLiteral("All Companies");
                 EndContext();
@@ -601,7 +606,7 @@ using Photoparallel.Web.Components;
             WriteLiteral("</li>\r\n    </ul>\r\n</li>\r\n<ul class=\"nav navbar-nav navbar-left\">\r\n    <li>");
             EndContext();
             BeginContext(3134, 111, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3534a88d4d76b69f3432482390d8f53313e5137246727", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3534a88d4d76b69f3432482390d8f53313e5137246888", async() => {
                 BeginContext(3206, 35, true);
                 WriteLiteral("<i class=\"fas fa-cog\"></i> Invoices");
                 EndContext();

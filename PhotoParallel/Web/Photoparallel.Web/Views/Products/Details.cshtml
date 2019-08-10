@@ -66,35 +66,35 @@
             {
                 <p class="font-weight-bold text-danger h5">Price: @Model.Price BGN</p>
             }
-            <div class="card-body">
-                @if (this.Model.ProductStatus == ProductStatus.Sale)
-                {
-                    <div class="mt-2">
-                        <div class="mb-2">
-                            <a asp-controller="Orders" asp-action="Add" asp-route-id="@Model.Id" asp-route-direct="true" class="myButton-olive btn-lg btn-block text-center"><i class="fas fa-shopping-cart"></i> Buy</a>
-                        </div>
-                        @if (this.Model.Price >= 300)
-                        {
-                            <div class="mb-2">
-                                <a asp-controller="Credits" asp-action="AddProduct" asp-route-id="@Model.Id" class="myButton-red btn-lg btn-block text-center">Credit</a>
-                            </div>
-                        }
+        <div class="card-body">
+            @if (this.Model.ProductStatus == ProductStatus.Sale)
+            {
+                <div class="mt-2">
+                    <div class="mb-2">
+                        <a asp-controller="Orders" asp-action="Add" asp-route-id="@Model.Id" asp-route-direct="true" class="myButton-olive btn-lg btn-block text-center"><i class="fas fa-shopping-cart"></i> Buy</a>
                     </div>
+                    @if (this.Model.Price >= GlobalConstants.MinimumCreditValue)
+                    {
+                        <div class="mb-2">
+                            <a asp-controller="Credits" asp-action="AddProduct" asp-route-id="@Model.Id" class="myButton-red btn-lg btn-block text-center">Credit</a>
+                        </div>
+                    }
+                </div>
+            }
+            else
+            {
+                if (Model.IsRented)
+                {
+                    <h3 class="text-danger">Rented</h3>
                 }
                 else
                 {
-                    if (Model.IsRented)
-                    {
-                        <h3 class="text-danger">Rented</h3>
-                    }
-                    else
-                    {
-                        <div class="mb-2">
-                            <a asp-controller="Rents" asp-action="Add" asp-route-id="@Model.Id" asp-route-direct="true" class="myButton-olive btn-lg btn-block text-center">Rent</a>
-                        </div>
-                    }
+                    <div class="mb-2">
+                        <a asp-controller="Rents" asp-action="Add" asp-route-id="@Model.Id" asp-route-direct="true" class="myButton-olive btn-lg btn-block text-center">Rent</a>
+                    </div>                   
                 }
-            </div>
+            }
+        </div>
             @if (this.Model.ProductStatus == ProductStatus.Sale)
             {
                 <div class="container d-flex">
@@ -110,7 +110,7 @@
                         }
                     </div>
                 </div>
-                @if (Model.Price >= 100)
+                @if (Model.Price >= GlobalConstants.FreeShippingLimitAmount)
                 {
                     <div class="container d-flex mt-2">
                         <img src="~/img/truck.png" height="40" width="40" alt="Shipping" />

@@ -71,7 +71,7 @@
         <div>
             <div class="h4 font-weight-bold text-center text-info">Products:</div>
             @await Component.InvokeAsync(typeof(OpenOrderComponent))
-            @if (Model.TotalPrice < 100)
+            @if (Model.TotalPrice < GlobalConstants.FreeShippingLimitAmount)
             {
                 <div class="text-center">
                     <p class="font-weight-bold text-danger h4 text-right">Shipping: @Model.ShippingCosts BGN</p>

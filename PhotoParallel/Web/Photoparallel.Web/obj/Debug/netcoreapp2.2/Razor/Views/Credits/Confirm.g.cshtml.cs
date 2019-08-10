@@ -28,8 +28,13 @@ using Photoparallel.Web.Components;
 
 #line default
 #line hidden
+#line 4 "D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web\Views\_ViewImports.cshtml"
+using Photoparallel.Common;
+
+#line default
+#line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d29c6836df2d70f95f539f0faf36c5728bab1528", @"/Views/Credits/Confirm.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"19f56853bc10335ee88806db5846472111bad1fa", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"69cd7a0e2099e547b87af83f987e9f2a0389f2d4", @"/Views/_ViewImports.cshtml")]
     public class Views_Credits_Confirm : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Photoparallel.Web.ViewModels.Credits.ConfirmCreditViewModel>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "Credits", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -182,7 +187,7 @@ using Photoparallel.Web.Components;
             WriteLiteral("</div>\r\n        </div>\r\n        <div class=\"container-fluid d-flex justify-content-around m-5\">\r\n            <div class=\"mb-2\">\r\n                ");
             EndContext();
             BeginContext(1740, 160, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d29c6836df2d70f95f539f0faf36c5728bab152811233", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d29c6836df2d70f95f539f0faf36c5728bab152811394", async() => {
                 BeginContext(1865, 31, true);
                 WriteLiteral("<i class=\"fas fa-cog\"></i> Edit");
                 EndContext();
@@ -213,7 +218,7 @@ using Photoparallel.Web.Components;
             WriteLiteral("\r\n            </div>\r\n            <div class=\"mb-2\">\r\n                ");
             EndContext();
             BeginContext(1970, 163, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d29c6836df2d70f95f539f0faf36c5728bab152813517", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d29c6836df2d70f95f539f0faf36c5728bab152813678", async() => {
                 BeginContext(2094, 35, true);
                 WriteLiteral("<i class=\"fas fa-check\"></i> Finish");
                 EndContext();

@@ -90,7 +90,7 @@ else
             <div class="text-right mt-3 mb-3">
                 <a asp-controller="Orders" asp-action="Create" class="form-group myButton-olive btn-sm btn-block mb-0">Finish Order</a>
             </div>
-            @if (Model.TotalPrice >= 300)
+            @if (Model.TotalPrice >= GlobalConstants.MinimumCreditValue)
             {
                 <div class="text-right mt-3 mb-3">
                     <a asp-controller="Credits" asp-action="Create" class="form-group myButton-red btn-sm btn-block mb-0">Buy on Credit</a>

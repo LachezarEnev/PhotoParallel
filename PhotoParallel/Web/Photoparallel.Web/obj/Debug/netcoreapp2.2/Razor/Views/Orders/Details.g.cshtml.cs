@@ -28,8 +28,13 @@ using Photoparallel.Web.Components;
 
 #line default
 #line hidden
+#line 4 "D:\SoftUni\C# Web\MyProject\PhotoParallel\Web\Photoparallel.Web\Views\_ViewImports.cshtml"
+using Photoparallel.Common;
+
+#line default
+#line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"6c7d335185a101ea38e3b8e72708828eec4754bf", @"/Views/Orders/Details.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"19f56853bc10335ee88806db5846472111bad1fa", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"69cd7a0e2099e547b87af83f987e9f2a0389f2d4", @"/Views/_ViewImports.cshtml")]
     public class Views_Orders_Details : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Photoparallel.Web.Areas.Administration.ViewModels.Orders.OrderDetailsViewModel>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-area", "", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -173,7 +178,7 @@ using Photoparallel.Web.Components;
             WriteLiteral("            <div>\r\n                <span class=\"font-weight-bold\">Invoice №:</span>\r\n                ");
             EndContext();
             BeginContext(1219, 159, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6c7d335185a101ea38e3b8e72708828eec4754bf9302", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6c7d335185a101ea38e3b8e72708828eec4754bf9463", async() => {
                 BeginContext(1313, 25, true);
                 WriteLiteral("\r\n                    <u>");
                 EndContext();
@@ -259,7 +264,7 @@ using Photoparallel.Web.Components;
             WriteLiteral("            <div>\r\n                <span class=\"font-weight-bold\">Credit Contract №:</span>\r\n                ");
             EndContext();
             BeginContext(1699, 176, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6c7d335185a101ea38e3b8e72708828eec4754bf13936", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6c7d335185a101ea38e3b8e72708828eec4754bf14097", async() => {
                 BeginContext(1800, 25, true);
                 WriteLiteral("\r\n                    <u>");
                 EndContext();

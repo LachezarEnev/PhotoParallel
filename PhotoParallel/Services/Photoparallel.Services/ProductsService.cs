@@ -240,6 +240,7 @@
             var products = await this.context.Products
                 .Include(x => x.Images)
                 .Where(x => x.Hide == false && x.ProductStatus == ProductStatus.Rent)
+                .OrderByDescending(x => x.Id)
                 .ToListAsync();
 
             return products;

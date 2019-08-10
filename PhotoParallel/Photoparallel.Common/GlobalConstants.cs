@@ -23,5 +23,7 @@
         public const int MonthsInYear = 12;
 
         public const int CreditCardValidity = 5;
+
+        public const decimal MinimumCreditValue = 300;
     }
 }
