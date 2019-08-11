@@ -27,6 +27,10 @@
         {
             <div><span class="font-weight-bold">Invoice №:</span> @Model.Invoice</div>
         }
+        @if (Model.Comment != null)
+        {
+            <div><span class="font-weight-bold">Comment:</span> @Model.Comment</div>
+        }
         <div><span class="font-weight-bold">Rental Amount:</span> @Model.TotalPrice BGN</div>
         @if (Model.RentsStatus != "Returned")
         {

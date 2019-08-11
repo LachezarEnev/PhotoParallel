@@ -123,7 +123,7 @@
 
             if ((DateTime.Now.Month > tokens[0] && lastToDigitsOfTheYear == tokens[1]) || lastToDigitsOfTheYear > tokens[1] || tokens[0] > GlobalConstants.MonthsInYear || tokens[1] - lastToDigitsOfTheYear > GlobalConstants.CreditCardValidity)
             {
-                return this.View("InvalidCard");
+                return this.View("InvalidCardRent");
             }
 
             await this.creditCardsService.PayRentWithCardAsync(creditCard, user, rent);
